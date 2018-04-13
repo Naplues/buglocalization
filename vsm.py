@@ -40,18 +40,12 @@ def getBugQuery(filePath):
 	return query, index
 
 #计算余弦相似度
-def cosine(vector1, vector2):  
-    dot_product = 0.0
-    normA = 0.0
-    normB = 0.0
-    for a,b in zip(vector1,vector2):
-        dot_product += a*b
-        normA += a**2
-        normB += b**2
-    if normA == 0.0 or normB==0.0:
-        return None
-    else:
-        return dot_product / ((normA*normB)**0.5)
+def cosine(A, B):
+	num = float(np.dot(A.T, B))
+	denom = np.linalg.norm(A) * np.linalg.norm(B)
+	cos = num / denom
+	sim = 0.5 + 0.5*cos #归一化处理映射到正值
+	return cos
 
 #VSM模型
 #	corpus: 语料库list
@@ -61,12 +55,9 @@ def VSM_Model(corpus, bug_query, index, other):
 	vectorizer = CountVectorizer()
 	#计算每个词语出现的次数
 	X = vectorizer.fit_transform(corpus)
-	#获取词袋中所有文本关键词
-	#print vectorizer.get_feature_names()
-	#查看词频结果
 	count = X.toarray()
-	#查看单词的索引
-	#print vectorizer.vocabulary_.get('type')
+	#归一化
+
 	transformer = TfidfTransformer(smooth_idf = False)
 	tfidf = transformer.fit_transform(count)
 	V = tfidf.toarray()
@@ -78,14 +69,21 @@ def VSM_Model(corpus, bug_query, index, other):
 	path = 'result/' + index.replace('\n', '') + '.txt'
 	f = open(path, 'w')
 	for i in range(len(filePathList)):
-		f.write(filePathList[res[0, i]].replace('-', '/').replace(other, '') + "\n")
+		f.write(str(i + 1) + ':' + filePathList[res[0, i]].replace('-', '/').replace(other, '') + "\n")
 	f.close()
 	
-if __name__ == "__main__":
+
+def main():
 	#语料库
 	corpus = getCorpus('source/target')
 	#查询
 	query, index = getBugQuery('bug_report')
+	#os.mkdir('result')
+	print len(query)
 	for x in range(len(query)):
-		print x
+		print 'Processing ' + str(x+1) + ' bug...'
 		VSM_Model(corpus, query[x], index[x], 'source/target\Tomcat/')
+
+
+if __name__ == "__main__":
+	main()
