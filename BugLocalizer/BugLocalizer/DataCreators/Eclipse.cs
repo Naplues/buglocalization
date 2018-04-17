@@ -9,11 +9,11 @@ namespace BugLocalizer.DataCreators
 {
     public class Eclipse : BaseExecutable
     {
-        private const string DataSetFolderName = @"Eclipse\";     //数据集文件夹名称
+        private const string DataSetFolderName = @"Eclipse\";            //数据集文件夹名称
 
-        private const string OutputCorpusFoldername = @"Corpus\";  //输出语料库文件夹名称
-        private const string OutputBugQueryFileName = @"BugQuery.txt";  //输出bug查询文件名称
-        private const string OutputRelListFileName = @"RelList.txt";  //
+        private const string OutputCorpusFoldername = @"Corpus\";        //输出语料库文件夹名称
+        private const string OutputBugQueryFileName = @"BugQuery.txt";   //输出bug查询文件名称
+        private const string OutputRelListFileName = @"RelList.txt";     //
         private const string OutputFileListFileName = @"FileList.txt";
         private const string EclipseQuerySourceFileName = @"EclipseBugRepository.xml";
         /// <summary>
@@ -63,7 +63,7 @@ namespace BugLocalizer.DataCreators
                 allBugs.Add(eclipseBug);
             }
 
-            // Match file name to get file path 
+            // Match file name to get file path
             // If file name try to match with folder name else throw and error
             Dictionary<string, List<FileInfo>> relevanceMappingDictionary = new Dictionary<string, List<FileInfo>>();
             foreach (var relevanceFileWithEclipseRelevanceObject in allRelevanceFileToResolvePath)

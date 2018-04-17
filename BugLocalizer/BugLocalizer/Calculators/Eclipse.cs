@@ -86,7 +86,7 @@ namespace BugLocalizer.Calculators
             List<string> completedJen = _runJen ? File.ReadAllLines(jenCompletedFilePath).ToList() : new List<string>();
             List<string> completedAPm = _runAPm ? File.ReadAllLines(aPmCompletedFilePath).ToList() : new List<string>();
 
-            List<DirectoryInfo> bugs = new DirectoryInfo(datasetFolderPath).GetDirectories().Where(x => x.Name != "Corpus" && x.Name == "94459").ToList();
+            List<DirectoryInfo> bugs = new DirectoryInfo(datasetFolderPath).GetDirectories().Where(x => x.Name != "Corpus").ToList();
             int totalbugsCount = bugs.Count;
 
             Utility.Status("Reading Files");
@@ -705,7 +705,7 @@ namespace BugLocalizer.Calculators
 
         private static void ComputeAPm(string pmiOutputFolderPath, string reqName, List<string> reqText)
         {
-            Utility.Status("Creating Pmi: " + reqName);
+            Utility.Status("Creating Apm: " + reqName);
 
             // Create list of word contained in query
             List<string> distinctReqWordList = reqText.Distinct().ToList();
