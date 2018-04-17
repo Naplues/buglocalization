@@ -24,13 +24,14 @@ namespace BugLocalizer
             }*/
 
             ///制作数据集
-            ///BugLocalizer.DataCreators.Swt DC_project = new BugLocalizer.DataCreators.Swt();
-            ///DC_project.Execute();
             ///BugLocalizer.DataCreators.ZXing DC_project = new BugLocalizer.DataCreators.ZXing();
             ///DC_project.Execute();
+            BugLocalizer.DataCreators.Swt DC_project = new BugLocalizer.DataCreators.Swt();
+            DC_project.Execute();
+
             ///BugLocalizer.DataCreators.Eclipse DC_project = new BugLocalizer.DataCreators.Eclipse();
             ///DC_project.Execute();
-            
+
             ///BugLocalizer.DataCreators.AspectJ DC_project = new BugLocalizer.DataCreators.AspectJ();
             ///DC_project.Execute();
             ///BugLocalizer.DataCreators.JodaTime DC_project = new BugLocalizer.DataCreators.JodaTime();
@@ -39,17 +40,19 @@ namespace BugLocalizer
             ///Console.WriteLine("-----------------------------------------------");
 
             ///计算排序结果
-            ///BugLocalizer.Calculators.Swt CA_project = new BugLocalizer.Calculators.Swt();
-            ///CA_project.Execute();
             ///BugLocalizer.Calculators.ZXing CA_project = new BugLocalizer.Calculators.ZXing();
             ///CA_project.Execute();
-            BugLocalizer.Calculators.Eclipse CA_project = new BugLocalizer.Calculators.Eclipse();
-            CA_project.Execute();
+            ///BugLocalizer.Calculators.Swt CA_project = new BugLocalizer.Calculators.Swt();
+            ///CA_project.Execute();
+            
+            ///BugLocalizer.Calculators.Eclipse CA_project = new BugLocalizer.Calculators.Eclipse();
+            ///CA_project.Execute();
 
             ///BugLocalizer.Calculators.AspectJ CA_project = new BugLocalizer.Calculators.AspectJ();
             ///CA_project.Execute();
             ///BugLocalizer.Calculators.JodaTime CA_project = new BugLocalizer.Calculators.JodaTime();
             ///CA_project.Execute();
+
             Console.WriteLine("-------------Finish---------------");
             Console.ReadLine();
         }

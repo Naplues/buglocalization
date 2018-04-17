@@ -36,7 +36,7 @@ namespace BugLocalizer.DataCreators
         {
             string outputFolderPath = Utility.ReportFolderPath + DataSetFolderName;
 
-            // filter source 获取所有的源文件
+            //过滤出项目中的java文件
             List<FileInfo> allSourceFile = GetAllSourceFile(ZXingSourceDirectoryPath, "*.java");
 
             // create file list

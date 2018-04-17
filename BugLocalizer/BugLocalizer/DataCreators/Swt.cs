@@ -27,7 +27,9 @@ namespace BugLocalizer.DataCreators
         private const string FixedFilesNodeName = "fixedFiles";
         private const string FileNodeName = "file";
 
+        //源码目录中需要移除的路径部分
         private const string SwtSourceDirectoryPathRemoveMachineSpecific = Utility.DatasetFolderPath + @"zhou\source\swt-3.1\src\";
+        //源码路径全目录
         private const string SwtSourceDirectoryPath = Utility.DatasetFolderPath + @"zhou\source\swt-3.1\src\org\eclipse\swt\";
         private const string SwtBugRepository = Utility.DatasetFolderPath + @"zhou\bugReports\SWTBugRepository.xml";
 
@@ -35,7 +37,7 @@ namespace BugLocalizer.DataCreators
         {
             string outputFolderPath = Utility.ReportFolderPath + DataSetFolderName;
 
-            // filter source
+            //过滤出项目中的java文件
             List<FileInfo> allSourceFile = GetAllSourceFile(SwtSourceDirectoryPath, "*.java");
 
             // create file list

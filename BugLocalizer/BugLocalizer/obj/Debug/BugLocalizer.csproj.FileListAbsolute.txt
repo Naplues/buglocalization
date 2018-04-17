@@ -15,3 +15,17 @@ C:\Users\naplues\Documents\Visual Studio 2015\Projects\BugLocalizer\BugLocalizer
 C:\Users\naplues\Documents\Visual Studio 2015\Projects\BugLocalizer\BugLocalizer\bin\Debug\Microsoft.Solver.Foundation.dll
 C:\Users\naplues\Documents\Visual Studio 2015\Projects\BugLocalizer\BugLocalizer\bin\Debug\NMath.xml
 C:\Users\naplues\Documents\Visual Studio 2015\Projects\BugLocalizer\BugLocalizer\bin\Debug\SharpCompress.dll
+C:\Users\naplues\Desktop\git\buglocalization\BugLocalizer\BugLocalizer\bin\Debug\BugLocalizer.exe.config
+C:\Users\naplues\Desktop\git\buglocalization\BugLocalizer\BugLocalizer\obj\Debug\BugLocalizer.exe
+C:\Users\naplues\Desktop\git\buglocalization\BugLocalizer\BugLocalizer\obj\Debug\BugLocalizer.pdb
+C:\Users\naplues\Desktop\git\buglocalization\BugLocalizer\BugLocalizer\bin\Debug\BugLocalizer.exe
+C:\Users\naplues\Desktop\git\buglocalization\BugLocalizer\BugLocalizer\bin\Debug\BugLocalizer.pdb
+C:\Users\naplues\Desktop\git\buglocalization\BugLocalizer\BugLocalizer\bin\Debug\Bluebit.MatrixLibrary.dll
+C:\Users\naplues\Desktop\git\buglocalization\BugLocalizer\BugLocalizer\bin\Debug\NMath.dll
+C:\Users\naplues\Desktop\git\buglocalization\BugLocalizer\BugLocalizer\bin\Debug\SourceCodeIndexer.STAC.dll
+C:\Users\naplues\Desktop\git\buglocalization\BugLocalizer\BugLocalizer\bin\Debug\Microsoft.Solver.Foundation.dll
+C:\Users\naplues\Desktop\git\buglocalization\BugLocalizer\BugLocalizer\bin\Debug\Bluebit.MatrixLibrary.xml
+C:\Users\naplues\Desktop\git\buglocalization\BugLocalizer\BugLocalizer\bin\Debug\NMath.xml
+C:\Users\naplues\Desktop\git\buglocalization\BugLocalizer\BugLocalizer\obj\Debug\BugLocalizer.csprojResolveAssemblyReference.cache
+C:\Users\naplues\Desktop\git\buglocalization\BugLocalizer\BugLocalizer\obj\Debug\BugLocalizer.Properties.Resources.resources
+C:\Users\naplues\Desktop\git\buglocalization\BugLocalizer\BugLocalizer\obj\Debug\BugLocalizer.csproj.GenerateResource.Cache
