@@ -12,23 +12,26 @@ namespace Viewer
         {
             InitializeComponent();
 
-            //GenerateMapBarGraph(); //MAP柱状图
+            //GenerateTopNGraph();     //TopN图  OK
+            //GenerateTable();         //创建表  OK
+            //QueryTextSimilarity();   //查询文本相似度  OK
+            //GenerateTableAll();      //生成所有表  OK
+
+            GenerateMapBarGraph(); //MAP柱状图
             //GenerateMrrBarGraph(); //MRR柱状图
-            //GenerateTopNGraph();   //TopN图 OK
-            //GenerateTable();       //创建表
-            //GenerateTableAll();    //生成所有表
+
             //GenerateLsiGraph();    //生成LSI图
             //GenerateLsiQueryGraph(); //生成LSI查询图
             //IndividualQueryResult(); //单个查询结果
             ///TextMatcher();           //文本匹配
             //TextMatcherAttempt2();
-            //QueryTextSimilarity();  //查询文本相似度OK
-             
+
+
             //Temp(); OK
-            
+
             ///Clipboard.SetText(TextBoxResult.Text);
         }
-        
+
         #region Temp
 
         private void Temp()

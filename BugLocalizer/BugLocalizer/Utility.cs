@@ -17,12 +17,12 @@ namespace BugLocalizer
         public const int ParallelThreadCount = 1;   //并行线程数
 
         public const bool CleanPrevious = false;    //
-        public const bool RunVsm = false;
-        public const bool RunLsi = true;
-        public const bool RunNgd = false;
-        public const bool RunSim = false;
-        public const bool RunJen = false;
-        public const bool RunAPm = false;
+        public const bool RunVsm = true;
+        public const bool RunLsi = false;
+        public const bool RunNgd = true;
+        public const bool RunSim = true;
+        public const bool RunJen = true;
+        public const bool RunAPm = true;
 
         public static readonly List<int> LsiKs = new List<int>() { 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900 };
         //打印状态

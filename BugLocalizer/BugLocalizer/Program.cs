@@ -24,8 +24,8 @@ namespace BugLocalizer
             ///DC_project.Execute();
             ///BugLocalizer.DataCreators.Eclipse DC_project = new BugLocalizer.DataCreators.Eclipse();
             ///DC_project.Execute();
-            ///BugLocalizer.DataCreators.AspectJ DC_project = new BugLocalizer.DataCreators.AspectJ();
-            ///DC_project.Execute();
+            BugLocalizer.DataCreators.AspectJ DC_project = new BugLocalizer.DataCreators.AspectJ();
+            DC_project.Execute();
             ///BugLocalizer.DataCreators.JodaTime DC_project = new BugLocalizer.DataCreators.JodaTime();
             ///DC_project.Execute();
 
@@ -34,12 +34,12 @@ namespace BugLocalizer
             ///计算排序结果
             ///BugLocalizer.Calculators.Swt CA_project = new BugLocalizer.Calculators.Swt();
             ///CA_project.Execute();
-            BugLocalizer.Calculators.ZXing CA_project = new BugLocalizer.Calculators.ZXing();
-            CA_project.Execute();
+            ///BugLocalizer.Calculators.ZXing CA_project = new BugLocalizer.Calculators.ZXing();
+            ///CA_project.Execute();
             ///BugLocalizer.Calculators.Eclipse CA_project = new BugLocalizer.Calculators.Eclipse();
             ///CA_project.Execute();
-            ///BugLocalizer.Calculators.AspectJ CA_project = new BugLocalizer.Calculators.AspectJ();
-            ///CA_project.Execute();
+            BugLocalizer.Calculators.AspectJ CA_project = new BugLocalizer.Calculators.AspectJ();
+            CA_project.Execute();
             ///BugLocalizer.Calculators.JodaTime CA_project = new BugLocalizer.Calculators.JodaTime();
             ///CA_project.Execute();
 
