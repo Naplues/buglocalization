@@ -16,3 +16,12 @@ C:\Users\gzq\Documents\Visual Studio 2015\Projects\BugLocalizer\Viewer\obj\Debug
 C:\Users\gzq\Documents\Visual Studio 2015\Projects\BugLocalizer\Viewer\obj\Debug\Viewer.Properties.Resources.resources
 C:\Users\gzq\Documents\Visual Studio 2015\Projects\BugLocalizer\Viewer\obj\Debug\Viewer.ResultViewer.resources
 C:\Users\gzq\Documents\Visual Studio 2015\Projects\BugLocalizer\Viewer\obj\Debug\Viewer.csproj.GenerateResource.Cache
+C:\Users\gzq\Desktop\git\buglocalization\BugLocalizer\Viewer\bin\Debug\Viewer.exe.config
+C:\Users\gzq\Desktop\git\buglocalization\BugLocalizer\Viewer\obj\Debug\Viewer.exe
+C:\Users\gzq\Desktop\git\buglocalization\BugLocalizer\Viewer\obj\Debug\Viewer.pdb
+C:\Users\gzq\Desktop\git\buglocalization\BugLocalizer\Viewer\bin\Debug\Viewer.exe
+C:\Users\gzq\Desktop\git\buglocalization\BugLocalizer\Viewer\bin\Debug\Viewer.pdb
+C:\Users\gzq\Desktop\git\buglocalization\BugLocalizer\Viewer\obj\Debug\Viewer.csprojResolveAssemblyReference.cache
+C:\Users\gzq\Desktop\git\buglocalization\BugLocalizer\Viewer\obj\Debug\Viewer.Properties.Resources.resources
+C:\Users\gzq\Desktop\git\buglocalization\BugLocalizer\Viewer\obj\Debug\Viewer.ResultViewer.resources
+C:\Users\gzq\Desktop\git\buglocalization\BugLocalizer\Viewer\obj\Debug\Viewer.csproj.GenerateResource.Cache

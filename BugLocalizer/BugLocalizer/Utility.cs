@@ -9,10 +9,10 @@ namespace BugLocalizer
 {
     public static class Utility
     {
-        public const string ReportFolderPath = @"C:\Research-Dataset\Bug\Report\";        //报告文件夹路径
-        public const string DatasetFolderPath = @"C:\Research-Dataset\Bug\Source\";       //数据集文件夹路径
+        public const string ReportFolderPath = @"D:\Research-Dataset\Bug\Report\";        //报告文件夹路径
+        public const string DatasetFolderPath = @"D:\Research-Dataset\Bug\Source\";       //数据集文件夹路径
         public const string MoreBugDatasetRelativeFolderPath = @"moreBugs\";              //更多bug相关文件夹路径
-        public const string CommonErrorPathFile = @"C:\Research-Dataset\Bug\Error.txt";   //通用错误路径
+        public const string CommonErrorPathFile = @"D:\Research-Dataset\Bug\Error.txt";   //通用错误路径
 
         public const int ParallelThreadCount = 1;   //并行线程数
 

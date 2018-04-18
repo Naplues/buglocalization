@@ -29,7 +29,7 @@ namespace Viewer
         /// </summary>
         private readonly List<string> _projects = new List<string>()
         {
-            //"AspectJ",
+            "AspectJ",
             //"Eclipse",
             "JodaTime",
             "SWT",

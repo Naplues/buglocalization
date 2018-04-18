@@ -11,23 +11,21 @@ namespace Viewer
         public ResultViewer()
         {
             InitializeComponent();
+            //Temp(); OK
 
             //GenerateTopNGraph();     //TopN图  OK
             //GenerateTable();         //创建表  OK
             //QueryTextSimilarity();   //查询文本相似度  OK
             //GenerateTableAll();      //生成所有表  OK
 
-            GenerateMapBarGraph(); //MAP柱状图
-            //GenerateMrrBarGraph(); //MRR柱状图
+            //GenerateMapBarGraph(); //MAP柱状图  OK
+            //GenerateMrrBarGraph(); //MRR柱状图  OK
 
             //GenerateLsiGraph();    //生成LSI图
             //GenerateLsiQueryGraph(); //生成LSI查询图
             //IndividualQueryResult(); //单个查询结果
-            ///TextMatcher();           //文本匹配
+            //TextMatcher();           //文本匹配
             //TextMatcherAttempt2();
-
-
-            //Temp(); OK
 
             ///Clipboard.SetText(TextBoxResult.Text);
         }

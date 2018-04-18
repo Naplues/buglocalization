@@ -40,7 +40,7 @@ namespace BugLocalizer.Calculators
         private const string LsiOutputFolderName = @"Results\Lsi\";
 
         private static readonly Dictionary<string, List<string>> CodeFilesWithContent = new Dictionary<string, List<string>>();
-
+        public string folder = @"AspectJ\";
         public override void Execute()
         {
             _cleanPrevious = Utility.CleanPrevious;
@@ -51,7 +51,7 @@ namespace BugLocalizer.Calculators
             _runJen = Utility.RunJen;
             _runAPm = Utility.RunAPm;
 
-            RunTssOnDataset(@"AspectJ\");
+            RunTssOnDataset(folder);
         }
 
         public static object MyObj1 = new object();

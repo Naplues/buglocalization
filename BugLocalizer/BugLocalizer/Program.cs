@@ -26,8 +26,8 @@ namespace BugLocalizer
             ///制作数据集
             ///BugLocalizer.DataCreators.ZXing DC_project = new BugLocalizer.DataCreators.ZXing();
             ///DC_project.Execute();
-            BugLocalizer.DataCreators.Swt DC_project = new BugLocalizer.DataCreators.Swt();
-            DC_project.Execute();
+            ///BugLocalizer.DataCreators.Swt DC_project = new BugLocalizer.DataCreators.Swt();
+            ///DC_project.Execute();
 
             ///BugLocalizer.DataCreators.Eclipse DC_project = new BugLocalizer.DataCreators.Eclipse();
             ///DC_project.Execute();
@@ -44,11 +44,15 @@ namespace BugLocalizer
             ///CA_project.Execute();
             ///BugLocalizer.Calculators.Swt CA_project = new BugLocalizer.Calculators.Swt();
             ///CA_project.Execute();
-            
-            ///BugLocalizer.Calculators.Eclipse CA_project = new BugLocalizer.Calculators.Eclipse();
-            ///CA_project.Execute();
 
-            ///BugLocalizer.Calculators.AspectJ CA_project = new BugLocalizer.Calculators.AspectJ();
+
+            ///BugLocalizer.Calculators.Eclipse CA_project = new BugLocalizer.Calculators.Eclipse();
+
+            BugLocalizer.Calculators.AspectJ CA_project = new BugLocalizer.Calculators.AspectJ();
+            string id = Console.ReadLine();
+            CA_project.folder = @"AspectJ" + id + @"\";
+            CA_project.Execute();
+
             ///CA_project.Execute();
             ///BugLocalizer.Calculators.JodaTime CA_project = new BugLocalizer.Calculators.JodaTime();
             ///CA_project.Execute();

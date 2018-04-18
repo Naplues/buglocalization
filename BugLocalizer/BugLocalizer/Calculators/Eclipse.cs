@@ -40,6 +40,11 @@ namespace BugLocalizer.Calculators
 
         private static readonly Dictionary<string, List<string>> CodeFilesWithContent = new Dictionary<string, List<string>>();
 
+        /// <summary>
+        /// 添加文件夹参数
+        /// </summary>
+        public string folder = @"Eclipse\";
+        
         public override void Execute()
         {
             _cleanPrevious = Utility.CleanPrevious;
@@ -50,7 +55,8 @@ namespace BugLocalizer.Calculators
             _runJen = Utility.RunJen;
             _runAPm = Utility.RunAPm;
 
-            RunTssOnDataset(@"Eclipse\");
+            ///RunTssOnDataset(@"Eclipse\");
+            RunTssOnDataset(this.folder);
         }
 
         public static object MyObj1 = new object();
