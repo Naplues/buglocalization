@@ -11,14 +11,14 @@ namespace BugLocalizer.Calculators
     public class JodaTime : BaseExecutable
     {
         #region Const
-
+        //各方法完成情况文件
         private const string VsmCompletedFile = @"CompletedVsm.txt";
         private const string LsiCompletedFile = @"CompletedLsi.txt";
         private const string NgdCompletedFile = @"CompletedNgd.txt";
         private const string SimCompletedFile = @"CompletedSim.txt";
         private const string JenCompletedFile = @"CompletedJen.txt";
         private const string APmCompletedFile = @"CompletedAPm.txt";
-
+        //各方法运行配置
         private static bool _cleanPrevious;
         private static bool _runVsm;
         private static bool _runLsi;
@@ -26,7 +26,7 @@ namespace BugLocalizer.Calculators
         private static bool _runSim;
         private static bool _runJen;
         private static bool _runAPm;
-
+        //语料库及查询
         private const string CorpusWithFilterFolderName = @"Corpus\";
         private const string QueryWithFilterFileName = @"BugQuery.txt";
 

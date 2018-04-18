@@ -9,20 +9,21 @@ namespace BugLocalizer
 {
     public static class Utility
     {
-        public const string ReportFolderPath = @"D:\Research-Dataset\Bug\Report\";        //报告文件夹路径
-        public const string DatasetFolderPath = @"D:\Research-Dataset\Bug\Source\";       //数据集文件夹路径
+        public const string ReportFolderPath = @"C:\Research-Dataset\Bug\Report\";        //报告文件夹路径
+        public const string DatasetFolderPath = @"C:\Research-Dataset\Bug\Source\";       //数据集文件夹路径
         public const string MoreBugDatasetRelativeFolderPath = @"moreBugs\";              //更多bug相关文件夹路径
-        public const string CommonErrorPathFile = @"D:\Research-Dataset\Bug\Error.txt";   //通用错误路径
+        public const string CommonErrorPathFile = @"C:\Research-Dataset\Bug\Error.txt";   //通用错误路径
 
-        public const int ParallelThreadCount = 1;   //并行线程数
+        public static int ParallelThreadCount = 20;   //并行线程数
 
-        public const bool CleanPrevious = false;    //
+        public const bool CleanPrevious = false;
         public const bool RunVsm = true;
         public const bool RunLsi = false;
-        public const bool RunNgd = true;
-        public const bool RunSim = true;
         public const bool RunJen = true;
-        public const bool RunAPm = true;
+
+        public const bool RunSim = true;
+        public const bool RunNgd = true;
+        public const bool RunAPm = false;
 
         public static readonly List<int> LsiKs = new List<int>() { 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900 };
         //打印状态

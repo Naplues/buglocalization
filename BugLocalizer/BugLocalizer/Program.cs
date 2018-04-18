@@ -10,7 +10,8 @@ namespace BugLocalizer
     {
         static void Main(string[] args)
         {
-            Console.ReadLine();
+            Console.WriteLine("请输入线程数: ");
+            Utility.ParallelThreadCount = Int32.Parse(Console.ReadLine());
             ///预处理moreBugs数据集中的项目AspectJ和JodaTime
             /*
             string project = "AspectJ";
@@ -32,12 +33,11 @@ namespace BugLocalizer
             ///BugLocalizer.DataCreators.Eclipse DC_project = new BugLocalizer.DataCreators.Eclipse();
             ///DC_project.Execute();
 
-            ///BugLocalizer.DataCreators.AspectJ DC_project = new BugLocalizer.DataCreators.AspectJ();
-            ///DC_project.Execute();
             ///BugLocalizer.DataCreators.JodaTime DC_project = new BugLocalizer.DataCreators.JodaTime();
             ///DC_project.Execute();
+            ///BugLocalizer.DataCreators.AspectJ DC_project = new BugLocalizer.DataCreators.AspectJ();
+            ///DC_project.Execute();
 
-            ///Console.WriteLine("-----------------------------------------------");
 
             ///计算排序结果
             ///BugLocalizer.Calculators.ZXing CA_project = new BugLocalizer.Calculators.ZXing();
@@ -47,15 +47,14 @@ namespace BugLocalizer
 
 
             ///BugLocalizer.Calculators.Eclipse CA_project = new BugLocalizer.Calculators.Eclipse();
+            ///CA_project.Execute();
 
-            BugLocalizer.Calculators.AspectJ CA_project = new BugLocalizer.Calculators.AspectJ();
-            string id = Console.ReadLine();
-            CA_project.folder = @"AspectJ" + id + @"\";
+            BugLocalizer.Calculators.JodaTime CA_project = new BugLocalizer.Calculators.JodaTime();
             CA_project.Execute();
+            ///BugLocalizer.Calculators.AspectJ CA_project = new BugLocalizer.Calculators.AspectJ();
+            ///CA_project.Execute();
 
-            ///CA_project.Execute();
-            ///BugLocalizer.Calculators.JodaTime CA_project = new BugLocalizer.Calculators.JodaTime();
-            ///CA_project.Execute();
+
 
             Console.WriteLine("-------------Finish---------------");
             Console.ReadLine();

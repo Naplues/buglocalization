@@ -88,6 +88,10 @@ namespace BugLocalizer.DataCreators
             string outputBugCorpusFolder = outputBugFolderPath + OutputCorpusFoldername;
             Directory.CreateDirectory(outputBugCorpusFolder);
 
+            ///解压文件
+            //Utility.unTAR(@"D:\test\xml.tgz", @"D:\test\");
+            Utility.unTAR(sourceBugFolderPath + @"corpus\xml.tgz", sourceBugFolderPath + @"corpus\temp\");
+
             foreach (FileInfo xmlCorpusFile in new DirectoryInfo(sourceBugFolderPath + CorpusExtractedRelativeFolderPath).GetFiles("*.xml"))
             {
                 // Read the xml document

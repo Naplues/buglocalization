@@ -12,14 +12,14 @@ namespace BugLocalizer.Calculators
     public class ZXing : BaseExecutable
     {
         #region Const
-
+        // 各方法完成情况文件名
         private const string VsmCompletedFile = @"CompletedVsm.txt";
         private const string LsiCompletedFile = @"CompletedLsi.txt";
         private const string NgdCompletedFile = @"CompletedNgd.txt";
         private const string SimCompletedFile = @"CompletedSim.txt";
         private const string JenCompletedFile = @"CompletedJen.txt";
         private const string APmCompletedFile = @"CompletedAPm.txt";
-
+        // 各方法运行配置
         private static bool _cleanPrevious;
         private static bool _runVsm;
         private static bool _runLsi;
@@ -27,17 +27,17 @@ namespace BugLocalizer.Calculators
         private static bool _runSim;
         private static bool _runJen;
         private static bool _runAPm;
-
+        // 语料库目录及bug查询文件
         private const string CorpusWithFilterFolderName = @"Corpus\";
         private const string QueryWithFilterFileName = @"BugQuery.txt";
-
+        // 各方法结果文件
         private const string VsmFileName = @"Results\Vsm.txt";
         private const string PmiSimFileName = @"Results\Pmi.txt";
         private const string NgdFileName = @"Results\Ngd.txt";
         private const string JenFileName = @"Results\Jen.txt";
         private const string APmFileName = @"Results\APm.txt";
         private const string LsiOutputFolderName = @"Results\Lsi\";
-
+        // 源文件的 file-token 索引
         private static readonly Dictionary<string, List<string>> CodeFilesWithContent = new Dictionary<string, List<string>>();
 
         public override void Execute()
@@ -54,17 +54,19 @@ namespace BugLocalizer.Calculators
         }
 
         public static object MyObj1 = new object();
+
         private static void RunTssOnDataset(string dataset)
         {
+            // 数据集文件夹路径
             string datasetFolderPath = Utility.ReportFolderPath + dataset;
-
+            // 各方法完成情况文件路径
             string vsmCompletedFilePath = datasetFolderPath + VsmCompletedFile;
             string lsiCompletedFilePath = datasetFolderPath + LsiCompletedFile;
             string ngdCompletedFilePath = datasetFolderPath + NgdCompletedFile;
             string simCompletedFilePath = datasetFolderPath + SimCompletedFile;
             string jenCompletedFilePath = datasetFolderPath + JenCompletedFile;
             string aPmCompletedFilePath = datasetFolderPath + APmCompletedFile;
-
+            // 根据配置创建相应的方法完成情况文件
             if (_runVsm && (!File.Exists(vsmCompletedFilePath) || _cleanPrevious))
                 File.Create(vsmCompletedFilePath).Close();
             if (_runLsi && (!File.Exists(lsiCompletedFilePath) || _cleanPrevious))
@@ -78,7 +80,7 @@ namespace BugLocalizer.Calculators
             if (_runAPm && (!File.Exists(aPmCompletedFilePath) || _cleanPrevious))
                 File.Create(aPmCompletedFilePath).Close();
 
-            // read completed uis
+            // 读取各方法完成情况列表
             List<string> completedVsm = _runVsm ? File.ReadAllLines(vsmCompletedFilePath).ToList() : new List<string>();
             List<string> completedLsi = _runLsi ? File.ReadAllLines(lsiCompletedFilePath).ToList() : new List<string>();
             List<string> completedNgd = _runNgd ? File.ReadAllLines(ngdCompletedFilePath).ToList() : new List<string>();
@@ -86,18 +88,22 @@ namespace BugLocalizer.Calculators
             List<string> completedJen = _runJen ? File.ReadAllLines(jenCompletedFilePath).ToList() : new List<string>();
             List<string> completedAPm = _runAPm ? File.ReadAllLines(aPmCompletedFilePath).ToList() : new List<string>();
 
+            // 获取数据集中每个bug的目录
             List<DirectoryInfo> bugs = new DirectoryInfo(datasetFolderPath).GetDirectories().Where(x => x.Name != "Corpus").ToList();
+            // bug总数目
             int totalbugsCount = bugs.Count;
-
+            
+            /// 提取file-token并进行初始化
             Utility.Status("Reading sources and Initiailizing");
 
-            // Read all files
+            // 读取Corpus中所有处理后源文件并且制作file-token索引
             foreach (var file in new DirectoryInfo(datasetFolderPath + CorpusWithFilterFolderName).GetFiles())
             {
                 string[] text = File.ReadAllLines(file.FullName);
                 CodeFilesWithContent.Add(Path.GetFileNameWithoutExtension(file.FullName), text.ToList());
             }
 
+            // 对各项配置进行初始化工作
             if (_runVsm || _runSim || _runAPm || _runLsi || _runJen)
                 InitializeForVsmSimLsi();
 
@@ -109,8 +115,11 @@ namespace BugLocalizer.Calculators
 
             Utility.Status("DONE Reading sources and Initiailizing");
 
+
             // Create files
+            // 完成情况计数
             int completedCount = 0;
+            //并行处理
             Parallel.For(0, totalbugsCount, new ParallelOptions() { MaxDegreeOfParallelism = Utility.ParallelThreadCount }, i =>
             {
                 ++completedCount;
@@ -118,12 +127,14 @@ namespace BugLocalizer.Calculators
                 {
                     Utility.Status("Creating Stuff: " + bugs[i].Name + " " + completedCount + " of " + totalbugsCount);
                     string bugFolderPath = datasetFolderPath + bugs[i].Name + @"\";
-
+                    // 创建结果文件夹
                     if (!Directory.Exists(bugFolderPath + "Results"))
                         Directory.CreateDirectory(bugFolderPath + "Results");
 
+                    // 提取查询文本
                     List<string> queryText = File.ReadAllLines(bugFolderPath + QueryWithFilterFileName).ToList();
 
+                    //按照配置执行各个方法，并且在记录上加入执行成功的bug
                     if (_runAPm && !completedAPm.Contains(bugs[i].Name))
                     {
                         ComputeAPm(bugFolderPath, bugs[i].Name, queryText);
@@ -167,11 +178,13 @@ namespace BugLocalizer.Calculators
                 }
                 catch (Exception e)
                 {
+                    // 记录出错信息
                     Utility.WriteErrorCommon(dataset + bugs[i].Name, e.Message);
                     Utility.Status("ERROR Creating Stuff: " + dataset + bugs[i].Name + " (" + completedCount + " of " + totalbugsCount + ")");
                 }
                 finally
                 {
+                    // 将完成情况记录在文件上
                     lock (MyObj1)
                     {
                         if (_runVsm) File.WriteAllLines(vsmCompletedFilePath, completedVsm);
@@ -187,75 +200,19 @@ namespace BugLocalizer.Calculators
 
         #endregion
 
-        #region Jensen-Shannon
-
-        private static void ComputeJen(string outputFolderPath, string bugName, List<string> queryText)
-        {
-            Utility.Status("Computing Source Vectors Jensen: " + bugName);
-
-            // create the vector for each source code
-            List<string> allUniqueWordsInSourceAndQuery = IdfDictionary.Keys.Union(queryText).Distinct().ToList();
-            int allUniqueWordsInSourceAndQueryCount = allUniqueWordsInSourceAndQuery.Count;
-
-            Dictionary<string, double[]> sourceVectors = new Dictionary<string, double[]>();
-            TfDictionary.ToList().ForEach(fileWithTfCount =>
-            {
-                MyDoubleDictionary tfDictionary = fileWithTfCount.Value;
-                int totalWordsInFile = CodeFilesWithContent[fileWithTfCount.Key].Count;
-
-                double[] vector = new double[allUniqueWordsInSourceAndQueryCount];
-                int counter = 0;
-                allUniqueWordsInSourceAndQuery.ForEach(uniqueWord =>
-                {
-                    vector[counter] = tfDictionary.ContainsKey(uniqueWord)
-                        ? tfDictionary[uniqueWord] / totalWordsInFile
-                        : 0;
-                    counter++;
-                });
-
-                sourceVectors.Add(fileWithTfCount.Key, vector);
-            });
-
-            // create the vector for query
-            double[] queryVector = new double[allUniqueWordsInSourceAndQueryCount];
-            int queryCounter = 0;
-            allUniqueWordsInSourceAndQuery.ForEach(uniqueWord =>
-            {
-                queryVector[queryCounter] = queryText.Contains(uniqueWord)
-                    ? (double)queryText.Count(x => x == uniqueWord) / queryText.Count
-                    : 0;
-                queryCounter++;
-            });
-
-            // calculate H(p), H(q) and H(p + q)
-            MyDoubleDictionary similarityDictionary = new MyDoubleDictionary();
-            sourceVectors.ToList().ForEach(sourceFileWithVector =>
-            {
-                var p = sourceFileWithVector.Value;
-                var sumEntropy = (p.JensenSum(queryVector)).JensenEntropy();
-                var pEntropy = 1.0 / 2 * p.JensenEntropy();
-                var qEntropy = 1.0 / 2 * queryVector.JensenEntropy();
-
-                var jensenDivergence = sumEntropy - pEntropy - qEntropy;
-                var jensenSimilarity = 1 - jensenDivergence;
-
-                similarityDictionary.Add(sourceFileWithVector.Key, jensenSimilarity);
-            });
-
-            // done
-            WriteDocumentVectorToFileOrderedDescending(outputFolderPath + JenFileName, similarityDictionary);
-
-            Utility.Status("DONE Computing Source Vectors Jensen: " + bugName);
-        }
-
-        #endregion
-
-        #region VSM
-
+        
+        // IDF 字典
         private static readonly MyDoubleDictionary IdfDictionary = new MyDoubleDictionary();
+        // 词频字典
         private static readonly Dictionary<string, MyDoubleDictionary> TfDictionary = new Dictionary<string, MyDoubleDictionary>();
+        // TF-IDF 词典
         private static readonly Dictionary<string, MyDoubleDictionary> TfIdfDictionary = new Dictionary<string, MyDoubleDictionary>();
 
+
+        #region Init for VSM SIM LSI
+        /// <summary>
+        /// 对VSM SIM LSI 方法进行初始化
+        /// </summary>
         private static void InitializeForVsmSimLsi()
         {
             // compute tf and idf
@@ -298,18 +255,28 @@ namespace BugLocalizer.Calculators
             }
         }
 
+        #endregion
+
+
+        #region VSM
+        /// <summary>
+        /// 计算 VSM 方法
+        /// </summary>
+        /// <param name="outputFolderPath"></param>
+        /// <param name="bugName"></param>
+        /// <param name="queryText"></param>
         private static void ComputeVsm(string outputFolderPath, string bugName, List<string> queryText)
         {
             Utility.Status("Creating VSM: " + bugName);
 
-            // CREATE QUERY TFIDF
+            // 创建查询的TF-IDF字典
             MyDoubleDictionary queryTfIdfDictionary = new MyDoubleDictionary();
             queryText.ForEach(queryTfIdfDictionary.Add);
 
-            // max frequency
+            // 最大频度
             double maxFrequency = queryTfIdfDictionary.Max(x => x.Value);
 
-            // now multiply each by idf to get tfidf for query
+            // 计算TF-IDF
             foreach (var queryWordWithTf in queryTfIdfDictionary.ToList())
             {
                 queryTfIdfDictionary[queryWordWithTf.Key] = IdfDictionary.ContainsKey(queryWordWithTf.Key)
@@ -317,7 +284,7 @@ namespace BugLocalizer.Calculators
                     : 0;
             }
 
-            // CALCULATE SIMILARITY
+            // 计算相似度
             MyDoubleDictionary similarityDictionary = new MyDoubleDictionary();
             CosineSimilarityCalculator cosineSimilarityCalculator = new CosineSimilarityCalculator(queryTfIdfDictionary);
 
@@ -328,13 +295,86 @@ namespace BugLocalizer.Calculators
                 similarityDictionary.Add(codeFileWithTfIdfDictionary.Key, cosineSimilarityWithUseCase);
             }
 
-            // WRITE TO FILE
+            // 将文档向量降序写入文件ZXing\001\Results\Jen.txt
             WriteDocumentVectorToFileOrderedDescending(outputFolderPath + VsmFileName, similarityDictionary);
 
             Utility.Status("Completed VSM: " + bugName);
         }
 
         #endregion
+
+
+        #region JEN
+        /// <summary>
+        /// 计算 Jensen-Shannon 方法
+        /// </summary>
+        /// <param name="outputFolderPath">输出文件夹,各个bug文件夹</param>
+        /// <param name="bugName">bug名称</param>
+        /// <param name="queryText">查询文本</param>
+        private static void ComputeJen(string outputFolderPath, string bugName, List<string> queryText)
+        {
+            Utility.Status("Computing JEN: " + bugName);
+
+            /// 为源代码创建向量
+            // 源码和查询中出现的单词, 单词库大小的向量
+            List<string> allUniqueWordsInSourceAndQuery = IdfDictionary.Keys.Union(queryText).Distinct().ToList();
+            // 总单词数
+            int allUniqueWordsInSourceAndQueryCount = allUniqueWordsInSourceAndQuery.Count;
+            //源码向量字典
+            Dictionary<string, double[]> sourceVectors = new Dictionary<string, double[]>();
+            TfDictionary.ToList().ForEach(fileWithTfCount =>
+            {
+                MyDoubleDictionary tfDictionary = fileWithTfCount.Value;
+                // 某源码中的总单词数
+                int totalWordsInFile = CodeFilesWithContent[fileWithTfCount.Key].Count;
+                // 单个源码文件向量,存放Pd=f(w, d)/Td
+                double[] vector = new double[allUniqueWordsInSourceAndQueryCount];
+                int counter = 0;
+                allUniqueWordsInSourceAndQuery.ForEach(uniqueWord =>
+                {
+                    vector[counter] = tfDictionary.ContainsKey(uniqueWord)
+                        ? tfDictionary[uniqueWord] / totalWordsInFile
+                        : 0;
+                    counter++;
+                });
+
+                sourceVectors.Add(fileWithTfCount.Key, vector);
+            });
+
+            // 为查询创建向量
+            double[] queryVector = new double[allUniqueWordsInSourceAndQueryCount];
+            int queryCounter = 0;
+            allUniqueWordsInSourceAndQuery.ForEach(uniqueWord =>
+            {
+                queryVector[queryCounter] = queryText.Contains(uniqueWord)
+                    ? (double)queryText.Count(x => x == uniqueWord) / queryText.Count
+                    : 0;
+                queryCounter++;
+            });
+
+            // 计算 H(p), H(q) and H(p + q)
+            MyDoubleDictionary similarityDictionary = new MyDoubleDictionary();
+            sourceVectors.ToList().ForEach(sourceFileWithVector =>
+            {
+                var p = sourceFileWithVector.Value;
+                var sumEntropy = (p.JensenSum(queryVector)).JensenEntropy();
+                var pEntropy = 1.0 / 2 * p.JensenEntropy();
+                var qEntropy = 1.0 / 2 * queryVector.JensenEntropy();
+
+                var jensenDivergence = sumEntropy - pEntropy - qEntropy;
+                var jensenSimilarity = 1 - jensenDivergence;
+                // 源码文件编码-jensen相似度
+                similarityDictionary.Add(sourceFileWithVector.Key, jensenSimilarity);
+            });
+
+            // 将文档向量降序写入文件ZXing\001\Results\Jen.txt
+            WriteDocumentVectorToFileOrderedDescending(outputFolderPath + JenFileName, similarityDictionary);
+
+            Utility.Status("DONE Computing JEN: " + bugName);
+        }
+
+        #endregion
+
 
         #region LSI
 
@@ -436,6 +476,158 @@ namespace BugLocalizer.Calculators
 
         #endregion
 
+
+        #region Init for NGD PMI
+        // 初始化
+        private static void InitializeForNgdPmiSim()
+        {
+            foreach (var sourceFileWithWords in CodeFilesWithContent)
+            {
+                sourceFileWithWords.Value.Distinct().ToList().ForEach(word =>
+                {
+                    if (!WordAndContainingFiles.ContainsKey(word))
+                        WordAndContainingFiles.Add(word, new List<string>());
+                    WordAndContainingFiles[word].Add(sourceFileWithWords.Key);
+                });
+            }
+        }
+
+        #endregion
+
+
+        #region PMI 
+        // 单词和包含该单词的文件
+        private static readonly Dictionary<string, List<string>> WordAndContainingFiles = new Dictionary<string, List<string>>();
+
+
+        /// <summary>
+        /// 计算 PMI 方法
+        /// </summary>
+        /// <param name="simOutputFolderPath"></param>
+        /// <param name="bugName"></param>
+        /// <param name="fileText"></param>
+        private static void ComputePmiSim(string simOutputFolderPath, string bugName, List<string> fileText)
+        {
+            Utility.Status("Creating Pmi: " + bugName);
+
+            MyDoubleDictionary tssDocumentDictionary = new MyDoubleDictionary();
+
+            // Create list of word contained in query
+            // 创建查询列表(每个单词唯一)
+            List<string> distinctQueryWordList = fileText.Distinct().ToList(); // DISTINCT HERE but since its calculating PMI done remove it
+            // 单词共现矩阵
+            DocumentDictionaryAny<MyDoubleDictionary> nPmiMatrix = new DocumentDictionaryAny<MyDoubleDictionary>();
+
+            // 源文件数目
+            int n = CodeFilesWithContent.Count;
+
+            // 为查询中的每个单词W2计算 带文件单词的 PMI值
+            foreach (var queryWordW2 in distinctQueryWordList)
+            {
+                MyDoubleDictionary nPmiDictionary = new MyDoubleDictionary();
+                // 对源码中的每个单词W1
+                foreach (var sourceWordW1 in WordAndContainingFiles.Keys)
+                {
+                    // 源码中是否包含查询W2
+                    bool sourceContainsUseCaseWord = WordAndContainingFiles.ContainsKey(queryWordW2);
+                    // 包含 W1的数目C(W1), C(W2), C(W1,W2)
+                    int countW1 = WordAndContainingFiles[sourceWordW1].Count;
+                    int countW2 = sourceContainsUseCaseWord ? WordAndContainingFiles[queryWordW2].Count : 0;
+                    // if query contains source then add 1 (query contains usecase word + source word
+                    // if source contains query word find the intersection of files containing both words
+                    int countW1W2 = sourceContainsUseCaseWord ? WordAndContainingFiles[sourceWordW1].Intersect(WordAndContainingFiles[queryWordW2]).Count() : 0;
+
+
+                    // 归一化的 PMI, d1 and d2 != 0, d1d2 可能
+                    double nPmi;
+                    // 从未共现, nPMI = -1
+                    if (countW1W2 == 0)
+                    {
+                        nPmi = -1;
+                    }
+                    else
+                    {
+                        // 完全共现, nPMI = 1
+                        if (countW1 == countW1W2 && countW2 == countW1W2)
+                        {
+                            nPmi = 1;
+                        }
+                        else
+                        {
+                            nPmi = Math.Log10((double)countW1 / n * countW2 / n) / Math.Log10((double)countW1W2 / n) - 1;
+                        }
+                    }
+                    nPmiDictionary.Add(sourceWordW1, nPmi);
+                }
+                nPmiMatrix.Add(queryWordW2, nPmiDictionary);
+            }
+
+            //List<string> distinctUseCaseWordListForTss = fileText.Distinct().ToList(); //DISTINCT HERE
+            List<string> distinctQueryWordListForTss = fileText.ToList(); //DISTINCT HERE
+            // 源码中总文件数
+            int totalNumberOfDocumentInSource = CodeFilesWithContent.Count;
+            
+            // Once the PMI is create compute Sim
+            foreach (var sourceFileWithWords in CodeFilesWithContent)
+            {
+                //List<string> distinctSourceWords = sourceFileWithWords.Value.Distinct().ToList(); //DISTINCT HERE
+                //该处应该是Distinct
+                List<string> distinctSourceWords = sourceFileWithWords.Value.ToList(); //DISTINCT HERE
+                double sumQueryTimeIdf = 0.0;
+                double sumQueryIdf = 0.0;
+
+                foreach (var queryWord in distinctQueryWordListForTss)
+                {
+                    // 计算maxSim
+                    double maxSim = -1;
+                    foreach (var sourceWord in distinctSourceWords)
+                    {
+                        double currentnPmi = nPmiMatrix[queryWord][sourceWord];
+                        if (maxSim < currentnPmi)
+                            maxSim = currentnPmi;
+                    }
+
+                    // if term does not occur in any corpus then its only in use case hence 1
+                    double idf = 0;
+                    if (WordAndContainingFiles.ContainsKey(queryWord))
+                        idf = Math.Log10((double)totalNumberOfDocumentInSource / WordAndContainingFiles[queryWord].Count);
+                    sumQueryTimeIdf += (maxSim * idf);
+                    sumQueryIdf += idf;
+                }
+
+                double sumCorpusTimeIdf = 0.0;
+                double sumCorpusIdf = 0.0;
+
+                foreach (string sourceWord in distinctSourceWords)
+                {
+                    double maxSim = -1;
+                    foreach (string useCaseWord in distinctQueryWordListForTss)
+                    {
+                        double currentNPmi = nPmiMatrix[useCaseWord][sourceWord];
+                        if (maxSim < currentNPmi)
+                            maxSim = currentNPmi;
+                    }
+
+                    // sourceWord has to be in IdfDictionary
+                    double idf = Math.Log10((double)totalNumberOfDocumentInSource / WordAndContainingFiles[sourceWord].Count);
+
+                    sumCorpusTimeIdf += (maxSim * idf);
+                    sumCorpusIdf += idf;
+                    
+                }
+
+                double tss = (1.0 / 2) * ((sumQueryTimeIdf / sumQueryIdf) + (sumCorpusTimeIdf / sumCorpusIdf));
+                tssDocumentDictionary.Add(sourceFileWithWords.Key, tss);
+            }
+
+            WriteDocumentVectorToFileOrderedDescending(simOutputFolderPath + PmiSimFileName, tssDocumentDictionary);
+
+            Utility.Status("Completed Pmi: " + bugName);
+        }
+
+        #endregion
+
+
         #region NGD
 
         private static void ComputeNgd(string ngdOutputFolderPath, string bugName, List<string> fileText)
@@ -530,6 +722,7 @@ namespace BugLocalizer.Calculators
             Utility.Status("Completed NGD: " + bugName);
         }
 
+
         /// <summary>
         /// d1, d2 and d1d2 are NOT zero
         /// </summary>
@@ -548,134 +741,8 @@ namespace BugLocalizer.Calculators
 
         #endregion
 
-        #region PMI 
 
-        private static readonly Dictionary<string, List<string>> WordAndContainingFiles = new Dictionary<string, List<string>>();
-
-        private static void InitializeForNgdPmiSim()
-        {
-            foreach (var sourceFileWithWords in CodeFilesWithContent)
-            {
-                sourceFileWithWords.Value.Distinct().ToList().ForEach(word =>
-                {
-                    if (!WordAndContainingFiles.ContainsKey(word))
-                        WordAndContainingFiles.Add(word, new List<string>());
-                    WordAndContainingFiles[word].Add(sourceFileWithWords.Key);
-                });
-            }
-        }
-
-        private static void ComputePmiSim(string simOutputFolderPath, string bugName, List<string> fileText)
-        {
-            Utility.Status("Creating Pmi: " + bugName);
-
-            MyDoubleDictionary tssDocumentDictionary = new MyDoubleDictionary();
-
-            // Create list of word contained in query
-            List<string> distinctQueryWordList = fileText.Distinct().ToList(); // DISTINCT HERE but since its calculating PMI done remove it
-            DocumentDictionaryAny<MyDoubleDictionary> nPmiMatrix = new DocumentDictionaryAny<MyDoubleDictionary>();
-            int n = CodeFilesWithContent.Count;
-
-            // Compute pmi for each word in WordAndContainingFiles and unique words in query
-            foreach (var queryWordW2 in distinctQueryWordList)
-            {
-                MyDoubleDictionary nPmiDictionary = new MyDoubleDictionary();
-
-                foreach (var sourceWordW1 in WordAndContainingFiles.Keys)
-                {
-                    bool sourceContainsUseCaseWord = WordAndContainingFiles.ContainsKey(queryWordW2);
-
-                    int countW1 = WordAndContainingFiles[sourceWordW1].Count;
-                    int countW2 = sourceContainsUseCaseWord ? WordAndContainingFiles[queryWordW2].Count : 0;
-                    // if query contains source then add 1 (query contains usecase word + source word
-                    // if source contains query word find the intersection of files containing both words
-                    int countW1W2 = sourceContainsUseCaseWord ? WordAndContainingFiles[sourceWordW1].Intersect(WordAndContainingFiles[queryWordW2]).Count() : 0;
-
-                    // d1 and d2 will never be 0, d1d2 however can be
-                    double nPmi;
-                    if (countW1W2 == 0)
-                    {
-                        // no cooccurence
-                        nPmi = -1;
-                    }
-                    else
-                    {
-                        if (countW1 == countW1W2 && countW2 == countW1W2)
-                        {
-                            nPmi = 1;
-                        }
-                        else
-                        {
-                            nPmi = Math.Log10((double)countW1 / n * countW2 / n) / Math.Log10((double)countW1W2 / n) - 1;
-                        }
-                    }
-                    nPmiDictionary.Add(sourceWordW1, nPmi);
-                }
-                nPmiMatrix.Add(queryWordW2, nPmiDictionary);
-            }
-
-            //List<string> distinctUseCaseWordListForTss = fileText.Distinct().ToList(); //DISTINCT HERE
-            List<string> distinctQueryWordListForTss = fileText.ToList(); //DISTINCT HERE
-            int totalNumberOfDocumentInSource = CodeFilesWithContent.Count;
-            // Once the PMI is create compute Sim
-            foreach (var sourceFileWithWords in CodeFilesWithContent)
-            {
-                //List<string> distinctSourceWords = sourceFileWithWords.Value.Distinct().ToList(); //DISTINCT HERE
-                List<string> distinctSourceWords = sourceFileWithWords.Value.ToList(); //DISTINCT HERE
-                double sumQueryTimeIdf = 0.0;
-                double sumQueryIdf = 0.0;
-
-                foreach (var queryWord in distinctQueryWordListForTss)
-                {
-                    double maxSim = -1;
-                    foreach (var sourceWord in distinctSourceWords)
-                    {
-                        double currentnPmi = nPmiMatrix[queryWord][sourceWord];
-                        if (maxSim < currentnPmi)
-                            maxSim = currentnPmi;
-                    }
-
-                    // if term does not occur in any corpus then its only in use case hence 1
-                    double idf = 0;
-                    if (WordAndContainingFiles.ContainsKey(queryWord))
-                        idf = Math.Log10((double)totalNumberOfDocumentInSource / WordAndContainingFiles[queryWord].Count);
-                    sumQueryIdf += idf;
-                    sumQueryTimeIdf += (maxSim * idf);
-                }
-
-                double sumCorpusTimeIdf = 0.0;
-                double sumCorpusIdf = 0.0;
-
-                foreach (string sourceWord in distinctSourceWords)
-                {
-                    double maxSim = -1;
-                    foreach (string useCaseWord in distinctQueryWordListForTss)
-                    {
-                        double currentNPmi = nPmiMatrix[useCaseWord][sourceWord];
-                        if (maxSim < currentNPmi)
-                            maxSim = currentNPmi;
-                    }
-
-                    // sourceWord has to be in IdfDictionary
-                    double idf = Math.Log10((double)totalNumberOfDocumentInSource / WordAndContainingFiles[sourceWord].Count);
-
-                    sumCorpusIdf += idf;
-                    sumCorpusTimeIdf += (maxSim * idf);
-                }
-
-                double tss = (1.0 / 2) * ((sumQueryTimeIdf / sumQueryIdf) + (sumCorpusTimeIdf / sumCorpusIdf));
-                tssDocumentDictionary.Add(sourceFileWithWords.Key, tss);
-            }
-
-            WriteDocumentVectorToFileOrderedDescending(simOutputFolderPath + PmiSimFileName, tssDocumentDictionary);
-
-            Utility.Status("Completed Pmi: " + bugName);
-        }
-
-        #endregion
-
-
-
+        #region APM
         private static void ComputeAPm(string pmiOutputFolderPath, string reqName, List<string> reqText)
         {
             Utility.Status("Creating Apm: " + reqName);
@@ -733,6 +800,7 @@ namespace BugLocalizer.Calculators
 
             Utility.Status("Completed APm: " + reqName);
         }
+
 
         private static MyDoubleDictionary GetTssAltered(List<string> reqFileText, DocumentDictionaryAny<MyDoubleDictionary> simMatrix, double noMatch)
         {
@@ -801,6 +869,15 @@ namespace BugLocalizer.Calculators
             return tssDocumentDictionary;
         }
 
+
+        /// <summary>
+        /// 获取相似度
+        /// </summary>
+        /// <param name="w1"></param>
+        /// <param name="w2"></param>
+        /// <param name="matrix"></param>
+        /// <param name="noMatch"></param>
+        /// <returns></returns>
         private static double GetSim(string w1, string w2, DocumentDictionaryAny<MyDoubleDictionary> matrix, double noMatch)
         {
             if (matrix.ContainsKey(w1) && matrix[w1].ContainsKey(w2))
@@ -811,6 +888,10 @@ namespace BugLocalizer.Calculators
 
             return noMatch;
         }
+
+        #endregion
+
+
 
     }
 }

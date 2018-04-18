@@ -2,6 +2,7 @@
 
 namespace BugLocalizer.Models
 {
+    // string-double 字典
     public class MyDoubleDictionary : Dictionary<string, double>
     {
         /// <summary>
@@ -20,7 +21,7 @@ namespace BugLocalizer.Models
             }
         }
     }
-
+    // string-List 字典
     public class MyListTDictionary<T> : Dictionary<string, List<T>>
     {
         public void Add(string term, T value)
