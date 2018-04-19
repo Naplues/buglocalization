@@ -19,7 +19,7 @@ namespace Viewer
             //GenerateTableAll();      //生成所有表  OK
 
             //GenerateMapBarGraph(); //MAP柱状图  OK
-            //GenerateMrrBarGraph(); //MRR柱状图  OK
+            GenerateMrrBarGraph(); //MRR柱状图  OK
 
             //GenerateLsiGraph();    //生成LSI图
             //GenerateLsiQueryGraph(); //生成LSI查询图

@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using Bluebit.MatrixLibrary;
+
+using CenterSpace.NMath.Core;
+using CenterSpace.NMath.Matrix;
+
 using BugLocalization.Helpers;
 using BugLocalizer.Models;
 
@@ -205,83 +208,6 @@ namespace BugLocalizer.Calculators
 
         #endregion
 
-        #region Jensen-Shannon
-
-        private static readonly Dictionary<string, double[]> SourceVectors = new Dictionary<string, double[]>();
-
-        private static readonly List<string> AllUniqueWordsInSourceAndQuery = new List<string>();
-
-        private static void InitializeJen(string datasetFolderPath)
-        {
-            List<DirectoryInfo> bugs = new DirectoryInfo(datasetFolderPath).GetDirectories().Where(x => x.Name != "Corpus").ToList();
-            var allQueryTexts = bugs.SelectMany(x => File.ReadAllLines(x.FullName + @"\" + QueryWithFilterFileName)).Distinct().ToList();
-
-            // create the vector for each source code
-            AllUniqueWordsInSourceAndQuery.AddRange(IdfDictionary.Keys.Union(allQueryTexts).Distinct().ToList());
-            int allUniqueWordsInSourceAndQueryCount = AllUniqueWordsInSourceAndQuery.Count;
-
-            TfDictionary.ToList().ForEach(fileWithTfCount =>
-            {
-                MyDoubleDictionary tfDictionary = fileWithTfCount.Value;
-                int totalWordsInFile = CodeFilesWithContent[fileWithTfCount.Key].Count;
-
-                double[] vector = new double[allUniqueWordsInSourceAndQueryCount];
-                int counter = 0;
-                AllUniqueWordsInSourceAndQuery.ForEach(uniqueWord =>
-                {
-                    vector[counter] = tfDictionary.ContainsKey(uniqueWord)
-                        ? tfDictionary[uniqueWord] / totalWordsInFile
-                        : 0;
-                    counter++;
-                });
-
-                SourceVectors.Add(fileWithTfCount.Key, vector);
-            });
-        }
-
-        private static void ComputeJen(string outputFolderPath, string bugName, List<string> queryText)
-        {
-            Utility.Status("Computing Source Vectors Jensen: " + bugName);
-
-            if (File.Exists(outputFolderPath + JenFileName))
-            {
-                Utility.Status("Jen File Exists.");
-                return;
-            }
-
-            // create the vector for query
-            double[] queryVector = new double[AllUniqueWordsInSourceAndQuery.Count];
-            int queryCounter = 0;
-            AllUniqueWordsInSourceAndQuery.ForEach(uniqueWord =>
-            {
-                queryVector[queryCounter] = queryText.Contains(uniqueWord)
-                    ? (double)queryText.Count(x => x == uniqueWord) / queryText.Count
-                    : 0;
-                queryCounter++;
-            });
-
-            // calculate H(p), H(q) and H(p + q)
-            MyDoubleDictionary similarityDictionary = new MyDoubleDictionary();
-            SourceVectors.ToList().ForEach(sourceFileWithVector =>
-            {
-                var p = sourceFileWithVector.Value;
-                var sumEntropy = (p.JensenSum(queryVector)).JensenEntropy();
-                var pEntropy = 1.0 / 2 * p.JensenEntropy();
-                var qEntropy = 1.0 / 2 * queryVector.JensenEntropy();
-
-                var jensenDivergence = sumEntropy - pEntropy - qEntropy;
-                var jensenSimilarity = 1 - jensenDivergence;
-
-                similarityDictionary.Add(sourceFileWithVector.Key, jensenSimilarity);
-            });
-
-            // done
-            WriteDocumentVectorToFileOrderedDescending(outputFolderPath + JenFileName, similarityDictionary);
-
-            Utility.Status("DONE Computing Source Vectors Jensen: " + bugName);
-        }
-
-        #endregion
 
         #region VSM
 
@@ -371,9 +297,9 @@ namespace BugLocalizer.Calculators
 
         #region LSI
 
-        private static Dictionary<int, Matrix> _uk;
-        private static Dictionary<int, Matrix> _sk;
-        private static Dictionary<int, Matrix> _vkTranspose;
+        private static Dictionary<int, DoubleMatrix> _uk;
+        private static Dictionary<int, DoubleMatrix> _sk;
+        private static Dictionary<int, DoubleMatrix> _vkTranspose;
 
         private static void DoSvd()
         {
@@ -397,21 +323,25 @@ namespace BugLocalizer.Calculators
             }
 
             // create matrix
-            Matrix generalMatrix = new Matrix(sourceMatrix);
+            DoubleMatrix generalMatrix = new DoubleMatrix(sourceMatrix);
 
             // singular value decomposition
-            SVD svd = new SVD(generalMatrix);
+            var svd = new DoubleSVDecomp(generalMatrix);
 
-            _uk = new Dictionary<int, Matrix>();
-            _sk = new Dictionary<int, Matrix>();
-            _vkTranspose = new Dictionary<int, Matrix>();
+            _uk = new Dictionary<int, DoubleMatrix>();
+            _sk = new Dictionary<int, DoubleMatrix>();
+            _vkTranspose = new Dictionary<int, DoubleMatrix>();
 
-            Utility.LsiKs.Where(x => x <= svd.S.Cols).ToList().ForEach(k =>
+            Utility.LsiKs.Where(x => x <= svd.Cols).ToList().ForEach(k =>
             {
                 Utility.Status("Creating k matrix of size " + k);
-                _uk.Add(k, new Matrix(svd.U.ToArray(), svd.U.Rows, k));
-                _sk.Add(k, new Matrix(svd.S.ToArray(), k, k));
-                _vkTranspose.Add(k, new Matrix(svd.VH.ToArray(), k, svd.VH.Cols));
+                DoubleMatrix U = svd.LeftVectors;
+                DoubleMatrix V = svd.RightVectors;
+                DoubleMatrix VH = NMathFunctions.Transpose(svd.RightVectors);
+
+                _uk.Add(k, new DoubleMatrix(U.Rows, k, Utility.ToOne(U.ToArray()), StorageType.RowMajor));
+                _sk.Add(k, new DoubleMatrix(k, k, Utility.ToOne(U.ToArray()), StorageType.RowMajor));
+                _vkTranspose.Add(k, new DoubleMatrix(k, VH.Cols, Utility.ToOne(U.ToArray()), StorageType.RowMajor));
             });
         }
 
@@ -441,11 +371,12 @@ namespace BugLocalizer.Calculators
                 var sk = _sk[k];
                 var vkTranspose = _vkTranspose[k];
 
-                Matrix q = new Matrix(queryMatrixTranspose);
-                Matrix qv = q * uk * sk.Inverse();
-                List<double> qDoubles = qv.RowVector(0).ToArray().ToList();
+                DoubleMatrix q = new DoubleMatrix(queryMatrixTranspose);
+                DoubleMatrix qv = NMathFunctions.Product(q, uk);
+                qv = NMathFunctions.Product(qv, NMathFunctions.Inverse(sk));
 
-                var similarityList = allSourceFilesWithIndex.Select(doc => new KeyValuePair<string, double>(doc.Key, GetSimilarity(qDoubles, vkTranspose.ColVector(doc.Value).ToArray().ToList())));
+                List<double> qDoubles = qv.Row(0).ToArray().ToList();
+                var similarityList = allSourceFilesWithIndex.Select(doc => new KeyValuePair<string, double>(doc.Key, GetSimilarity(qDoubles, vkTranspose.Col(doc.Value).ToArray().ToList())));
                 File.WriteAllLines(outputFolderPath + LsiOutputFolderName + k + ".txt", similarityList.OrderByDescending(x => x.Value).Select(x => x.Key + " " + x.Value.ToString("##.00000")));
             }
 
@@ -465,6 +396,83 @@ namespace BugLocalizer.Calculators
             }
 
             return dotProduct / (Math.Sqrt(aSum) * Math.Sqrt(bSum));
+        }
+
+        #endregion
+
+        #region Jensen-Shannon
+
+        private static readonly Dictionary<string, double[]> SourceVectors = new Dictionary<string, double[]>();
+        private static readonly List<string> AllUniqueWordsInSourceAndQuery = new List<string>();
+
+        private static void InitializeJen(string datasetFolderPath)
+        {
+            List<DirectoryInfo> bugs = new DirectoryInfo(datasetFolderPath).GetDirectories().Where(x => x.Name != "Corpus").ToList();
+            var allQueryTexts = bugs.SelectMany(x => File.ReadAllLines(x.FullName + @"\" + QueryWithFilterFileName)).Distinct().ToList();
+
+            // create the vector for each source code
+            AllUniqueWordsInSourceAndQuery.AddRange(IdfDictionary.Keys.Union(allQueryTexts).Distinct().ToList());
+            int allUniqueWordsInSourceAndQueryCount = AllUniqueWordsInSourceAndQuery.Count;
+
+            TfDictionary.ToList().ForEach(fileWithTfCount =>
+            {
+                MyDoubleDictionary tfDictionary = fileWithTfCount.Value;
+                int totalWordsInFile = CodeFilesWithContent[fileWithTfCount.Key].Count;
+
+                double[] vector = new double[allUniqueWordsInSourceAndQueryCount];
+                int counter = 0;
+                AllUniqueWordsInSourceAndQuery.ForEach(uniqueWord =>
+                {
+                    vector[counter] = tfDictionary.ContainsKey(uniqueWord)
+                        ? tfDictionary[uniqueWord] / totalWordsInFile
+                        : 0;
+                    counter++;
+                });
+
+                SourceVectors.Add(fileWithTfCount.Key, vector);
+            });
+        }
+
+        private static void ComputeJen(string outputFolderPath, string bugName, List<string> queryText)
+        {
+            Utility.Status("Computing Source Vectors Jensen: " + bugName);
+
+            if (File.Exists(outputFolderPath + JenFileName))
+            {
+                Utility.Status("Jen File Exists.");
+                return;
+            }
+
+            // create the vector for query
+            double[] queryVector = new double[AllUniqueWordsInSourceAndQuery.Count];
+            int queryCounter = 0;
+            AllUniqueWordsInSourceAndQuery.ForEach(uniqueWord =>
+            {
+                queryVector[queryCounter] = queryText.Contains(uniqueWord)
+                    ? (double)queryText.Count(x => x == uniqueWord) / queryText.Count
+                    : 0;
+                queryCounter++;
+            });
+
+            // calculate H(p), H(q) and H(p + q)
+            MyDoubleDictionary similarityDictionary = new MyDoubleDictionary();
+            SourceVectors.ToList().ForEach(sourceFileWithVector =>
+            {
+                var p = sourceFileWithVector.Value;
+                var sumEntropy = (p.JensenSum(queryVector)).JensenEntropy();
+                var pEntropy = 1.0 / 2 * p.JensenEntropy();
+                var qEntropy = 1.0 / 2 * queryVector.JensenEntropy();
+
+                var jensenDivergence = sumEntropy - pEntropy - qEntropy;
+                var jensenSimilarity = 1 - jensenDivergence;
+
+                similarityDictionary.Add(sourceFileWithVector.Key, jensenSimilarity);
+            });
+
+            // done
+            WriteDocumentVectorToFileOrderedDescending(outputFolderPath + JenFileName, similarityDictionary);
+
+            Utility.Status("DONE Computing Source Vectors Jensen: " + bugName);
         }
 
         #endregion

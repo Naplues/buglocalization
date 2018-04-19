@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using Bluebit.MatrixLibrary;
+
+using CenterSpace.NMath.Core;
+using CenterSpace.NMath.Matrix;
+
 using BugLocalization.Helpers;
 using BugLocalizer.Models;
 
@@ -334,9 +337,9 @@ namespace BugLocalizer.Calculators
 
         #region LSI
 
-        private static Dictionary<int, Matrix> _uk;
-        private static Dictionary<int, Matrix> _sk;
-        private static Dictionary<int, Matrix> _vkTranspose;
+        private static Dictionary<int, DoubleMatrix> _uk;
+        private static Dictionary<int, DoubleMatrix> _sk;
+        private static Dictionary<int, DoubleMatrix> _vkTranspose;
 
         private static void DoSvd()
         {
@@ -360,21 +363,25 @@ namespace BugLocalizer.Calculators
             }
 
             // create matrix
-            Matrix generalMatrix = new Matrix(sourceMatrix);
+            DoubleMatrix generalMatrix = new DoubleMatrix(sourceMatrix);
 
             // singular value decomposition
-            SVD svd = new SVD(generalMatrix);
+            var svd = new DoubleSVDecomp(generalMatrix);
 
-            _uk = new Dictionary<int, Matrix>();
-            _sk = new Dictionary<int, Matrix>();
-            _vkTranspose = new Dictionary<int, Matrix>();
+            _uk = new Dictionary<int, DoubleMatrix>();
+            _sk = new Dictionary<int, DoubleMatrix>();
+            _vkTranspose = new Dictionary<int, DoubleMatrix>();
 
-            Utility.LsiKs.Where(x => x <= svd.S.Cols).ToList().ForEach(k =>
+            Utility.LsiKs.Where(x => x <= svd.Cols).ToList().ForEach(k =>
             {
                 Utility.Status("Creating k matrix of size " + k);
-                _uk.Add(k, new Matrix(svd.U.ToArray(), svd.U.Rows, k));
-                _sk.Add(k, new Matrix(svd.S.ToArray(), k, k));
-                _vkTranspose.Add(k, new Matrix(svd.VH.ToArray(), k, svd.VH.Cols));
+                DoubleMatrix U = svd.LeftVectors;
+                DoubleMatrix V = svd.RightVectors;
+                DoubleMatrix VH = NMathFunctions.Transpose(svd.RightVectors);
+
+                _uk.Add(k, new DoubleMatrix(U.Rows, k, Utility.ToOne(U.ToArray()), StorageType.RowMajor));
+                _sk.Add(k, new DoubleMatrix(k, k, Utility.ToOne(U.ToArray()), StorageType.RowMajor));
+                _vkTranspose.Add(k, new DoubleMatrix(k, VH.Cols, Utility.ToOne(U.ToArray()), StorageType.RowMajor));
             });
         }
 
@@ -404,11 +411,13 @@ namespace BugLocalizer.Calculators
                 var sk = _sk[k];
                 var vkTranspose = _vkTranspose[k];
 
-                Matrix q = new Matrix(queryMatrixTranspose);
-                Matrix qv = q * uk * sk.Inverse();
-                List<double> qDoubles = qv.RowVector(0).ToArray().ToList();
+                DoubleMatrix q = new DoubleMatrix(queryMatrixTranspose);
+                DoubleMatrix qv = NMathFunctions.Product(q, uk);
+                qv = NMathFunctions.Product(qv, NMathFunctions.Inverse(sk));
 
-                var similarityList = allSourceFilesWithIndex.Select(doc => new KeyValuePair<string, double>(doc.Key, GetSimilarity(qDoubles, vkTranspose.ColVector(doc.Value).ToArray().ToList())));
+                List<double> qDoubles = qv.Row(0).ToArray().ToList();
+
+                var similarityList = allSourceFilesWithIndex.Select(doc => new KeyValuePair<string, double>(doc.Key, GetSimilarity(qDoubles, vkTranspose.Col(doc.Value).ToArray().ToList())));
                 File.WriteAllLines(outputFolderPath + LsiOutputFolderName + k + ".txt", similarityList.OrderByDescending(x => x.Value).Select(x => x.Key + " " + x.Value.ToString("##.00000")));
             }
 

@@ -49,10 +49,10 @@ namespace BugLocalizer
             ///BugLocalizer.Calculators.Eclipse CA_project = new BugLocalizer.Calculators.Eclipse();
             ///CA_project.Execute();
 
-            BugLocalizer.Calculators.JodaTime CA_project = new BugLocalizer.Calculators.JodaTime();
-            CA_project.Execute();
-            ///BugLocalizer.Calculators.AspectJ CA_project = new BugLocalizer.Calculators.AspectJ();
+            ///BugLocalizer.Calculators.JodaTime CA_project = new BugLocalizer.Calculators.JodaTime();
             ///CA_project.Execute();
+            BugLocalizer.Calculators.AspectJ CA_project = new BugLocalizer.Calculators.AspectJ();
+            CA_project.Execute();
 
 
 

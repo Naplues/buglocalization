@@ -18,7 +18,7 @@ namespace Viewer
         private readonly Dictionary<string, string> _simMethods = new Dictionary<string, string>()
         {
             { "VSM", @"Vsm.txt" },
-            //{ "LSI", @"Lsi\" },
+            { "LSI", @"Lsi\" },
             { "JSM", @"Jen.txt" },
             { "PMI", @"Pmi.txt" },
             { "NGD", @"Ngd.txt" },
@@ -29,7 +29,7 @@ namespace Viewer
         /// </summary>
         private readonly List<string> _projects = new List<string>()
         {
-            "AspectJ",
+            //"AspectJ",
             //"Eclipse",
             "JodaTime",
             "SWT",

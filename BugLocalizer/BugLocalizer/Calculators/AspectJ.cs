@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-//using Bluebit.MatrixLibrary;
+
 using CenterSpace.NMath.Core;
 using CenterSpace.NMath.Matrix;
+
 using BugLocalization.Helpers;
 using BugLocalizer.Models;
 //相似度计算器
@@ -417,6 +418,8 @@ namespace BugLocalizer.Calculators
             });
         }
 
+
+
         private static void ComputeLsi(string outputFolderPath, string bugName, List<string> queryText)
         {
             Utility.Status("Creating LSI: " + bugName);
@@ -448,10 +451,11 @@ namespace BugLocalizer.Calculators
                 ///List<double> qDoubles = qv.RowVector(0).ToArray().ToList();
                 ///var similarityList = allSourceFilesWithIndex.Select(doc => new KeyValuePair<string, double>(doc.Key, GetSimilarity(qDoubles, vkTranspose.ColVector(doc.Value).ToArray().ToList())));
                 DoubleMatrix q = new DoubleMatrix(queryMatrixTranspose);
-                DoubleMatrix qv = q * uk * NMathFunctions.Inverse(sk);
+                DoubleMatrix qv = NMathFunctions.Product(q, uk);
+                qv = NMathFunctions.Product(qv, NMathFunctions.Inverse(sk));
+
                 List<double> qDoubles = qv.Row(0).ToArray().ToList();
                 var similarityList = allSourceFilesWithIndex.Select(doc => new KeyValuePair<string, double>(doc.Key, GetSimilarity(qDoubles, vkTranspose.Col(doc.Value).ToArray().ToList())));
-
                 File.WriteAllLines(outputFolderPath + LsiOutputFolderName + k + ".txt", similarityList.OrderByDescending(x => x.Value).Select(x => x.Key + " " + x.Value.ToString("##.00000")));
             }
 
