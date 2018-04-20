@@ -51,8 +51,8 @@ namespace BugLocalizer
 
             ///BugLocalizer.Calculators.JodaTime CA_project = new BugLocalizer.Calculators.JodaTime();
             ///CA_project.Execute();
-            BugLocalizer.Calculators.AspectJ CA_project = new BugLocalizer.Calculators.AspectJ();
-            CA_project.Execute();
+            ///BugLocalizer.Calculators.AspectJ CA_project = new BugLocalizer.Calculators.AspectJ();
+            ///CA_project.Execute();
 
 
 

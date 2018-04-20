@@ -31,7 +31,7 @@ namespace Viewer
         {
             //"AspectJ",
             //"Eclipse",
-            "JodaTime",
+            //"JodaTime",
             "SWT",
             "ZXing",
         };
