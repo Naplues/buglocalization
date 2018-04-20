@@ -24,14 +24,14 @@ namespace BugLocalizer
                 Console.WriteLine(i++);
             }*/
 
-            ///制作数据集
+            ///制作数据集  一个语料库/多个语料库
             ///BugLocalizer.DataCreators.ZXing DC_project = new BugLocalizer.DataCreators.ZXing();
             ///DC_project.Execute();
             ///BugLocalizer.DataCreators.Swt DC_project = new BugLocalizer.DataCreators.Swt();
             ///DC_project.Execute();
-
             ///BugLocalizer.DataCreators.Eclipse DC_project = new BugLocalizer.DataCreators.Eclipse();
             ///DC_project.Execute();
+
 
             ///BugLocalizer.DataCreators.JodaTime DC_project = new BugLocalizer.DataCreators.JodaTime();
             ///DC_project.Execute();
@@ -44,10 +44,9 @@ namespace BugLocalizer
             ///CA_project.Execute();
             ///BugLocalizer.Calculators.Swt CA_project = new BugLocalizer.Calculators.Swt();
             ///CA_project.Execute();
+            BugLocalizer.Calculators.Eclipse CA_project = new BugLocalizer.Calculators.Eclipse();
+            CA_project.Execute();
 
-
-            ///BugLocalizer.Calculators.Eclipse CA_project = new BugLocalizer.Calculators.Eclipse();
-            ///CA_project.Execute();
 
             ///BugLocalizer.Calculators.JodaTime CA_project = new BugLocalizer.Calculators.JodaTime();
             ///CA_project.Execute();

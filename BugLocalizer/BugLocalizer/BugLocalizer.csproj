@@ -35,13 +35,9 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bluebit.MatrixLibrary, Version=5.0.1.0, Culture=neutral, PublicKeyToken=c915370950fbbd9f, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\ExternalReferences\Bluebit.MatrixLibrary.dll</HintPath>
-    </Reference>
     <Reference Include="NMath, Version=6.2.0.41, Culture=neutral, PublicKeyToken=873235918a322639, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\CenterSpace\NMath 6.2\Assemblies\NMath.dll</HintPath>
+      <HintPath>..\ExternalReferences\NMath.dll</HintPath>
     </Reference>
     <Reference Include="SharpCompress">
       <HintPath>..\..\Test\SharpCompress.dll</HintPath>
@@ -90,6 +86,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\StopWords.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\ExternalReferences\NMath.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

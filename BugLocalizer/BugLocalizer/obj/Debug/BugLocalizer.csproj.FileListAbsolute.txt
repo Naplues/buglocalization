@@ -20,12 +20,9 @@ C:\Users\naplues\Desktop\git\buglocalization\BugLocalizer\BugLocalizer\obj\Debug
 C:\Users\naplues\Desktop\git\buglocalization\BugLocalizer\BugLocalizer\obj\Debug\BugLocalizer.pdb
 C:\Users\naplues\Desktop\git\buglocalization\BugLocalizer\BugLocalizer\bin\Debug\BugLocalizer.exe
 C:\Users\naplues\Desktop\git\buglocalization\BugLocalizer\BugLocalizer\bin\Debug\BugLocalizer.pdb
-C:\Users\naplues\Desktop\git\buglocalization\BugLocalizer\BugLocalizer\bin\Debug\Bluebit.MatrixLibrary.dll
 C:\Users\naplues\Desktop\git\buglocalization\BugLocalizer\BugLocalizer\bin\Debug\NMath.dll
 C:\Users\naplues\Desktop\git\buglocalization\BugLocalizer\BugLocalizer\bin\Debug\SourceCodeIndexer.STAC.dll
 C:\Users\naplues\Desktop\git\buglocalization\BugLocalizer\BugLocalizer\bin\Debug\Microsoft.Solver.Foundation.dll
-C:\Users\naplues\Desktop\git\buglocalization\BugLocalizer\BugLocalizer\bin\Debug\Bluebit.MatrixLibrary.xml
-C:\Users\naplues\Desktop\git\buglocalization\BugLocalizer\BugLocalizer\bin\Debug\NMath.xml
 C:\Users\naplues\Desktop\git\buglocalization\BugLocalizer\BugLocalizer\obj\Debug\BugLocalizer.csprojResolveAssemblyReference.cache
 C:\Users\naplues\Desktop\git\buglocalization\BugLocalizer\BugLocalizer\obj\Debug\BugLocalizer.Properties.Resources.resources
 C:\Users\naplues\Desktop\git\buglocalization\BugLocalizer\BugLocalizer\obj\Debug\BugLocalizer.csproj.GenerateResource.Cache

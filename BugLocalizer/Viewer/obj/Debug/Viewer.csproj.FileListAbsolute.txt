@@ -25,3 +25,6 @@ C:\Users\gzq\Desktop\git\buglocalization\BugLocalizer\Viewer\obj\Debug\Viewer.cs
 C:\Users\gzq\Desktop\git\buglocalization\BugLocalizer\Viewer\obj\Debug\Viewer.Properties.Resources.resources
 C:\Users\gzq\Desktop\git\buglocalization\BugLocalizer\Viewer\obj\Debug\Viewer.ResultViewer.resources
 C:\Users\gzq\Desktop\git\buglocalization\BugLocalizer\Viewer\obj\Debug\Viewer.csproj.GenerateResource.Cache
+C:\Users\naplues\Desktop\git\buglocalization\BugLocalizer\Viewer\bin\Debug\Viewer.exe.config
+C:\Users\naplues\Desktop\git\buglocalization\BugLocalizer\Viewer\obj\Debug\Viewer.exe
+C:\Users\naplues\Desktop\git\buglocalization\BugLocalizer\Viewer\obj\Debug\Viewer.pdb

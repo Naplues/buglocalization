@@ -90,7 +90,7 @@ namespace BugLocalizer.DataCreators
 
             ///解压文件
             //Utility.unTAR(@"D:\test\xml.tgz", @"D:\test\");
-            Utility.unTAR(sourceBugFolderPath + @"corpus\xml.tgz", sourceBugFolderPath + @"corpus\temp\");
+            //Utility.unTAR(sourceBugFolderPath + @"corpus\xml.tgz", sourceBugFolderPath + @"corpus\temp\");
 
             foreach (FileInfo xmlCorpusFile in new DirectoryInfo(sourceBugFolderPath + CorpusExtractedRelativeFolderPath).GetFiles("*.xml"))
             {

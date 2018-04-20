@@ -10,7 +10,12 @@ namespace BugLocalizer
 {
     public abstract class BaseExecutable
     {
-        //生成数据集或执行算法处理数据集
+
+
+
+
+
+        //执行方法
         public abstract void Execute();
         /// <summary>
         /// 过滤文本

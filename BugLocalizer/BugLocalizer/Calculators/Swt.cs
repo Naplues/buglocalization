@@ -4,11 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-using CenterSpace.NMath.Core;
-using CenterSpace.NMath.Matrix;
-
-using BugLocalization.Helpers;
-using BugLocalizer.Models;
 
 namespace BugLocalizer.Calculators
 {
