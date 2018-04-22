@@ -126,7 +126,6 @@ namespace BugLocalizer.Calculators
         #endregion
 
 
-
         #region LSI
         // 多个维度的 奇异值分解后矩阵字典 U S VT
         internal static Dictionary<int, DoubleMatrix> _uk;
@@ -162,7 +161,7 @@ namespace BugLocalizer.Calculators
             // 创建矩阵
             DoubleMatrix generalMatrix = new DoubleMatrix(sourceMatrix);
 
-            // 奇异值分解 A = USV.T
+            // 奇异值分解 A = U S V.T
             var svd = new DoubleSVDecomp(generalMatrix);
 
             _uk = new Dictionary<int, DoubleMatrix>();
@@ -178,7 +177,6 @@ namespace BugLocalizer.Calculators
                 DoubleMatrix V = svd.RightVectors;
 
                 // 通过数组创建矩阵, 行优先存储, 可再改
-                //_uk.Add(k, new DoubleMatrix(U.Rows, k, Utility.ToOne(U.ToArray()), StorageType.RowMajor));
                 _uk.Add(k, Utility.GetDimMatrix(U, U.Rows, k));
                 _sk.Add(k, Utility.GetDiagonal(svd.SingularValues, k));
                 _vkTranspose.Add(k, NMathFunctions.Transpose(Utility.GetDimMatrix(V, V.Rows, k)));
@@ -194,22 +192,22 @@ namespace BugLocalizer.Calculators
         public static void ComputeLsi(string outputFolderPath, string bugName, List<string> queryText)
         {
             Utility.Status("Creating LSI: " + bugName);
-
+            // 所有源码中的总独特词数  源文件 - 索引, 源文件单词 - 索引
             int totalDistinctTermsInAllSourceFiles = IdfDictionary.Count;
-
+            
             Dictionary<string, int> allSourceFilesWithIndex = TfDictionary.Keys.Select((x, index) => new { Name = x, Index = index }).ToDictionary(x => x.Name, x => x.Index);
             Dictionary<string, int> allSourceWordsWithIndex = IdfDictionary.Keys.Select((x, index) => new { Name = x, Index = index }).ToDictionary(x => x.Name, x => x.Index);
 
-            // create one for query as well
+            // 为查询创建一个 1xm 的向量
             double[,] queryMatrixTranspose = new double[1, totalDistinctTermsInAllSourceFiles];
             queryText.ForEach(queryWord =>
             {
                 if (allSourceWordsWithIndex.ContainsKey(queryWord))
                     queryMatrixTranspose[0, allSourceWordsWithIndex[queryWord]] = queryMatrixTranspose[0, allSourceWordsWithIndex[queryWord]] + 1;
             });
-
+            // k列的 U 矩阵
             var ks = _uk.Keys.Where(x => !File.Exists(outputFolderPath + LsiOutputFolderName + x + ".txt")).ToList();
-
+            // 为每个维度的矩阵计算相似度
             foreach (var k in ks)
             {
                 Utility.Status("Creating LSI for " + bugName + " where k=" + k);
@@ -218,35 +216,19 @@ namespace BugLocalizer.Calculators
                 var vkTranspose = _vkTranspose[k];
 
                 DoubleMatrix q = new DoubleMatrix(queryMatrixTranspose);
-                //qv = q * uk * sk.I
+                //qv = q * uk * sk.I [1xm,mxn,nxn = 1xn]
                 DoubleMatrix qv = NMathFunctions.Product(q, uk);
                 qv = NMathFunctions.Product(qv, NMathFunctions.Inverse(sk));
                 List<double> qDoubles = qv.Row(0).ToArray().ToList();
 
-                var similarityList = allSourceFilesWithIndex.Select(doc => new KeyValuePair<string, double>(doc.Key, GetSimilarity(qDoubles, vkTranspose.Col(doc.Value).ToArray().ToList())));
+                var similarityList = allSourceFilesWithIndex.Select(doc => new KeyValuePair<string, double>(doc.Key, Utility.GetSimilarity(qDoubles, vkTranspose.Col(doc.Value).ToArray().ToList())));
                 File.WriteAllLines(outputFolderPath + LsiOutputFolderName + k + ".txt", similarityList.OrderByDescending(x => x.Value).Select(x => x.Key + " " + x.Value.ToString("##.00000")));
             }
 
             Utility.Status("Completed LSI: " + bugName);
         }
 
-        private static double GetSimilarity(IReadOnlyList<double> a1, IReadOnlyList<double> a2)
-        {
-            double dotProduct = 0;
-            double aSum = 0, bSum = 0;
-
-            for (int i = 0; i < a1.Count; i++)
-            {
-                dotProduct += a1[i] * a2[i];
-                aSum += Math.Pow(a1[i], 2);
-                bSum += Math.Pow(a2[i], 2);
-            }
-
-            return dotProduct / (Math.Sqrt(aSum) * Math.Sqrt(bSum));
-        }
-
         #endregion
-
 
 
         #region JEN
@@ -313,84 +295,10 @@ namespace BugLocalizer.Calculators
                 similarityDictionary.Add(sourceFileWithVector.Key, jensenSimilarity);
             });
 
-            // 将文档向量降序写入文件ZXing\001\Results\Jen.txt
+            // 将文档向量降序写入文件Project\001\Results\Jen.txt
             WriteDocumentVectorToFileOrderedDescending(outputFolderPath + JenFileName, similarityDictionary);
 
             Utility.Status("DONE Computing JEN: " + bugName);
-        }
-
-
-        internal static readonly Dictionary<string, double[]> SourceVectors = new Dictionary<string, double[]>();
-        internal static readonly List<string> AllUniqueWordsInSourceAndQuery = new List<string>();
-
-        internal static void InitializeJen(string datasetFolderPath)
-        {
-            List<DirectoryInfo> bugs = new DirectoryInfo(datasetFolderPath).GetDirectories().Where(x => x.Name != "Corpus").ToList();
-            var allQueryTexts = bugs.SelectMany(x => File.ReadAllLines(x.FullName + @"\" + QueryWithFilterFileName)).Distinct().ToList();
-
-            // create the vector for each source code
-            AllUniqueWordsInSourceAndQuery.AddRange(IdfDictionary.Keys.Union(allQueryTexts).Distinct().ToList());
-            int allUniqueWordsInSourceAndQueryCount = AllUniqueWordsInSourceAndQuery.Count;
-
-            TfDictionary.ToList().ForEach(fileWithTfCount =>
-            {
-                MyDoubleDictionary tfDictionary = fileWithTfCount.Value;
-                int totalWordsInFile = CodeFilesWithContent[fileWithTfCount.Key].Count;
-
-                double[] vector = new double[allUniqueWordsInSourceAndQueryCount];
-                int counter = 0;
-                AllUniqueWordsInSourceAndQuery.ForEach(uniqueWord =>
-                {
-                    vector[counter] = tfDictionary.ContainsKey(uniqueWord)
-                        ? tfDictionary[uniqueWord] / totalWordsInFile
-                        : 0;
-                    counter++;
-                });
-
-                SourceVectors.Add(fileWithTfCount.Key, vector);
-            });
-        }
-
-        private static void ComputeJen2Eclipse(string outputFolderPath, string bugName, List<string> queryText)
-        {
-            Utility.Status("Computing Source Vectors Jensen: " + bugName);
-
-            if (File.Exists(outputFolderPath + JenFileName))
-            {
-                Utility.Status("Jen File Exists.");
-                return;
-            }
-
-            // create the vector for query
-            double[] queryVector = new double[AllUniqueWordsInSourceAndQuery.Count];
-            int queryCounter = 0;
-            AllUniqueWordsInSourceAndQuery.ForEach(uniqueWord =>
-            {
-                queryVector[queryCounter] = queryText.Contains(uniqueWord)
-                    ? (double)queryText.Count(x => x == uniqueWord) / queryText.Count
-                    : 0;
-                queryCounter++;
-            });
-
-            // calculate H(p), H(q) and H(p + q)
-            MyDoubleDictionary similarityDictionary = new MyDoubleDictionary();
-            SourceVectors.ToList().ForEach(sourceFileWithVector =>
-            {
-                var p = sourceFileWithVector.Value;
-                var sumEntropy = (p.JensenSum(queryVector)).JensenEntropy();
-                var pEntropy = 1.0 / 2 * p.JensenEntropy();
-                var qEntropy = 1.0 / 2 * queryVector.JensenEntropy();
-
-                var jensenDivergence = sumEntropy - pEntropy - qEntropy;
-                var jensenSimilarity = 1 - jensenDivergence;
-
-                similarityDictionary.Add(sourceFileWithVector.Key, jensenSimilarity);
-            });
-
-            // done
-            WriteDocumentVectorToFileOrderedDescending(outputFolderPath + JenFileName, similarityDictionary);
-
-            Utility.Status("DONE Computing Source Vectors Jensen: " + bugName);
         }
 
         #endregion

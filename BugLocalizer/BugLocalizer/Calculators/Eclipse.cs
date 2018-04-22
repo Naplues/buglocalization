@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace BugLocalizer.Calculators
@@ -28,10 +28,9 @@ namespace BugLocalizer.Calculators
             _runJen = Utility.RunJen;
             _runAPm = Utility.RunAPm;
 
-            ///RunTssOnDataset(@"Eclipse\");
             RunTssOnDataset(@"Eclipse\");
         }
-
+        //互斥操作加锁对象
         public static object MyObj1 = new object();
         private static void RunTssOnDataset(string dataset)
         {
@@ -69,14 +68,14 @@ namespace BugLocalizer.Calculators
             int totalbugsCount = bugs.Count;
 
             Utility.Status("Reading Files");
-            var allFiles = new DirectoryInfo(datasetFolderPath + ClassicalMethod.CorpusWithFilterFolderName).GetFiles();
+            var allFiles = new DirectoryInfo(datasetFolderPath + Method.CorpusWithFilterFolderName).GetFiles();
             int counter = 1;
             // Read all files
             foreach (var file in allFiles)
             {
                 Utility.Status("Reading " + counter++ + " of " + allFiles.Length);
                 string[] text = File.ReadAllLines(file.FullName);
-                ClassicalMethod.CodeFilesWithContent.Add(Path.GetFileNameWithoutExtension(file.FullName), text.ToList());
+                Method.CodeFilesWithContent.Add(Path.GetFileNameWithoutExtension(file.FullName), text.ToList());
             }
 
             Utility.Status("Initializing");
@@ -85,15 +84,11 @@ namespace BugLocalizer.Calculators
             if (_runVsm || _runSim || _runAPm || _runLsi || _runJen)
                 ClassicalMethod.InitializeForVsmSimLsi();
 
-            if (_runJen)
-                ClassicalMethod.InitializeJen(datasetFolderPath);
-
             if (_runLsi)
                 ClassicalMethod.DoSvd();
 
             if (_runNgd || _runAPm || _runSim)
                 ProposedMethod.InitializeForNgdPmiSim();
-
 
             // Create files
             int completedCount = 0;
@@ -115,7 +110,7 @@ namespace BugLocalizer.Calculators
                     if (!Directory.Exists(bugFolderPath + "Results"))
                         Directory.CreateDirectory(bugFolderPath + "Results");
 
-                    List<string> queryText = File.ReadAllLines(bugFolderPath + ProposedMethod.QueryWithFilterFileName).ToList();
+                    List<string> queryText = File.ReadAllLines(bugFolderPath + Method.QueryWithFilterFileName).ToList();
 
                     if (_runVsm && !completedVsm.Contains(bugs[i].Name))
                     {

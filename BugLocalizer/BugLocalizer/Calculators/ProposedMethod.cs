@@ -1,11 +1,7 @@
 ﻿using System;
-using System.IO;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections.Generic;
 
-using BugLocalization.Helpers;
 using BugLocalizer.Models;
 
 namespace BugLocalizer.Calculators
@@ -16,18 +12,23 @@ namespace BugLocalizer.Calculators
     public class ProposedMethod : Method
     {
 
-        // 单词和包含该单词的文件
+        // 单词和包含该单词的文件列表
         internal static readonly Dictionary<string, List<string>> WordAndContainingFiles = new Dictionary<string, List<string>>();
 
-
         #region Init for NGD PMI
-        // 初始化
+        /// <summary>
+        /// 为NGD PMI 方法进行初始化
+        /// 生成 WordAndContainingFiles
+        /// </summary>
         public static void InitializeForNgdPmiSim()
         {
+            // 源码文件-内容对象
             foreach (var sourceFileWithWords in CodeFilesWithContent)
             {
+                // 源码文件中的独特词
                 sourceFileWithWords.Value.Distinct().ToList().ForEach(word =>
                 {
+                    // 未处理过的单词新建一个list对象
                     if (!WordAndContainingFiles.ContainsKey(word))
                         WordAndContainingFiles.Add(word, new List<string>());
                     WordAndContainingFiles[word].Add(sourceFileWithWords.Key);
@@ -36,7 +37,6 @@ namespace BugLocalizer.Calculators
         }
 
         #endregion
-
 
 
         #region PMI
@@ -53,15 +53,12 @@ namespace BugLocalizer.Calculators
 
             MyDoubleDictionary tssDocumentDictionary = new MyDoubleDictionary();
 
-            // Create list of word contained in query
-            // 创建查询列表(每个单词唯一)
+            // 创建查询列表(每个单词唯一) Create list of word contained in query
             List<string> distinctQueryWordList = fileText.Distinct().ToList(); // DISTINCT HERE but since its calculating PMI done remove it
             // 单词共现矩阵
             DocumentDictionaryAny<MyDoubleDictionary> nPmiMatrix = new DocumentDictionaryAny<MyDoubleDictionary>();
-
             // 源文件数目
             int n = CodeFilesWithContent.Count;
-
             // 为查询中的每个单词W2计算 带文件单词的 PMI值
             foreach (var queryWordW2 in distinctQueryWordList)
             {
@@ -77,8 +74,6 @@ namespace BugLocalizer.Calculators
                     // if query contains source then add 1 (query contains usecase word + source word
                     // if source contains query word find the intersection of files containing both words
                     int countW1W2 = sourceContainsUseCaseWord ? WordAndContainingFiles[sourceWordW1].Intersect(WordAndContainingFiles[queryWordW2]).Count() : 0;
-
-
                     // 归一化的 PMI, d1 and d2 != 0, d1d2 可能
                     double nPmi;
                     // 从未共现, nPMI = -1
@@ -154,7 +149,6 @@ namespace BugLocalizer.Calculators
 
                     sumCorpusTimeIdf += (maxSim * idf);
                     sumCorpusIdf += idf;
-
                 }
 
                 double tss = (1.0 / 2) * ((sumQueryTimeIdf / sumQueryIdf) + (sumCorpusTimeIdf / sumCorpusIdf));
@@ -171,6 +165,12 @@ namespace BugLocalizer.Calculators
 
         #region NGD
 
+        /// <summary>
+        /// 计算 NDG 方法
+        /// </summary>
+        /// <param name="ngdOutputFolderPath"></param>
+        /// <param name="bugName"></param>
+        /// <param name="fileText"></param>
         public static void ComputeNgd(string ngdOutputFolderPath, string bugName, List<string> fileText)
         {
             Utility.Status("Creating NGD: " + bugName);
@@ -205,6 +205,7 @@ namespace BugLocalizer.Calculators
                 ngdMatrix.Add(queryWordW2, ngdDictionary);
             }
 
+            // TSS评判
             //List<string> distinctUseCaseWordListForTss = fileText.Distinct().ToList(); //DISTINCT HERE
             List<string> distinctQueryWordListForTss = fileText.ToList(); //DISTINCT HERE
             int totalNumberOfDocumentInSource = CodeFilesWithContent.Count;
