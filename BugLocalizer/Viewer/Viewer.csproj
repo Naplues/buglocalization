@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extensions.cs" />
     <Compile Include="GraphCreators.cs" />
     <Compile Include="Models.cs" />
     <Compile Include="ResultViewer.cs">

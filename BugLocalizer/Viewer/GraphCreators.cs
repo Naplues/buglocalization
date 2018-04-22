@@ -7,7 +7,7 @@ using System.Xml.Serialization;
 namespace Viewer
 {
     /// <summary>
-    /// 图示生成器
+    /// 图表生成器
     /// </summary>
     public class GraphCreators
     {
@@ -17,11 +17,11 @@ namespace Viewer
         /// </summary>
         private readonly Dictionary<string, string> _simMethods = new Dictionary<string, string>()
         {
-            //{ "VSM", @"Vsm.txt" },
+            { "VSM", @"Vsm.txt" },
             { "LSI", @"Lsi\" },
-            //{ "JSM", @"Jen.txt" },
-            //{ "PMI", @"Pmi.txt" },
-            //{ "NGD", @"Ngd.txt" },
+            { "JSM", @"Jen.txt" },
+            { "PMI", @"Pmi.txt" },
+            { "NGD", @"Ngd.txt" },
             //{ "APM", @"APm.txt" },
         };
         /// <summary>
@@ -31,7 +31,7 @@ namespace Viewer
         {
             //"AspectJ",
             //"Eclipse",
-            "JodaTime",
+            //"JodaTime",
             "SWT",
             "ZXing",
         };
