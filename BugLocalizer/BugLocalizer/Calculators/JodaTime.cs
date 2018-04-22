@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-
-using CenterSpace.NMath.Core;
-using CenterSpace.NMath.Matrix;
-
-using BugLocalization.Helpers;
-using BugLocalizer.Models;
+using System.Collections.Generic;
 
 namespace BugLocalizer.Calculators
 {

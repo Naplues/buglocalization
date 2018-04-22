@@ -157,17 +157,18 @@ namespace BugLocalizer
             Console.WriteLine(tarFilePath + " finish...");
         }
 
-        /// <summary>
-        /// Writes vector to file
-        /// 将文档向量写入文件
-        /// </summary>
-        /// <param name="filePath">文件路径</param>
-        /// <param name="vector">文档向量</param>
-        /// <param name="asInt">是否作为整数</param>
-        public static void WriteDocumentVectorToFile(string filePath, MyDoubleDictionary vector, bool asInt = false)
+
+        public static void DoUnTar()
         {
-            string pattern = asInt ? "##" : "##.00000";
-            File.WriteAllLines(filePath, vector.Select(x => x.Key + " " + x.Value.ToString(pattern)));
+            string project = "AspectJ";
+            string path = @"D:\Research-Dataset\Bug\Source\moreBugs\" + project + @"\bugs\";
+            List<DirectoryInfo> bugs = new DirectoryInfo(path).GetDirectories().ToList();
+            int i = 0;
+            foreach (DirectoryInfo x in bugs)
+            {
+                unTAR(x.FullName + @"\corpus\xml.tgz", x.FullName + @"\corpus\temp\");
+                Console.WriteLine(i++);
+            }
         }
 
     }

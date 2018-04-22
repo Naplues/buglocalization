@@ -6,7 +6,7 @@ using System.Linq;
 using CenterSpace.NMath.Core;
 using CenterSpace.NMath.Matrix;
 
-using BugLocalization.Helpers;
+using BugLocalizer.Helpers;
 using BugLocalizer.Models;
 
 namespace BugLocalizer.Calculators

@@ -1,60 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
+
 namespace BugLocalizer
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Test.Run();
             Console.WriteLine("请输入线程数: ");
             Utility.ParallelThreadCount = Int32.Parse(Console.ReadLine());
-            ///预处理moreBugs数据集中的项目AspectJ和JodaTime
-            /*
-            string project = "AspectJ";
-            string path = @"D:\Research-Dataset\Bug\Source\moreBugs\" + project + "\bugs\";
-            List<DirectoryInfo> bugs = new DirectoryInfo(path).GetDirectories().ToList();
-            int i = 0;
-            foreach (DirectoryInfo x in bugs)
-            {
-                Utility.unTAR(x.FullName + @"\corpus\xml.tgz", x.FullName + @"\corpus\temp\");
-                Console.WriteLine(i++);
-            }*/
-
+            
             ///制作数据集  一个语料库/多个语料库
-            ///BugLocalizer.DataCreators.ZXing DC_project = new BugLocalizer.DataCreators.ZXing();
-            ///DC_project.Execute();
-            BugLocalizer.DataCreators.Swt DC_project = new BugLocalizer.DataCreators.Swt();
-            DC_project.Execute();
-            ///BugLocalizer.DataCreators.Eclipse DC_project = new BugLocalizer.DataCreators.Eclipse();
-            ///DC_project.Execute();
-
-
-            ///BugLocalizer.DataCreators.JodaTime DC_project = new BugLocalizer.DataCreators.JodaTime();
-            ///DC_project.Execute();
-            ///BugLocalizer.DataCreators.AspectJ DC_project = new BugLocalizer.DataCreators.AspectJ();
-            ///DC_project.Execute();
-
+            //new BugLocalizer.DataCreators.ZXing().Execute();
+            //new BugLocalizer.DataCreators.Swt().Execute();
+            //new BugLocalizer.DataCreators.Eclipse().Execute();
+            //new BugLocalizer.DataCreators.JodaTime().Execute();
+            //new BugLocalizer.DataCreators.AspectJ().Execute();
 
             ///计算排序结果
-            ///BugLocalizer.Calculators.ZXing CA_project = new BugLocalizer.Calculators.ZXing();
-            ///CA_project.Execute();
-            BugLocalizer.Calculators.Swt CA_project = new BugLocalizer.Calculators.Swt();
-            CA_project.Execute();
-            ///BugLocalizer.Calculators.Eclipse CA_project = new BugLocalizer.Calculators.Eclipse();
-            ///CA_project.Execute();
-
-
-            ///BugLocalizer.Calculators.JodaTime CA_project = new BugLocalizer.Calculators.JodaTime();
-            ///CA_project.Execute();
-            ///BugLocalizer.Calculators.AspectJ CA_project = new BugLocalizer.Calculators.AspectJ();
-            ///CA_project.Execute();
-
-
+            //new BugLocalizer.Calculators.ZXing().Execute();
+            //new BugLocalizer.Calculators.Swt().Execute();
+            //new BugLocalizer.Calculators.Eclipse().Execute();
+            //new BugLocalizer.Calculators.JodaTime().Execute();
+            //new BugLocalizer.Calculators.AspectJ().Execute();
 
             Console.WriteLine("-------------Finish---------------");
             Console.ReadLine();

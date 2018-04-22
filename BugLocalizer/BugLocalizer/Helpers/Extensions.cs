@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace BugLocalization.Helpers
+namespace BugLocalizer.Helpers
 {
     public static class Extensions
     {

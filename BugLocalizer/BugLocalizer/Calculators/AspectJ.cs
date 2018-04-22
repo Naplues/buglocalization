@@ -3,11 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-using CenterSpace.NMath.Core;
-using CenterSpace.NMath.Matrix;
-
-using BugLocalization.Helpers;
-using BugLocalizer.Models;
 //相似度计算器
 namespace BugLocalizer.Calculators
 {

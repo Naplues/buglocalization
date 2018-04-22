@@ -2,7 +2,7 @@
 using System.Linq;
 using BugLocalizer.Models;
 
-namespace BugLocalization.Helpers
+namespace BugLocalizer.Helpers
 {
     /// <summary>
     /// 余弦相似度计算器

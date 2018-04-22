@@ -31,11 +31,8 @@ C:\Users\gzq\Desktop\git\buglocalization\BugLocalizer\BugLocalizer\obj\Debug\Bug
 C:\Users\gzq\Desktop\git\buglocalization\BugLocalizer\BugLocalizer\obj\Debug\BugLocalizer.pdb
 C:\Users\gzq\Desktop\git\buglocalization\BugLocalizer\BugLocalizer\bin\Debug\BugLocalizer.exe
 C:\Users\gzq\Desktop\git\buglocalization\BugLocalizer\BugLocalizer\bin\Debug\BugLocalizer.pdb
-C:\Users\gzq\Desktop\git\buglocalization\BugLocalizer\BugLocalizer\bin\Debug\Bluebit.MatrixLibrary.dll
 C:\Users\gzq\Desktop\git\buglocalization\BugLocalizer\BugLocalizer\bin\Debug\SourceCodeIndexer.STAC.dll
 C:\Users\gzq\Desktop\git\buglocalization\BugLocalizer\BugLocalizer\bin\Debug\Microsoft.Solver.Foundation.dll
-C:\Users\gzq\Desktop\git\buglocalization\BugLocalizer\BugLocalizer\bin\Debug\Bluebit.MatrixLibrary.xml
-C:\Users\gzq\Desktop\git\buglocalization\BugLocalizer\BugLocalizer\bin\Debug\NMath.xml
 C:\Users\gzq\Desktop\git\buglocalization\BugLocalizer\BugLocalizer\obj\Debug\BugLocalizer.csprojResolveAssemblyReference.cache
 C:\Users\gzq\Desktop\git\buglocalization\BugLocalizer\BugLocalizer\obj\Debug\BugLocalizer.Properties.Resources.resources
 C:\Users\gzq\Desktop\git\buglocalization\BugLocalizer\BugLocalizer\obj\Debug\BugLocalizer.csproj.GenerateResource.Cache

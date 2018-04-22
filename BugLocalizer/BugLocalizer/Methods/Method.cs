@@ -51,5 +51,18 @@ namespace BugLocalizer.Calculators
             string pattern = asInt ? "##" : "##.00000";
             File.WriteAllLines(filePath, vector.ToList().OrderByDescending(x => x.Value).Select(x => x.Key + " " + x.Value.ToString(pattern)));
         }
+
+        /// <summary>
+        /// Writes vector to file
+        /// 将文档向量写入文件
+        /// </summary>
+        /// <param name="filePath">文件路径</param>
+        /// <param name="vector">文档向量</param>
+        /// <param name="asInt">是否作为整数</param>
+        public static void WriteDocumentVectorToFile(string filePath, MyDoubleDictionary vector, bool asInt = false)
+        {
+            string pattern = asInt ? "##" : "##.00000";
+            File.WriteAllLines(filePath, vector.Select(x => x.Key + " " + x.Value.ToString(pattern)));
+        }
     }
 }
