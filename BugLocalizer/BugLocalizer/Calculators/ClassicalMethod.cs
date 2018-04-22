@@ -18,53 +18,55 @@ namespace BugLocalizer.Calculators
     public class ClassicalMethod : Method
     {
 
+        #region Init for VSM SIM LSI
 
-        // IDF 字典
+        // IDF 逆文档字典
         internal static readonly MyDoubleDictionary IdfDictionary = new MyDoubleDictionary();
-        // 词频字典
+        // TF 词频字典
         internal static readonly Dictionary<string, MyDoubleDictionary> TfDictionary = new Dictionary<string, MyDoubleDictionary>();
         // TF-IDF 词典
         internal static readonly Dictionary<string, MyDoubleDictionary> TfIdfDictionary = new Dictionary<string, MyDoubleDictionary>();
 
-
-
-        #region Init for VSM SIM LSI
         /// <summary>
-        /// 对VSM SIM LSI 方法进行初始化
+        /// 对VSM PMI LSI 方法进行初始化
+        /// 设置 TF, IDF, TF-IDF
         /// </summary>
         public static void InitializeForVsmSimLsi()
         {
-            // compute tf and idf
+            // 计算 TF and idf
             foreach (var fileAndItsWords in CodeFilesWithContent)
             {
+                //TF 词频字典
                 MyDoubleDictionary fileTfDictionary = new MyDoubleDictionary();
 
-                // for each word in the file add 1 to the count
+                // 统计每个源码文件的中的单词及其词频
                 foreach (string word in fileAndItsWords.Value)
                 {
                     fileTfDictionary.Add(word);
                 }
 
-                // save tf result for the file
+                // 为每个源码文件保存其词频
                 TfDictionary.Add(fileAndItsWords.Key, fileTfDictionary);
 
-                // for each DISTINCT word found in the file increase the idf by 1. At this point idf holds document frequency
+                // 对每个在源码文件中出现的单词, 记录它出现的文档数目, 此时IDF中保存的是文档频数DF
                 foreach (var wordAndItsCount in fileTfDictionary)
                 {
                     IdfDictionary.Add(wordAndItsCount.Key);
                 }
             }
 
-            // change df to idf
+            // 将DF转换为IDF IDF = log(T/DF)
+            // 文档总数
             int totalNumberOfDocuments = CodeFilesWithContent.Count;
-            foreach (var wordAndItsDocumentCount in IdfDictionary.ToList()) // to list so that we can change the dictionary
+            foreach (var wordAndItsDocumentCount in IdfDictionary.ToList()) // to list 这样可以改变该字典
             {
                 IdfDictionary[wordAndItsDocumentCount.Key] = Math.Log10(totalNumberOfDocuments / wordAndItsDocumentCount.Value);
             }
 
-            // update tfidf for each file
+            // 为每个文件设置 TF-IDF
             foreach (var sourceFileWithTfDictionary in TfDictionary)
             {
+                // 单个源文件的TF-IDF
                 MyDoubleDictionary fileTfIdfDictionary = new MyDoubleDictionary();
                 foreach (var wordWithTfCount in sourceFileWithTfDictionary.Value)
                 {
@@ -77,7 +79,6 @@ namespace BugLocalizer.Calculators
         #endregion
 
 
-
         #region VSM
 
         /// <summary>
@@ -85,18 +86,18 @@ namespace BugLocalizer.Calculators
         /// </summary>
         /// <param name="outputFolderPath"></param>
         /// <param name="bugName"></param>
-        /// <param name="queryText"></param>
+        /// <param name="queryText">查询文本</param>
         public static void ComputeVsm(string outputFolderPath, string bugName, List<string> queryText)
         {
             Utility.Status("Creating VSM: " + bugName);
 
-            // 创建查询的TF-IDF字典
+            // 创建查询文本的TF-IDF字典
             MyDoubleDictionary queryTfIdfDictionary = new MyDoubleDictionary();
             queryText.ForEach(queryTfIdfDictionary.Add);
 
             // 最大频度
             double maxFrequency = queryTfIdfDictionary.Max(x => x.Value);
-
+                
             // 计算TF-IDF
             foreach (var queryWordWithTf in queryTfIdfDictionary.ToList())
             {
@@ -105,18 +106,18 @@ namespace BugLocalizer.Calculators
                     : 0;
             }
 
-            // 计算相似度
+            // 计算相似度字典
             MyDoubleDictionary similarityDictionary = new MyDoubleDictionary();
             CosineSimilarityCalculator cosineSimilarityCalculator = new CosineSimilarityCalculator(queryTfIdfDictionary);
 
-            // compute similarity of fileText with each _codeFiles
+            // 计算文本文件相似度 with each _codeFiles
             foreach (var codeFileWithTfIdfDictionary in TfIdfDictionary)
             {
                 double cosineSimilarityWithUseCase = cosineSimilarityCalculator.GetSimilarity(codeFileWithTfIdfDictionary.Value);
                 similarityDictionary.Add(codeFileWithTfIdfDictionary.Key, cosineSimilarityWithUseCase);
             }
 
-            // 将文档向量降序写入文件ZXing\001\Results\Jen.txt
+            // 将文档向量降序写入文件Project\001\Results\Vsm.txt
             WriteDocumentVectorToFileOrderedDescending(outputFolderPath + VsmFileName, similarityDictionary);
 
             Utility.Status("Completed VSM: " + bugName);
@@ -127,25 +128,30 @@ namespace BugLocalizer.Calculators
 
 
         #region LSI
-
+        // 多个维度的 奇异值分解后矩阵字典 U S VT
         internal static Dictionary<int, DoubleMatrix> _uk;
         internal static Dictionary<int, DoubleMatrix> _sk;
         internal static Dictionary<int, DoubleMatrix> _vkTranspose;
 
+        /// <summary>
+        /// 奇异值分解 singular value decomposition
+        /// </summary>
         public static void DoSvd()
         {
             Utility.Status("Creating SVD");
 
-            // create the matrix
+            // 源文件数, 源文件中所有独特词数目, 源文件-索引, 源文件单词-索引
             int totalNumberOfSourceFiles = TfDictionary.Count;
             int totalDistinctTermsInAllSourceFiles = IdfDictionary.Count;
             Dictionary<string, int> allSourceFilesWithIndex = TfDictionary.Keys.Select((x, index) => new { Name = x, Index = index }).ToDictionary(x => x.Name, x => x.Index);
             Dictionary<string, int> allSourceWordsWithIndex = IdfDictionary.Keys.Select((x, index) => new { Name = x, Index = index }).ToDictionary(x => x.Name, x => x.Index);
-
-            double[,] sourceMatrix = new double[totalDistinctTermsInAllSourceFiles, totalNumberOfSourceFiles]; // row, col row is word col docs
+            
+            // 源码矩阵 行数: 源码中单词数, 源文件数
+            double[,] sourceMatrix = new double[totalDistinctTermsInAllSourceFiles, totalNumberOfSourceFiles];
 
             foreach (var fileNameWithTfDictionary in TfDictionary)
             {
+                // 文件索引
                 int fileIndex = allSourceFilesWithIndex[fileNameWithTfDictionary.Key];
                 foreach (var fileWordWithTf in fileNameWithTfDictionary.Value)
                 {
@@ -153,10 +159,10 @@ namespace BugLocalizer.Calculators
                 }
             }
 
-            // create matrix
+            // 创建矩阵
             DoubleMatrix generalMatrix = new DoubleMatrix(sourceMatrix);
 
-            // singular value decomposition
+            // 奇异值分解 A = USV.T
             var svd = new DoubleSVDecomp(generalMatrix);
 
             _uk = new Dictionary<int, DoubleMatrix>();
@@ -165,15 +171,17 @@ namespace BugLocalizer.Calculators
 
             Utility.LsiKs.Where(x => x <= svd.Cols).ToList().ForEach(k =>
             {
+                // 创建k维矩阵
                 Utility.Status("Creating k matrix of size " + k);
-
+                
                 DoubleMatrix U = svd.LeftVectors;
                 DoubleMatrix V = svd.RightVectors;
-                DoubleMatrix VH = NMathFunctions.Transpose(svd.RightVectors);
 
-                _uk.Add(k, new DoubleMatrix(U.Rows, k, Utility.ToOne(U.ToArray()), StorageType.RowMajor));
-                _sk.Add(k, new DoubleMatrix(k, k, Utility.ToOne(U.ToArray()), StorageType.RowMajor));
-                _vkTranspose.Add(k, new DoubleMatrix(k, VH.Cols, Utility.ToOne(U.ToArray()), StorageType.RowMajor));
+                // 通过数组创建矩阵, 行优先存储, 可再改
+                //_uk.Add(k, new DoubleMatrix(U.Rows, k, Utility.ToOne(U.ToArray()), StorageType.RowMajor));
+                _uk.Add(k, Utility.GetDimMatrix(U, U.Rows, k));
+                _sk.Add(k, Utility.GetDiagonal(svd.SingularValues, k));
+                _vkTranspose.Add(k, NMathFunctions.Transpose(Utility.GetDimMatrix(V, V.Rows, k)));
             });
         }
 

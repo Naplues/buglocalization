@@ -10,6 +10,7 @@ namespace BugLocalizer
     {
         static void Main(string[] args)
         {
+            Test.Run();
             Console.WriteLine("请输入线程数: ");
             Utility.ParallelThreadCount = Int32.Parse(Console.ReadLine());
             ///预处理moreBugs数据集中的项目AspectJ和JodaTime
@@ -27,8 +28,8 @@ namespace BugLocalizer
             ///制作数据集  一个语料库/多个语料库
             ///BugLocalizer.DataCreators.ZXing DC_project = new BugLocalizer.DataCreators.ZXing();
             ///DC_project.Execute();
-            ///BugLocalizer.DataCreators.Swt DC_project = new BugLocalizer.DataCreators.Swt();
-            ///DC_project.Execute();
+            BugLocalizer.DataCreators.Swt DC_project = new BugLocalizer.DataCreators.Swt();
+            DC_project.Execute();
             ///BugLocalizer.DataCreators.Eclipse DC_project = new BugLocalizer.DataCreators.Eclipse();
             ///DC_project.Execute();
 
@@ -42,10 +43,10 @@ namespace BugLocalizer
             ///计算排序结果
             ///BugLocalizer.Calculators.ZXing CA_project = new BugLocalizer.Calculators.ZXing();
             ///CA_project.Execute();
-            ///BugLocalizer.Calculators.Swt CA_project = new BugLocalizer.Calculators.Swt();
-            ///CA_project.Execute();
-            BugLocalizer.Calculators.Eclipse CA_project = new BugLocalizer.Calculators.Eclipse();
+            BugLocalizer.Calculators.Swt CA_project = new BugLocalizer.Calculators.Swt();
             CA_project.Execute();
+            ///BugLocalizer.Calculators.Eclipse CA_project = new BugLocalizer.Calculators.Eclipse();
+            ///CA_project.Execute();
 
 
             ///BugLocalizer.Calculators.JodaTime CA_project = new BugLocalizer.Calculators.JodaTime();
