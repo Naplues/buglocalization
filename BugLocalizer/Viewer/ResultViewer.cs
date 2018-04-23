@@ -11,7 +11,6 @@ namespace Viewer
         public ResultViewer()
         {
             InitializeComponent();
-            //Temp(); OK
 
             //GenerateTopNGraph();     //TopN图  OK
             //GenerateMrrBarGraph(); //MRR柱状图  OK
@@ -30,14 +29,6 @@ namespace Viewer
             ///Clipboard.SetText(TextBoxResult.Text);
         }
 
-        #region Temp
-
-        private void Temp()
-        {
-            TextBoxResult.Text = new GraphCreators().Temp();
-        }
-
-        #endregion
 
         #region Query/Source similarity
 
