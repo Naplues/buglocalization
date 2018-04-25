@@ -18,7 +18,6 @@ import java.util.regex.Pattern;
 
 public class BugCorpusCreator {
 
-
 	private void writeCorpus(Bug bug, String storeDir) throws IOException {
 
 		String content = bug.getBugSummary() + " " + bug.getBugDescription();
@@ -37,14 +36,16 @@ public class BugCorpusCreator {
 
 	}
 
+	/**
+	 * 从XML中提取Bug信息
+	 * @return
+	 */
 	private ArrayList<Bug> parseXML() {
 		ArrayList<Bug> list = new ArrayList<Bug>();
-		DocumentBuilderFactory domFactory = DocumentBuilderFactory
-				.newInstance();
+		DocumentBuilderFactory domFactory = DocumentBuilderFactory.newInstance();
 		try {
 			DocumentBuilder domBuilder = domFactory.newDocumentBuilder();
-			InputStream is = new FileInputStream(Property.getInstance()
-					.getBugFilePath());
+			InputStream is = new FileInputStream(Property.getInstance().getBugFilePath());
 			Document doc = domBuilder.parse(is);
 			Element root = doc.getDocumentElement();
 			NodeList bugRepository = root.getChildNodes();
@@ -52,46 +53,36 @@ public class BugCorpusCreator {
 				for (int i = 0; i < bugRepository.getLength(); i++) {
 					Node bugNode = bugRepository.item(i);
 					if (bugNode.getNodeType() == Node.ELEMENT_NODE) {
-						String bugId = bugNode.getAttributes()
-								.getNamedItem("id").getNodeValue();
-						String openDate = bugNode.getAttributes()
-								.getNamedItem("opendate").getNodeValue();
-						String fixDate = bugNode.getAttributes()
-								.getNamedItem("fixdate").getNodeValue();
+						String bugId = bugNode.getAttributes().getNamedItem("id").getNodeValue();
+						String openDate = bugNode.getAttributes().getNamedItem("opendate").getNodeValue();
+						String fixDate = bugNode.getAttributes().getNamedItem("fixdate").getNodeValue();
 						Bug bug = new Bug();
 						bug.setBugId(bugId);
 						bug.setOpenDate(openDate);
 						bug.setFixDate(fixDate);
-						for (Node node = bugNode.getFirstChild(); node != null; node = node
-								.getNextSibling()) {
+						for (Node node = bugNode.getFirstChild(); node != null; node = node.getNextSibling()) {
 							if (node.getNodeType() == Node.ELEMENT_NODE) {
 								if (node.getNodeName().equals("buginformation")) {
 									NodeList _l = node.getChildNodes();
 									for (int j = 0; j < _l.getLength(); j++) {
 										Node _n = _l.item(j);
 										if (_n.getNodeName().equals("summary")) {
-											String summary = _n
-													.getTextContent();
+											String summary = _n.getTextContent();
 											bug.setBugSummary(summary);
 										}
 
-										if (_n.getNodeName().equals(
-												"description")) {
-											String description = _n
-													.getTextContent();
+										if (_n.getNodeName().equals("description")) {
+											String description = _n.getTextContent();
 											bug.setBugDescription(description);
 										}
-
 									}
-
 								}
 								if (node.getNodeName().equals("fixedFiles")) {
 									NodeList _l = node.getChildNodes();
 									for (int j = 0; j < _l.getLength(); j++) {
 										Node _n = _l.item(j);
 										if (_n.getNodeName().equals("file")) {
-											String fileName = _n
-													.getTextContent();
+											String fileName = _n.getTextContent();
 											bug.addFixedFile(fileName);
 										}
 									}
@@ -108,36 +99,33 @@ public class BugCorpusCreator {
 		return list;
 	}
 
+	
 	public void create() throws IOException {
 
 		ArrayList<Bug> list = new BugCorpusCreator().parseXML();
-		String dirPath = Property.getInstance().getWorkDir()
-				+ Property.getInstance().getSeparator() + "BugCorpus"
+		String dirPath = Property.getInstance().getWorkDir() + Property.getInstance().getSeparator() + "BugCorpus"
 				+ Property.getInstance().getSeparator();
 		File file = new File(dirPath);
 		Property.getInstance().setBugReportCount(list.size());
 		if (!file.exists())
 			file.mkdir();
-		
+
 		for (Bug bug : list) {
 			writeCorpus(bug, dirPath);
 		}
-		FileWriter writer = new FileWriter(Property.getInstance().getWorkDir()
-				+ Property.getInstance().getSeparator() + "SortedId.txt");
-		FileWriter writerFix = new FileWriter(Property.getInstance()
-				.getWorkDir()
-				+ Property.getInstance().getSeparator()
-				+ "FixLink.txt");
-		FileWriter writerClassName = new FileWriter(Property.getInstance().getWorkDir() + Property.getInstance().getSeparator() + "DescriptionClassName.txt");
+		FileWriter writer = new FileWriter(
+				Property.getInstance().getWorkDir() + Property.getInstance().getSeparator() + "SortedId.txt");
+		FileWriter writerFix = new FileWriter(
+				Property.getInstance().getWorkDir() + Property.getInstance().getSeparator() + "FixLink.txt");
+		FileWriter writerClassName = new FileWriter(Property.getInstance().getWorkDir()
+				+ Property.getInstance().getSeparator() + "DescriptionClassName.txt");
 
 		for (Bug bug : list) {
-			writer.write(bug.getBugId() + "\t" + bug.getFixDate()
-					+ Property.getInstance().getLineSeparator());
+			writer.write(bug.getBugId() + "\t" + bug.getFixDate() + Property.getInstance().getLineSeparator());
 
 			writer.flush();
-            for (String fixName : bug.set) {
-				writerFix.write(bug.getBugId()+"\t"+fixName
-						+ Property.getInstance().getLineSeparator());
+			for (String fixName : bug.set) {
+				writerFix.write(bug.getBugId() + "\t" + fixName + Property.getInstance().getLineSeparator());
 				writerFix.flush();
 			}
 			String classnames = extractClassName(bug.getBugDescription());
@@ -148,7 +136,12 @@ public class BugCorpusCreator {
 		writerFix.close();
 	}
 
-	public String extractClassName(String content){
+	/**
+	 * 提取类名
+	 * @param content
+	 * @return
+	 */
+	public String extractClassName(String content) {
 
 		String pattern = "[a-zA-Z_][a-zA-Z0-9_\\-]*\\.java";
 		StringBuffer res = new StringBuffer();
@@ -163,6 +156,13 @@ public class BugCorpusCreator {
 		}
 		return res.toString();
 	}
-
+	
+	public static void main(String[] args) throws IOException {
+		Property.createInstance("C:\\Users\\gzq\\Desktop\\BRTracer\\Dataset\\SWTBugRepository.xml",
+				"C:\\Users\\gzq\\Desktop\\BRTracer\\Dataset\\swt-3.1", "C:\\Users\\gzq\\Desktop\\BRTracer\\tmp", 0.2f, "C:\\Users\\gzq\\Desktop\\BRTracer\\Output", "swt", 1);
+		
+		new BugCorpusCreator().create();
+		System.out.println("Finish");
+	}
 
 }

@@ -6,57 +6,58 @@ import sourcecode.ast.FileDetector;
 import sourcecode.ast.FileParser;
 import utils.Stem;
 import utils.Stopword;
-
 import java.io.*;
-import java.text.ParseException;
-import java.util.HashMap;
 import java.util.TreeSet;
 
+/**
+ * 类名称
+ * 
+ * @author gzq
+ *
+ */
 public class ClassName {
 
-	public ClassName() throws IOException, ParseException {
-
-	}
-
-    public static void main(String[] agrs) throws Exception {
-        new ClassName().create();
-    }
+	/**
+	 * 创建类名文件
+	 * 
+	 * @throws Exception
+	 */
 	public void create() throws Exception {
+		// java文件检测器
 		FileDetector detector = new FileDetector("java");
-		File[] files = detector.detect(Property.getInstance()
-				.getSourceCodeDir());
+		File[] files = detector.detect(Property.getInstance().getSourceCodeDir());
+
+		// 语料库创建
 		ClassName corpusCreator = new ClassName();
 
-		FileWriter writer = new FileWriter(Property.getInstance().getWorkDir()
-				+ Property.getInstance().getSeparator() + "ClassName.txt");
-        FileWriter NameWriter = new FileWriter(Property.getInstance().getWorkDir()+Property.getInstance().getSeparator()+"ClassAndMethodCorpus.txt");
+		FileWriter writer = new FileWriter(
+				Property.getInstance().getWorkDir() + Property.getInstance().getSeparator() + "ClassName.txt");
+		FileWriter NameWriter = new FileWriter(Property.getInstance().getWorkDir()
+				+ Property.getInstance().getSeparator() + "ClassAndMethodCorpus.txt");
 
 		int count = 0;
 
 		TreeSet<String> nameSet = new TreeSet<String>();
-        String name;
 		for (File file : files) {
-			Corpus corpus = corpusCreator.create(file);
+			Corpus corpus = corpusCreator.createCorpus(file);
 
 			if (corpus == null)
 				continue;
 			if (!nameSet.contains(corpus.getJavaFileFullClassName())) {
 				if (corpus.getJavaFileFullClassName().endsWith(".java")) {
-					writer.write(count + "\t"
-							+ corpus.getJavaFileFullClassName()
+					writer.write(count + "\t" + corpus.getJavaFileFullClassName()
 							+ Property.getInstance().getLineSeparator());
-                    NameWriter.write(corpus.getJavaFileFullClassName()+"\t"
-                            + corpus.getContent() + Property.getInstance().getLineSeparator());
+					NameWriter.write(corpus.getJavaFileFullClassName() + "\t" + corpus.getContent()
+							+ Property.getInstance().getLineSeparator());
 				} else {
-					writer.write(count + "\t"
-							+ corpus.getJavaFileFullClassName() + ".java"
+					writer.write(count + "\t" + corpus.getJavaFileFullClassName() + ".java"
 							+ Property.getInstance().getLineSeparator());
-                    NameWriter.write(corpus.getJavaFileFullClassName()+".java"+"\t"
-                            + corpus.getContent() + Property.getInstance().getLineSeparator());
+					NameWriter.write(corpus.getJavaFileFullClassName() + ".java" + "\t" + corpus.getContent()
+							+ Property.getInstance().getLineSeparator());
 
 				}
 				writer.flush();
-                NameWriter.flush();
+				NameWriter.flush();
 				nameSet.add(corpus.getJavaFileFullClassName());
 				count++;
 			}
@@ -64,10 +65,16 @@ public class ClassName {
 		}
 		Property.getInstance().setOriginFileCount(count);
 		writer.close();
-        NameWriter.close();
+		NameWriter.close();
 	}
 
-	public Corpus create(File file) {
+	/**
+	 * 读取文件创建语料库
+	 * 
+	 * @param file
+	 * @return
+	 */
+	public Corpus createCorpus(File file) {
 		FileParser parser = new FileParser(file);
 
 		String fileName = parser.getPackageName();
@@ -76,27 +83,27 @@ public class ClassName {
 		} else {
 			fileName += "." + file.getName();
 		}
-		
+
 		/* modification for AspectJ */
-        if(Property.getInstance().getProject().compareTo("aspectj")==0){
-            fileName = file.getPath();
-		    fileName = fileName.substring(Property.getInstance().getOffset());
-        }
-        /* ************************** */
-        
+		if (Property.getInstance().getProject().compareTo("aspectj") == 0) {
+			fileName = file.getPath();
+			fileName = fileName.substring(Property.getInstance().getOffset());
+		}
+		/* ************************** */
+
 		fileName = fileName.substring(0, fileName.lastIndexOf("."));
 
-        String[] content = parser.getContent();
-        StringBuffer contentBuf = new StringBuffer();
-        for (String word : content) {
-            String stemWord = Stem.stem(word.toLowerCase());
-            if (!(Stopword.isKeyword(word) || Stopword.isEnglishStopword(word))) {
+		String[] content = parser.getContent();
+		StringBuffer contentBuf = new StringBuffer();
+		for (String word : content) {
+			String stemWord = Stem.stem(word.toLowerCase());
+			if (!(Stopword.isKeyword(word) || Stopword.isEnglishStopword(word))) {
 
-                contentBuf.append(stemWord);
-                contentBuf.append(" ");
-            }
-        }
-        
+				contentBuf.append(stemWord);
+				contentBuf.append(" ");
+			}
+		}
+
 		String[] classNameAndMethodName = parser.getClassNameAndMethodName();
 		StringBuffer nameBuf = new StringBuffer();
 
@@ -112,5 +119,14 @@ public class ClassName {
 		corpus.setJavaFileFullClassName(fileName);
 		corpus.setContent(names);
 		return corpus;
+	}
+
+
+	public static void main(String[] agrs) throws Exception {
+		Property.createInstance("C:\\Users\\gzq\\Desktop\\BRTracer\\Dataset\\SWTBugRepository.xml",
+				"C:\\Users\\gzq\\Desktop\\BRTracer\\Dataset\\swt-3.1", "C:\\Users\\gzq\\Desktop\\BRTracer\\tmp", 0.2f, "C:\\Users\\gzq\\Desktop\\BRTracer\\Output", "swt", 1);
+		
+		new ClassName().create();
+		System.out.println("Finish");
 	}
 }

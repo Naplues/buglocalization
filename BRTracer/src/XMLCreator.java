@@ -16,17 +16,13 @@ import org.dom4j.io.OutputFormat;
 import org.dom4j.io.XMLWriter;
 
 public class XMLCreator {
-	public static void main(String[] args) throws Exception {
-		XMLCreator creator = new XMLCreator();
-		creator.buildXML();
-	}
 
 	public void buildXML() throws Exception {
 		Document document = DocumentHelper.createDocument();
 
 		Element root = document.addElement("bugrepository");
 		Bug[] bugs = loadBugInfo();
-		
+
 		for (Bug bug : bugs) {
 			Element bugElement = root.addElement("bug");
 			bugElement.addAttribute("id", bug.bugId);
@@ -81,13 +77,13 @@ public class XMLCreator {
 			openDateLine = openDateLine.substring(openDateLine.indexOf("\t"))
 					.trim();
 			bug.openDate = openDateLine.trim();
-		
+
 
 			String fixDateLine = reader.readLine();
 			fixDateLine = fixDateLine.substring(fixDateLine.indexOf("\t"));
 			bug.fixDate = fixDateLine.trim();
-		
-			
+
+
 			String bugSummaryLine = reader.readLine();
 			bugSummaryLine = bugSummaryLine.substring(
 					bugSummaryLine.indexOf("\t")).trim();
@@ -175,6 +171,11 @@ public class XMLCreator {
 		return fixTable;
 	}
 
+
+	public static void main(String[] args) throws Exception {
+		XMLCreator creator = new XMLCreator();
+		creator.buildXML();
+	}
 }
 
 class Bug {

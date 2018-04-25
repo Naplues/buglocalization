@@ -7,22 +7,16 @@ import java.io.IOException;
 import java.util.Hashtable;
 
 import property.Property;
-
+/**
+ * Bug 相似度
+ * @author gzq
+ *
+ */
 public class BugSimilarity {
 	private int wordCount = Property.getInstance().getBugTermCount();
 	private int bugReportCount = Property.getInstance().getBugReportCount();
 	private String workDir = Property.getInstance().getWorkDir()
 			+ Property.getInstance().getSeparator();
-
-	public static void main(String[] args) {
-		BugSimilarity sim = new BugSimilarity();
-		try {
-			sim.computeSimilarity();
-		} catch (IOException e) {
-
-			e.printStackTrace();
-		}
-	}
 
 	public void computeSimilarity() throws IOException {
 		BufferedReader reader = new BufferedReader(new FileReader(workDir
@@ -100,5 +94,15 @@ public class BugSimilarity {
 		}
 		return vector;
 	}
+	
+	public static void main(String[] args) {
+		
+		BugSimilarity sim = new BugSimilarity();
+		try {
+			sim.computeSimilarity();
+		} catch (IOException e) {
 
+			e.printStackTrace();
+		}
+	}
 }

@@ -1,15 +1,19 @@
 package bug;
 
 import java.util.TreeSet;
-
+/**
+ * Bug 实体类
+ * @author gzq
+ *
+ */
 public class Bug {
 
-	String bugId;
-	String openDate;
-	String fixDate;
-	String bugSummary;
-	String bugDescription;
-	TreeSet<String> set = new TreeSet<String>();
+	String bugId; //bug编号
+	String openDate; //开放日期
+	String fixDate; //修复日期
+	String bugSummary; //标题
+	String bugDescription; //描述
+	TreeSet<String> set = new TreeSet<String>();  //修复集
 
 	public String getBugId() {
 		return bugId;

@@ -18,33 +18,38 @@ import edu.udo.cs.wvtool.main.WVTFileInputList;
 import edu.udo.cs.wvtool.main.WVTool;
 import edu.udo.cs.wvtool.util.WVToolException;
 import edu.udo.cs.wvtool.wordlist.WVTWordList;
-
+/**
+ * Bug 向量
+ * @author gzq
+ *
+ */
 public class BugVector {
 
-	private final static String HOME_FOLDER = Property.getInstance()
-			.getWorkDir() + Property.getInstance().getSeparator();
-	private final static String BUG_CORPUS_FOLDER = "BugCorpus"
-			+ Property.getInstance().getSeparator();
+	private static String HOME_FOLDER;
+	private static String BUG_CORPUS_FOLDER;
 
-	public  void create() throws WVToolException, IOException {
+	public BugVector() {
+		
+		HOME_FOLDER = Property.getInstance().getWorkDir()+ Property.getInstance().getSeparator();
+		BUG_CORPUS_FOLDER = "BugCorpus" + Property.getInstance().getSeparator();
+	}
+	
+	
+	public void create() throws WVToolException, IOException {
 
 		WVTool wvt = new WVTool(false);
 		WVTConfiguration config = new WVTConfiguration();
 		final WVTStemmer porterStemmer = new PorterStemmerWrapper();
-		config.setConfigurationRule(WVTConfiguration.STEP_STEMMER,
-				new WVTConfigurationRule() {
-					public Object getMatchingComponent(WVTDocumentInfo d)
-							throws WVTConfigException {
-						return porterStemmer;
-					}
-				});
+		config.setConfigurationRule(WVTConfiguration.STEP_STEMMER, new WVTConfigurationRule() {
+			public Object getMatchingComponent(WVTDocumentInfo d) throws WVTConfigException {
+				return porterStemmer;
+			}
+		});
 		WVTStemmer stemmer = new LovinsStemmerWrapper();
-		config.setConfigurationRule(WVTConfiguration.STEP_STEMMER,
-				new WVTConfigurationFact(stemmer));
+		config.setConfigurationRule(WVTConfiguration.STEP_STEMMER, new WVTConfigurationFact(stemmer));
 		WVTFileInputList list = new WVTFileInputList(1);
 
-		list.addEntry(new WVTDocumentInfo(HOME_FOLDER + BUG_CORPUS_FOLDER,
-				"txt", "", "english", 0));
+		list.addEntry(new WVTDocumentInfo(HOME_FOLDER + BUG_CORPUS_FOLDER, "txt", "", "english", 0));
 
 		WVTWordList wordList = wvt.createWordList(list, config);
 
@@ -58,13 +63,19 @@ public class BugVector {
 
 		WordVectorWriter wvw = new WordVectorWriter(outFile, true);
 
-		config.setConfigurationRule(WVTConfiguration.STEP_OUTPUT,
-				new WVTConfigurationFact(wvw));
-		config.setConfigurationRule(WVTConfiguration.STEP_VECTOR_CREATION,
-				new WVTConfigurationFact(new TFIDF()));
+		config.setConfigurationRule(WVTConfiguration.STEP_OUTPUT, new WVTConfigurationFact(wvw));
+		config.setConfigurationRule(WVTConfiguration.STEP_VECTOR_CREATION, new WVTConfigurationFact(new TFIDF()));
 
 		wvt.createVectors(list, config, wordList);
 		wvw.close();
 		outFile.close();
+	}
+	
+	public static void main(String[] args) throws WVToolException, IOException {
+		Property.createInstance("C:\\Users\\gzq\\Desktop\\BRTracer\\Dataset\\SWTBugRepository.xml",
+				"C:\\Users\\gzq\\Desktop\\BRTracer\\Dataset\\swt-3.1", "C:\\Users\\gzq\\Desktop\\BRTracer\\tmp", 0.2f, "C:\\Users\\gzq\\Desktop\\BRTracer\\Output", "swt", 1);
+		
+		new BugVector().create();
+		System.out.println("Finish");
 	}
 }

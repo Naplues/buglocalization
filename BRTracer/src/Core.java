@@ -7,18 +7,19 @@ import bug.BugVector;
 import bug.SimilarityDistribution;
 
 public class Core {
-
+	/**
+	 * 处理过程
+	 */
 	public void process() {
 
-
-		try{
+		try {
 			System.out.println("get all class name...");
 			new ClassName().create();
-		} catch( Exception ex ){
+		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
 
-        // ------------bug-------------------------
+		// ------------bug-------------------------
 		try {
 			System.out.println("create bug corpus...");
 			new BugCorpusCreator().create();
@@ -26,7 +27,6 @@ public class Core {
 		} catch (Exception ex) {
 
 		}
-
 
 		try {
 			System.out.println("create bug vector...");
@@ -41,8 +41,6 @@ public class Core {
 
 		}
 
-
-
 		try {
 			System.out.println("create code corpus...");
 			new CodeCorpusCreator_SpiltCorpus().create();
@@ -50,15 +48,12 @@ public class Core {
 			ex.printStackTrace();
 		}
 
+		try {
+			System.out.println("create code corpus origin...");
+			new CodeCorpusCreator_OriginClass().create();
+		} catch (Exception ex) {
 
-
-        try {
-            System.out.println("create code corpus origin...");
-            new CodeCorpusCreator_OriginClass().create();
-        } catch (Exception ex) {
-
-        }
-
+		}
 
 		try {
 			System.out.println("compute SimiScore...");
@@ -75,13 +70,12 @@ public class Core {
 
 		}
 
-        try {
-            System.out.println("create index origin...");
-            new Indexer_OriginClass().index();
-        } catch (Exception ex) {
+		try {
+			System.out.println("create index origin...");
+			new Indexer_OriginClass().index();
+		} catch (Exception ex) {
 
-        }
-
+		}
 
 		try {
 			System.out.println("create vector...");
@@ -101,13 +95,12 @@ public class Core {
 		} catch (Exception ex) {
 
 		}
-		//----------------evaluation--------
+		// ----------------evaluation--------
 
 		try {
 			System.out.println("count LoC...");
 			new LineofCode().beginCount();
-		}
-		catch (Exception ex){
+		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
 
