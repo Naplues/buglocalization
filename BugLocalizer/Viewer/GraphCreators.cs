@@ -15,10 +15,10 @@ namespace Viewer
 
         private readonly Dictionary<string, string> _simMethods = new Dictionary<string, string>()
         {
-            { "VSM", @"Vsm.txt" },
-            { "LSI", @"Lsi\" },
-            { "JSM", @"Jen.txt" },
-            { "PMI", @"Pmi.txt" },
+            //{ "VSM", @"Vsm.txt" },
+            //{ "LSI", @"Lsi\" },
+            //{ "JSM", @"Jen.txt" },
+            //{ "PMI", @"Pmi.txt" },
             { "NGD", @"Ngd.txt" },
             //{ "APM", @"APm.txt" },
         };
@@ -26,10 +26,10 @@ namespace Viewer
         private readonly List<string> _projects = new List<string>()
         {
             //"AspectJ",
-            //"Eclipse",
+            "Eclipse",
             //"JodaTime",
-            "SWT",
-            "ZXing",
+            //"SWT",
+            //"ZXing",
         };
 
         private const string ResultFolderName = @"Results\";

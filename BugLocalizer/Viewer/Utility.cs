@@ -8,9 +8,9 @@ namespace Viewer
 {
     public static class Utility
     {
-        public const string ReportFolderPath = @"C:\Research-Dataset\Bug\Report\";            //根目录文件夹
+        public const string ReportFolderPath = @"D:\Research-Dataset\Bug\Report\";            //根目录文件夹
         public const string CorpusFolderName = @"Corpus\";                                    //语料库文件夹
-        public const string ResultDumpsFolderPath = @"C:\Research-Dataset\Bug\ResultDumps\";  //结果文件夹
+        public const string ResultDumpsFolderPath = @"D:\Research-Dataset\Bug\ResultDumps\";  //结果文件夹
 
         public const int ParallelThreadCount = 1;  //并行线程数
 
