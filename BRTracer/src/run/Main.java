@@ -1,8 +1,10 @@
-import java.io.File;
+package run;
 
+import java.io.File;
 import property.Property;
 
-public class BRTracer {
+public class Main {
+
     public static void main(String[] args) {
         try {
             if (args.length == 0) {
@@ -100,7 +102,6 @@ public class BRTracer {
                         .getAbsolutePath(), alpha, outputFile, projectStr, sourceCodeDir.length());
             }
         }
-
         return isLegal;
     }
 }
