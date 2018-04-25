@@ -11,12 +11,14 @@ import java.util.LinkedList;
  *
  */
 public class Utility {
+    public static  String separator = System.getProperty("file.separator"); // 文件分隔符
+    public static  String lineSeparator = System.getProperty("line.separator"); // 行分隔符
 
-    public static String workDir = "C:\\Users\\gzq\\Desktop\\BRTracer\\";
+    public static String workDir = "C:\\Users\\naplues\\Desktop\\BRTracer" + separator;
     public static String project = "Swt";
     public static String bugFilePath = workDir + project + "\\SWTBugRepository.xml";
-    public static String sourceFileDir = workDir + project + "\\source";
-
+    public static String sourceFileDir = workDir + project + "\\Source\\";
+    public static String outputFileDir = workDir + project + separator + "Output" + separator;
     public static String srcFileType = "java";
     public static int sourceFileCount;
     public static int sourceWordCount;
@@ -29,8 +31,6 @@ public class Utility {
 
     public static int aspectj_filename_offset;
 
-    public static  String separator = System.getProperty("file.separator"); // 文件分隔符
-    public static  String lineSeparator = System.getProperty("line.separator"); // 行分隔符
 
 
     /**

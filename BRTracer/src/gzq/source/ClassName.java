@@ -12,7 +12,7 @@ import java.util.TreeSet;
 
 /**
  * 类名称
- *
+ * 提取源码文件的类和其中的方法
  * @author gzq
  */
 public class ClassName {
@@ -23,20 +23,18 @@ public class ClassName {
      * @throws Exception
      */
     public static void create() throws Exception {
-        // java文件检测器
+        // 检测出所有的源文件
         File[] files = Utility.detectSourceFiles(Utility.sourceFileDir, Utility.srcFileType);
 
-        // 语料库创建
-        ClassName corpusCreator = new ClassName();
-
-        FileWriter writer = new FileWriter(Utility.workDir + Utility.separator + "ClassName.txt");
-        FileWriter NameWriter = new FileWriter(Utility.workDir + Utility.separator + "ClassAndMethodCorpus.txt");
+        FileWriter writer = new FileWriter(Utility.outputFileDir + "ClassName.txt");
+        FileWriter NameWriter = new FileWriter(Utility.outputFileDir + "ClassAndMethodCorpus.txt");
 
         int count = 0;
 
-        TreeSet<String> nameSet = new TreeSet<String>();
+        TreeSet<String> nameSet = new TreeSet<>();
         for (File file : files) {
-            Corpus corpus = corpusCreator.createCorpus(file);
+            //创建语料库
+            Corpus corpus = createCorpus(file);
 
             if (corpus == null)
                 continue;
@@ -60,7 +58,7 @@ public class ClassName {
     }
 
     /**
-     * 读取文件创建语料库
+     * 读取源文件创建对应的语料库
      *
      * @param file
      * @return
@@ -76,7 +74,7 @@ public class ClassName {
         }
 
         /* modification for AspectJ */
-        if (Utility.project.compareTo("aspectj") == 0) {
+        if (Utility.project.compareTo("AspectJ") == 0) {
             fileName = file.getPath();
             fileName = fileName.substring(Utility.aspectj_filename_offset);
         }
@@ -112,8 +110,8 @@ public class ClassName {
         return corpus;
     }
 
-    public static void main(String[] agrs) throws Exception {
-
+    public static void main(String[] args) throws Exception {
+        System.out.println("Getting all class names...");
         ClassName.create();
         System.out.println("Finish");
     }
