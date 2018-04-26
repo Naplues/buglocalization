@@ -1,6 +1,5 @@
 package gzq.source;
 
-import sourcecode.ast.Corpus;
 import sourcecode.ast.FileParser;
 import utils.Stem;
 import utils.Stopword;
@@ -24,41 +23,27 @@ public class ClassName {
      */
     public static Corpus createCorpus(File file) {
         FileParser parser = new FileParser(file);
+        // 文件名 文件内容
         String fileName = parser.getPackageName();
+        String[] content = parser.getContent();
         // fileName = 包名+类名
         if (fileName.trim().equals(""))
             fileName = file.getName();
         else
             fileName += "." + file.getName();
-
         //AspectJ项目处理
         if (Utility.project.compareTo("AspectJ") == 0)
             fileName = file.getPath().substring(Utility.aspectj_filename_offset);
         fileName = fileName.substring(0, fileName.lastIndexOf(".")).replace("\\",".");
 
-        String[] content = parser.getContent();
         StringBuffer contentBuf = new StringBuffer();
-        for (String word : content) {
-            String stemWord = Stem.stem(word.toLowerCase());
-            if (!(Stopword.isKeyword(word) || Stopword.isEnglishStopword(word))) {
-                contentBuf.append(stemWord);
-                contentBuf.append(" ");
-            }
-        }
-
-        String[] classNameAndMethodName = parser.getClassNameAndMethodName();
         StringBuffer nameBuf = new StringBuffer();
-
-        for (String word : classNameAndMethodName) {
-            String stemWord = Stem.stem(word.toLowerCase());
-            nameBuf.append(stemWord + " ");
-        }
-        String names = nameBuf.toString();
-        Corpus corpus = new Corpus();
-        corpus.setJavaFilePath(file.getAbsolutePath());
-        corpus.setJavaFileFullClassName(fileName);
-        corpus.setContent(names);
-        return corpus;
+        for (String word : content)
+            if (!(Stopword.isKeyword(word) || Stopword.isEnglishStopword(word)))
+                contentBuf.append(Stem.stem(word.toLowerCase()) + " ");
+        for (String word : parser.getClassNameAndMethodName())
+            nameBuf.append(Stem.stem(word.toLowerCase()) + " ");
+        return new Corpus(fileName, file.getAbsolutePath(), nameBuf.toString());
     }
 
     /**
@@ -69,35 +54,26 @@ public class ClassName {
     public static void create() throws Exception {
         // 检测出所有的源文件
         File[] files = Utility.detectSourceFiles(Utility.sourceFileDir, Utility.srcFileType);
-
         FileWriter writer = new FileWriter(Utility.outputFileDir + "ClassName.txt");
         FileWriter NameWriter = new FileWriter(Utility.outputFileDir + "ClassAndMethodCorpus.txt");
-
         int count = 0;
-
-        TreeSet<String> nameSet = new TreeSet<>();
+        TreeSet<String> nameSet = new TreeSet<>();  //名称集合
         for (File file : files) {
-            //创建语料库
-            Corpus corpus = createCorpus(file);
-
+            Corpus corpus = createCorpus(file); //创建语料库
             if (corpus == null)
                 continue;
             if (!nameSet.contains(corpus.getJavaFileFullClassName())) {
-                if (corpus.getJavaFileFullClassName().endsWith(".java")) {
-                    writer.write(count + "\t" + corpus.getJavaFileFullClassName() + Utility.lineSeparator);
-                    NameWriter.write(corpus.getJavaFileFullClassName() + "\t" + corpus.getContent() + Utility.lineSeparator);
-                } else {
-                    writer.write(count + "\t" + corpus.getJavaFileFullClassName() + ".java" + Utility.lineSeparator);
-                    NameWriter.write(corpus.getJavaFileFullClassName() + ".java" + "\t" + corpus.getContent() + Utility.lineSeparator);
-                }
+                writer.write(count + "\t" + corpus.getJavaFileFullClassName() + ".java" + Utility.lineSeparator);
+                NameWriter.write(corpus.getJavaFileFullClassName() + ".java" + "\t" + corpus.getContent() + Utility.lineSeparator);
                 writer.flush();
                 NameWriter.flush();
                 nameSet.add(corpus.getJavaFileFullClassName());
                 count++;
             }
         }
-        Utility.originFileCount = count;
+        Utility.originFileCount = count; //原始文件数
         writer.close();
         NameWriter.close();
+        Utility.writeConfig("originFileCount", Utility.originFileCount + Utility.lineSeparator);  //写入配置
     }
 }

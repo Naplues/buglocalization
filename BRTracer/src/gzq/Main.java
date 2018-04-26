@@ -15,7 +15,7 @@ public class Main {
         System.out.println("2. Creating bug corpus...");
         BugCorpus.create();
         System.out.println("Finish");
-/*
+
         System.out.println("3. Creating bug vector...");
         BugVector.create();
         System.out.println("Finish");
@@ -23,7 +23,7 @@ public class Main {
         System.out.println("4. Computing bug similarity...");
         BugSimilarity.computeSimilarity();
         System.out.println("Finish");
-
+/*
         System.out.println("5. Creating code corpus...");
         CodeCorpus_SpiltCorpus.create();
         System.out.println("Finish");

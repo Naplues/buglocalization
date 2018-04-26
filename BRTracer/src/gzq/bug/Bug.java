@@ -22,6 +22,11 @@ public class Bug {
     String bugDescription;
     TreeSet<String> set = new TreeSet<>();
 
+    public Bug(String bugId, String openDate, String fixDate) {
+        this.bugId = bugId;
+        this.openDate = openDate;
+        this.fixDate = fixDate;
+    }
 
     public String getBugId() {
         return bugId;

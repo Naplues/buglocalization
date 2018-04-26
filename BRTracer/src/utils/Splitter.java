@@ -12,19 +12,14 @@ public class Splitter {
                 wordBuffer.append(c);
             } else {
                 String word = wordBuffer.toString();
-                if (!word.equals("")) {
-                    wordList.add(word);
-                }
+                if (!word.equals("")) wordList.add(word);
                 wordBuffer = new StringBuffer();
             }
         }
 
         if (wordBuffer.length() != 0) {
             String word = wordBuffer.toString();
-            if (!word.equals("")) {
-                wordList.add(word);
-            }
-            wordBuffer = new StringBuffer();
+            if (!word.equals("")) wordList.add(word);
         }
         return wordList.toArray(new String[wordList.size()]);
     }

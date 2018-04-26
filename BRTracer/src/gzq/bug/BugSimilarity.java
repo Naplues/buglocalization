@@ -21,9 +21,7 @@ public class BugSimilarity {
 	 * @return
 	 */
 	private static float getCosineValue(float[] firstVector, float[] secondVector) {
-		float len1 = 0;
-		float len2 = 0;
-		float product = 0;
+		float len1 = 0, len2 = 0, product = 0;
 		for (int i = 0; i < Utility.bugTermCount; i++) {
 			len1 += firstVector[i] * firstVector[i];
 			len2 += secondVector[i] * secondVector[i];

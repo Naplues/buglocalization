@@ -1,7 +1,9 @@
 package utils;
 
-import java.io.File;
+import java.io.*;
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 /**
  * 功效类，定义了项目运行的各项配置信息
@@ -16,7 +18,7 @@ public class Utility {
 
     public static String project = "AspectJ";
     private static String bugXMLFile = "AspectJBugRepository.xml";
-    public static String workDir = "C:\\Users\\gzq\\Desktop\\BRTracer" + separator;
+    public static String workDir = "C:\\Users\\naplues\\Desktop\\BRTracer" + separator;
     public static String bugFilePath = workDir + project + separator + bugXMLFile;
     public static String sourceFileDir = workDir + project + "\\Source\\";
     public static String outputFileDir = workDir + project + separator + "Output" + separator;
@@ -91,5 +93,28 @@ public class Utility {
      */
     public static float getIdfValue(double docCount, double totalCount) {
         return (float) Math.log(totalCount / docCount);
+    }
+
+    /**
+     * 写入配置
+     * @param name
+     * @param value
+     */
+    public static void writeConfig(String name, String value) throws IOException{
+        BufferedReader reader = new BufferedReader(new FileReader(Utility.outputFileDir + "Config.txt"));
+        List lines = new ArrayList();
+        String line;
+        while ((line = reader.readLine()) != null)
+            lines.add(line.toString());
+
+        FileWriter configWriter = new FileWriter(Utility.outputFileDir + "Config.txt");
+        for(int i = 0;i<lines.size();i++)
+            configWriter.write(lines.get(i).toString() + lineSeparator);
+        configWriter.write(name + ":" + value + lineSeparator);
+        configWriter.close();
+    }
+
+    public static void readConfig(){
+
     }
 }
