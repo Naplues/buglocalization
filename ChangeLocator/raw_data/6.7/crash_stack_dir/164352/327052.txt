@@ -1,0 +1,13 @@
+java.lang.NullPointerException
+        at org.netbeans.modules.java.j2seproject.ui.wizards.NewJ2SEProjectWizardIterator.instantiate(NewJ2SEProjectWizardIterator.java:214)
+        at org.openide.loaders.TemplateWizard$InstantiatingIteratorBridge.instantiate(TemplateWizard.java:1016)
+        at org.openide.loaders.TemplateWizard.handleInstantiate(TemplateWizard.java:588)
+        at org.openide.loaders.TemplateWizard.instantiateNewObjects(TemplateWizard.java:409)
+        at org.openide.loaders.TemplateWizardIterImpl.instantiate(TemplateWizardIterImpl.java:253)
+        at org.openide.loaders.TemplateWizardIteratorWrapper.instantiate(TemplateWizardIteratorWrapper.java:165)
+        at org.openide.WizardDescriptor.callInstantiateOpen(WizardDescriptor.java:1524)
+        at org.openide.WizardDescriptor.callInstantiate(WizardDescriptor.java:1481)
+        at org.openide.WizardDescriptor.access$1700(WizardDescriptor.java:127)
+        at org.openide.WizardDescriptor$Listener$2$1.run(WizardDescriptor.java:2052)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:577)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1030)

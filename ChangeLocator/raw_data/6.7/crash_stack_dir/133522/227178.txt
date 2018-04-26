@@ -1,0 +1,12 @@
+java.lang.NullPointerException: Must pass a non-null filename
+        at org.netbeans.spi.project.support.ant.AntProjectHelper.resolveFileObject(AntProjectHelper.java:1243)
+        at org.netbeans.modules.java.j2seproject.ui.customizer.J2SEProjectProperties$1.run(J2SEProjectProperties.java:429)
+        at org.netbeans.modules.java.j2seproject.ui.customizer.J2SEProjectProperties$1.run(J2SEProjectProperties.java:424)
+        at org.openide.util.Mutex.writeAccess(Mutex.java:433)
+        at org.netbeans.modules.java.j2seproject.ui.customizer.J2SEProjectProperties.save(J2SEProjectProperties.java:424)
+        at org.netbeans.modules.java.j2seproject.ui.customizer.CustomizerProviderImpl$StoreListener.actionPerformed(CustomizerProviderImpl.java:160)
+        at org.netbeans.modules.project.uiapi.CustomizerDialog$OptionListener$2$1.run(CustomizerDialog.java:277)
+        at org.openide.util.Mutex.writeAccess(Mutex.java:394)
+        at org.netbeans.modules.project.uiapi.CustomizerDialog$OptionListener$2.run(CustomizerDialog.java:273)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:577)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1030)

@@ -1,0 +1,13 @@
+java.lang.NullPointerException
+        at org.netbeans.modules.apisupport.project.universe.TestEntry.getNBRoot(TestEntry.java:161)
+        at org.netbeans.modules.apisupport.project.universe.TestEntry.getNetBeansOrgPath(TestEntry.java:171)
+        at org.netbeans.modules.apisupport.project.universe.TestEntry.getSrcDir(TestEntry.java:125)
+        at org.netbeans.modules.apisupport.project.queries.GlobalSourceForBinaryImpl.findSourceRoots(GlobalSourceForBinaryImpl.java:111)
+        at org.netbeans.api.java.queries.SourceForBinaryQuery.findSourceRoots2(SourceForBinaryQuery.java:123)
+        at org.netbeans.modules.parsing.impl.indexing.PathRegistry.createResources(PathRegistry.java:480)
+        at org.netbeans.modules.parsing.impl.indexing.PathRegistry.getSources(PathRegistry.java:187)
+        at org.netbeans.modules.java.source.ui.JavaTypeProvider.computeTypeNames(JavaTypeProvider.java:156)
+        at org.netbeans.modules.jumpto.type.GoToTypeAction$Worker.getTypeNames(GoToTypeAction.java:452)
+        at org.netbeans.modules.jumpto.type.GoToTypeAction$Worker.run(GoToTypeAction.java:388)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:577)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1030)

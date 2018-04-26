@@ -1,0 +1,12 @@
+java.lang.IllegalArgumentException: The given fqn [ru.redgrass.pay.component.RoundedCornersPanelLight] does not represent a fully qualified class name
+        at org.netbeans.modules.j2ee.core.api.support.java.JavaIdentifiers.checkFQN(JavaIdentifiers.java:144)
+        at org.netbeans.modules.j2ee.core.api.support.java.JavaIdentifiers.unqualify(JavaIdentifiers.java:115)
+        at org.netbeans.modules.web.refactoring.rename.WebXmlMove.getRenameItems(WebXmlMove.java:64)
+        at org.netbeans.modules.web.refactoring.rename.BaseWebXmlRename.prepare(BaseWebXmlRename.java:68)
+        at org.netbeans.modules.web.refactoring.WebRefactoringPlugin.prepare(WebRefactoringPlugin.java:71)
+        at org.netbeans.modules.refactoring.api.AbstractRefactoring.pluginsPrepare2(AbstractRefactoring.java:406)
+        at org.netbeans.modules.refactoring.api.AbstractRefactoring.pluginsPrepare(AbstractRefactoring.java:390)
+        at org.netbeans.modules.refactoring.api.AbstractRefactoring.prepare(AbstractRefactoring.java:207)
+        at org.netbeans.modules.refactoring.spi.impl.ParametersPanel$Prepare.run(ParametersPanel.java:787)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:572)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:997)

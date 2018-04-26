@@ -1,0 +1,10 @@
+java.lang.NullPointerException
+        at org.netbeans.modules.maven.graph.ArtifactWidget.<init>(ArtifactWidget.java:124)
+        at org.netbeans.modules.maven.graph.DependencyGraphScene.attachNodeWidget(DependencyGraphScene.java:184)
+        at org.netbeans.modules.maven.graph.DependencyGraphScene.attachNodeWidget(DependencyGraphScene.java:95)
+        at org.netbeans.api.visual.graph.GraphScene.addNode(GraphScene.java:97)
+        at org.netbeans.modules.maven.graph.GraphConstructor.endVisit(GraphConstructor.java:129)
+        at org.apache.maven.shared.dependency.tree.DependencyNode.accept(DependencyNode.java:317)
+        at org.netbeans.modules.maven.graph.DependencyGraphTopComponent$8.run(DependencyGraphTopComponent.java:416)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:577)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1030)

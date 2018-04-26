@@ -1,0 +1,5 @@
+java.lang.NullPointerException
+        at org.netbeans.modules.php.project.ProjectPropertiesSupport.getEncoding(ProjectPropertiesSupport.java:209)
+        at org.netbeans.modules.php.project.ui.actions.support.DebugScript$1.run(DebugScript.java:72)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1424)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1968)

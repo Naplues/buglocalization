@@ -1,0 +1,13 @@
+java.lang.NullPointerException: The newFqn parameter cannot be null
+        at org.openide.util.Parameters.notNull(Parameters.java:89)
+        at org.openide.util.Parameters.notEmpty(Parameters.java:104)
+        at org.netbeans.modules.web.refactoring.rename.RenameItem.<init>(RenameItem.java:67)
+        at org.netbeans.modules.web.refactoring.rename.WebXmlPackageRename.getRenameItems(WebXmlPackageRename.java:80)
+        at org.netbeans.modules.web.refactoring.rename.BaseWebXmlRename.prepare(BaseWebXmlRename.java:73)
+        at org.netbeans.modules.web.refactoring.WebRefactoringPlugin.prepare(WebRefactoringPlugin.java:74)
+        at org.netbeans.modules.refactoring.api.AbstractRefactoring.pluginsPrepare2(AbstractRefactoring.java:422)
+        at org.netbeans.modules.refactoring.api.AbstractRefactoring.pluginsPrepare(AbstractRefactoring.java:406)
+        at org.netbeans.modules.refactoring.api.AbstractRefactoring.prepare(AbstractRefactoring.java:217)
+        at org.netbeans.modules.refactoring.spi.impl.ParametersPanel$Prepare.run(ParametersPanel.java:807)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1418)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1957)

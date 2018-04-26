@@ -1,0 +1,6 @@
+java.lang.IllegalArgumentException: MasterFileObject[D:\JIH's Documents\Manual\Hibernate\????_??_JAVA????_Hibernate000_????????\????????\hibernate012_many2many_uni\src\com\bjpowernode\hibernate\ExportDB.java@1a9be19:8cc74f,valid=true] is not inside MasterFileObject[D:\JIH's Documents\Manual\Hibernate\????_??_JAVA????_Hibernate000_????????\????????\hibernate012_many2many_uni\src@7f803e:1f8f488,valid=true]
+        at org.netbeans.spi.project.support.ant.SourcesHelper$SourceRoot$Group.contains(SourcesHelper.java:201)
+        at org.netbeans.spi.java.project.support.ui.PackageViewChildren$NoFoldersDataFilter.acceptFileObject(PackageViewChildren.java:1224)
+        at org.openide.loaders.FolderChildren$1R.run(FolderChildren.java:163)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1418)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1957)

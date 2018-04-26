@@ -1,0 +1,12 @@
+java.lang.IllegalArgumentException: C:\Java Workspace\NileUStudio\UMSAdmissionApp\test\.svn is not inside C:\Java Workspace\NileUStudio\UMSAdmissionApp\test
+        at org.netbeans.spi.project.support.ant.SourcesHelper$SourceRoot$Group.contains(SourcesHelper.java:180)
+        at org.netbeans.spi.java.project.support.ui.TreeRootNode$GroupDataFilter.acceptFileObject(TreeRootNode.java:245)
+        at org.openide.loaders.FolderChildren$1R.run(FolderChildren.java:157)
+        at org.openide.util.Mutex$1Exec.run(Mutex.java:1239)
+        at org.openide.nodes.Children$ProjectManagerDeadlockDetector.execute(Children.java:1796)
+        at org.openide.util.Mutex.postRequest(Mutex.java:1245)
+        at org.openide.util.Mutex.postRequest(Mutex.java:1209)
+        at org.openide.util.Mutex.postWriteRequest(Mutex.java:582)
+        at org.openide.loaders.FolderChildren$1R.run(FolderChildren.java:139)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:572)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:997)

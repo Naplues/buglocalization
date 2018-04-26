@@ -1,0 +1,1108 @@
+bucket ID	build ID	summary	component	sub-component	bug	is resolved?
+196224	081110	IllegalArgumentException: Null folder	java	Project	enter	false
+89091	101108	java.io.IOException: read past EOF	projects	Maven	151474	true
+179136	081110	NullPointerException at org.netbeans.modules.refactoring.spi	editor	Refactoring	enter	false
+178783	081110	org.openide.util.MutexException: java.io.FileNotFoundExcepti	projects	Maven	enter	false
+172031	081110	org.openide.util.MutexException: java.io.FileNotFoundExcepti	projects	Maven	enter	false
+171927	081110	reflect.UndeclaredThrowableException at $Proxy13.actionPerfo	php	Project	enter	false
+171157	081110	java.net.MalformedURLException at org.netbeans.modules.php.p	php	Project	enter	false
+153556	101115	StackOverflowError at org.openide.filesystems.FileObject.get	apisupport	Project	177479	true
+149264	090624	org.apache.maven.embedder.MavenEmbedderException: Unable to	projects	Maven	enter	false
+18649	110925	IllegalArgumentException at org.netbeans.modules.refactoring	editor	Refactoring	163663	true
+158379	090624	IllegalArgumentException at org.netbeans.api.java.source.Sou	java	Project	enter	false
+4133	110929	java.io.IOException: file:/C:/Users/Mark/Documents/NetBeansP	editor	Refactoring	203194	true
+164319	081110	NullPointerException at org.sonatype.nexus.index.DefaultNexu	projects	Maven	enter	false
+163265	081205	reflect.UndeclaredThrowableException at $Proxy23.actionPerfo	java	Project	enter	false
+159989	081110	AssertionError: release/libs/jdom.zip	apisupport	project	enter	false
+153267	090624	NullPointerException: The platformKey parameter cannot be nu	java	Project	168124	true
+151373	090306	NoClassDefFoundError: org/netbeans/modules/uml/ui/swing/draw	uml	project	enter	false
+133960	090407	NullPointerException at org.netbeans.modules.ruby.elements.A	ruby	Refactoring	151780	true
+482	081110	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	134404	true
+147666	090312	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	160387	true
+153265	090806	NullPointerException at org.netbeans.modules.java.project.Ja	java	Project	168274	true
+170762	100610	IllegalArgumentException: Called DataObject.find on null	editor	Refactoring	187744	true
+152374	090821	NullPointerException: The classPath parameter cannot be null	java	Project	171140	true
+152336	101108	NullPointerException at org.netbeans.modules.refactoring.spi	editor	Refactoring	enter	false
+22056	081110	NullPointerException at org.netbeans.modules.refactoring.spi	java	Refactoring	166391	true
+151229	091204	NullPointerException: The bootPath parameter cannot be null	java	Refactoring	enter	false
+151584	081110	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	165732	true
+87544	091121	java.nio.charset.UnsupportedCharsetException: TIS-620	php	Project	enter	false
+150524	091101	NullPointerException at org.sonatype.nexus.index.DefaultNexu	projects	Maven	171300	true
+150462	081110	NullPointerException at org.netbeans.modules.php.project.cla	php	project	enter	false
+27599	090618	reflect.UndeclaredThrowableException at $Proxy18.actionPerfo	platform	Templates	167240	true
+150197	081110	NullPointerException at org.netbeans.modules.maven.NbMavenPr	projects	Maven	163842	true
+70564	090624	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	Project	enter	false
+149830	090723	NullPointerException at java.nio.charset.Charset.put	php	project	enter	false
+149801	101108	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	Project	enter	false
+149792	081110	reflect.UndeclaredThrowableException at $Proxy23.actionPerfo	apisupport	project	enter	false
+118307	081110	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	148337	true
+149666	081110	NullPointerException: Name is null	php	project	enter	false
+149664	081110	NullPointerException: Name is null	php	project	enter	false
+149663	090515	org.apache.maven.extension.ExtensionScanningException: Error	projects	Maven	enter	false
+42318	081110	IllegalArgumentException: fileObject == null	java	Refactoring	131692	true
+55032	120301	org.apache.maven.artifact.InvalidArtifactRTException: For ar	projects	Maven	164998	true
+78322	091204	OutOfMemoryError: Java heap space	projects	Maven	168806	true
+149446	120905	org.netbeans.modules.masterfs.filebasedfs.utils.FSException:	javafx	Project	217907	true
+116703	120503	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	202030	true
+149239	111130	java.util.NoSuchElementException at java.util.LinkedList.get	editor	Refactoring	199280	true
+139257	110218	ArrayIndexOutOfBoundsException: 0	ruby	Project	195711	true
+130901	090626	UnsupportedOperationException at org.netbeans.api.java.proje	java	Project	enter	false
+148411	081110	reflect.UndeclaredThrowableException at $Proxy13.actionPerfo	web	project	enter	false
+148390	081110	NullPointerException at org.netbeans.modules.uml.project.UML	uml	project	enter	false
+67756	081110	ClassCastException at java.lang.Class.cast	apisupport	Project	161212	true
+80721	090506	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	Project	142157	true
+147703	081110	java.io.IOException: invalid header field	apisupport	Project	160445	true
+147595	090306	IllegalArgumentException: Path ends with slash	php	Project	enter	false
+29060	091204	IllegalArgumentException: Not a DataFolder: H:\Eigene Dateie	java	Project	179416	true
+147410	081110	ArrayIndexOutOfBoundsException: 6	apisupport	project	enter	false
+80198	090306	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	134854	true
+14180	090415	OutOfMemoryError: Java heap space	projects	Maven	157450	true
+60774	111207	NullPointerException at org.netbeans.modules.spring.beans.ui	projects	Maven	136227	true
+147057	090306	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	project	enter	false
+146993	101115	NullPointerException at org.netbeans.modules.maven.webframew	javaee	Maven	enter	false
+120395	090306	IllegalArgumentException: Tried to pass null folder arg	php	project	enter	false
+146872	100420	NullPointerException: The bootPath parameter cannot be null	java	Refactoring	159355	true
+146719	110728	IllegalArgumentException: URI is not hierarchical	java	Project	198873	true
+12160	091021	IllegalArgumentException: Already a project in G:\attendbyvi	ruby	Project	150390	true
+146595	090624	OutOfMemoryError: Java heap space	javascript	Refactoring	170004	true
+146543	100420	NullPointerException at org.openide.filesystems.FileUtil.toF	php	Project	187075	true
+146440	150619	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	224777	true
+94443	090306	IllegalArgumentException: C:\wamp\www\moodle-weekly-19\moodl	php	Project	150015	true
+146339	090406	ClassCastException: org.netbeans.tax.TreeComment cannot be c	apisupport	Project	162734	true
+146338	091204	NullPointerException at org.netbeans.modules.uml.project.UML	uml	Project	188650	false
+146284	090424	NullPointerException at org.netbeans.modules.ruby.rubyprojec	ruby	Project	165992	true
+146236	081110	NullPointerException at javax.swing.SwingUtilities.getWindow	uml	project	enter	false
+146227	090605	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	project	enter	false
+55940	151022	org.jdom.IllegalDataException: The data "-XX:+UnlockCommerci	projects	Maven	267901	false
+146226	090723	OutOfMemoryError: Java heap space	projects	Maven	enter	false
+139354	090306	ClassCastException: org.apache.maven.wagon.providers.http.Ht	projects	Maven	enter	false
+146173	111207	ClassFormatError: Unknown constant tag 30 in class file sun/	java	Project	158384	true
+125971	090306	NullPointerException at org.netbeans.modules.refactoring.api	editor	Refactoring	148675	true
+146045	090407	NullPointerException at org.netbeans.modules.cnd.makeproject	cnd	Project	159227	true
+165357	100215	NullPointerException: Passed null to FileOwnerQuery.getOwner	apisupport	Project	180872	true
+145923	120410	NullPointerException at java.util.TreeMap.getEntry	java	Project	enter	false
+145881	100826	IllegalArgumentException: TreePathHandle [/Volumes/Work/NetB	java	Refactoring	enter	false
+145867	100211	NullPointerException: The treePath parameter cannot be null	java	Refactoring	179475	true
+144941	101108	org.apache.maven.project.InvalidProjectModelException: Faile	projects	Maven	172570	true
+18347	120410	java.io.IOException: file:/C:/development/vervepayday/src/ma	editor	Refactoring	151013	true
+21754	091204	IllegalStateException: Missing dorun script.	cnd	Project	enter	false
+145679	090723	java.io.IOException: No suite.dir defined from /home/guan/of	apisupport	Project	163109	true
+138242	090817	IllegalStateException: Error in org.openide.nodes.EntrySuppo	projects	Maven	162541	true
+145674	101015	UnsupportedOperationException: Project in /home/lifeisfoo/de	java	Project	enter	false
+144961	090310	NullPointerException at org.netbeans.modules.maven.spi.actio	projects	Maven	159698	true
+145516	081110	java.io.IOException: Unevaluated properties in ${nbplatform.	apisupport	project	enter	false
+145505	111107	IllegalArgumentException: MasterFileObject[C:\Users\Richard\	java	Project	157361	true
+95092	090306	AbstractMethodError: org.netbeans.modules.maven.j2ee.J2EEPre	projects	Maven	158721	true
+134708	081110	java.io.SyncFailedException: /home/vagninu/projects/test-ice	projects	Maven	160803	true
+145431	100529	java.io.IOException: java.io.IOException: error=24, Too many	projects	Maven	157266	true
+139097	081205	NoClassDefFoundError: org/netbeans/spi/java/project/support/	java	Project	158396	true
+135784	090306	LinkageError: Class com/sun/xml/rpc/processor/generator/Name	apisupport	project	enter	false
+136319	090624	ClassCastException: com.sun.tools.javac.tree.JCTree$JCPrimit	projects	Maven	162595	true
+138530	090306	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	152993	true
+145149	100322	NullPointerException at org.netbeans.modules.java.api.common	java	Project	182558	true
+46514	090306	IllegalArgumentException: The given fqn [it.emmeduei.OlyTell	javaee	Refactoring	156699	true
+133244	090407	IllegalArgumentException: Invalid ClassPath root: file:/C:/U	java	Project	152227	true
+145095	091002	org.openide.filesystems.FileStateInvalidException: File java	projects	Maven	173915	true
+145039	081110	NoClassDefFoundError: org/netbeans/modules/web/project/WebPr	web	project	enter	false
+82753	120301	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	enter	false
+68	090723	org.openide.filesystems.FSException: Error in JAR file C:\Do	projects	Maven	147178	true
+144329	090424	org.xml.sax.SAXParseException: Content is not allowed in pro	projects	Maven	161635	true
+53611	100610	ClassCastException: com.sun.tools.javac.code.Symbol$MethodSy	java	Refactoring	enter	false
+16591	090323	OutOfMemoryError: Java heap space	projects	Maven	161137	true
+102881	081110	NullPointerException at org.netbeans.modules.maven.j2ee.Exec	javaee	Maven	145786	true
+133522	090826	NullPointerException: Must pass a non-null filename	java	Project	153335	true
+144854	081110	java.net.MalformedURLException: Illegal character in hostnam	php	project	enter	false
+144850	100531	org.openide.filesystems.FileStateInvalidException: MasterFil	java	Refactoring	187268	true
+54619	090407	OutOfMemoryError: Java heap space	projects	Maven	153779	true
+144527	090605	NullPointerException: Attempted to pass a null filename to r	java	Project	155761	true
+109772	101108	StringIndexOutOfBoundsException: String index out of range:	java	Project	157861	true
+72029	091121	java.io.IOException: /home/richarda/FEMSService_case_1308323	uml	Project	138957	true
+19454	110408	ArrayIndexOutOfBoundsException: -1	java	Refactoring	152998	true
+144668	090306	NullPointerException at org.netbeans.spi.java.project.suppor	java	Project	enter	false
+144560	091204	NullPointerException at java.io.Writer.	cnd	Project	enter	false
+144547	081110	NullPointerException: The file parameter cannot be null	php	Project	155810	true
+144474	081110	NullPointerException at org.netbeans.modules.refactoring.api	php	Refactoring	155667	true
+144461	090306	IllegalArgumentException: Tried to pass null fo arg	apisupport	Project	155618	true
+133562	081110	org.openide.util.MutexException: org.sonatype.nexus.index.co	projects	Maven	156810	true
+135868	100420	java.io.IOException: invalid header field	apisupport	Project	175330	true
+110273	090723	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	Project	147502	true
+144392	091021	NullPointerException at org.netbeans.modules.maven.MavenProj	projects	Maven	168543	true
+144391	081110	NullPointerException at org.netbeans.modules.maven.NbMavenPr	projects	Maven	160469	true
+144343	081113	java.util.MissingResourceException: Can't find resource for	python	project	enter	false
+8812	081110	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	project	enter	false
+33583	081110	java.io.IOException: Section did not start with Name	apisupport	Project	129194	true
+42983	100728	java.io.SyncFailedException: C:\Users\Eka\Dropbox\Progra Poo	java	Project	131943	true
+144253	081110	reflect.InvocationTargetException at java.awt.EventQueue.inv	apisupport	project	enter	false
+119504	110408	org.xml.sax.SAXParseException: Content is not allowed in pro	projects	Maven	156916	true
+143648	081230	IllegalArgumentException: Model source is read-only.	projects	Maven	154431	true
+5874	090306	NullPointerException at org.netbeans.modules.refactoring.spi	java	Refactoring	156401	true
+152176	110728	java.io.IOException: No such file or directory	projects	Maven	166500	true
+121629	090306	NullPointerException at org.netbeans.modules.cnd.makeproject	cnd	Project	148834	true
+75311	091214	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	Project	144758	true
+7612	120301	StackOverflowError at org.netbeans.modules.search.BufferedCh	java	Project	154894	true
+124786	111111	IllegalStateException: Should not acquire Children.MUTEX whi	java	Project	150540	true
+27498	110408	IllegalStateException: No classpath for MasterFileObject[/ho	java	Refactoring	159228	true
+144040	081110	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	project	enter	false
+4790	081110	ExceptionInInitializerError at org.netbeans.modules.uml.code	uml	Project	146421	true
+143990	101115	java.io.IOException: java.io.IOException: error=2, No such f	ruby	Project	enter	false
+143970	081110	ArrayIndexOutOfBoundsException: 0	php	project	enter	false
+61395	081110	IllegalStateException: The internal default plexus-bootstrap	projects	Maven	154755	true
+1347	090723	ArrayIndexOutOfBoundsException: 8 >= 3	editor	Refactoring	116030	true
+123	130605	ArrayIndexOutOfBoundsException: 3184	java	Project	124804	true
+143887	151022	UnsupportedOperationException: No project found to correspon	java	Project	249397	false
+10961	120118	IllegalArgumentException: Invalid ClassPath root: file:/D:/P	java	Project	146359	true
+139911	091204	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	Project	enter	false
+111250	090723	IllegalStateException: The data object J:\workspace\ClienteD	java	Project	162303	true
+143726	081110	java.io.FileNotFoundException: Menu/&Relat?rios	apisupport	project	enter	false
+46813	090624	IllegalStateException at org.netbeans.modules.apisupport.pro	apisupport	Project	enter	false
+137162	081126	IllegalArgumentException: The given fqn [my.http.form.contro	javaee	Refactoring	153886	true
+51907	090918	NullPointerException at org.nbheaven.sqe.core.ant.AntUtiliti	projects	Maven	147203	true
+12950	111205	NullPointerException at org.netbeans.modules.uml.project.ui.	uml	Project	123392	true
+142931	090723	NullPointerException at org.netbeans.modules.php.project.con	php	Project	170828	true
+49155	090306	NullPointerException at org.netbeans.modules.php.project.ui.	php	project	enter	false
+105870	100326	NullPointerException: The classPath parameter cannot be null	java	Project	149306	true
+133419	081110	java.io.IOException at org.netbeans.api.java.source.Modifica	java	Refactoring	151572	true
+135842	090306	ArrayIndexOutOfBoundsException: 0	php	Project	166338	true
+48502	091204	java.io.IOException: /home/tomas/Dropbox/PFG/ServandoUML/.Qu	uml	Project	166208	false
+131449	090723	NullPointerException at java.io.File.	projects	Maven	150832	true
+46880	081110	IllegalArgumentException: URL must be a folder URL (append '	apisupport	project	enter	false
+141473	081110	NullPointerException at javax.swing.tree.DefaultTreeModel.is	apisupport	project	enter	false
+141301	111207	NullPointerException at org.netbeans.modules.ruby.rubyprojec	ruby	Project	enter	false
+62573	101108	IllegalStateException: Artifact org.apache.openejb:xbean-ref	projects	Maven	188871	true
+141188	081110	java.io.FileNotFoundException: Toolbars/&Search	apisupport	project	enter	false
+119093	090306	java.io.IOException: Cannot run program "C:\Program" (in dir	cnd	Project	148552	true
+132882	090306	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	151288	true
+122715	090306	NullPointerException: Must pass a non-null path	php	Project	150499	true
+136364	090519	NullPointerException at org.netbeans.modules.maven.nodes.Sou	projects	Maven	152418	true
+140651	090626	NullPointerException at org.netbeans.modules.maven.j2ee.web.	projects	Maven	167151	true
+132903	120503	java.io.SyncFailedException: C:\Users\daniel\Documents\NetBe	projects	Maven	152366	true
+127523	090407	NullPointerException at java.util.regex.Matcher.getTextLengt	php	Project	152532	true
+162645	090826	java.lang.NullPointerException	cnd	Project	177368	true
+158379	090624	IllegalArgumentException at org.netbeans.api.java.source.Sou	java	Project	enter	false
+153816	090723	java.util.MissingResourceException: No such bundle org.netbe	java	Project	191366	true
+163291	090723	NullPointerException at org.netbeans.modules.cnd.makeproject	cnd	Project	enter	false
+46813	090624	IllegalStateException at org.netbeans.modules.apisupport.pro	apisupport	Project	enter	false
+68	090723	org.openide.filesystems.FSException: Error in JAR file C:\Do	projects	Maven	147178	true
+169284	090624	UnsupportedOperationException at org.netbeans.api.java.proje	java	Project	enter	false
+158323	100215	UnsupportedOperationException at org.netbeans.api.java.proje	java	Project	enter	false
+167597	090626	ClassFormatError: org/netbeans/modules/java/api/common/queri	java	Project	enter	false
+166774	090624	NullPointerException at org.netbeans.modules.maven.cos.CosCh	projects	Maven	enter	false
+158356	101108	NullPointerException at org.openide.filesystems.FileUtil.toF	php	Project	186887	true
+166674	090624	java.io.IOException: error=12, Not enough space	projects	Maven	enter	false
+166324	090723	ClassCastException: com.sun.tools.javac.code.Symbol$MethodSy	java	Refactoring	enter	false
+165900	090624	NullPointerException at org.netbeans.modules.cnd.makeproject	cnd	Project	enter	false
+152135	091121	NullPointerException: The fileObject parameter cannot be nul	java	Project	174170	true
+160138	111207	org.xml.sax.SAXParseException: The markup declarations conta	projects	Maven	175092	true
+157674	100326	NullPointerException at org.netbeans.modules.java.j2seprojec	java	Project	178886	true
+164352	130213	NullPointerException at org.netbeans.modules.java.j2seprojec	java	Project	225698	true
+163507	090624	NoSuchMethodError: org.netbeans.spi.project.support.ant.Sour	java	Project	enter	false
+163409	130709	java.net.URISyntaxException: Illegal character in path at in	java	Project	233024	true
+162550	091021	NullPointerException at org.netbeans.modules.maven.NbMavenPr	projects	Maven	enter	false
+163157	090624	java.io.IOException: java.io.IOException: error=2, Aucun fic	projects	Maven	enter	false
+163134	090624	ArrayIndexOutOfBoundsException: Array index out of range: 58	projects	Maven	enter	false
+163063	090626	NullPointerException at org.netbeans.modules.java.j2seprojec	java	Project	enter	false
+153556	101115	StackOverflowError at org.openide.filesystems.FileObject.get	apisupport	Project	177479	true
+162645	090826	java.lang.NullPointerException	cnd	Project	177368	true
+137852	090624	NullPointerException at org.netbeans.modules.cnd.makeproject	cnd	Project	enter	false
+161911	140825	java.nio.charset.UnsupportedCharsetException: ISO-8959-1	php	Project	enter	false
+152949	091204	NullPointerException at org.netbeans.modules.web.jsf.JSFFram	javaee	Maven	178136	true
+160911	100128	java.io.FileNotFoundException: no segments* file found in or	projects	Maven	enter	false
+172265	120118	IllegalStateException: The model is not initialized or is br	projects	Maven	190041	true
+112149	151022	IllegalArgumentException: fo must be folder - /home/mohammed	java	Project	enter	false
+149264	090624	org.apache.maven.embedder.MavenEmbedderException: Unable to	projects	Maven	enter	false
+159892	090723	NullPointerException at org.netbeans.modules.maven.repositor	projects	Maven	174245	true
+160660	100524	java.io.FileNotFoundException: no segments* file found in or	projects	Maven	179624	true
+143983	091204	IllegalStateException: Current thread has already started a	apisupport	Maven	157538	true
+158964	090723	NullPointerException at org.netbeans.modules.java.j2seprojec	java	Project	172815	true
+159651	090723	IllegalArgumentException: Already listening to /home/jmoshon	java	Project	enter	false
+70564	090624	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	Project	enter	false
+159572	100728	NullPointerException at org.netbeans.modules.php.project.cla	php	Project	190850	true
+175259	110408	UnsupportedOperationException: XXX: public static org.netbea	apisupport	Project	196608	true
+159478	090624	ClassCastException: org.netbeans.modules.maven.NbMavenProjec	apisupport	project	enter	false
+174134	101115	StringIndexOutOfBoundsException: String index out of range:	projects	Maven	192241	true
+159351	090624	org.openide.filesystems.FileStateInvalidException: C:\WebTea	projects	Maven	173465	true
+154406	090624	NullPointerException at org.netbeans.modules.java.project.Ja	java	Project	169408	true
+159173	101108	NullPointerException at org.netbeans.modules.maven.CPExtende	projects	Maven	191933	true
+158030	090802	NullPointerException at org.netbeans.modules.maven.hints.pom	projects	Maven	172839	true
+158955	090625	ClassNotFoundException: org.netbeans.spi.java.project.suppor	python	project	enter	false
+149188	090624	NullPointerException at org.netbeans.modules.php.project.ui.	php	Project	172790	true
+146027	090723	org.openide.filesystems.FileStateInvalidException: E:\lavoro	apisupport	Project	158131	true
+169230	100420	StringIndexOutOfBoundsException: String index out of range:	java	Refactoring	185647	true
+158585	090624	NullPointerException at org.netbeans.modules.php.project.uti	php	project	enter	false
+153265	090806	NullPointerException at org.netbeans.modules.java.project.Ja	java	Project	168274	true
+157882	091204	NullPointerException at org.netbeans.spi.java.project.suppor	java	Project	181132	true
+158441	090624	NullPointerException at org.netbeans.modules.maven.jaxws.WSU	projects	Maven	172162	true
+158197	101108	org.apache.lucene.store.AlreadyClosedException: this IndexRe	projects	Maven	enter	false
+148755	090624	StackOverflowError at sun.awt.windows.WComponentPeer.getLoca	apisupport	Project	164567	true
+86189	091021	StackOverflowError at org.openide.filesystems.FileUtil.toFil	projects	Maven	143211	true
+12160	091021	IllegalArgumentException: Already a project in G:\attendbyvi	ruby	Project	150390	true
+157282	090624	NullPointerException at org.netbeans.modules.maven.api.Model	projects	Maven	171117	true
+152410	090624	NullPointerException at org.netbeans.api.java.source.Element	java	Refactoring	166810	true
+42983	100728	java.io.SyncFailedException: C:\Users\Eka\Dropbox\Progra Poo	java	Project	131943	true
+142931	090723	NullPointerException at org.netbeans.modules.php.project.con	php	Project	170828	true
+152953	100323	NullPointerException at java.util.Hashtable.get	php	Refactoring	182717	true
+130901	090626	UnsupportedOperationException at org.netbeans.api.java.proje	java	Project	enter	false
+156202	091214	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	Project	enter	false
+155910	090626	NumberFormatException: For input string: ""	php	project	enter	false
+155587	090625	ClassNotFoundException: org.netbeans.spi.java.project.suppor	python	project	enter	false
+132903	120503	java.io.SyncFailedException: C:\Users\daniel\Documents\NetBe	projects	Maven	152366	true
+155358	090624	java.io.FileNotFoundException: /home/prog/NetBeansProjects/s	php	project	enter	false
+146595	090624	OutOfMemoryError: Java heap space	javascript	Refactoring	170004	true
+144560	091204	NullPointerException at java.io.Writer.	cnd	Project	enter	false
+155021	100902	NullPointerException at com.sun.tools.javac.api.JavacTrees.g	java	Refactoring	190100	true
+154946	090624	java.io.IOException: invalid manifest format	apisupport	project	enter	false
+154932	090723	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	Project	169855	true
+154913	090723	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	Project	enter	false
+135868	100420	java.io.IOException: invalid header field	apisupport	Project	175330	true
+154763	090624	NullPointerException at org.netbeans.modules.maven.j2ee.POHI	javaee	Maven	169744	true
+154730	091002	NullPointerException at org.netbeans.modules.ruby.rubyprojec	ruby	Project	173735	true
+154461	091121	java.util.MissingResourceException: Can't find resource for	java	Project	169459	true
+149210	090914	NullPointerException: The file parameter cannot be null	projects	Maven	164314	true
+154395	091121	java.util.MissingResourceException: Can't find resource for	java	Project	169458	true
+132788	091204	NullPointerException: The file parameter cannot be null	apisupport	Project	enter	false
+128014	110728	IllegalArgumentException: File MasterFileObject[/home/sidlo/	apisupport	Project	150165	true
+154535	090918	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	169516	true
+154534	090723	java.util.MissingResourceException: Can't find resource for	java	Project	169511	true
+154497	120516	java.net.URISyntaxException: Illegal character in path at in	java	Project	180981	true
+154446	090723	java.util.MissingResourceException: Can't find resource for	java	Project	169662	true
+154440	090723	NullPointerException at org.netbeans.modules.java.project.Ja	java	Project	enter	false
+154403	120503	NullPointerException at org.netbeans.modules.php.project.ui.	php	Project	enter	false
+154398	090723	java.util.MissingResourceException: Can't find resource for	java	Project	enter	false
+154341	091124	java.util.MissingResourceException: Can't find resource for	java	Project	169309	true
+154100	091214	java.util.MissingResourceException: Can't find resource for	java	Project	169368	true
+152407	090723	NullPointerException at org.netbeans.api.java.classpath.Clas	projects	Maven	166803	true
+151271	090914	[68cat] NullPointerException at org.netbeans.modules.refacto	java	Refactoring	169258	true
+145505	111107	IllegalArgumentException: MasterFileObject[C:\Users\Richard\	java	Project	157361	true
+152404	090723	NullPointerException at org.netbeans.modules.maven.j2ee.web.	projects	Maven	169984	true
+154230	090624	NullPointerException: Property ${test.unit.src.dir} returned	apisupport	project	enter	false
+154204	091121	NullPointerException at org.netbeans.modules.maven.indexer.a	projects	Maven	enter	false
+151652	110408	ArrayIndexOutOfBoundsException: 1	projects	Maven	199345	true
+148968	090624	NullPointerException at java.util.ArrayList.addAll	ruby	Refactoring	162005	true
+154061	090624	NullPointerException at org.netbeans.modules.php.project.ui.	php	Project	168991	true
+48502	091204	java.io.IOException: /home/tomas/Dropbox/PFG/ServandoUML/.Qu	uml	Project	166208	false
+145317	090802	NullPointerException at org.netbeans.modules.maven.api.custo	projects	Maven	157019	true
+149696	090624	ClassNotFoundException: org.netbeans.lib.jsch.antlibrary	apisupport	Inspector	164498	true
+152033	130605	NullPointerException at org.netbeans.spi.project.support.ant	php	Project	185720	true
+18649	110925	IllegalArgumentException at org.netbeans.modules.refactoring	editor	Refactoring	163663	true
+152718	090619	NullPointerException at org.netbeans.api.project.ProjectUtil	java	Project	167261	true
+153846	090723	NullPointerException at org.netbeans.modules.maven.queries.M	projects	Maven	enter	false
+152176	110728	java.io.IOException: No such file or directory	projects	Maven	166500	true
+131449	090723	NullPointerException at java.io.File.	projects	Maven	150832	true
+151483	090626	NullPointerException at org.netbeans.modules.maven.indexer.a	projects	Maven	168705	true
+153790	100505	NumberFormatException: For input string: "3,764.527"	projects	Maven	184022	true
+151654	090826	NullPointerException at org.netbeans.modules.cnd.makeproject	cnd	Project	165858	true
+119925	100610	org.openide.filesystems.FileStateInvalidException: MasterFil	java	Refactoring	188717	true
+87544	091121	java.nio.charset.UnsupportedCharsetException: TIS-620	php	Project	enter	false
+153672	090624	ArrayIndexOutOfBoundsException: 1	apisupport	project	enter	false
+153648	160908	OutOfMemoryError: Java heap space	javascript	Refactoring	184296	true
+27103	110214	java.io.FileNotFoundException: /Users/ecerulm/NetBeansProjec	apisupport	Project	127322	true
+153637	130821	NoClassDefFoundError: org/netbeans/modules/java/j2seproject/	java	Project	enter	false
+151566	090707	org.apache.lucene.search.BooleanQuery$TooManyClauses: maxCla	projects	Maven	167729	true
+164767	100420	IllegalArgumentException: Attempting to create panel with an	php	Project	180054	true
+152349	090624	NullPointerException at java.util.Arrays$ArrayList.	projects	Maven	166709	true
+149399	100728	java.io.IOException: Cannot delete C:\Documents and Settings	projects	Maven	enter	false
+153484	090723	NullPointerException at org.netbeans.modules.favorites.templ	platform	Templates	172221	true
+62573	101108	IllegalStateException: Artifact org.apache.openejb:xbean-ref	projects	Maven	188871	true
+75311	091214	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	Project	144758	true
+147362	110728	java.io.IOException: CreateProcess error=2, The system canno	ruby	Project	186312	false
+153460	091121	IllegalArgumentException: org.openide.util.WeakListenerImpl$	java	Project	176811	true
+152042	090624	org.apache.lucene.search.BooleanQuery$TooManyClauses: maxCla	cnd	Project	167655	true
+151182	110722	AssertionError: Cannot find source group for '/Users/bond/Ne	java	Project	165208	true
+153423	100803	javax.xml.parsers.FactoryConfigurationError: Provider org.ap	java	Project	enter	false
+147528	110728	NullPointerException at org.netbeans.modules.maven.navigator	projects	Maven	160302	true
+153409	091204	java.nio.charset.IllegalCharsetNameException: ${project.buil	projects	Maven	179401	true
+153267	090624	NullPointerException: The platformKey parameter cannot be nu	java	Project	168124	true
+150616	091021	IllegalArgumentException: old node must be in the tree	apisupport	Maven	165465	true
+136864	091021	NullPointerException at org.netbeans.modules.cnd.makeproject	cnd	Project	161505	true
+133522	090826	NullPointerException: Must pass a non-null filename	java	Project	153335	true
+52657	090624	org.openide.util.MutexException: java.io.FileNotFoundExcepti	projects	Maven	138253	true
+151413	090626	java.io.FileNotFoundException: C:\Documents and Settings\Adm	projects	Maven	enter	false
+149801	101108	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	Project	enter	false
+148756	090826	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	Project	161787	true
+149365	120118	NullPointerException: The session parameter cannot be null	java	Refactoring	175805	true
+160493	100223	IllegalStateException: Current thread has already started a	projects	Maven	174998	true
+136319	090624	ClassCastException: com.sun.tools.javac.tree.JCTree$JCPrimit	projects	Maven	162595	true
+151187	120118	org.apache.maven.project.InvalidProjectModelException: Not a	projects	Maven	168138	true
+152458	100420	NullPointerException at org.netbeans.api.debugger.ActionsMan	javaee	Maven	167978	true
+152056	090624	org.apache.lucene.search.BooleanQuery$TooManyClauses: maxCla	projects	Maven	167169	true
+151035	100107	org.apache.maven.wagon.ResourceDoesNotExistException: Unable	projects	Maven	164992	true
+149037	091021	IllegalStateException: Current thread has already started a	projects	Maven	166282	true
+152117	091204	IllegalArgumentException: URL must be a folder URL (append '	projects	Maven	173098	true
+51907	090918	NullPointerException at org.nbheaven.sqe.core.ant.AntUtiliti	projects	Maven	147203	true
+145431	100529	java.io.IOException: java.io.IOException: error=24, Too many	projects	Maven	157266	true
+123	130605	ArrayIndexOutOfBoundsException: 3184	java	Project	124804	true
+105870	100326	NullPointerException: The classPath parameter cannot be null	java	Project	149306	true
+110273	090723	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	Project	147502	true
+146179	091121	NullPointerException at org.netbeans.modules.java.source.ant	projects	Maven	160776	true
+55032	120301	org.apache.maven.artifact.InvalidArtifactRTException: For ar	projects	Maven	164998	true
+152473	090624	NullPointerException at org.netbeans.modules.maven.indexer.N	projects	Maven	167884	true
+150955	111012	java.io.IOException: File C:\Users\tqi_vsilva\.netbeans\7.0r	projects	Maven	177460	true
+151957	090707	org.apache.lucene.search.BooleanQuery$TooManyClauses: maxCla	projects	Maven	167665	true
+7612	120301	StackOverflowError at org.netbeans.modules.search.BufferedCh	java	Project	154894	true
+72029	091121	java.io.IOException: /home/richarda/FEMSService_case_1308323	uml	Project	138957	true
+191360	100215	NullPointerException: #145291: Cannot resolve handle: TreePa	java	Refactoring	216497	true
+147062	090723	NullPointerException at org.netbeans.modules.maven.api.custo	projects	Maven	159602	true
+12950	111205	NullPointerException at org.netbeans.modules.uml.project.ui.	uml	Project	123392	true
+152257	090826	NullPointerException: Must pass a non-null filename	php	Project	168390	true
+147194	091204	NullPointerException at org.netbeans.modules.cnd.makeproject	cnd	Project	enter	false
+153121	100728	NullPointerException at org.apache.maven.artifact.versioning	projects	Maven	enter	false
+142302	090624	ClassCastException: org.netbeans.modules.ide.ergonomics.fod.	php	project	enter	false
+152110	091121	NullPointerException at org.netbeans.modules.php.project.ui.	php	Project	168521	true
+151487	091214	IllegalArgumentException: Already listening to C:\Documents	java	Project	165869	true
+165622	100404	NullPointerException at org.netbeans.modules.maven.graph.Art	projects	Maven	181108	true
+27599	090618	reflect.UndeclaredThrowableException at $Proxy18.actionPerfo	platform	Templates	167240	true
+199668	091204	IllegalArgumentException: Invalid URL: jar:nbinst:///sources	java	Project	enter	false
+194940	091204	IndexOutOfBoundsException: Index: 45, Size: 11	java	Refactoring	enter	false
+190607	100326	ClassFormatError: com/sun/tools/javadoc/JavadocMemberEnter	java	Project	enter	false
+187584	091204	UnsupportedOperationException: Project in C:\Documents and S	java	Project	enter	false
+181332	091204	ClassFormatError: org/netbeans/modules/java/j2seproject/ui/c	java	Project	enter	false
+151233	140825	IllegalArgumentException: Attempted to pass a non-directory	cnd	Project	198220	true
+170438	091209	NullPointerException at org.netbeans.modules.java.api.common	java	Project	enter	false
+173078	091204	ClassFormatError: Unknown constant tag 86 in class file org/	java	Project	enter	false
+172803	091204	IllegalArgumentException: Invalid URL: jar:nbinst:///sources	java	Project	enter	false
+172791	091204	ClassFormatError: org/netbeans/modules/java/j2seproject/J2SE	java	Project	enter	false
+172544	091204	ClassFormatError: org/netbeans/modules/java/api/common/class	java	Project	enter	false
+144180	101115	IllegalArgumentException: Attempted to pass a non-directory	projects	Maven	194281	true
+146719	110728	IllegalArgumentException: URI is not hierarchical	java	Project	198873	true
+172048	091204	java.io.IOException: CreateProcess error=267, The directory	projects	Maven	enter	false
+172037	110224	StringIndexOutOfBoundsException: String index out of range:	java	Refactoring	195957	true
+171653	091204	java.util.ConcurrentModificationException at java.util.TreeM	java	Refactoring	enter	false
+48502	091204	java.io.IOException: /home/tomas/Dropbox/PFG/ServandoUML/.Qu	uml	Project	166208	false
+151035	100107	org.apache.maven.wagon.ResourceDoesNotExistException: Unable	projects	Maven	164992	true
+170991	100404	java.io.IOException: CreateProcess error=2, El sistema no pu	projects	Maven	enter	false
+170968	100404	java.io.IOException: CreateProcess error=2, El sistema no pu	projects	Maven	enter	false
+170944	110925	NullPointerException at org.netbeans.modules.java.api.common	java	Project	203617	true
+163478	110728	StringIndexOutOfBoundsException: String index out of range:	php	Project	202012	true
+159575	091204	IllegalArgumentException: The name parameter cannot be an em	php	Project	enter	false
+170716	100519	org.xml.sax.SAXParseException: XML document structures must	projects	Maven	187819	true
+170689	101108	StringIndexOutOfBoundsException: String index out of range:	php	Project	196588	true
+147528	110728	NullPointerException at org.netbeans.modules.maven.navigator	projects	Maven	160302	true
+153121	100728	NullPointerException at org.apache.maven.artifact.versioning	projects	Maven	enter	false
+170466	100728	StringIndexOutOfBoundsException: String index out of range:	php	Project	enter	false
+170449	101108	IllegalArgumentException at org.netbeans.api.java.source.Sou	java	Project	enter	false
+146338	091204	NullPointerException at org.netbeans.modules.uml.project.UML	uml	Project	188650	false
+170408	091204	NullPointerException at org.netbeans.modules.cnd.makeproject	cnd	Project	enter	false
+158356	101108	NullPointerException at org.openide.filesystems.FileUtil.toF	php	Project	186887	true
+152458	100420	NullPointerException at org.netbeans.api.debugger.ActionsMan	javaee	Maven	167978	true
+147311	091204	java.io.FileNotFoundException: no segments* file found in or	projects	Maven	186939	true
+170244	091204	NullPointerException at org.netbeans.core.startup.layers.Arc	projects	Maven	enter	false
+170213	110728	StringIndexOutOfBoundsException: String index out of range:	php	Project	203642	true
+157849	101115	IllegalStateException at org.netbeans.modules.maven.graph.De	projects	Maven	enter	false
+170068	091204	NullPointerException at org.netbeans.modules.cnd.makeproject	cnd	Project	enter	false
+170017	101027	IllegalArgumentException: URI scheme is not "file"	projects	Maven	enter	false
+144560	091204	NullPointerException at java.io.Writer.	cnd	Project	enter	false
+156221	091204	java.nio.charset.IllegalCharsetNameException: ${mnet.encodin	projects	Maven	enter	false
+149607	111207	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	enter	false
+165031	091204	NullPointerException at org.netbeans.modules.uml.project.UML	uml	Project	enter	false
+152638	091204	org.openide.util.MutexException: org.apache.lucene.index.Cor	projects	Maven	enter	false
+160113	091204	NullPointerException at org.netbeans.modules.refactoring.spi	editor	Refactoring	enter	false
+169377	091204	NullPointerException at org.apache.maven.artifact.DefaultArt	projects	Maven	enter	false
+154497	120516	java.net.URISyntaxException: Illegal character in path at in	java	Project	180981	true
+169241	091204	NullPointerException: Please attach your {nb.userdir}/var/lo	java	Refactoring	enter	false
+132788	091204	NullPointerException: The file parameter cannot be null	apisupport	Project	enter	false
+154403	120503	NullPointerException at org.netbeans.modules.php.project.ui.	php	Project	enter	false
+144922	110214	OutOfMemoryError: Java heap space	projects	Maven	185080	true
+184272	120410	NullPointerException at org.netbeans.modules.maven.api.Plugi	projects	Maven	207098	true
+168637	091204	java.nio.charset.UnsupportedCharsetException: ISO-8859-3	php	Project	enter	false
+161911	140825	java.nio.charset.UnsupportedCharsetException: ISO-8959-1	php	Project	enter	false
+168608	091204	NullPointerException at java.util.ArrayList.addAll	projects	Maven	184948	true
+168595	091204	NullPointerException at org.netbeans.modules.ruby.rubyprojec	ruby	Project	enter	false
+175967	110125	IllegalStateException: No classpath for /home/dev/projs/aaaa	java	Refactoring	194463	true
+168472	111207	java.net.MalformedURLException: unknown protocol: c	java	Project	196617	true
+168381	101108	NullPointerException at org.netbeans.modules.cnd.makeproject	cnd	Project	enter	false
+163553	091204	java.io.IOException: invalid offset: 1994	java	Refactoring	enter	false
+72018	101116	NullPointerException at org.netbeans.modules.cnd.makeproject	cnd	Project	193139	true
+174134	101115	StringIndexOutOfBoundsException: String index out of range:	projects	Maven	192241	true
+160454	101108	NullPointerException at com.sun.tools.javac.model.JavacEleme	javaee	Maven	188570	true
+155021	100902	NullPointerException at com.sun.tools.javac.api.JavacTrees.g	java	Refactoring	190100	true
+168263	100610	NullPointerException at org.apache.maven.project.build.model	projects	Maven	enter	false
+153648	160908	OutOfMemoryError: Java heap space	javascript	Refactoring	184296	true
+167967	091204	java.util.MissingResourceException: Can't find resource for	javaee	Maven	enter	false
+152336	101108	NullPointerException at org.netbeans.modules.refactoring.spi	editor	Refactoring	enter	false
+162393	091204	NullPointerException: The baseFolder parameter cannot be nul	projects	Maven	enter	false
+159329	091204	NullPointerException at org.netbeans.modules.cnd.makeproject	cnd	Project	enter	false
+163040	120206	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	190443	true
+167692	091204	UnsupportedOperationException: No project found to correspon	java	Project	enter	false
+133211	091209	java.io.SyncFailedException: C:\Users\Administrador\Document	java	Project	183590	true
+164692	100405	IllegalStateException: Method can be called only on model wa	apisupport	Project	179979	true
+167619	120410	NullPointerException: Passed null to FileOwnerQuery.getOwner	javaee	Maven	enter	false
+167602	091204	NullPointerException at org.netbeans.modules.java.api.common	java	Project	enter	false
+162705	110728	IllegalStateException: Could not locate file phpunit/NetBean	php	Project	200489	true
+167460	091204	NullPointerException at org.netbeans.modules.java.j2seprojec	java	Project	enter	false
+167439	101108	IllegalArgumentException: Illegal character(s) in message he	projects	Maven	194233	true
+154715	110728	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	177707	true
+167361	091209	NullPointerException at org.netbeans.modules.cnd.makeproject	cnd	Project	183230	true
+151402	101115	NullPointerException at org.netbeans.modules.maven.model.pom	projects	Maven	177548	true
+160793	100420	AssertionError: file '_0.cfs' does not exist dir=org.apache.	projects	Maven	184632	true
+167320	091204	java.io.IOException: java.io.IOException: error=12, Cannot a	projects	Maven	enter	false
+21754	091204	IllegalStateException: Missing dorun script.	cnd	Project	enter	false
+189881	120410	java.io.FileNotFoundException: /Users/tim0033/Workspace/netb	php	Project	214593	true
+146173	111207	ClassFormatError: Unknown constant tag 30 in class file sun/	java	Project	158384	true
+167129	091204	java.util.ConcurrentModificationException at java.util.Abstr	projects	Maven	enter	false
+7612	120301	StackOverflowError at org.netbeans.modules.search.BufferedCh	java	Project	154894	true
+191360	100215	NullPointerException: #145291: Cannot resolve handle: TreePa	java	Refactoring	216497	true
+154800	101108	NullPointerException at org.apache.maven.profiles.activation	projects	Maven	182564	true
+55032	120301	org.apache.maven.artifact.InvalidArtifactRTException: For ar	projects	Maven	164998	true
+163542	091209	NullPointerException at org.netbeans.modules.cnd.makeproject	cnd	Project	enter	false
+162987	091204	OutOfMemoryError: Java heap space	projects	Maven	enter	false
+161725	130605	NullPointerException at org.netbeans.modules.java.j2seprojec	java	Project	enter	false
+166529	091204	NullPointerException at org.netbeans.modules.java.j2seprojec	java	Project	enter	false
+166524	091204	NullPointerException at org.netbeans.modules.refactoring.spi	editor	Refactoring	182153	true
+166464	091204	NullPointerException at org.netbeans.modules.php.project.con	php	Project	enter	false
+166444	121106	NullPointerException at sun.misc.FloatingDecimal.readJavaFor	php	Project	enter	false
+158743	091209	NullPointerException at org.netbeans.modules.maven.format.ch	projects	Maven	180447	true
+153423	100803	javax.xml.parsers.FactoryConfigurationError: Provider org.ap	java	Project	enter	false
+166370	091204	org.apache.commons.net.ftp.parser.ParserInitializationExcept	php	Project	enter	false
+163605	100405	org.netbeans.modules.apisupport.project.ProjectXMLManager$Cy	apisupport	Project	178584	true
+166300	091204	NullPointerException at org.netbeans.modules.php.project.cla	php	Project	enter	false
+166181	091204	NullPointerException at org.netbeans.modules.java.j2seprojec	java	Project	enter	false
+177758	111106	java.io.FileNotFoundException at org.netbeans.modules.master	java	Refactoring	196924	true
+145149	100322	NullPointerException at org.netbeans.modules.java.api.common	java	Project	182558	true
+78322	091204	OutOfMemoryError: Java heap space	projects	Maven	168806	true
+151229	091204	NullPointerException: The bootPath parameter cannot be null	java	Refactoring	enter	false
+165897	111020	NullPointerException at org.netbeans.modules.web.struts.Stru	javaee	Maven	204070	true
+159907	101108	NullPointerException at org.openide.util.lookup.InstanceCont	javaee	Maven	192936	true
+150395	110728	org.apache.commons.net.ftp.parser.ParserInitializationExcept	php	Project	enter	false
+165767	091204	NullPointerException at org.netbeans.modules.ruby.rubyprojec	ruby	Project	enter	false
+158124	100728	java.lang.NoClassDefFoundError: org/codehaus/plexus/util/Dir	projects	Maven	171805	true
+165693	091204	NullPointerException at org.netbeans.api.java.source.SourceU	java	Project	enter	false
+165596	120118	NullPointerException: The fileObject parameter cannot be nul	php	Project	189110	true
+165580	091204	java.io.IOException: CreateProcess error=267, The directory	projects	Maven	enter	false
+165518	120227	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	181021	true
+159633	091209	IllegalArgumentException: com.sigma.tfg.sel	javaee	Refactoring	176088	true
+181899	121010	IllegalStateException: The model is not initialized or is br	projects	Maven	203551	true
+165354	091204	NullPointerException: org/netbeans/spi/xml/cookies/CheckXMLS	java	Project	enter	false
+165302	100728	NullPointerException at org.netbeans.modules.php.project.cla	php	Project	enter	false
+165261	091204	IllegalArgumentException: Invalid ClassPath root: file:/Q:/V	java	Project	enter	false
+165260	091209	NullPointerException at org.netbeans.modules.java.j2seprojec	java	Project	enter	false
+145431	100529	java.io.IOException: java.io.IOException: error=24, Too many	projects	Maven	157266	true
+149801	101108	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	Project	enter	false
+173758	101109	NullPointerException at java.io.Writer.	cnd	Project	192518	true
+165167	091204	NullPointerException at com.sun.org.apache.xerces.internal.d	projects	Maven	enter	false
+150791	110612	IllegalArgumentException: Attempted to pass a non-directory	projects	Maven	199502	true
+147194	091204	NullPointerException at org.netbeans.modules.cnd.makeproject	cnd	Project	enter	false
+151426	100420	NumberFormatException: For input string: "1,358.119"	projects	Maven	enter	false
+165122	091204	NullPointerException at org.netbeans.modules.maven.MavenProj	projects	Maven	enter	false
+165121	091204	NullPointerException at org.netbeans.modules.maven.NbMavenPr	projects	Maven	enter	false
+160336	100907	NullPointerException at org.netbeans.modules.maven.api.execu	projects	Maven	180579	true
+153790	100505	NumberFormatException: For input string: "3,764.527"	projects	Maven	184022	true
+165050	091204	OutOfMemoryError: PermGen space	apisupport	Project	enter	false
+164987	120118	ArrayIndexOutOfBoundsException: Array index out of range: 38	projects	Maven	188557	true
+164980	091204	NullPointerException: version was null for com.click4care.th	projects	Maven	enter	false
+163444	101108	NullPointerException at org.apache.lucene.search.BooleanQuer	projects	Maven	178274	true
+164965	101115	NullPointerException at org.netbeans.modules.masterfs.Global	projects	Maven	192439	true
+42983	100728	java.io.SyncFailedException: C:\Users\Eka\Dropbox\Progra Poo	java	Project	131943	true
+160498	101108	NullPointerException at org.netbeans.modules.maven.graph.Art	projects	Maven	183593	true
+164873	091204	ArrayIndexOutOfBoundsException: 9591	projects	Maven	enter	false
+150284	091204	OutOfMemoryError: Java heap space	projects	Maven	164016	true
+164534	091204	UnsupportedClassVersionError: Bad version number in .class f	apisupport	Project	180158	true
+162971	091204	org.netbeans.modules.j2ee.deployment.devmodules.api.Instance	javaee	Maven	176665	true
+164761	100326	IllegalStateException: Current thread has already started a	projects	Maven	180773	true
+145796	091204	reflect.InvocationTargetException at sun.reflect.GeneratedMe	php	Project	157787	true
+95827	091204	IllegalArgumentException: Attempt to remove nonexistent path	projects	Maven	180003	true
+164709	091204	NullPointerException at org.netbeans.modules.maven.spi.actio	projects	Maven	enter	false
+157882	091204	NullPointerException at org.netbeans.spi.java.project.suppor	java	Project	181132	true
+164594	101108	java.util.ConcurrentModificationException at org.openide.uti	php	Project	191980	true
+164591	091204	IllegalArgumentException: Invalid URL: jar:nbinst://org.netb	java	Project	enter	false
+164590	100126	NumberFormatException: For input string: ""	apisupport	Project	179855	true
+150971	091204	NullPointerException at java.util.ArrayList.addAll	cnd	Project	enter	false
+163131	100413	java.io.IOException: java.io.IOException: error=12, Cannot a	projects	Maven	184769	true
+164485	091204	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	enter	false
+143983	091204	IllegalStateException: Current thread has already started a	apisupport	Maven	157538	true
+148751	091204	IllegalArgumentException: bad position: 3563	projects	Maven	161771	true
+149101	100315	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	Project	181798	true
+161175	100728	NullPointerException at sun.misc.FloatingDecimal.readJavaFor	javaee	Maven	192572	true
+171901	101115	java.io.SyncFailedException: /Users/fayimora/NetBeansProject	editor	Refactoring	189427	true
+139911	091204	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	Project	enter	false
+164149	100215	UnsupportedOperationException: XXX #172324: do not know how	apisupport	Project	179543	true
+146481	091204	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	Project	enter	false
+164311	101115	NullPointerException at org.netbeans.modules.maven.model.pom	projects	Maven	179495	true
+160373	120301	IllegalStateException: Current thread has already started a	projects	Maven	177318	true
+164301	151022	java.io.IOException: There are no source roots in the projec	java	Project	enter	false
+145505	111107	IllegalArgumentException: MasterFileObject[C:\Users\Richard\	java	Project	157361	true
+10961	120118	IllegalArgumentException: Invalid ClassPath root: file:/D:/P	java	Project	146359	true
+29060	091204	IllegalArgumentException: Not a DataFolder: H:\Eigene Dateie	java	Project	179416	true
+157736	101108	NullPointerException at org.netbeans.modules.java.j2seprojec	java	Project	enter	false
+164223	091209	NullPointerException at org.netbeans.modules.java.api.common	java	Project	enter	false
+160138	111207	org.xml.sax.SAXParseException: The markup declarations conta	projects	Maven	175092	true
+153634	091204	ArrayIndexOutOfBoundsException: 82	projects	Maven	170532	true
+163631	101108	java.util.zip.ZipError: jzentry == 0, jzfile = 175382112,	projects	Maven	enter	false
+164762	101108	NullPointerException at org.netbeans.modules.maven.graph.Fru	projects	Maven	180046	true
+164767	100420	IllegalArgumentException: Attempting to create panel with an	php	Project	180054	true
+153556	101115	StackOverflowError at org.openide.filesystems.FileObject.get	apisupport	Project	177479	true
+164088	110408	NullPointerException at java.util.ArrayList.addAll	javascript	Refactoring	enter	false
+149126	091204	NullPointerException at org.netbeans.modules.favorites.templ	platform	Templates	179210	true
+164064	100420	NullPointerException at org.netbeans.modules.maven.j2ee.J2ee	javaee	Maven	179174	true
+163967	091204	NullPointerException at org.netbeans.modules.maven.api.Plugi	projects	Maven	enter	false
+162665	091204	NullPointerException at java.io.Reader.	cnd	Project	enter	false
+163894	091204	NullPointerException at javax.swing.JFileChooser.updateUI	apisupport	Project	179016	true
+163847	110728	NullPointerException at org.netbeans.modules.maven.j2ee.web.	javaee	Maven	enter	false
+159974	100316	NullPointerException: The fo parameter cannot be null	javaee	Maven	178971	true
+163812	091204	java.io.IOException: CreateProcess error=267, Le nom de r?pe	projects	Maven	enter	false
+157674	100326	NullPointerException at org.netbeans.modules.java.j2seprojec	java	Project	178886	true
+151498	091209	NullPointerException at org.netbeans.modules.cnd.makeproject	cnd	Project	181034	true
+62573	101108	IllegalStateException: Artifact org.apache.openejb:xbean-ref	projects	Maven	188871	true
+163756	091204	NullPointerException at org.netbeans.modules.cnd.makeproject	cnd	Project	178855	true
+152117	091204	IllegalArgumentException: URL must be a folder URL (append '	projects	Maven	173098	true
+163160	120410	IllegalStateException: Property 'src.dir' was not found in '	php	Project	181877	true
+105870	100326	NullPointerException: The classPath parameter cannot be null	java	Project	149306	true
+153409	091204	java.nio.charset.IllegalCharsetNameException: ${project.buil	projects	Maven	179401	true
+58778	120520	IllegalArgumentException: #177688: property editor org.openi	projects	Maven	135868	true
+151187	120118	org.apache.maven.project.InvalidProjectModelException: Not a	projects	Maven	168138	true
+155913	100420	Throwable: Locked by:	projects	Maven	172620	true
+160493	100223	IllegalStateException: Current thread has already started a	projects	Maven	174998	true
+109772	101108	StringIndexOutOfBoundsException: String index out of range:	java	Project	157861	true
+163067	100420	NullPointerException at org.netbeans.modules.java.api.common	java	Project	184021	true
+132903	120503	java.io.SyncFailedException: C:\Users\daniel\Documents\NetBe	projects	Maven	152366	true
+148420	091204	NullPointerException at org.netbeans.modules.maven.graph.Fru	projects	Maven	161379	true
+148156	110930	IllegalArgumentException: No parser for mime type: text/x-ja	java	Project	enter	false
+123	130605	ArrayIndexOutOfBoundsException: 3184	java	Project	124804	true
+165622	100404	NullPointerException at org.netbeans.modules.maven.graph.Art	projects	Maven	181108	true
+152949	091204	NullPointerException at org.netbeans.modules.web.jsf.JSFFram	javaee	Maven	178136	true
+177500	110214	NullPointerException at org.netbeans.modules.java.api.common	java	Project	enter	false
+191831	100610	IllegalArgumentException: NB_REPORTER_IGNORE: Project Ex5 is	java	Project	enter	false
+172191	110919	NumberFormatException: null	php	Project	189937	true
+185055	100825	VerifyError: (class: org/netbeans/modules/ruby/spi/project/s	ruby	Project	enter	false
+167439	101108	IllegalArgumentException: Illegal character(s) in message he	projects	Maven	194233	true
+169558	100825	NullPointerException at org.netbeans.modules.maven.navigator	projects	Maven	187535	true
+178227	120717	NumberFormatException: null	php	Project	215039	true
+182037	101108	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	Project	enter	false
+181802	130709	NoClassDefFoundError: Could not initialize class org.netbean	cnd	Project	236038	true
+152336	101108	NullPointerException at org.netbeans.modules.refactoring.spi	editor	Refactoring	enter	false
+153423	100803	javax.xml.parsers.FactoryConfigurationError: Provider org.ap	java	Project	enter	false
+177538	120410	IllegalStateException: Property 'src.dir' was not found in '	php	Project	200317	true
+177546	110214	NullPointerException at org.netbeans.modules.refactoring.php	php	Refactoring	enter	false
+173882	101108	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	Project	191922	true
+165609	101108	IllegalArgumentException: NB_REPORTER_IGNORE: Project Foo is	projects	Maven	181096	true
+178156	101108	NullPointerException at org.netbeans.modules.javafx.refactor	javafx	Refactoring	enter	false
+37789	101108	NullPointerException at org.netbeans.spi.java.project.suppor	java	Project	130382	true
+16395	101108	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	Project	124200	true
+89091	101108	java.io.IOException: read past EOF	projects	Maven	151474	true
+144941	101108	org.apache.maven.project.InvalidProjectModelException: Faile	projects	Maven	172570	true
+175650	100610	NullPointerException at org.netbeans.modules.cnd.makeproject	cnd	Project	enter	false
+149365	120118	NullPointerException: The session parameter cannot be null	java	Refactoring	175805	true
+174716	101108	NullPointerException at java.util.ArrayList.addAll	cnd	Project	192913	true
+174579	110214	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	Project	enter	false
+170689	101108	StringIndexOutOfBoundsException: String index out of range:	php	Project	196588	true
+173806	101108	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	Project	enter	false
+173487	101108	NumberFormatException: For input string: "31)100"	projects	Maven	enter	false
+173374	100610	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	enter	false
+170549	110329	NullPointerException: The newFqn parameter cannot be null	javaee	Refactoring	197257	true
+173148	100610	NullPointerException at sun.awt.shell.Win32ShellFolder2.pidl	apisupport	Project	enter	false
+97533	100728	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	enter	false
+173061	101015	NullPointerException at com.sun.org.apache.xerces.internal.d	projects	Maven	190845	true
+160454	101108	NullPointerException at com.sun.tools.javac.model.JavacEleme	javaee	Maven	188570	true
+153121	100728	NullPointerException at org.apache.maven.artifact.versioning	projects	Maven	enter	false
+172920	100610	NullPointerException at org.netbeans.modules.maven.api.Plugi	projects	Maven	enter	false
+172910	100728	ArrayIndexOutOfBoundsException: 0	apisupport	Project	enter	false
+163040	120206	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	190443	true
+168263	100610	NullPointerException at org.apache.maven.project.build.model	projects	Maven	enter	false
+151289	101108	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	enter	false
+11301	100728	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	143946	true
+151410	101115	NullPointerException at org.netbeans.modules.maven.jaxws.Mav	javaee	Maven	178910	true
+172533	100610	NullPointerException at sun.net.www.protocol.http.NTLMAuthen	projects	Maven	190351	true
+172298	100610	NoClassDefFoundError: Could not initialize class org.netbean	java	Project	enter	false
+149817	101012	java.io.IOException: netbeans.org-type module requires at le	apisupport	Project	196338	true
+162705	110728	IllegalStateException: Could not locate file phpunit/NetBean	php	Project	200489	true
+177758	111106	java.io.FileNotFoundException at org.netbeans.modules.master	java	Refactoring	196924	true
+163160	120410	IllegalStateException: Property 'src.dir' was not found in '	php	Project	181877	true
+172228	100728	ClassFormatError: org/netbeans/modules/php/project/ui/action	php	Project	enter	false
+172194	101108	IllegalArgumentException: No such annotation could be found:	apisupport	Project	194569	true
+171877	100728	NullPointerException at org.openide.filesystems.FileUtil.toF	apisupport	Project	189389	true
+159907	101108	NullPointerException at org.openide.util.lookup.InstanceCont	javaee	Maven	192936	true
+145923	120410	NullPointerException at java.util.TreeMap.getEntry	java	Project	enter	false
+172028	100610	java.io.FileNotFoundException: no segments* file found in or	projects	Maven	enter	false
+151402	101115	NullPointerException at org.netbeans.modules.maven.model.pom	projects	Maven	177548	true
+42983	100728	java.io.SyncFailedException: C:\Users\Eka\Dropbox\Progra Poo	java	Project	131943	true
+171958	100728	NullPointerException at org.netbeans.modules.web.refactoring	javaee	Refactoring	189531	true
+171941	110920	NullPointerException at org.netbeans.modules.apisupport.face	apisupport	Templates	189506	true
+171918	110328	NullPointerException at org.netbeans.modules.php.project.cla	php	Project	193499	true
+18649	110925	IllegalArgumentException at org.netbeans.modules.refactoring	editor	Refactoring	163663	true
+116703	120503	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	202030	true
+171901	101115	java.io.SyncFailedException: /Users/fayimora/NetBeansProject	editor	Refactoring	189427	true
+170962	121106	NullPointerException: The folder parameter cannot be null	java	Project	enter	false
+171870	100610	java.util.regex.PatternSyntaxException: Illegal character ra	ruby	Project	enter	false
+170306	101108	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	Project	186992	true
+159034	130605	NullPointerException at org.netbeans.modules.java.project.Ne	java	Project	enter	false
+171812	101115	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	Project	189295	true
+110377	110211	org.xml.sax.SAXParseException: cvc-type.3.1.3: The value '1.	apisupport	Project	188608	true
+171766	101115	ArrayIndexOutOfBoundsException: 1	projects	Maven	192042	true
+169812	100610	NullPointerException at java.util.TreeMap.put	projects	Maven	189236	true
+172265	120118	IllegalStateException: The model is not initialized or is br	projects	Maven	190041	true
+171748	100610	IllegalArgumentException: Illegal Capacity: -2	cnd	Project	enter	false
+171718	100610	org.codehaus.plexus.util.xml.pull.XmlPullParserException: en	projects	Maven	enter	false
+171690	110408	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	Project	197015	true
+171675	110207	NullPointerException at org.netbeans.modules.cnd.makeproject	cnd	Project	195897	true
+171674	101115	NullPointerException: The file parameter cannot be null	apisupport	Project	192332	true
+166848	160413	org.apache.maven.artifact.InvalidArtifactRTException: For ar	projects	Maven	258898	true
+171657	100610	StringIndexOutOfBoundsException: String index out of range:	java	Project	enter	false
+165431	101108	UnsupportedOperationException: Project in C:\Documents and S	projects	Maven	185139	true
+53611	100610	ClassCastException: com.sun.tools.javac.code.Symbol$MethodSy	java	Refactoring	enter	false
+171506	100721	org.codehaus.plexus.util.xml.pull.XmlPullParserException: Un	projects	Maven	188877	true
+146440	150619	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	224777	true
+164088	110408	NullPointerException at java.util.ArrayList.addAll	javascript	Refactoring	enter	false
+157373	168237	NullPointerException at java.util.ArrayList.addAll	javascript	Refactoring	193837	true
+171587	100728	NumberFormatException: For input string: "69Latest"	apisupport	Project	188983	true
+171586	100610	ClassFormatError: Method "normalize" in class org/netbeans/m	cnd	Project	enter	false
+170000	120410	NullPointerException: The folders parameter cannot be null	php	Project	196060	true
+195797	130118	IllegalArgumentException: more than one element with same na	projects	Maven	222898	true
+152176	110728	java.io.IOException: No such file or directory	projects	Maven	166500	true
+171461	110919	NumberFormatException: null	php	Project	198289	true
+119925	100610	org.openide.filesystems.FileStateInvalidException: MasterFil	java	Refactoring	188717	true
+154715	110728	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	177707	true
+164594	101108	java.util.ConcurrentModificationException at org.openide.uti	php	Project	191980	true
+123	130605	ArrayIndexOutOfBoundsException: 3184	java	Project	124804	true
+27498	110408	IllegalStateException: No classpath for MasterFileObject[/ho	java	Refactoring	159228	true
+152033	130605	NullPointerException at org.netbeans.spi.project.support.ant	php	Project	185720	true
+172704	120410	IllegalStateException: Property 'src.dir' was not found in '	php	Project	190508	true
+171237	110925	NullPointerException at org.netbeans.spi.java.project.suppor	java	Project	205030	true
+171221	101115	NullPointerException at javax.swing.ImageIcon.	apisupport	Project	189401	true
+165596	120118	NullPointerException: The fileObject parameter cannot be nul	php	Project	189110	true
+168337	100610	NullPointerException: The fileObject parameter cannot be nul	php	Refactoring	enter	false
+165897	111020	NullPointerException at org.netbeans.modules.web.struts.Stru	javaee	Maven	204070	true
+158939	120410	IllegalArgumentException: Was not listening to C:\xampp\htdo	php	Project	172777	true
+147211	101108	org.openide.filesystems.FileStateInvalidException: MasterFil	java	Refactoring	enter	false
+18347	120410	java.io.IOException: file:/C:/development/vervepayday/src/ma	editor	Refactoring	151013	true
+189881	120410	java.io.FileNotFoundException: /Users/tim0033/Workspace/netb	php	Project	214593	true
+153648	160908	OutOfMemoryError: Java heap space	javascript	Refactoring	184296	true
+169538	100610	NullPointerException at org.netbeans.core.startup.layers.Arc	projects	Maven	187562	true
+132903	120503	java.io.SyncFailedException: C:\Users\daniel\Documents\NetBe	projects	Maven	152366	true
+171126	100610	NullPointerException at org.netbeans.modules.cnd.makeproject	cnd	Project	enter	false
+171080	111130	IllegalArgumentException: Backup with id 6does not exist	editor	Refactoring	enter	false
+169820	101108	java.util.ConcurrentModificationException at java.util.Linke	javaee	Maven	194119	true
+167489	120118	IllegalArgumentException: TreePathHandle [C:\Users\Administr	java	Refactoring	186908	true
+170231	121106	InternalError: incorrect component	projects	Maven	186861	true
+171024	120309	IllegalStateException: Canceled operation did not finish in	java	Project	192021	true
+168108	101108	NullPointerException at org.netbeans.modules.maven.j2ee.ejb.	javaee	Maven	194398	true
+170312	100610	java.io.FileNotFoundException: C:\Users\Olufemi\Documents\Ne	editor	Refactoring	enter	false
+148594	100617	ArrayIndexOutOfBoundsException: 1	projects	Maven	167728	true
+170905	100610	NullPointerException at org.netbeans.modules.maven.nodes.Dep	projects	Maven	enter	false
+151037	100825	java.io.FileNotFoundException: /home/davide/Private/Hypercod	editor	Refactoring	enter	false
+170875	100728	NullPointerException at javax.swing.ImageIcon.	apisupport	Project	enter	false
+170848	100610	IllegalArgumentException: Called DataObject.find on null	cnd	Project	187897	true
+170836	100610	IllegalArgumentException at org.netbeans.modules.maven.Maven	projects	Maven	enter	false
+163791	100825	IllegalStateException: attempted model write without invokin	projects	Maven	181290	true
+191585	120118	NullPointerException at java.io.Writer.	cnd	Project	216947	true
+10961	120118	IllegalArgumentException: Invalid ClassPath root: file:/D:/P	java	Project	146359	true
+151187	120118	org.apache.maven.project.InvalidProjectModelException: Not a	projects	Maven	168138	true
+158197	101108	org.apache.lucene.store.AlreadyClosedException: this IndexRe	projects	Maven	enter	false
+133898	100610	java.io.IOException: read past EOF	projects	Maven	enter	false
+170762	100610	IllegalArgumentException: Called DataObject.find on null	editor	Refactoring	187744	true
+151702	130213	NullPointerException at org.netbeans.spi.project.support.ant	java	Project	229127	true
+62573	101108	IllegalStateException: Artifact org.apache.openejb:xbean-ref	projects	Maven	188871	true
+160138	111207	org.xml.sax.SAXParseException: The markup declarations conta	projects	Maven	175092	true
+159572	100728	NullPointerException at org.netbeans.modules.php.project.cla	php	Project	190850	true
+170455	101108	NullPointerException: Passed null to FileOwnerQuery.getOwner	projects	Maven	188445	true
+170167	100825	NullPointerException at org.netbeans.modules.cnd.makeproject	cnd	Project	187353	true
+165513	100805	NullPointerException at org.openide.util.lookup.InstanceCont	projects	Maven	181009	true
+145505	111107	IllegalArgumentException: MasterFileObject[C:\Users\Richard\	java	Project	157361	true
+164762	101108	NullPointerException at org.netbeans.modules.maven.graph.Fru	projects	Maven	180046	true
+168472	111207	java.net.MalformedURLException: unknown protocol: c	java	Project	196617	true
+208342	110408	ClassFormatError: javax/swing/plaf/basic/BasicDirectoryModel	java	Project	enter	false
+7612	120301	StackOverflowError at org.netbeans.modules.search.BufferedCh	java	Project	154894	true
+186077	110408	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	Project	enter	false
+180712	120503	AssertionError at org.apache.lucene.index.IndexWriter.doFlus	projects	Maven	204706	true
+164088	110408	NullPointerException at java.util.ArrayList.addAll	javascript	Refactoring	enter	false
+180259	110408	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	enter	false
+180236	110408	java.io.IOException: The filename, directory name, or volume	projects	Maven	enter	false
+173363	121010	ClassCastException: com.vigilante.joomla.JoomlaProject canno	php	Project	204930	true
+170231	121106	InternalError: incorrect component	projects	Maven	186861	true
+163478	110728	StringIndexOutOfBoundsException: String index out of range:	php	Project	202012	true
+180080	110408	IllegalArgumentException: Called DataObject.find on null	editor	Refactoring	200327	true
+180073	120412	org.apache.maven.model.building.ModelBuildingException: 1 pr	projects	Maven	200320	true
+179998	110408	IndexOutOfBoundsException: Index: 2, Size: 1	cnd	Project	201082	true
+179996	110728	NullPointerException at javax.swing.SwingUtilities.computeIn	php	Project	enter	false
+179970	110408	NullPointerException at java.io.File.	ruby	Project	enter	false
+178227	120717	NumberFormatException: null	php	Project	215039	true
+10961	120118	IllegalArgumentException: Invalid ClassPath root: file:/D:/P	java	Project	146359	true
+179894	110408	ClassCastException: org.netbeans.modules.java.j2seproject.ui	java	Project	enter	false
+175322	120423	org.jdom.IllegalNameException: The name "-offline Env.MAVEN_	projects	Maven	193793	true
+179785	110408	NullPointerException at org.netbeans.spi.java.project.suppor	java	Project	199982	true
+179784	110728	NullPointerException at org.netbeans.modules.refactoring.plu	editor	Refactoring	199981	true
+179770	110408	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	199961	true
+179730	110728	NullPointerException: The brandingSource parameter cannot be	apisupport	Project	enter	false
+171024	120309	IllegalStateException: Canceled operation did not finish in	java	Project	192021	true
+178107	121010	NullPointerException at org.apache.lucene.store.Directory.co	projects	Maven	197346	true
+179699	110408	NullPointerException at org.netbeans.modules.refactoring.spi	editor	Refactoring	enter	false
+179690	110614	IllegalStateException: Too many org.netbeans.modules.apisupp	apisupport	Project	204459	true
+162705	110728	IllegalStateException: Could not locate file phpunit/NetBean	php	Project	200489	true
+176808	110408	NullPointerException at org.apache.maven.index.DefaultSearch	projects	Maven	enter	false
+179641	110408	ClassCastException: java.lang.String cannot be cast to java.	apisupport	Refactoring	199783	true
+179637	110408	IllegalArgumentException: Called DataObject.find on null	java	Refactoring	enter	false
+179633	111025	NullPointerException: The project parameter cannot be null	apisupport	Project	204323	true
+179205	110607	NullPointerException at org.openide.text.Line.	apisupport	Project	199205	true
+174501	110408	java.util.ConcurrentModificationException at java.util.Abstr	cnd	Project	199668	true
+179506	110408	java.io.IOException: Syntaxe du nom de fichier, de r?pertoir	projects	Maven	enter	false
+179488	110408	java.io.IOException: Syntaxe du nom de fichier, de r?pertoir	projects	Maven	enter	false
+179475	110408	java.io.IOException: Syntaxe du nom de fichier, de r?pertoir	projects	Maven	enter	false
+175707	110408	java.io.IOException: Cannot delete C:\Users\jaricomar\.netbe	projects	Maven	enter	false
+171461	110919	NumberFormatException: null	php	Project	198289	true
+179381	110408	IllegalStateException: Property 'src.dir' was not found in '	php	Project	enter	false
+189266	120503	java.io.IOException: Do not create DO for .svn metadata: E:\	java	Project	213888	true
+164295	110408	IllegalArgumentException: URI has an authority component	java	Project	enter	false
+157373	168237	NullPointerException at java.util.ArrayList.addAll	javascript	Refactoring	193837	true
+175026	110728	IllegalArgumentException at org.netbeans.api.java.source.Sou	java	Project	enter	false
+179300	110408	ClassNotFoundException: java.nio.charsep.IllegalCharsetNameE	java	Project	enter	false
+151652	110408	ArrayIndexOutOfBoundsException: 1	projects	Maven	199345	true
+176911	110408	java.net.URISyntaxException: Illegal character in opaque par	projects	Maven	enter	false
+179230	110408	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	enter	false
+182573	120410	org.apache.lucene.queryParser.ParseException: Encountered "	projects	Maven	204651	true
+176428	110408	org.openide.filesystems.FileAlreadyLockedException: /Users/s	apisupport	Project	195063	true
+179193	110408	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	enter	false
+179185	110408	NullPointerException at org.netbeans.modules.maven.api.FileU	projects	Maven	199172	true
+171941	110920	NullPointerException at org.netbeans.modules.apisupport.face	apisupport	Templates	189506	true
+179171	110408	java.util.MissingResourceException: No such bundle org.netbe	projects	Maven	199160	true
+175301	120410	IllegalArgumentException: No archive for deployment	javaee	Maven	193778	true
+179164	110728	NullPointerException at org.netbeans.modules.java.api.common	java	Project	enter	false
+179160	110408	ClassFormatError: Method "access$100" in class org/openide/w	java	Project	enter	false
+183185	120309	IllegalArgumentException: The expression's string cannot be	projects	Maven	205552	true
+18218	110728	ArrayIndexOutOfBoundsException: -1	java	Refactoring	199077	true
+145505	111107	IllegalArgumentException: MasterFileObject[C:\Users\Richard\	java	Project	157361	true
+169183	120301	NumberFormatException: null	php	Project	187538	true
+177538	120410	IllegalStateException: Property 'src.dir' was not found in '	php	Project	200317	true
+175426	120410	java.io.FileNotFoundException: C:\Users\gquezid\.netbeans\7.	projects	Maven	194153	true
+172191	110919	NumberFormatException: null	php	Project	189937	true
+179047	120410	StackOverflowError at java.util.concurrent.FutureTask$Sync.r	projects	Maven	205658	true
+147528	110728	NullPointerException at org.netbeans.modules.maven.navigator	projects	Maven	160302	true
+170213	110728	StringIndexOutOfBoundsException: String index out of range:	php	Project	203642	true
+192478	121010	IllegalStateException: WARNING: Going from readAccess to wri	php	Project	218432	true
+178947	111207	NullPointerException at org.netbeans.modules.maven.indexer.N	projects	Maven	enter	false
+152033	130605	NullPointerException at org.netbeans.spi.project.support.ant	php	Project	185720	true
+178941	110408	ClassFormatError: org/netbeans/spi/project/support/ant/Gener	java	Project	enter	false
+18347	120410	java.io.IOException: file:/C:/development/vervepayday/src/ma	editor	Refactoring	151013	true
+163160	120410	IllegalStateException: Property 'src.dir' was not found in '	php	Project	181877	true
+175605	111207	NullPointerException at org.openide.util.NbBundle.getBundleF	cnd	Project	194061	true
+154715	110728	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	177707	true
+119504	110408	org.xml.sax.SAXParseException: Content is not allowed in pro	projects	Maven	156916	true
+172704	120410	IllegalStateException: Property 'src.dir' was not found in '	php	Project	190508	true
+177049	110408	IllegalArgumentException: Parameter file was not normalized.	projects	Maven	enter	false
+178810	110408	NullPointerException at org.netbeans.modules.maven.classpath	projects	Maven	198541	true
+178794	110408	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	Project	198490	true
+149607	111207	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	enter	false
+178785	120607	ThreadDeath at org.netbeans.modules.maven.embedder.exec.Prog	projects	Maven	213812	true
+177122	130605	NullPointerException at java.util.regex.Matcher.getTextLengt	java	Project	217257	true
+171690	110408	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	Project	197015	true
+177758	111106	java.io.FileNotFoundException at org.netbeans.modules.master	java	Refactoring	196924	true
+175142	120301	UnsupportedOperationException at org.netbeans.api.java.proje	java	Project	213109	true
+154403	120503	NullPointerException at org.netbeans.modules.php.project.ui.	php	Project	enter	false
+177148	110408	java.net.URISyntaxException: Illegal character in opaque par	projects	Maven	enter	false
+175259	110408	UnsupportedOperationException: XXX: public static org.netbea	apisupport	Project	196608	true
+170000	120410	NullPointerException: The folders parameter cannot be null	php	Project	196060	true
+178717	110408	java.nio.channels.ClosedByInterruptException at java.nio.cha	projects	Maven	enter	false
+123	130605	ArrayIndexOutOfBoundsException: 3184	java	Project	124804	true
+178699	110408	UnsupportedOperationException: Project in /home/fcs/IDCS of	java	Project	enter	false
+171622	110728	java.util.concurrent.CancellationException at java.util.conc	php	Project	194747	true
+178677	110408	ClassCastException: org.netbeans.modules.java.j2seproject.ui	java	Project	enter	false
+153648	160908	OutOfMemoryError: Java heap space	javascript	Refactoring	184296	true
+165596	120118	NullPointerException: The fileObject parameter cannot be nul	php	Project	189110	true
+177715	110512	NullPointerException at org.netbeans.modules.cnd.makeproject	cnd	Project	197117	true
+178582	110920	NullPointerException at org.netbeans.modules.php.project.Pro	php	Project	198753	true
+151233	140825	IllegalArgumentException: Attempted to pass a non-directory	cnd	Project	198220	true
+176821	110408	NullPointerException at org.antlr.runtime.ANTLRStringStream.	java	Project	196613	true
+178594	110408	NullPointerException at org.netbeans.modules.refactoring.spi	editor	Refactoring	enter	false
+176897	141118	Netbeans Enters An Infinite, Recursive Build Loop	java	Project	enter	false
+178578	110408	IllegalArgumentException: URI has a query component	projects	Maven	enter	false
+177214	110408	java.net.URISyntaxException: Illegal character in authority	projects	Maven	196909	true
+178561	110408	NullPointerException at org.apache.maven.artifact.DefaultArt	projects	Maven	198155	true
+19454	110408	ArrayIndexOutOfBoundsException: -1	java	Refactoring	152998	true
+27498	110408	IllegalStateException: No classpath for MasterFileObject[/ho	java	Refactoring	159228	true
+193374	110408	NullPointerException at org.netbeans.modules.web.refactoring	javaee	Refactoring	219873	true
+178521	130217	NullPointerException at org.netbeans.modules.cnd.makeproject	cnd	Project	198241	true
+163048	121010	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	Project	225078	true
+132903	120503	java.io.SyncFailedException: C:\Users\daniel\Documents\NetBe	projects	Maven	152366	true
+178313	110408	java.io.FileNotFoundException: C:\Users\aleksandrv\.netbeans	projects	Maven	enter	false
+178504	110408	StringIndexOutOfBoundsException: String index out of range:	apisupport	Refactoring	enter	false
+150955	111012	java.io.IOException: File C:\Users\tqi_vsilva\.netbeans\7.0r	projects	Maven	177460	true
+180021	110925	NullPointerException at org.netbeans.modules.refactoring.php	php	Refactoring	200260	true
+173722	110423	NullPointerException at org.netbeans.modules.maven.NbMavenPr	projects	Maven	enter	false
+178056	111004	ThreadDeath at org.netbeans.modules.maven.embedder.exec.Prog	projects	Maven	197261	true
+178451	110408	org.apache.maven.model.building.ModelBuildingException: 1 pr	projects	Maven	enter	false
+176945	120717	java.util.ConcurrentModificationException at java.util.HashM	apisupport	Project	218417	true
+178466	110416	org.apache.maven.model.building.ModelBuildingException: 1 pr	projects	Maven	197994	true
+178071	110408	org.apache.maven.artifact.InvalidArtifactRTException: For ar	projects	Maven	197288	true
+178393	110408	org.apache.maven.artifact.InvalidRepositoryException: Reposi	projects	Maven	197831	true
+177069	111020	org.apache.lucene.queryParser.ParseException: Query cannot s	projects	Maven	196046	true
+223994	111207	com.google.inject.ProvisionException: Guice provision errors	projects	Maven	enter	false
+193173	120309	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	219644	true
+200181	111207	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	245846	true
+176954	120518	java.lang.IllegalStateException: Property 'src.dir' was not	php	Project	216499	true
+199833	130605	NullPointerException at org.netbeans.modules.cnd.makeproject	cnd	Project	239679	true
+141301	111207	NullPointerException at org.netbeans.modules.ruby.rubyprojec	ruby	Project	enter	false
+184579	121106	org.apache.lucene.queryParser.ParseException: Encountered "<	projects	Maven	224088	true
+191825	140418	ArrayIndexOutOfBoundsException: 0 >= 0	java	Project	enter	false
+183525	120503	IllegalArgumentException: org.netbeans.modules.maven.problem	projects	Maven	211588	true
+184905	120126	java.io.IOException: canceled indexing	projects	Maven	enter	false
+180402	121010	IllegalArgumentException: more than one element with same na	projects	Maven	200651	true
+82753	120301	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	enter	false
+184238	120104	NullPointerException at org.netbeans.modules.maven.indexer.N	projects	Maven	207038	true
+188393	120503	NullPointerException: The treePath parameter cannot be null	java	Refactoring	213462	true
+182422	111207	java.io.IOException: Invalid J2SE platform in C:\Program Fil	java	Project	enter	false
+180073	120412	org.apache.maven.model.building.ModelBuildingException: 1 pr	projects	Maven	200320	true
+146173	111207	ClassFormatError: Unknown constant tag 30 in class file sun/	java	Project	158384	true
+191143	111207	org.apache.maven.model.building.ModelBuildingException: 1 pr	projects	Maven	enter	false
+190715	141118	ArrayIndexOutOfBoundsException: 462997	projects	Maven	enter	false
+190221	111207	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	Project	enter	false
+172738	111207	NullPointerException at java.io.File.	projects	Maven	205722	true
+177325	141118	NoClassDefFoundError: Could not initialize class org.netbean	cnd	Project	237769	true
+180646	111207	ArrayIndexOutOfBoundsException: 0	javaee	Maven	enter	false
+175322	120423	org.jdom.IllegalNameException: The name "-offline Env.MAVEN_	projects	Maven	193793	true
+180726	120301	java.io.IOException: Do not create DO for .svn metadata: U:\	cnd	Project	197573	true
+60774	111207	NullPointerException at org.netbeans.modules.spring.beans.ui	projects	Maven	136227	true
+187624	111207	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	enter	false
+175605	111207	NullPointerException at org.openide.util.NbBundle.getBundleF	cnd	Project	194061	true
+178947	111207	NullPointerException at org.netbeans.modules.maven.indexer.N	projects	Maven	enter	false
+187277	111207	NullPointerException at org.netbeans.modules.refactoring.spi	editor	Refactoring	enter	false
+187223	111207	IllegalStateException at org.netbeans.modules.maven.execute.	projects	Maven	enter	false
+183264	120301	java.io.IOException: Could find no file corresponding to jar	projects	Maven	207397	true
+187019	120410	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	211197	true
+184020	111207	SecurityException: Invalid signature file digest for Manifes	projects	Maven	enter	false
+186854	111207	NullPointerException at org.netbeans.modules.java.project.Ex	java	Project	210963	true
+132903	120503	java.io.SyncFailedException: C:\Users\daniel\Documents\NetBe	projects	Maven	152366	true
+186501	111207	ClassFormatError: org/netbeans/modules/java/project/PackageD	java	Project	enter	false
+174289	111207	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	193494	true
+183543	111207	SecurityException: no manifiest section for signature file e	projects	Maven	206111	true
+186368	111207	java.io.IOException: Cannot read web.xml	javaee	Maven	enter	false
+186367	111207	java.io.IOException: Cannot read web.xml	javaee	Maven	enter	false
+186211	111207	NullPointerException at java.util.regex.Pattern.escape	cnd	Project	210185	true
+160138	111207	org.xml.sax.SAXParseException: The markup declarations conta	projects	Maven	175092	true
+178847	120410	NullPointerException at org.apache.maven.index.DefaultSearch	projects	Maven	202138	true
+183493	120301	NullPointerException at javax.swing.SwingUtilities.computeIn	php	Project	enter	false
+185986	111207	NullPointerException at org.netbeans.modules.maven.ProjectOp	projects	Maven	enter	false
+7612	120301	StackOverflowError at org.netbeans.modules.search.BufferedCh	java	Project	154894	true
+185814	111207	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	209509	true
+185810	111207	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	209504	true
+185802	120410	NullPointerException at org.vaadin.framework.VaadinFramework	javaee	Maven	enter	false
+185776	111207	SecurityException: class "org.apache.xmlrpc.XmlRpcRequestCon	projects	Maven	enter	false
+180587	111207	ArrayIndexOutOfBoundsException: 0	javaee	Maven	205860	true
+185608	111207	NullPointerException at org.openide.filesystems.FileUtil.toF	javaee	Maven	209254	true
+185584	120124	NullPointerException at org.openide.filesystems.FileUtil.nor	php	Project	enter	false
+185523	111207	NullPointerException at org.netbeans.modules.javafx2.project	javafx	Project	209141	true
+149607	111207	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	enter	false
+170000	120410	NullPointerException: The folders parameter cannot be null	php	Project	196060	true
+179841	130314	NullPointerException at com.sun.tools.javac.api.JavacTrees.g	java	Refactoring	218720	true
+185353	141118	java.io.FileNotFoundException: Can't read /home/aulaskar/Net	javaee	Maven	enter	false
+183051	120301	NullPointerException at org.netbeans.modules.java.api.common	java	Project	209550	true
+179015	120503	NullPointerException at org.netbeans.spi.java.project.classp	java	Project	enter	false
+180599	141118	NullPointerException: Name is null	php	Project	253418	true
+176897	141118	Netbeans Enters An Infinite, Recursive Build Loop	java	Project	enter	false
+167619	120410	NullPointerException: Passed null to FileOwnerQuery.getOwner	javaee	Maven	enter	false
+185272	120717	NullPointerException at java.util.ArrayList.addAll	javascript	Refactoring	219758	true
+190009	120410	NullPointerException at org.netbeans.modules.cnd.makeproject	cnd	Project	214681	true
+160373	120301	IllegalStateException: Current thread has already started a	projects	Maven	177318	true
+163160	120410	IllegalStateException: Property 'src.dir' was not found in '	php	Project	181877	true
+172704	120410	IllegalStateException: Property 'src.dir' was not found in '	php	Project	190508	true
+169183	120301	NumberFormatException: null	php	Project	187538	true
+173157	111207	IllegalArgumentException: non-ws text encountered in [public	apisupport	Project	208648	true
+181520	120301	IllegalArgumentException: Already a org.netbeans.modules.cnd	cnd	Project	202897	true
+178468	120627	NullPointerException at org.netbeans.modules.cnd.makeproject	cnd	Project	197996	true
+179057	120301	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	198965	true
+183208	120503	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	Project	213187	true
+185188	111207	NullPointerException at org.netbeans.modules.uml.project.ui.	uml	Project	208595	false
+185135	111207	NullPointerException at com.sun.tools.javac.api.JavacTrees.g	java	Refactoring	208499	true
+186550	130311	Scanning stuck at 100%, never stopped	java	Project	210527	true
+185088	111207	org.openide.filesystems.FileStateInvalidException: E:\__kerj	editor	Refactoring	enter	false
+184276	120410	NullPointerException at org.netbeans.modules.maven.j2ee.newp	javaee	Maven	207108	true
+189266	120503	java.io.IOException: Do not create DO for .svn metadata: E:\	java	Project	213888	true
+185014	111207	NullPointerException at org.netbeans.modules.ruby.rubyprojec	ruby	Project	enter	false
+190604	120717	NullPointerException at org.netbeans.modules.cnd.makeproject	cnd	Project	215355	true
+184997	111207	NullPointerException at org.netbeans.spi.java.project.suppor	java	Project	208278	true
+123	130605	ArrayIndexOutOfBoundsException: 3184	java	Project	124804	true
+184960	111207	IllegalArgumentException: run-testng	java	Project	enter	false
+183274	120410	IllegalArgumentException: jar:file:/C:/Program%20Files/NetBe	projects	Maven	207887	true
+157373	168237	NullPointerException at java.util.ArrayList.addAll	javascript	Refactoring	193837	true
+181997	111207	AbstractMethodError at org.openide.filesystems.URLMapper.fin	java	Project	enter	false
+176945	120717	java.util.ConcurrentModificationException at java.util.HashM	apisupport	Project	218417	true
+184788	111207	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	Project	207780	true
+181899	121010	IllegalStateException: The model is not initialized or is br	projects	Maven	203551	true
+150785	120503	IllegalArgumentException: Not a DataFolder: /home/zepolar/Ne	projects	Maven	209267	true
+184748	111207	NullPointerException at com.sun.java.swing.plaf.windows.Wind	php	Project	enter	false
+181129	120410	NullPointerException at org.netbeans.modules.php.project.con	php	Project	205240	true
+181135	111207	java.io.SyncFailedException: C:\Users\Jerouris\Develop\espea	apisupport	Project	202087	true
+185647	111207	NullPointerException: Must pass non-null build script	java	Project	209288	true
+194225	120410	NullPointerException at com.sun.tools.javac.api.JavacTrees.g	java	Refactoring	209552	true
+182429	120410	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	Project	210772	true
+184596	111207	ClassCastException: com.sun.tools.javac.code.Symbol$ClassSym	java	Refactoring	207555	true
+184581	151022	NullPointerException at com.sun.source.util.TreePath.	java	Refactoring	258482	true
+10961	120118	IllegalArgumentException: Invalid ClassPath root: file:/D:/P	java	Project	146359	true
+184548	130213	NullPointerException: The brandingSource parameter cannot be	apisupport	Project	227374	true
+180712	120503	AssertionError at org.apache.lucene.index.IndexWriter.doFlus	projects	Maven	204706	true
+184500	111207	IllegalArgumentException: MALFORMED	projects	Maven	enter	false
+180126	120503	IllegalArgumentException: File 'C:\Users\Rafael\Documents\Ne	php	Project	208621	true
+183808	120301	ClassCastException: com.sun.tools.javac.code.Symbol$ClassSym	java	Refactoring	206440	true
+184461	111207	ArrayIndexOutOfBoundsException: 0	projects	Maven	enter	false
+178521	130217	NullPointerException at org.netbeans.modules.cnd.makeproject	cnd	Project	198241	true
+178227	120717	NumberFormatException: null	php	Project	215039	true
+203699	121106	IllegalArgumentException: nbfs://nbhost/org.netbeans.modules	cnd	Project	215822	true
+168472	111207	java.net.MalformedURLException: unknown protocol: c	java	Project	196617	true
+163453	111207	java.net.MalformedURLException: unknown protocol: x	java	Project	enter	false
+183687	111207	NullPointerException: The argument parameter cannot be null	php	Project	enter	false
+55032	120301	org.apache.maven.artifact.InvalidArtifactRTException: For ar	projects	Maven	164998	true
+181546	120717	NullPointerException at org.netbeans.modules.apisupport.inst	apisupport	Maven	202961	true
+184330	111207	IllegalArgumentException: Consecutive slashes in path	projects	Maven	enter	false
+181405	120410	NullPointerException at com.sun.tools.javac.api.JavacTrees.g	java	Refactoring	202670	true
+184295	120410	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	207224	true
+184272	120410	NullPointerException at org.netbeans.modules.maven.api.Plugi	projects	Maven	207098	true
+177538	120410	IllegalStateException: Property 'src.dir' was not found in '	php	Project	200317	true
+183387	120410	NullPointerException at java.io.File.	projects	Maven	205867	true
+183457	120301	java.util.NoSuchElementException at java.util.AbstractList$I	projects	Maven	enter	false
+179047	120410	StackOverflowError at java.util.concurrent.FutureTask$Sync.r	projects	Maven	205658	true
+192478	121010	IllegalStateException: WARNING: Going from readAccess to wri	php	Project	218432	true
+183749	120301	IllegalArgumentException: Default JavaFX Platform	javafx	Project	206370	true
+182710	120503	UnsupportedOperationException at java.util.AbstractMap.put	java	Project	205634	true
+184362	120410	java.lang.Exception: Scan canceled.	java	Project	207377	true
+163250	111205	java.util.ConcurrentModificationException at java.util.HashM	java	Project	177991	true
+12950	111205	NullPointerException at org.netbeans.modules.uml.project.ui.	uml	Project	123392	true
+183019	120410	NullPointerException at org.netbeans.modules.maven.j2ee.cust	javaee	Maven	205298	true
+183813	130205	Background scanning of projects hangs on 96%	projects	Maven	206445	true
+182824	120410	java.util.NoSuchElementException at java.util.ArrayList$Itr.	projects	Maven	206238	true
+180686	120410	NullPointerException at org.apache.lucene.index.SegmentTermD	projects	Maven	201057	true
+211995	120717	NoClassDefFoundError: org/netbeans/modules/java/j2seplatform	java	Project	enter	false
+184222	120717	AssertionError: Need to normalize C:\Users\MARK~1.JON\AppDat	javaee	Maven	214182	true
+183095	121010	java.nio.channels.ClosedChannelException at sun.nio.ch.FileC	projects	Maven	enter	false
+209300	120717	ClassFormatError: org/netbeans/modules/java/api/common/Sourc	java	Project	enter	false
+208285	130128	NullPointerException at com.sun.source.util.TreePath.getPath	java	Refactoring	enter	false
+203351	120717	NullPointerException: The task parameter cannot be null	java	Refactoring	enter	false
+192090	120717	NullPointerException: Passed null to FileOwnerQuery.getOwner	java	Project	enter	false
+195997	121203	IllegalStateException: Trying to use content for org.openide	javaee	Maven	223153	true
+202158	120717	java.util.ConcurrentModificationException at java.util.HashM	java	Refactoring	enter	false
+218072	141118	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	253089	true
+199060	120717	NullPointerException at org.netbeans.modules.cnd.makeproject	cnd	Project	enter	false
+177325	141118	NoClassDefFoundError: Could not initialize class org.netbean	cnd	Project	237769	true
+190604	120717	NullPointerException at org.netbeans.modules.cnd.makeproject	cnd	Project	215355	true
+183157	130605	ClassCastException: org.netbeans.modules.java.source.parsing	php	Project	234035	true
+180369	141118	NullPointerException at org.netbeans.api.java.classpath.Clas	java	Project	250206	true
+189003	151022	org.xml.sax.SAXParseException; cvc-complex-type.2.4.a: Inval	javafx	Project	229015	false
+198382	151022	AssertionError: Broken project.xml file	java	Project	enter	false
+197775	120717	ArrayIndexOutOfBoundsException: 0	java	Refactoring	enter	false
+197408	130605	IllegalArgumentException: Called DataObject.find on null	php	Project	enter	false
+149253	120717	java.lang.NegativeArraySizeException	ruby	Refactoring	186462	false
+211848	141118	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	247110	true
+189526	121010	IllegalArgumentException: org.netbeans.modules.maven.reposit	projects	Maven	219461	true
+157373	168237	NullPointerException at java.util.ArrayList.addAll	javascript	Refactoring	193837	true
+196758	120717	NullPointerException: The file parameter cannot be null	php	Project	enter	false
+196672	120717	java.util.ConcurrentModificationException at java.util.Abstr	projects	Maven	enter	false
+184181	120717	OutOfMemoryError: GC overhead limit exceeded	projects	Maven	206921	true
+198565	130207	NullPointerException at java.io.File.	javaee	Maven	226061	true
+187062	120717	java.net.MalformedURLException at java.net.URL.	php	Project	enter	false
+196478	120717	OutOfMemoryError: Java heap space	projects	Maven	enter	false
+173363	121010	ClassCastException: com.vigilante.joomla.JoomlaProject canno	php	Project	204930	true
+181899	121010	IllegalStateException: The model is not initialized or is br	projects	Maven	203551	true
+151233	140825	IllegalArgumentException: Attempted to pass a non-directory	cnd	Project	198220	true
+181802	130709	NoClassDefFoundError: Could not initialize class org.netbean	cnd	Project	236038	true
+196010	121010	NullPointerException at org.netbeans.modules.java.api.common	java	Project	223162	true
+186541	120717	org.netbeans.editor.GuardedException: Modification prohibite	java	Refactoring	210517	true
+195883	120717	NullPointerException: The file parameter cannot be null	projects	Maven	enter	false
+195882	120717	java.net.URISyntaxException: Illegal character in authority	projects	Maven	enter	false
+195862	141118	NullPointerException: #222979: Cannot resolve handle: TreePa	java	Refactoring	222979	true
+195823	121010	NullPointerException at org.netbeans.modules.java.api.common	java	Project	enter	false
+195627	120717	ArrayIndexOutOfBoundsException: -268410910	projects	Maven	enter	false
+134153	151022	org.netbeans.modules.masterfs.filebasedfs.utils.FSException:	java	Refactoring	218038	false
+195164	120717	NullPointerException at org.openide.filesystems.FileUtil.toF	projects	Maven	enter	false
+191571	130620	StackOverflowError at com.sun.tools.javac.code.Type$Wildcard	java	Refactoring	231639	true
+194972	120717	IllegalArgumentException: TreePathHandle [/Users/antoniodifl	java	Refactoring	221938	true
+192803	121001	NullPointerException at org.netbeans.modules.maven.j2ee.web.	javaee	Maven	219080	true
+194717	130213	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	227886	true
+194243	121106	NullPointerException at org.netbeans.modules.maven.junit.nod	projects	Maven	221053	true
+194430	120717	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	Project	enter	false
+194008	120717	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	220727	true
+193939	120717	OutOfMemoryError: Java heap space	java	Project	enter	false
+184548	130213	NullPointerException: The brandingSource parameter cannot be	apisupport	Project	227374	true
+193767	141118	NoClassDefFoundError: org/apache/maven/plugin/internal/Plugi	projects	Maven	enter	false
+189428	120717	IllegalArgumentException: Comparison method violates its gen	projects	Maven	220248	true
+193576	130605	NullPointerException at org.netbeans.modules.php.project.ui.	php	Project	enter	false
+193560	151022	org.apache.maven.artifact.InvalidArtifactRTException: For ar	projects	Maven	220114	true
+190868	120717	java.io.FileNotFoundException: C:\Java\ide\netbeans	apisupport	Harness	enter	false
+192795	121010	IllegalStateException: Property 'src.dir' was not found in '	php	Project	219959	true
+193118	150804	com.google.inject.ProvisionException: Guice provision errors	projects	Maven	enter	false
+183400	130213	java.io.IOException: No application project found to corresp	apisupport	Templates	227498	true
+192953	120717	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	Project	enter	false
+192913	131011	IllegalArgumentException: URI has an authority component	javaee	Maven	237478	true
+192909	120730	IllegalArgumentException: Node:class org.netbeans.modules.pr	java	Project	219277	true
+192894	130521	IllegalArgumentException: URI has an authority component	editor	Refactoring	230219	true
+192827	120717	ClassFormatError: org/netbeans/modules/php/project/connectio	php	Project	enter	false
+189882	120717	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	219065	true
+192776	130218	NullPointerException at org.netbeans.spi.java.project.suppor	java	Project	226391	true
+192774	151022	NullPointerException at org.netbeans.modules.java.source.usa	java	Project	enter	false
+192773	120717	NullPointerException at org.openide.util.lookup.InheritanceT	javaee	Maven	enter	false
+195797	130118	IllegalArgumentException: more than one element with same na	projects	Maven	222898	true
+192745	120629	AssertionError: USE_ALIAS	php	Refactoring	218991	true
+192732	140114	NullPointerException at org.netbeans.api.project.ant.AntArti	javafx	Project	240962	true
+192719	121001	NullPointerException at org.netbeans.modules.refactoring.spi	editor	Refactoring	218926	true
+178107	121010	NullPointerException at org.apache.lucene.store.Directory.co	projects	Maven	197346	true
+190919	120720	NullPointerException at org.netbeans.modules.maven.j2ee.web.	javaee	Maven	215798	true
+196139	130213	NullPointerException at com.sun.source.util.TreePath.	java	Refactoring	223326	true
+204469	130605	NullPointerException: The brandingSource parameter cannot be	apisupport	Project	236962	true
+179841	130314	NullPointerException at com.sun.tools.javac.api.JavacTrees.g	java	Refactoring	218720	true
+192608	120717	NullPointerException at org.netbeans.modules.refactoring.api	editor	Refactoring	enter	false
+192485	120717	IllegalArgumentException at org.netbeans.api.java.classpath.	projects	Maven	218462	true
+176945	120717	java.util.ConcurrentModificationException at java.util.HashM	apisupport	Project	218417	true
+192401	120717	IllegalArgumentException: URI is not absolute	java	Project	enter	false
+192360	120717	NullPointerException at org.netbeans.modules.php.project.con	php	Project	enter	false
+192357	121010	NoClassDefFoundError: sun/security/pkcs11/P11Key	php	Project	enter	false
+200657	140310	StackOverflowError at java.security.AccessController.doPrivi	apisupport	Project	229764	false
+192307	121010	IllegalArgumentException: URI has an authority component	javaee	Maven	enter	false
+192241	120717	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	218017	true
+192186	120904	NullPointerException at com.sun.tools.javac.api.JavacTrees.g	java	Refactoring	217966	true
+203704	130213	IllegalArgumentException: file:/G:/GCS-KFT/lib/.jar/ is not	java	Project	235693	true
+181705	120717	StackOverflowError at sun.nio.cs.UTF_8.updatePositions	projects	Maven	215055	true
+147531	120831	NoClassDefFoundError: org/netbeans/modules/php/project/PhpEd	php	Project	196185	true
+203700	131011	IllegalArgumentException: Root cannot be null.	projects	Maven	235687	true
+123	130605	ArrayIndexOutOfBoundsException: 3184	java	Project	124804	true
+172277	151022	NullPointerException at java.util.TreeMap.getEntry	java	Project	enter	false
+189680	121010	IllegalStateException: Property 'src.dir' was not found in '	php	Project	enter	false
+181546	120717	NullPointerException at org.netbeans.modules.apisupport.inst	apisupport	Maven	202961	true
+178227	120717	NumberFormatException: null	php	Project	215039	true
+191832	120717	OutOfMemoryError: Java heap space	javaee	Maven	235754	true
+191825	140418	ArrayIndexOutOfBoundsException: 0 >= 0	java	Project	enter	false
+177298	120911	NullPointerException at org.apache.maven.index.context.Defau	projects	Maven	218582	true
+191788	141118	NumberFormatException: For input string: "8b0::2020"	php	Project	enter	false
+190775	121010	NullPointerException at org.netbeans.modules.cnd.utils.FSPat	cnd	Project	218180	true
+177122	130605	NullPointerException at java.util.regex.Matcher.getTextLengt	java	Project	217257	true
+191726	120717	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	Harness	enter	false
+184579	121106	org.apache.lucene.queryParser.ParseException: Encountered "<	projects	Maven	224088	true
+178521	130217	NullPointerException at org.netbeans.modules.cnd.makeproject	cnd	Project	198241	true
+210816	141002	java.io.IOException: Do not create DO for .svn metadata: C:\	projects	Maven	245857	true
+189554	140217	Cannot design window layout in maven-based module: NullPoint	apisupport	Templates	242246	true
+188317	120730	IllegalStateException: Property 'src.dir' was not found in '	php	Project	214000	true
+190415	121010	NullPointerException at org.netbeans.modules.refactoring.spi	editor	Refactoring	215157	true
+191600	151022	VerifyError: (class: org/sonatype/aether/impl/internal/Defau	projects	Maven	enter	false
+193817	121010	IllegalStateException: Property 'src.dir' was not found in '	php	Project	220481	true
+194968	120717	java.lang.Exception: Scan canceled.	projects	Maven	221935	true
+187691	120717	java.util.ConcurrentModificationException at java.util.Array	projects	Maven	214457	true
+190188	151022	IllegalStateException: Wrong placement of JPAModuleInfo in m	javaee	Maven	enter	false
+191508	120717	IllegalStateException: Wrong placement of JPAModuleInfo in m	javaee	Maven	enter	false
+191486	120717	NullPointerException at org.netbeans.modules.refactoring.jav	java	Refactoring	enter	false
+185272	120717	NullPointerException at java.util.ArrayList.addAll	javascript	Refactoring	219758	true
+203163	140523	NullPointerException: #145291: Cannot resolve handle: TreePa	java	Refactoring	234613	true
+189725	121010	NullPointerException: The info parameter cannot be null	java	Refactoring	214442	true
+190986	120717	NullPointerException at org.openide.filesystems.FileUtil.cre	projects	Maven	enter	false
+203699	121106	IllegalArgumentException: nbfs://nbhost/org.netbeans.modules	cnd	Project	215822	true
+191399	120717	java.util.ConcurrentModificationException at java.util.HashM	java	Project	216548	true
+191385	130627	NullPointerException: #120577: Cannot resolve ElementHandle[	java	Refactoring	216541	true
+190983	131011	IllegalArgumentException: number of workunits cannot be nega	php	Project	237847	true
+191358	121106	IllegalArgumentException at org.netbeans.api.java.source.Ele	java	Refactoring	222917	true
+191357	141118	NullPointerException at org.netbeans.modules.java.source.pre	java	Refactoring	216817	true
+38410	120717	ClassCastException: com.sun.tools.javac.tree.JCTree$JCMethod	java	Refactoring	221173	true
+191026	120717	java.net.MalformedURLException at java.net.URL.	php	Project	enter	false
+188812	130213	Memory issue	projects	Maven	216475	true
+189518	121010	IllegalStateException: Property 'src.dir' was not found in '	php	Project	216410	true
+174408	120717	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	Project	enter	false
+192478	121010	IllegalStateException: WARNING: Going from readAccess to wri	php	Project	218432	true
+191197	151022	IllegalArgumentException: build	cnd	Project	216230	true
+191157	131011	NullPointerException at org.netbeans.modules.maven.j2ee.web.	javaee	Maven	enter	false
+191156	121106	NullPointerException at org.netbeans.modules.java.j2seprojec	java	Project	222010	true
+191104	120717	ClassNotFoundException: org.netbeans.modules.php.spi.editor.	php	Project	enter	false
+184210	120717	StringIndexOutOfBoundsException: String index out of range:	java	Project	enter	false
+183649	120717	IllegalArgumentException: Attempt to remove nonexistent path	projects	Maven	206246	true
+191068	120717	NullPointerException at org.netbeans.modules.apisupport.proj	apisupport	Project	216034	true
+189582	121106	IllegalStateException: Trying to use content for org.openide	javaee	Maven	216942	true
+189746	120730	IllegalArgumentException: URI has an authority component	php	Project	217208	true
+191023	120717	IllegalArgumentException: URI has an authority component	php	Project	220412	true
+188898	121010	NullPointerException at org.apache.maven.index.DefaultSearch	projects	Maven	213466	true
+187417	120717	IllegalStateException: Property 'src.dir' was not found in '	php	Project	213468	true
+186550	130311	Scanning stuck at 100%, never stopped	java	Project	210527	true
+191105	120813	ClassCastException: org.apache.maven.wagon.providers.file.Fi	projects	Maven	216401	true
+190901	120918	ClassCastException: com.sun.tools.javac.code.Symbol$ClassSym	java	Refactoring	215787	true
+189674	120717	NullPointerException: The folder parameter cannot be null	java	Project	214382	true
+190140	121010	IllegalStateException: Property 'src.dir' was not found in '	php	Project	215122	true
+190377	120629	NullPointerException at org.netbeans.api.java.source.Element	java	Refactoring	215118	true

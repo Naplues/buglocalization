@@ -1,0 +1,10 @@
+java.util.ConcurrentModificationException
+        at java.util.AbstractList$Itr.checkForComodification(AbstractList.java:372)
+        at java.util.AbstractList$Itr.next(AbstractList.java:343)
+        at java.util.Collections$UnmodifiableCollection$1.next(Collections.java:1010)
+        at org.openide.nodes.Children$Dupl.updateList(Children.java:1689)
+        at org.openide.nodes.Children$Keys.setKeys(Children.java:1489)
+        at org.netbeans.modules.cnd.makeproject.ui.BaseMakeViewChildren.access$200(BaseMakeViewChildren.java:62)
+        at org.netbeans.modules.cnd.makeproject.ui.BaseMakeViewChildren$4.run(BaseMakeViewChildren.java:182)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1424)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1968)

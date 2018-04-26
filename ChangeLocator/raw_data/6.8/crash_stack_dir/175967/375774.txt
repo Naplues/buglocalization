@@ -1,0 +1,11 @@
+java.lang.IllegalStateException: No classpath for E:\NETBEANS.
+        at org.netbeans.modules.refactoring.java.RetoucheUtils.getPackageName(RetoucheUtils.java:361)
+        at org.netbeans.modules.refactoring.java.RetoucheUtils.getPackageName(RetoucheUtils.java:391)
+        at org.netbeans.modules.refactoring.java.plugins.CopyClassRefactoringPlugin.fastCheckParameters(CopyClassRefactoringPlugin.java:105)
+        at org.netbeans.modules.refactoring.api.AbstractRefactoring.pluginsFastCheckParams(AbstractRefactoring.java:508)
+        at org.netbeans.modules.refactoring.api.AbstractRefactoring.fastCheckParameters(AbstractRefactoring.java:262)
+        at org.netbeans.modules.refactoring.api.AbstractRefactoring.checkParameters(AbstractRefactoring.java:239)
+        at org.netbeans.modules.refactoring.java.ui.CopyClassRefactoringUI.setParameters(CopyClassRefactoringUI.java:108)
+        at org.netbeans.modules.refactoring.spi.impl.ParametersPanel$Prepare.run(ParametersPanel.java:787)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:602)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1084)

@@ -1,0 +1,20 @@
+java.lang.IllegalStateException: Property 'src.dir' was not found in 'nbproject/project.properties' (NB metadata corrupted?)
+diagnostics:
+project.properties exists: false
+project directory: /home/dev/Documents/NBW/dev_front@40c26af0:1cd5f53f
+project directory children: [/home/dev/Documents/NBW/dev_front/etc@e1d5d877:3f2bc418, /home/dev/Documents/NBW/dev_front/.zfproject.xml@ea512987:57003d5d, /home/dev/Documents/NBW/dev_front/data@570b2009:31a5fdb9, /home/dev/Documents/NBW/dev_front/sync.exclude@e845a0e4:71aefd7b, /home/dev/Documents/NBW/dev_front/application@7083c233:1783d08c, /home/dev/Documents/NBW/dev_front/.svn@571378fa:4ef0a363]
+nbproject exists: false
+source roots: []
+source roots - fired changes: 2
+properties (helper): {}
+properties (evaluator): {java.vm.version=20.6-b01, java.util.logging.config.class=org.netbeans.core.startup.TopLogging, apple.laf.useScreenMenuBar=true, sun.jnu.encoding=UTF-8, java.vendor.url=http://java.sun.com/, java.vm.info=mixed mode, user.dir=/home/dev, sun.cpu.isalist=, java.a
+        at org.netbeans.modules.php.project.PhpProject.resolveSourcesDirectory(PhpProject.java:376)
+        at org.netbeans.modules.php.project.PhpProject.getSourcesDirectory(PhpProject.java:300)
+        at org.netbeans.modules.php.project.ProjectPropertiesSupport.getSourcesDirectory(ProjectPropertiesSupport.java:120)
+        at org.netbeans.modules.php.project.PhpModuleImpl.getSourceDirectory(PhpModuleImpl.java:88)
+        at org.netbeans.modules.php.zend.ZendPhpFrameworkProvider.getConfigurationFiles(ZendPhpFrameworkProvider.java:102)
+        at org.netbeans.modules.php.project.ui.logicalview.ImportantFilesNodeFactory$ImportantFilesChildFactory.getImportantFiles(ImportantFilesNodeFactory.java:252)
+        at org.netbeans.modules.php.project.ui.logicalview.ImportantFilesNodeFactory$ImportantFilesChildFactory.createKeys(ImportantFilesNodeFactory.java:222)
+        at org.openide.nodes.AsynchChildren.run(AsynchChildren.java:206)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1452)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:2032)

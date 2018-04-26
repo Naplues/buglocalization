@@ -1,0 +1,13 @@
+java.io.IOException: Permission denied
+        at java.io.UnixFileSystem.createFileExclusively(UnixFileSystem.java:0)
+        at java.io.File.createNewFile(File.java:883)
+        at org.netbeans.modules.masterfs.filebasedfs.fileobjects.FolderObj.createData(FolderObj.java:288)
+        at org.netbeans.modules.masterfs.filebasedfs.fileobjects.FolderObj.createDataImpl(FolderObj.java:245)
+        at org.netbeans.modules.masterfs.filebasedfs.fileobjects.FolderObj$1.call(FolderObj.java:215)
+        at org.netbeans.modules.masterfs.filebasedfs.fileobjects.FolderObj$1.call(FolderObj.java:214)
+        at org.netbeans.modules.masterfs.filebasedfs.FileBasedFileSystem.runAsInconsistent(FileBasedFileSystem.java:112)
+        at org.netbeans.modules.masterfs.filebasedfs.fileobjects.FolderObj.createData(FolderObj.java:218)
+        at org.openide.filesystems.FileUtil.createData(FileUtil.java:583)
+        at org.openide.filesystems.FileUtil.createData(FileUtil.java:308)
+        at org.netbeans.modules.tomcat5.util.LogViewer.getLogFile(LogViewer.java:210)
+        at org.netbeans.modules.tomcat5.util.LogViewer.run(LogViewer.java:271)

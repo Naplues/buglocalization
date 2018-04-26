@@ -1,0 +1,9 @@
+java.lang.NullPointerException
+        at org.netbeans.modules.java.api.common.project.ui.LibrariesNode$LibrariesChildren.createFileSourceGroup(LibrariesNode.java:469)
+        at org.netbeans.modules.java.api.common.project.ui.LibrariesNode$LibrariesChildren.getKeys(LibrariesNode.java:442)
+        at org.netbeans.modules.java.api.common.project.ui.LibrariesNode$LibrariesChildren.getKeys(LibrariesNode.java:450)
+        at org.netbeans.modules.java.api.common.project.ui.LibrariesNode$LibrariesChildren.getKeys(LibrariesNode.java:354)
+        at org.netbeans.modules.java.api.common.project.ui.LibrariesNode$LibrariesChildren.access$000(LibrariesNode.java:218)
+        at org.netbeans.modules.java.api.common.project.ui.LibrariesNode$LibrariesChildren$1.run(LibrariesNode.java:286)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:602)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1084)

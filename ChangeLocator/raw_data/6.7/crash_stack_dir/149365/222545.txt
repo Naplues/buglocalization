@@ -1,0 +1,6 @@
+java.lang.NullPointerException: The session parameter cannot be null
+        at org.openide.util.Parameters.notNull(Parameters.java:86)
+        at org.netbeans.modules.refactoring.api.AbstractRefactoring.prepare(AbstractRefactoring.java:202)
+        at org.netbeans.modules.refactoring.spi.impl.ParametersPanel$Prepare.run(ParametersPanel.java:802)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:577)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1030)

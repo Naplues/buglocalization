@@ -1,0 +1,8 @@
+java.lang.NullPointerException
+        at org.netbeans.modules.maven.hints.pom.ParentVersionError.getErrorsForDocument(ParentVersionError.java:129)
+        at org.netbeans.modules.maven.hints.pom.StatusProvider$StatusProviderImpl.findHints(StatusProvider.java:153)
+        at org.netbeans.modules.maven.hints.pom.StatusProvider$StatusProviderImpl.checkHints(StatusProvider.java:124)
+        at org.netbeans.modules.maven.hints.pom.StatusProvider$StatusProviderImpl.access$000(StatusProvider.java:96)
+        at org.netbeans.modules.maven.hints.pom.StatusProvider$StatusProviderImpl$1$1.run(StatusProvider.java:109)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:577)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1030)

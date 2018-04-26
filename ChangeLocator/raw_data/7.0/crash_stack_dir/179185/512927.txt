@@ -1,0 +1,10 @@
+java.lang.NullPointerException
+        at org.netbeans.modules.maven.api.FileUtilities.getDirURI(FileUtilities.java:155)
+        at org.netbeans.modules.maven.api.FileUtilities.getDirURI(FileUtilities.java:171)
+        at org.netbeans.modules.maven.cos.CopyResourcesOnSave.findResource(CopyResourcesOnSave.java:339)
+        at org.netbeans.modules.maven.cos.CopyResourcesOnSave.findAppropriateResourceRoots(CopyResourcesOnSave.java:307)
+        at org.netbeans.modules.maven.cos.CopyResourcesOnSave.handleCopyFileToDestDir(CopyResourcesOnSave.java:268)
+        at org.netbeans.modules.maven.cos.CopyResourcesOnSave.fileChanged(CopyResourcesOnSave.java:158)
+        at org.netbeans.modules.maven.cos.CopyResourcesOnSave$1.run(CopyResourcesOnSave.java:148)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1424)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1968)

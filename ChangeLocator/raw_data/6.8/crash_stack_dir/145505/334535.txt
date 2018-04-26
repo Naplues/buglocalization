@@ -1,0 +1,6 @@
+java.lang.IllegalArgumentException: M:\greant_mbtrs_dev_int\mbtrs_dev\JavaEE\JavaEE_Framework\src\com\mobitrans\framework\javaee\misc\HttpServletUtil.java is not inside M:\greant_mbtrs_dev_int\mbtrs_dev\JavaEE\JavaEE_Framework\src
+        at org.netbeans.spi.project.support.ant.SourcesHelper$SourceRoot$Group.contains(SourcesHelper.java:198)
+        at org.netbeans.spi.java.project.support.ui.PackageViewChildren$NoFoldersDataFilter.acceptFileObject(PackageViewChildren.java:1221)
+        at org.openide.loaders.FolderChildren$1R.run(FolderChildren.java:155)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:602)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1084)

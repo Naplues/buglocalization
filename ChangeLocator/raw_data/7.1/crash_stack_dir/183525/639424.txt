@@ -1,0 +1,10 @@
+java.lang.IllegalArgumentException: org.netbeans.modules.maven.problems.ProblemReporterImpl$2@114adfa was not listening to /homes/malinke/.m2/repository/net/sf/xcf/xcf4j/1.3.4/xcf4j-1.3.4.jar; only to []
+        at org.openide.filesystems.FileUtil.removeFileChangeListenerImpl(FileUtil.java:309)
+        at org.openide.filesystems.FileUtil.removeFileChangeListener(FileUtil.java:298)
+        at org.netbeans.modules.maven.problems.ProblemReporterImpl.clearReports(ProblemReporterImpl.java:252)
+        at org.netbeans.modules.maven.NbMavenProjectImpl.fireProjectReload(NbMavenProjectImpl.java:484)
+        at org.netbeans.modules.maven.api.NbMavenProject.fireProjectReload(NbMavenProject.java:480)
+        at org.netbeans.modules.maven.api.NbMavenProject.fireMavenProjectReload(NbMavenProject.java:499)
+        at org.netbeans.modules.maven.execute.MavenCommandLineExecutor$1.run(MavenCommandLineExecutor.java:227)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1411)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1991)

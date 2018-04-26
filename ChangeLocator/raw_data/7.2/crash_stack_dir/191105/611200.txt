@@ -1,0 +1,11 @@
+java.lang.ClassCastException: org.apache.maven.wagon.providers.file.FileWagon cannot be cast to org.apache.maven.wagon.providers.http.HttpWagon
+        at org.netbeans.modules.maven.indexer.NexusRepositoryIndexerImpl.indexLoadedRepo(NexusRepositoryIndexerImpl.java:423)
+        at org.netbeans.modules.maven.indexer.NexusRepositoryIndexerImpl.access$100(NexusRepositoryIndexerImpl.java:112)
+        at org.netbeans.modules.maven.indexer.NexusRepositoryIndexerImpl$3.run(NexusRepositoryIndexerImpl.java:509)
+        at org.netbeans.modules.maven.indexer.NexusRepositoryIndexerImpl$3.run(NexusRepositoryIndexerImpl.java:503)
+        at org.openide.util.Mutex.writeAccess(Mutex.java:399)
+        at org.netbeans.modules.maven.indexer.NexusRepositoryIndexerImpl.indexRepo(NexusRepositoryIndexerImpl.java:503)
+        at org.netbeans.modules.maven.indexer.api.RepositoryIndexer.indexRepo(RepositoryIndexer.java:58)
+        at org.netbeans.modules.maven.ProjectOpenedHookImpl$2.run(ProjectOpenedHookImpl.java:227)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1452)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:2032)

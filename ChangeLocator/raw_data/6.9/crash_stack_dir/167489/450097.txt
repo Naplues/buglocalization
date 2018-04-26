@@ -1,0 +1,23 @@
+java.lang.IllegalArgumentException: TreePathHandle [D:\dev\epc-dev\DescCours\DescCours-ejb\src\java\be\ucl\epc\desccours\service\FicheProgrammeService.java] was not created from D:\dev\epc-dev\DescCours\DescCours-ejb\src\java\be\ucl\epc\desccours\service\convert\DomaineDecretBologneConverter.java
+mine: id=MasterFileObject[D:\dev\epc-dev\DescCours\DescCours-ejb\src\java\be\ucl\epc\desccours\service\FicheProgrammeService.java@315d700:90bb43a,valid=true], url=file:/D:/dev/epc-dev/DescCours/DescCours-ejb/src/java/be/ucl/epc/desccours/service/FicheProgrammeService.java
+remote: id=MasterFileObject[D:\dev\epc-dev\DescCours\DescCours-ejb\src\java\be\ucl\epc\desccours\service\convert\DomaineDecretBologneConverter.java@1a965c4:2e0c9c7c,valid=true], url=file:/D:/dev/epc-dev/DescCours/DescCours-ejb/src/java/be/ucl/epc/desccours/service/convert/DomaineDecretBologneConverter.java
+        at org.netbeans.api.java.source.TreePathHandle$TreeDelegate.resolve(TreePathHandle.java:424)
+        at org.netbeans.api.java.source.TreePathHandle.resolve(TreePathHandle.java:154)
+        at org.netbeans.modules.refactoring.java.ui.ChangeParametersPanel$1.run(ChangeParametersPanel.java:136)
+        at org.netbeans.modules.refactoring.java.ui.ChangeParametersPanel$1.run(ChangeParametersPanel.java:130)
+        at org.netbeans.api.java.source.JavaSource$MultiTask.run(JavaSource.java:478)
+        at org.netbeans.modules.parsing.api.ParserManager$UserTaskAction.run(ParserManager.java:154)
+        at org.netbeans.modules.parsing.api.ParserManager$UserTaskAction.run(ParserManager.java:138)
+        at org.netbeans.modules.parsing.impl.TaskProcessor$1.call(TaskProcessor.java:200)
+        at org.netbeans.modules.parsing.impl.TaskProcessor$1.call(TaskProcessor.java:197)
+        at org.netbeans.modules.masterfs.filebasedfs.utils.FileChangedManager.priorityIO(FileChangedManager.java:160)
+        at org.netbeans.modules.masterfs.providers.ProvidedExtensions.priorityIO(ProvidedExtensions.java:227)
+        at org.netbeans.modules.parsing.impl.Utilities.runPriorityIO(Utilities.java:66)
+        at org.netbeans.modules.parsing.impl.TaskProcessor.runUserTask(TaskProcessor.java:197)
+        at org.netbeans.modules.parsing.api.ParserManager.parse(ParserManager.java:106)
+        at org.netbeans.api.java.source.JavaSource.runUserActionTaskImpl(JavaSource.java:433)
+        at org.netbeans.api.java.source.JavaSource.runUserActionTask(JavaSource.java:404)
+        at org.netbeans.modules.refactoring.java.ui.ChangeParametersPanel.initialize(ChangeParametersPanel.java:130)
+        at org.netbeans.modules.refactoring.spi.impl.ParametersPanel$10.run(ParametersPanel.java:508)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1418)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1957)

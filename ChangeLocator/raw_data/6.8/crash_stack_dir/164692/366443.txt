@@ -1,0 +1,12 @@
+java.lang.IllegalStateException: Method can be called only on model waiting for bg thread to populate it.
+        at org.netbeans.modules.apisupport.project.ui.customizer.CustomizerComponentFactory$DependencyListModel.setDependencies(CustomizerComponentFactory.java:230)
+        at org.netbeans.modules.apisupport.project.ui.customizer.SingleModuleProperties$2$1.run(SingleModuleProperties.java:523)
+        at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:209)
+        at java.awt.EventQueue.dispatchEvent(EventQueue.java:597)
+        at org.netbeans.core.TimableEventQueue.dispatchEvent(TimableEventQueue.java:125)
+        at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:269)
+        at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:184)
+        at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:174)
+        at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:169)
+        at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:161)
+        at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)

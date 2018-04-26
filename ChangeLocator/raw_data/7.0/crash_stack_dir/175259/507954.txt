@@ -1,0 +1,13 @@
+java.lang.UnsupportedOperationException: XXX: AlwaysEnabledAction[null]
+        at org.netbeans.modules.apisupport.project.layers.WritableXMLFileSystem.writeAttribute(WritableXMLFileSystem.java:900)
+        at org.openide.filesystems.AbstractFileObject.setAttribute(AbstractFileObject.java:357)
+        at org.openide.filesystems.AbstractFileObject.setAttribute(AbstractFileObject.java:340)
+        at org.openide.filesystems.MultiFileObject.copyAttrs(MultiFileObject.java:1568)
+        at org.openide.filesystems.MultiFileObject.copyContent(MultiFileObject.java:1531)
+        at org.openide.filesystems.MultiFileObject.rename(MultiFileObject.java:1235)
+        at org.netbeans.modules.apisupport.refactoring.NbRenameRefactoringPlugin$LayerAbstractRefactoringElement.doFileMove(NbRenameRefactoringPlugin.java:270)
+        at org.netbeans.modules.apisupport.refactoring.NbRenameRefactoringPlugin$LayerClassRefactoringElement.performChange(NbRenameRefactoringPlugin.java:372)
+        at org.netbeans.modules.refactoring.api.RefactoringSession.doRefactoring(RefactoringSession.java:121)
+        at org.netbeans.modules.refactoring.spi.impl.ParametersPanel$8.run(ParametersPanel.java:402)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1424)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1968)

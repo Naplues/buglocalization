@@ -1,0 +1,11 @@
+org.openide.filesystems.FileAlreadyLockedException: L:\dev\code\POM\XMLBlog\target\test-classes\blog-resources\engine-test-config.properties
+        at org.netbeans.modules.masterfs.filebasedfs.fileobjects.LockForFile.registerLock(LockForFile.java:111)
+        at org.netbeans.modules.masterfs.filebasedfs.fileobjects.LockForFile.tryLock(LockForFile.java:100)
+        at org.netbeans.modules.masterfs.filebasedfs.fileobjects.FileObj.lock(FileObj.java:308)
+        at org.netbeans.modules.maven.cos.CopyResourcesOnSave.copySrcToDest(CopyResourcesOnSave.java:114)
+        at org.netbeans.modules.maven.cos.CopyResourcesOnSave.handleCopyFileToDestDir(CopyResourcesOnSave.java:284)
+        at org.netbeans.modules.maven.cos.CopyResourcesOnSave.handleCopyFileToDestDir(CopyResourcesOnSave.java:272)
+        at org.netbeans.modules.maven.cos.CopyResourcesOnSave.fileDataCreated(CopyResourcesOnSave.java:185)
+        at org.netbeans.modules.maven.cos.CopyResourcesOnSave$2.run(CopyResourcesOnSave.java:175)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:602)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1084)

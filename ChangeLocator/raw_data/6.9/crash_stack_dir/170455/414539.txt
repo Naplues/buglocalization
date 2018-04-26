@@ -1,0 +1,5 @@
+java.lang.NullPointerException: Passed null to FileOwnerQuery.getOwner(FileObject)
+        at org.netbeans.api.project.FileOwnerQuery.getOwner(FileOwnerQuery.java:97)
+        at org.netbeans.modules.maven.output.TestOutputListenerProvider$TestOutputListener$1.run(TestOutputListenerProvider.java:247)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1418)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1957)

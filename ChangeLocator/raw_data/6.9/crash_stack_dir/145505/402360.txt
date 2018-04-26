@@ -1,0 +1,12 @@
+java.lang.IllegalArgumentException: MasterFileObject[/Users/jeff/NetBeansProjects/techdayscode/vwpjpa/src/java/CVS@75331b54:46c664af,valid=true] is not inside MasterFileObject[/Users/jeff/NetBeansProjects/techdayscode/vwpjpa/src/java@12b730b9:2b5b64a3,valid=false]
+        at org.netbeans.spi.project.support.ant.SourcesHelper$SourceRoot$Group.contains(SourcesHelper.java:201)
+        at org.netbeans.spi.java.project.support.ui.TreeRootNode$GroupDataFilter.acceptFileObject(TreeRootNode.java:249)
+        at org.openide.loaders.FolderChildren$1R.run(FolderChildren.java:163)
+        at org.openide.util.Mutex$1Exec.run(Mutex.java:1244)
+        at org.openide.nodes.Children$ProjectManagerDeadlockDetector.execute(Children.java:1835)
+        at org.openide.util.Mutex.postRequest(Mutex.java:1250)
+        at org.openide.util.Mutex.postRequest(Mutex.java:1213)
+        at org.openide.util.Mutex.postWriteRequest(Mutex.java:585)
+        at org.openide.loaders.FolderChildren$1R.run(FolderChildren.java:145)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1418)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1957)

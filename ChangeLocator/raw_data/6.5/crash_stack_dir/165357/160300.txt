@@ -1,0 +1,5 @@
+java.lang.NullPointerException: Passed null to FileOwnerQuery.getOwner(FileObject)
+        at org.netbeans.api.project.FileOwnerQuery.getOwner(FileOwnerQuery.java:94)
+        at org.netbeans.modules.apisupport.project.layers.LayerNode$LayerChildren$1.run(LayerNode.java:147)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:572)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:997)

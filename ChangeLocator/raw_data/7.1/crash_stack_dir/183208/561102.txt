@@ -1,0 +1,7 @@
+java.lang.NullPointerException
+        at org.netbeans.modules.apisupport.project.queries.ClassPathProviderImpl.findClassPath(ClassPathProviderImpl.java:138)
+        at org.netbeans.modules.csl.core.ProjectClassPathProvider.findClassPath(ProjectClassPathProvider.java:70)
+        at org.netbeans.api.java.classpath.ClassPath.getClassPath(ClassPath.java:632)
+        at org.netbeans.modules.parsing.impl.indexing.errors.ErrorAnnotator$1.run(ErrorAnnotator.java:309)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1411)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1991)

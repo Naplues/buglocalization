@@ -1,0 +1,10 @@
+org.apache.maven.artifact.InvalidRepositoryException: Repository identifier missing
+        at org.apache.maven.repository.legacy.LegacyRepositorySystem.buildArtifactRepository(LegacyRepositorySystem.java:768)
+        at org.netbeans.modules.maven.embedder.NBRepositoryModelResolver.addRepository(NBRepositoryModelResolver.java:90)
+        at org.apache.maven.model.building.DefaultModelBuilder.configureResolver(DefaultModelBuilder.java:567)
+        at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:306)
+        at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:232)
+        at org.netbeans.modules.maven.embedder.EmbedderFactory.createModelLineage(EmbedderFactory.java:377)
+        at org.netbeans.modules.maven.navigator.POMModelPanel.run(POMModelPanel.java:296)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1424)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1968)

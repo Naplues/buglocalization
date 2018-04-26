@@ -1,0 +1,10 @@
+java.lang.NullPointerException
+        at org.netbeans.modules.cnd.makeproject.api.configurations.MakeConfigurationDescriptor.hasProjectCustomizer(MakeConfigurationDescriptor.java:1834)
+        at org.netbeans.modules.cnd.makeproject.ui.customizer.ProjectNodeFactory.createRootNodeProject(ProjectNodeFactory.java:133)
+        at org.netbeans.modules.cnd.makeproject.ui.customizer.MakeCustomizer.createRootNode(MakeCustomizer.java:642)
+        at org.netbeans.modules.cnd.makeproject.ui.customizer.MakeCustomizer.<init>(MakeCustomizer.java:147)
+        at org.netbeans.modules.cnd.makeproject.api.MakeCustomizerProvider.showCustomizerWorker(MakeCustomizerProvider.java:190)
+        at org.netbeans.modules.cnd.makeproject.api.MakeCustomizerProvider.access$000(MakeCustomizerProvider.java:85)
+        at org.netbeans.modules.cnd.makeproject.api.MakeCustomizerProvider$1.run(MakeCustomizerProvider.java:134)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1411)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1991)

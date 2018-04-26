@@ -1,0 +1,11 @@
+java.io.FileNotFoundException: no segments* file found in org.apache.lucene.store.FSDirectory@C:\Documents and Settings\dutour_d\.netbeans\6.8\var\cache\maven-plugins-index\7: files:
+        at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:604)
+        at org.apache.lucene.index.DirectoryIndexReader.open(DirectoryIndexReader.java:115)
+        at org.apache.lucene.index.IndexReader.open(IndexReader.java:316)
+        at org.apache.lucene.index.IndexReader.open(IndexReader.java:227)
+        at org.netbeans.modules.maven.indexer.api.PluginIndexManager.getIndexSearcher(PluginIndexManager.java:126)
+        at org.netbeans.modules.maven.indexer.api.PluginIndexManager.getPluginGoalNames(PluginIndexManager.java:133)
+        at org.netbeans.modules.maven.grammar.GoalsProviderImpl.getAvailableGoals(GoalsProviderImpl.java:71)
+        at org.netbeans.modules.maven.execute.ui.RunGoalsPanel$1.run(RunGoalsPanel.java:92)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:602)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1084)

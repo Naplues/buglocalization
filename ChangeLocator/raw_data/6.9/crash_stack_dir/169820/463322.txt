@@ -1,0 +1,7 @@
+java.util.ConcurrentModificationException
+        at java.util.LinkedList$ListItr.checkForComodification(LinkedList.java:761)
+        at java.util.LinkedList$ListItr.next(LinkedList.java:696)
+        at org.netbeans.modules.maven.jaxws.nodes.JaxWsNodeFactory$WsNodeList.keys(JaxWsNodeFactory.java:104)
+        at org.netbeans.spi.project.ui.support.NodeFactorySupport$DelegateChildren$2.run(NodeFactorySupport.java:269)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1418)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1957)

@@ -1,0 +1,8 @@
+java.lang.NullPointerException: The file parameter cannot be null
+        at org.openide.util.Parameters.notNull(Parameters.java:89)
+        at org.openide.filesystems.FileUtil.toFileObject(FileUtil.java:984)
+        at org.netbeans.modules.apisupport.project.ui.customizer.SingleModuleProperties.getSuite(SingleModuleProperties.java:323)
+        at org.netbeans.modules.apisupport.project.ui.customizer.SingleModuleProperties.getUniverseDependencies(SingleModuleProperties.java:634)
+        at org.netbeans.modules.apisupport.project.ui.customizer.AddModulePanel$5.run(AddModulePanel.java:215)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1418)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1957)

@@ -1,0 +1,10 @@
+java.lang.IllegalArgumentException: URI has an authority component
+        at java.io.File.<init>(File.java:368)
+        at org.netbeans.modules.refactoring.spi.BackupFacility2$DefaultImpl.storeChecksum(BackupFacility2.java:225)
+        at org.netbeans.modules.refactoring.spi.BackupFacility2$DefaultImpl.access$100(BackupFacility2.java:210)
+        at org.netbeans.modules.refactoring.spi.BackupFacility2$DefaultHandle.storeChecksum(BackupFacility2.java:192)
+        at org.netbeans.modules.refactoring.spi.RefactoringCommit.commit(RefactoringCommit.java:150)
+        at org.netbeans.modules.refactoring.api.RefactoringSession.doRefactoring(RefactoringSession.java:143)
+        at org.netbeans.modules.refactoring.spi.impl.ParametersPanel$9.run(ParametersPanel.java:479)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1452)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:2032)

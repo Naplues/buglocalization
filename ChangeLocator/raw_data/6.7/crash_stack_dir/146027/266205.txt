@@ -1,0 +1,20 @@
+java.lang.AssertionError: org.openide.loaders.DataObjectNotFoundException: MultiFileObject@1b03a971[Databases/SQLCommands/SQL Command 1.sql] parent: MultiFileObject@50caa737[Databases/SQLCommands] validFlag: false validRoot: MultiFileObject@12a45435[root of SystemFileSystem[org.netbeans.core.startup.layers.SystemFileSystem@7cd1a1ab]] isValidRoot: true
+        at org.netbeans.modules.apisupport.project.ui.ModuleLogicalView.findPath(ModuleLogicalView.java:94)
+        at org.netbeans.modules.project.ui.ProjectsRootNode.findNode(ProjectsRootNode.java:182)
+        at org.netbeans.modules.project.ui.ProjectTab$2.run(ProjectTab.java:473)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:577)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1030)
+org.openide.loaders.DataObjectNotFoundException: MultiFileObject@1b03a971[Databases/SQLCommands/SQL Command 1.sql] parent: MultiFileObject@50caa737[Databases/SQLCommands] validFlag: false validRoot: MultiFileObject@12a45435[root of SystemFileSystem[org.netbeans.core.startup.layers.SystemFileSystem@7cd1a1ab]] isValidRoot: true
+        at org.openide.loaders.DataObject.find(DataObject.java:505)
+        at org.netbeans.modules.apisupport.project.ui.ModuleLogicalView.findPath(ModuleLogicalView.java:92)
+        at org.netbeans.modules.project.ui.ProjectsRootNode.findNode(ProjectsRootNode.java:182)
+        at org.netbeans.modules.project.ui.ProjectTab$2.run(ProjectTab.java:473)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:577)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1030)
+org.openide.filesystems.FileStateInvalidException: MultiFileObject@1b03a971[Databases/SQLCommands/SQL Command 1.sql] parent: MultiFileObject@50caa737[Databases/SQLCommands] validFlag: false validRoot: MultiFileObject@12a45435[root of SystemFileSystem[org.netbeans.core.startup.layers.SystemFileSystem@7cd1a1ab]] isValidRoot: true
+        at org.openide.loaders.DataObject.find(DataObject.java:485)
+        at org.netbeans.modules.apisupport.project.ui.ModuleLogicalView.findPath(ModuleLogicalView.java:92)
+        at org.netbeans.modules.project.ui.ProjectsRootNode.findNode(ProjectsRootNode.java:182)
+        at org.netbeans.modules.project.ui.ProjectTab$2.run(ProjectTab.java:473)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:577)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1030)

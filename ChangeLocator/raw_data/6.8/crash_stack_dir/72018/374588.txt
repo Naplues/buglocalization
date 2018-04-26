@@ -1,0 +1,13 @@
+java.lang.NullPointerException
+        at org.netbeans.modules.cnd.makeproject.api.RunDialogPanel.getSelectedProject(RunDialogPanel.java:542)
+        at org.netbeans.modules.cnd.makeproject.api.actions.RunDialogAction.perform(RunDialogAction.java:143)
+        at org.netbeans.modules.cnd.makeproject.api.actions.RunDialogAction.perform(RunDialogAction.java:125)
+        at org.netbeans.modules.cnd.makeproject.api.actions.RunDialogAction.performAction(RunDialogAction.java:99)
+        at org.openide.util.actions.NodeAction$DelegateAction$1.run(NodeAction.java:589)
+        at org.netbeans.modules.openide.util.ActionsBridge$ActionRunnable.actionPerformed(ActionsBridge.java:129)
+        at org.netbeans.core.ModuleActions.invokeAction(ModuleActions.java:106)
+        at org.netbeans.modules.openide.actions.ActionsBridgeImpl.invokeAction(ActionsBridgeImpl.java:53)
+        at org.netbeans.modules.openide.util.ActionsBridge$ActionRunnable.doRun(ActionsBridge.java:120)
+        at org.netbeans.modules.openide.util.ActionsBridge$1.run(ActionsBridge.java:77)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:602)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1084)

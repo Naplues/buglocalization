@@ -1,0 +1,9 @@
+java.lang.NullPointerException
+        at org.netbeans.api.debugger.ActionsManager.registerActionsProviders(ActionsManager.java:421)
+        at org.netbeans.api.debugger.ActionsManager.initActionImpls(ActionsManager.java:439)
+        at org.netbeans.api.debugger.ActionsManager.postAction(ActionsManager.java:189)
+        at org.netbeans.api.debugger.DebuggerManager.startDebugging(DebuggerManager.java:386)
+        at org.netbeans.api.debugger.jpda.JPDADebugger.startListening(JPDADebugger.java:220)
+        at org.netbeans.modules.debugger.jpda.ant.JPDAStart$1.run(JPDAStart.java:444)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:602)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1084)

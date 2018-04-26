@@ -1,0 +1,3 @@
+An error occurred during parsing of 'E:\NetBeansProjects\CWFLoCOnline\CWFOnline\source\com\qfund\bl\bo\Collections.java'. Please report a bug against java/source and attach dump file 'C:\Documents and Settings\baburao\.netbeans\6.7\var\log\Collections.dump'.
+An error occurred during parsing of 'E:\NetBeansProjects\CWFLoCOnline\CWFOnline\source\com\qfund\bl\collections\CollectionsHandler.java'. Please report a bug against java/source and attach dump file 'C:\Documents and Settings\baburao\.netbeans\6.7\var\log\CollectionsHandler.dump'.
+java.lang.OutOfMemoryError: Java heap space

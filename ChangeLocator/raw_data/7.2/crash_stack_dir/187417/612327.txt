@@ -1,0 +1,22 @@
+java.lang.IllegalStateException: Property 'src.dir' was not found in 'nbproject/project.properties' (NB metadata corrupted?)
+diagnostics:
+project.properties exists: false
+project directory: /Volumes/DATA2/LongVu/MySlt@4f3d9956:2f4a2e75
+project directory children: [/Volumes/DATA2/LongVu/MySlt/splitHTML.php@a5dbcb16:6931bf42, /Volumes/DATA2/LongVu/MySlt/remove_svn.php@6f06e093:4103bc02, /Volumes/DATA2/LongVu/MySlt/_Old@dcc51021:5c2c48a6, /Volumes/DATA2/LongVu/MySlt/_temp@be31c8fa:5f55b990, /Volumes/DATA2/LongVu/MySlt/.DS_Store@810aad86:7509cdd5, /Volumes/DATA2/LongVu/MySlt/mssproj@a5685ab3:56a896fa, /Volumes/DATA2/LongVu/MySlt/TÀI LI?U SETUP V? QU?N TR? SVN SERVER_v2.docx@cd884bd7:56502388, /Volumes/DATA2/LongVu/MySlt/vim@59a66343:274ce1fd, /Volumes/DATA2/LongVu/MySlt/wap8x40@976f2dcb:2888bd33, /Volumes/DATA2/LongVu/MySlt/ums@59a66602:293d740f, /Volumes/DATA2/LongVu/MySlt/Web_account and port.xls@d0a3dd30:18e99f0, /Volumes/DATA2/LongVu/MySlt/_Old2@be322513:391c5c5c, /Volumes/DATA2/LongVu/MySlt/scenter@c6dee8d1:
+        at org.netbeans.modules.php.project.PhpProject.resolveSourcesDirectory(PhpProject.java:376)
+        at org.netbeans.modules.php.project.PhpProject.getSourcesDirectory(PhpProject.java:300)
+        at org.netbeans.modules.php.project.PhpProject.resolveWebRootDirectory(PhpProject.java:487)
+        at org.netbeans.modules.php.project.PhpProject.getWebRootDirectory(PhpProject.java:478)
+        at org.netbeans.modules.php.project.PhpProject$ProjectPropertiesListener.propertyChange(PhpProject.java:982)
+        at org.openide.util.WeakListenerImpl$PropertyChange.propertyChange(WeakListenerImpl.java:196)
+        at java.beans.PropertyChangeSupport.firePropertyChange(PropertyChangeSupport.java:339)
+        at org.netbeans.spi.project.support.ant.SequentialPropertyEvaluator.stateChanged(SequentialPropertyEvaluator.java:208)
+        at org.openide.util.WeakListenerImpl$Change.stateChanged(WeakListenerImpl.java:329)
+        at org.openide.util.ChangeSupport.fireChange(ChangeSupport.java:133)
+        at org.openide.util.ChangeSupport.fireChange(ChangeSupport.java:119)
+        at org.netbeans.spi.project.support.ant.ProjectProperties$PP$2.run(ProjectProperties.java:348)
+        at org.netbeans.spi.project.support.ant.ProjectProperties$PP$2.run(ProjectProperties.java:346)
+        at org.openide.util.Mutex.readAccess(Mutex.java:290)
+        at org.netbeans.spi.project.support.ant.ProjectProperties$PP$3.run(ProjectProperties.java:362)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1452)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:2032)

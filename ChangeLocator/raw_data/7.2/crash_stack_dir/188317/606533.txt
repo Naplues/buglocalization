@@ -1,0 +1,41 @@
+java.lang.IllegalStateException: Property 'src.dir' was not found in 'nbproject/project.properties' (NB metadata corrupted?)
+diagnostics:
+project.properties exists: false
+project directory: /Library/WebServer/Documents/sandbox@78b0a584:6291bbb9
+project directory children: []
+nbproject exists: false
+source roots: []
+source roots - fired changes: 2
+properties (helper): {}
+properties (evaluator): {libs.jaxws21.src=, java.vm.version=20.8-b03-424, libs.swing-layout.maven-pom=, ant.core.lib=/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/java/ant/lib/ant.jar, java.vendor.url=http://www.apple.com/, libs.jpa20-persistence.src=, libs.ejb3-persistence.maven-pom=, libs.junit_4.javadoc=/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/java/docs/junit-4.10-javadoc.jar, libs.absolutelayout.classpath=/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/java/modules/ext/AbsoluteLayout.jar, libs.junit.classpath=/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetB
+        at org.netbeans.modules.php.project.PhpProject.resolveSourcesDirectory(PhpProject.java:376)
+        at org.netbeans.modules.php.project.PhpProject.getSourcesDirectory(PhpProject.java:300)
+        at org.netbeans.modules.php.project.ProjectPropertiesSupport.getSourcesDirectory(ProjectPropertiesSupport.java:120)
+        at org.netbeans.modules.php.project.PhpModuleImpl.getSourceDirectory(PhpModuleImpl.java:88)
+        at org.netbeans.modules.php.nette.NettePhpFrameworkProvider.isInPhpModule(NettePhpFrameworkProvider.java:86)
+        at org.netbeans.modules.php.project.PhpProject.getFrameworks(PhpProject.java:609)
+        at org.netbeans.modules.php.project.PhpProject.resetFrameworks(PhpProject.java:637)
+        at org.netbeans.modules.php.project.PhpProject$SourceDirectoryFileChangeListener.processFileChange(PhpProject.java:1025)
+        at org.netbeans.modules.php.project.PhpProject$SourceDirectoryFileChangeListener.fileDeleted(PhpProject.java:1010)
+        at sun.reflect.GeneratedMethodAccessor44.invoke(GeneratedMethodAccessor44.java:0)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+        at java.lang.reflect.Method.invoke(Method.java:597)
+        at org.openide.util.WeakListenerImpl$ProxyListener.invoke(WeakListenerImpl.java:457)
+        at $Proxy1.fileDeleted(.java:0)
+        at org.openide.filesystems.FCLSupport$DispatchEventWrapper.dispatchEventImpl(FCLSupport.java:148)
+        at org.openide.filesystems.FCLSupport$DispatchEventWrapper.dispatchEvent(FCLSupport.java:128)
+        at org.openide.filesystems.FCLSupport.dispatchEvent(FCLSupport.java:105)
+        at org.openide.filesystems.FileObject$ED.dispatch(FileObject.java:1242)
+        at org.openide.filesystems.FileSystem$EventDispatcher.run(FileSystem.java:997)
+        at org.openide.filesystems.EventControl.dispatchEvent(EventControl.java:84)
+        at org.openide.filesystems.FileSystem.dispatchEvent(FileSystem.java:642)
+        at org.openide.filesystems.FileObject.dispatchEvent(FileObject.java:564)
+        at org.openide.filesystems.FileObject.fireFileDeletedEvent(FileObject.java:540)
+        at org.netbeans.modules.masterfs.filebasedfs.fileobjects.BaseFileObj.fireFileDeletedEvent(BaseFileObj.java:697)
+        at org.netbeans.modules.masterfs.filebasedfs.fileobjects.FolderObj.refreshImpl(FolderObj.java:511)
+        at org.netbeans.modules.masterfs.filebasedfs.fileobjects.BaseFileObj.refresh(BaseFileObj.java:818)
+        at org.netbeans.modules.masterfs.filebasedfs.fileobjects.FolderObj.refresh(FolderObj.java:554)
+        at org.openide.filesystems.FileObject.refresh(FileObject.java:1130)
+        at org.netbeans.modules.masterfs.watcher.Watcher$1.run(Watcher.java:379)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1452)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:2032)

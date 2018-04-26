@@ -1,0 +1,11 @@
+java.lang.NullPointerException
+        at org.netbeans.modules.maven.j2ee.ejb.EjbJarImpl.getMetaInf(EjbJarImpl.java:142)
+        at org.netbeans.modules.maven.j2ee.ejb.EjbJarImpl.getWebServicesDeploymentDescriptor(EjbJarImpl.java:496)
+        at org.netbeans.modules.maven.j2ee.ejb.EjbJarImpl.getWebservicesMetadataModel(EjbJarImpl.java:479)
+        at org.netbeans.modules.maven.j2ee.ejb.EjbJarImpl.getMetadataModel(EjbJarImpl.java:471)
+        at org.netbeans.modules.j2ee.deployment.devmodules.api.J2eeModule.getMetadataModel(J2eeModule.java:291)
+        at org.netbeans.modules.maven.jaxws.MavenJAXWSSupportImpl.getWebservicesMetadataModel(MavenJAXWSSupportImpl.java:236)
+        at org.netbeans.modules.websvc.jaxws.light.api.JAXWSLightSupport.getWebservicesMetadataModel(JAXWSLightSupport.java:191)
+        at org.netbeans.modules.maven.jaxws.MavenJaxWsSupportProvider$2.run(MavenJaxWsSupportProvider.java:97)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1418)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1957)

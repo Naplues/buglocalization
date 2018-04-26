@@ -1,0 +1,6 @@
+java.lang.ArrayIndexOutOfBoundsException: 2
+        at org.netbeans.modules.maven.navigator.POMModelVisitor$PomChildren.rescan(POMModelVisitor.java:1469)
+        at org.netbeans.modules.maven.navigator.POMModelVisitor$PomChildren.access$1400(POMModelVisitor.java:1408)
+        at org.netbeans.modules.maven.navigator.POMModelVisitor$PomChildren$1.run(POMModelVisitor.java:1440)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1418)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1957)

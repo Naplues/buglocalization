@@ -1,0 +1,10 @@
+java.lang.NullPointerException
+        at org.netbeans.modules.refactoring.java.ui.tree.ElementGripFactory.getParent(ElementGripFactory.java:98)
+        at org.netbeans.modules.refactoring.java.ui.tree.ElementGrip.getParent(ElementGrip.java:117)
+        at org.netbeans.modules.refactoring.java.ui.tree.ElementGripTreeElement.getParent(ElementGripTreeElement.java:66)
+        at org.netbeans.modules.refactoring.spi.impl.RefactoringPanel.createNode(RefactoringPanel.java:476)
+        at org.netbeans.modules.refactoring.spi.impl.RefactoringPanel.createNode(RefactoringPanel.java:481)
+        at org.netbeans.modules.refactoring.spi.impl.RefactoringPanel.access$1000(RefactoringPanel.java:99)
+        at org.netbeans.modules.refactoring.spi.impl.RefactoringPanel$4.run(RefactoringPanel.java:764)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1452)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:2032)

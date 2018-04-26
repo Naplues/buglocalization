@@ -1,0 +1,6 @@
+java.lang.IllegalArgumentException: F:\NetBeansProjects\DocumentEditor\src\documenteditor\DocumentEditorView.java is not inside F:\NetBeansProjects\DocumentEditor\src
+        at org.netbeans.spi.project.support.ant.SourcesHelper$SourceRoot$Group.contains(SourcesHelper.java:198)
+        at org.netbeans.spi.java.project.support.ui.PackageViewChildren$NoFoldersDataFilter.acceptFileObject(PackageViewChildren.java:1221)
+        at org.openide.loaders.FolderChildren$1R.run(FolderChildren.java:155)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:602)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1084)

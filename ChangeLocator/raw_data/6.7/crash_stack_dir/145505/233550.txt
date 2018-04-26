@@ -1,0 +1,6 @@
+java.lang.IllegalArgumentException: C:\Users\Administrator\Documents\NetBeansProjects\DesktopApplication1\src\desktopapplication1\DesktopApplication1AboutBox.java is not inside C:\Users\Administrator\Documents\NetBeansProjects\DesktopApplication1\src
+        at org.netbeans.spi.project.support.ant.SourcesHelper$SourceRoot$Group.contains(SourcesHelper.java:181)
+        at org.netbeans.spi.java.project.support.ui.PackageViewChildren$NoFoldersDataFilter.acceptFileObject(PackageViewChildren.java:1160)
+        at org.openide.loaders.FolderChildren$1R.run(FolderChildren.java:155)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:577)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1030)

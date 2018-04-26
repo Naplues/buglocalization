@@ -1,0 +1,11 @@
+java.lang.NullPointerException
+        at org.netbeans.modules.web.refactoring.RefactoringUtil.constructNewName(RefactoringUtil.java:189)
+        at org.netbeans.modules.web.refactoring.rename.WebXmlPackageRename.getRenameItems(WebXmlPackageRename.java:76)
+        at org.netbeans.modules.web.refactoring.rename.BaseWebXmlRename.prepare(BaseWebXmlRename.java:73)
+        at org.netbeans.modules.web.refactoring.WebRefactoringPlugin.prepare(WebRefactoringPlugin.java:74)
+        at org.netbeans.modules.refactoring.api.AbstractRefactoring.pluginsPrepare2(AbstractRefactoring.java:419)
+        at org.netbeans.modules.refactoring.api.AbstractRefactoring.pluginsPrepare(AbstractRefactoring.java:403)
+        at org.netbeans.modules.refactoring.api.AbstractRefactoring.prepare(AbstractRefactoring.java:218)
+        at org.netbeans.modules.refactoring.spi.impl.ParametersPanel$Prepare.run(ParametersPanel.java:851)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1424)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1968)

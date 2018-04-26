@@ -1,0 +1,52 @@
+java.lang.IllegalStateException: Property 'src.dir' was not found in 'nbproject/project.properties' (NB metadata corrupted?)
+diagnostics:
+project.properties exists: false
+project directory: /var/www/terramundi/f@7c69a5b0:475f02
+project directory children: [/var/www/terramundi/f/favicon.ico@25d76f5c:7ea91310, /var/www/terramundi/f/blog@722c2941:b894bf0, /var/www/terramundi/f/app@f3399aa2:14d03dc5, /var/www/terramundi/f/index.php@47a19c7f:2591c424]
+nbproject exists: false
+source roots: []
+source roots - fired changes: 2
+properties (helper): {}
+properties (evaluator): {java.vm.version=20.10-b01-428, libs.jpa20-persistence.src=, libs.ejb3-persistence.maven-pom=, ant.core.lib=/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/java/ant/lib/ant.jar, libs.junit_4.javadoc=/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/java/docs/junit-4.10-javadoc.jar, libs.jakarta_slide_ant_webdav.javadoc=, libs.junit.classpath=/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/ja
+        at org.netbeans.modules.php.project.PhpProject.resolveSourcesDirectory(PhpProject.java:382)
+        at org.netbeans.modules.php.project.PhpProject.getSourcesDirectory(PhpProject.java:302)
+        at org.netbeans.modules.php.project.ProjectPropertiesSupport.getSourcesDirectory(ProjectPropertiesSupport.java:120)
+        at org.netbeans.modules.php.project.PhpModuleImpl.getSourceDirectory(PhpModuleImpl.java:88)
+        at org.netbeans.modules.php.symfony2.commands.Symfony2Script.getPath(Symfony2Script.java:81)
+        at org.netbeans.modules.php.symfony2.commands.Symfony2Script.getPath(Symfony2Script.java:74)
+        at org.netbeans.modules.php.symfony2.Symfony2PhpFrameworkProvider.isInPhpModule(Symfony2PhpFrameworkProvider.java:110)
+        at org.netbeans.modules.php.project.PhpProject.getFrameworks(PhpProject.java:615)
+        at org.netbeans.modules.php.project.PhpProject.resetFrameworks(PhpProject.java:643)
+        at org.netbeans.modules.php.project.PhpProject$SourceDirectoryFileChangeListener.processFileChange(PhpProject.java:1035)
+        at org.netbeans.modules.php.project.PhpProject$SourceDirectoryFileChangeListener.fileDeleted(PhpProject.java:1020)
+        at sun.reflect.GeneratedMethodAccessor62.invoke(GeneratedMethodAccessor62.java:0)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+        at java.lang.reflect.Method.invoke(Method.java:597)
+        at org.openide.util.WeakListenerImpl$ProxyListener.invoke(WeakListenerImpl.java:457)
+        at $Proxy1.fileDeleted(.java:0)
+        at org.openide.filesystems.FCLSupport$DispatchEventWrapper.dispatchEventImpl(FCLSupport.java:148)
+        at org.openide.filesystems.FCLSupport$DispatchEventWrapper.dispatchEvent(FCLSupport.java:128)
+        at org.openide.filesystems.FCLSupport.dispatchEvent(FCLSupport.java:105)
+        at org.openide.filesystems.FileObject$ED.dispatch(FileObject.java:1242)
+        at org.openide.filesystems.EventControl.invokeDispatchers(EventControl.java:213)
+        at org.openide.filesystems.EventControl.exitAtomicAction(EventControl.java:188)
+        at org.openide.filesystems.EventControl.runAtomicAction(EventControl.java:129)
+        at org.openide.filesystems.FileSystem.runAtomicAction(FileSystem.java:607)
+        at org.openide.filesystems.FileUtil.runAtomicAction(FileUtil.java:603)
+        at org.netbeans.modules.parsing.impl.indexing.RepositoryUpdater$RefreshWork.getDone(RepositoryUpdater.java:3876)
+        at org.netbeans.modules.parsing.impl.indexing.RepositoryUpdater$Work.doTheWork(RepositoryUpdater.java:2959)
+        at org.netbeans.modules.parsing.impl.indexing.RepositoryUpdater$Task._run(RepositoryUpdater.java:5187)
+        at org.netbeans.modules.parsing.impl.indexing.RepositoryUpdater$Task.access$4800(RepositoryUpdater.java:4879)
+        at org.netbeans.modules.parsing.impl.indexing.RepositoryUpdater$Task$2$1.run(RepositoryUpdater.java:5124)
+        at org.netbeans.modules.parsing.impl.RunWhenScanFinishedSupport.performScan(RunWhenScanFinishedSupport.java:96)
+        at org.netbeans.modules.parsing.impl.indexing.RepositoryUpdater$Task$2.call(RepositoryUpdater.java:5120)
+        at org.netbeans.modules.parsing.impl.indexing.RepositoryUpdater$Task$2.call(RepositoryUpdater.java:5116)
+        at org.netbeans.modules.masterfs.filebasedfs.utils.FileChangedManager.priorityIO(FileChangedManager.java:176)
+        at org.netbeans.modules.masterfs.providers.ProvidedExtensions.priorityIO(ProvidedExtensions.java:360)
+        at org.netbeans.modules.parsing.impl.Utilities.runPriorityIO(Utilities.java:72)
+        at org.netbeans.modules.parsing.impl.indexing.RepositoryUpdater$Task.run(RepositoryUpdater.java:5116)
+        at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:441)
+        at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+        at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1452)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:2032)

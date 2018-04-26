@@ -1,0 +1,5 @@
+java.lang.NullPointerException
+        at org.netbeans.modules.maven.indexer.api.RepositoryPreferences.getRepositoryInfos(RepositoryPreferences.java:121)
+        at org.netbeans.modules.maven.ModInstall$1.run(ModInstall.java:130)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:577)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1030)

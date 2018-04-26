@@ -1,0 +1,9 @@
+java.util.EmptyStackException
+        at java.util.Stack.peek(Stack.java:85)
+        at java.util.Stack.pop(Stack.java:67)
+        at javax.swing.JTree.setExpandedState(JTree.java:3357)
+        at javax.swing.JTree.expandPath(JTree.java:2166)
+        at javax.swing.JTree.expandRow(JTree.java:2181)
+        at org.netbeans.modules.refactoring.spi.impl.RefactoringPanel$2.run(RefactoringPanel.java:534)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:572)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:997)

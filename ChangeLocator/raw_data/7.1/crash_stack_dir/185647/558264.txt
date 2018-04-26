@@ -1,0 +1,11 @@
+java.lang.NullPointerException: Must pass non-null build script
+        at org.apache.tools.ant.module.api.support.ActionUtils.runTarget(ActionUtils.java:85)
+        at org.netbeans.modules.java.j2seproject.J2SEProjectOperations.clean(J2SEProjectOperations.java:161)
+        at org.netbeans.modules.java.j2seproject.J2SEProjectOperations.notifyDeleting(J2SEProjectOperations.java:148)
+        at org.netbeans.spi.project.support.ProjectOperations.notifyDeleting(ProjectOperations.java:129)
+        at org.netbeans.modules.project.uiapi.DefaultProjectOperationsImplementation.performDelete(DefaultProjectOperationsImplementation.java:130)
+        at org.netbeans.modules.project.uiapi.DefaultProjectOperationsImplementation.access$200(DefaultProjectOperationsImplementation.java:101)
+        at org.netbeans.modules.project.uiapi.DefaultProjectOperationsImplementation$1.execute(DefaultProjectOperationsImplementation.java:207)
+        at org.netbeans.modules.project.uiapi.DefaultProjectOperationsImplementation$6$1.run(DefaultProjectOperationsImplementation.java:649)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1411)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1991)

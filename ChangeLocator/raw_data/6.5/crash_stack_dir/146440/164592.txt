@@ -1,0 +1,11 @@
+java.lang.NullPointerException
+        at org.netbeans.modules.refactoring.java.plugins.PackageRename$PackageRenamePlugin$RenameNonRecursiveFolder.setName(PackageRename.java:195)
+        at org.netbeans.modules.refactoring.java.plugins.PackageRename$PackageRenamePlugin$RenameNonRecursiveFolder$1.run(PackageRename.java:171)
+        at org.openide.filesystems.EventControl.runAtomicAction(EventControl.java:120)
+        at org.openide.filesystems.FileSystem.runAtomicAction(FileSystem.java:502)
+        at org.netbeans.modules.refactoring.java.plugins.PackageRename$PackageRenamePlugin$RenameNonRecursiveFolder.atomicSetName(PackageRename.java:169)
+        at org.netbeans.modules.refactoring.java.plugins.PackageRename$PackageRenamePlugin$RenameNonRecursiveFolder.performChange(PackageRename.java:160)
+        at org.netbeans.modules.refactoring.api.RefactoringSession.doRefactoring(RefactoringSession.java:125)
+        at org.netbeans.modules.refactoring.spi.impl.ParametersPanel$8.run(ParametersPanel.java:375)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:572)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:997)

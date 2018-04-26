@@ -1,0 +1,10 @@
+java.lang.NullPointerException: The fo parameter cannot be null
+        at org.openide.util.Parameters.notNull(Parameters.java:86)
+        at org.netbeans.modules.j2ee.dd.api.web.DDProvider.getDDRoot(DDProvider.java:111)
+        at org.netbeans.modules.maven.j2ee.web.EntRefContainerImpl.getWebApp(EntRefContainerImpl.java:192)
+        at org.netbeans.modules.maven.j2ee.web.EntRefContainerImpl.addReference(EntRefContainerImpl.java:108)
+        at org.netbeans.modules.maven.j2ee.web.EntRefContainerImpl.addEjbLocalReference(EntRefContainerImpl.java:99)
+        at org.netbeans.modules.j2ee.ejbcore.action.CallEjbGenerator.addReference(CallEjbGenerator.java:166)
+        at org.netbeans.modules.j2ee.ejbcore.ui.logicalview.entries.CallEjbDialog$3.run(CallEjbDialog.java:160)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:602)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1084)

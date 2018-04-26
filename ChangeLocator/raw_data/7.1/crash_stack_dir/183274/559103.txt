@@ -1,0 +1,10 @@
+java.lang.IllegalArgumentException: jar:file:/usr/not-backed-up/repository/./com/mysimpatico/publisher/1.0-SNAPSHOT/publisher-1.0-SNAPSHOT.jar!/ is not a valid classpath entry; it cannot contain current or parent dir reference.
+        at org.netbeans.modules.java.classpath.SimplePathResourceImplementation.verify(SimplePathResourceImplementation.java:114)
+        at org.netbeans.modules.java.classpath.SimplePathResourceImplementation.verify(SimplePathResourceImplementation.java:67)
+        at org.netbeans.api.java.queries.SourceForBinaryQuery.findSourceRoots2(SourceForBinaryQuery.java:122)
+        at org.netbeans.modules.maven.problems.ProblemReporterImpl.doArtifactChecks(ProblemReporterImpl.java:381)
+        at org.netbeans.modules.maven.problems.ProblemReporterImpl.doBaseProblemChecks(ProblemReporterImpl.java:348)
+        at org.netbeans.modules.maven.NbMavenProjectImpl.fireProjectReload(NbMavenProjectImpl.java:491)
+        at org.netbeans.modules.maven.problems.ProblemReporterImpl$1.run(ProblemReporterImpl.java:104)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1411)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1991)

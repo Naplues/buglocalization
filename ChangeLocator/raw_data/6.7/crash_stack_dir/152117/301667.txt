@@ -1,0 +1,11 @@
+java.lang.IllegalArgumentException: URL must be a folder URL (append '/' if necessary): file:/Users/johnson/NetBeansProjects/pentane/target/test-classes/bootstrap
+        at org.netbeans.spi.java.classpath.support.ClassPathSupport.createResource(ClassPathSupport.java:86)
+        at org.netbeans.spi.java.classpath.support.ClassPathSupport.createClassPath(ClassPathSupport.java:160)
+        at org.netbeans.modules.maven.cos.CosChecker.checkRunTest(CosChecker.java:511)
+        at org.netbeans.modules.maven.cos.CosChecker.checkRunConfig(CosChecker.java:123)
+        at org.netbeans.modules.maven.execute.PrereqCheckerMerger$Impl.checkRunConfig(PrereqCheckerMerger.java:84)
+        at org.netbeans.modules.maven.ActionProviderImpl.runGoal(ActionProviderImpl.java:231)
+        at org.netbeans.modules.maven.ActionProviderImpl.invokeAction(ActionProviderImpl.java:220)
+        at org.netbeans.modules.maven.ActionProviderImpl$1.run(ActionProviderImpl.java:177)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:577)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1030)

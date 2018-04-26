@@ -1,0 +1,6 @@
+java.lang.IllegalArgumentException: C:\Documents and Settings\Administrator\My Documents\NetBeansProjects\CurrencyTrader\src\java\currencytrader\ApplicationBean1.java is not inside C:\Documents and Settings\Administrator\My Documents\NetBeansProjects\CurrencyTrader\src\java
+        at org.netbeans.spi.project.support.ant.SourcesHelper$SourceRoot$Group.contains(SourcesHelper.java:198)
+        at org.netbeans.spi.java.project.support.ui.PackageViewChildren$NoFoldersDataFilter.acceptFileObject(PackageViewChildren.java:1160)
+        at org.openide.loaders.FolderChildren$1R.run(FolderChildren.java:155)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:577)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1030)

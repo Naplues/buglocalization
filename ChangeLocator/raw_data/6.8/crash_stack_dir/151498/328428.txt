@@ -1,0 +1,13 @@
+java.lang.NullPointerException
+        at org.netbeans.modules.cnd.makeproject.api.configurations.ItemConfiguration.<init>(ItemConfiguration.java:87)
+        at org.netbeans.modules.cnd.makeproject.ui.customizer.MakeCustomizer$ProxyItemConfiguration.<init>(MakeCustomizer.java:1622)
+        at org.netbeans.modules.cnd.makeproject.ui.customizer.MakeCustomizer$ProxyItemConfiguration.<init>(MakeCustomizer.java:1613)
+        at org.netbeans.modules.cnd.makeproject.ui.customizer.MakeCustomizer.getItemConfiguration(MakeCustomizer.java:190)
+        at org.netbeans.modules.cnd.makeproject.ui.customizer.MakeCustomizer.createRootNodeItem(MakeCustomizer.java:765)
+        at org.netbeans.modules.cnd.makeproject.ui.customizer.MakeCustomizer.createRootNode(MakeCustomizer.java:610)
+        at org.netbeans.modules.cnd.makeproject.ui.customizer.MakeCustomizer.<init>(MakeCustomizer.java:166)
+        at org.netbeans.modules.cnd.makeproject.api.MakeCustomizerProvider.showCustomizerWorker(MakeCustomizerProvider.java:178)
+        at org.netbeans.modules.cnd.makeproject.api.MakeCustomizerProvider.access$000(MakeCustomizerProvider.java:76)
+        at org.netbeans.modules.cnd.makeproject.api.MakeCustomizerProvider$1.run(MakeCustomizerProvider.java:122)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:602)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1084)

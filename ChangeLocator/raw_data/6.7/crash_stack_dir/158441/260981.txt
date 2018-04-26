@@ -1,0 +1,9 @@
+java.lang.NullPointerException
+        at org.netbeans.modules.maven.jaxws.WSUtils.removeServiceFromDD(WSUtils.java:758)
+        at org.netbeans.modules.maven.jaxws.MavenJAXWSSupportImpl.removeService(MavenJAXWSSupportImpl.java:155)
+        at org.netbeans.modules.websvc.jaxws.light.api.JAXWSLightSupport.removeService(JAXWSLightSupport.java:140)
+        at org.netbeans.modules.maven.jaxws.MavenJaxWsSupportProvider$WebservicesChangeListener.updateJaxWs(MavenJaxWsSupportProvider.java:257)
+        at org.netbeans.modules.maven.jaxws.MavenJaxWsSupportProvider$WebservicesChangeListener.access$400(MavenJaxWsSupportProvider.java:181)
+        at org.netbeans.modules.maven.jaxws.MavenJaxWsSupportProvider$WebservicesChangeListener$1.run(MavenJaxWsSupportProvider.java:190)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:577)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1030)

@@ -1,0 +1,7 @@
+java.lang.IllegalArgumentException: Called DataObject.find on null
+        at org.openide.loaders.DataObject.find(DataObject.java:495)
+        at org.netbeans.modules.refactoring.plugins.FileMovePlugin$MoveFile.performChange(FileMovePlugin.java:125)
+        at org.netbeans.modules.refactoring.api.RefactoringSession.doRefactoring(RefactoringSession.java:134)
+        at org.netbeans.modules.refactoring.spi.impl.ParametersPanel$8.run(ParametersPanel.java:402)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1424)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1968)

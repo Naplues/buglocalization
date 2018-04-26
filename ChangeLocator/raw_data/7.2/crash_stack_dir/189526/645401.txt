@@ -1,0 +1,9 @@
+java.lang.IllegalArgumentException: org.netbeans.modules.maven.repository.M2RepositoryBrowser$RootNodes@59639b3 was not listening to /home/mcanpolat/.m2/settings.xml; only to []
+        at org.openide.filesystems.FileUtil.removeFileChangeListenerImpl(FileUtil.java:317)
+        at org.openide.filesystems.FileUtil.removeFileChangeListener(FileUtil.java:306)
+        at org.netbeans.modules.maven.repository.M2RepositoryBrowser$RootNodes.removeNotify(M2RepositoryBrowser.java:203)
+        at org.openide.nodes.AsynchChildren.removeNotify(AsynchChildren.java:103)
+        at org.openide.nodes.Children.callRemoveNotify(Children.java:580)
+        at org.openide.nodes.EntrySupportDefault.finalizedChildrenArray(EntrySupportDefault.java:757)
+        at org.openide.nodes.EntrySupportDefault$ChArrRef.run(EntrySupportDefault.java:849)
+        at org.openide.util.lookup.implspi.ActiveQueue$Daemon.run(ActiveQueue.java:191)

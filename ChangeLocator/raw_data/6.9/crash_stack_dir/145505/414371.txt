@@ -1,0 +1,6 @@
+java.lang.IllegalArgumentException: MasterFileObject[C:\work\home\NetBeansProjects\OBSsim\src\test2\Test.java@15f0338:1b4d8f8,valid=true] is not inside MasterFileObject[C:\work\home\NetBeansProjects\OBSsim\src@f6c19e:3414dc,valid=true]
+        at org.netbeans.spi.project.support.ant.SourcesHelper$SourceRoot$Group.contains(SourcesHelper.java:201)
+        at org.netbeans.spi.java.project.support.ui.PackageViewChildren$NoFoldersDataFilter.acceptFileObject(PackageViewChildren.java:1224)
+        at org.openide.loaders.FolderChildren$1R.run(FolderChildren.java:163)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1418)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1957)

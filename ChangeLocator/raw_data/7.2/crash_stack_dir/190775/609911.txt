@@ -1,0 +1,11 @@
+java.lang.NullPointerException
+        at org.netbeans.modules.cnd.utils.FSPath.toFSPath(FSPath.java:66)
+        at org.netbeans.modules.cnd.remote.support.RemoteProjectSupport.getProjectSourceDirs(RemoteProjectSupport.java:160)
+        at org.netbeans.modules.cnd.remote.sync.RemoteBuildProjectActionHandler.execute(RemoteBuildProjectActionHandler.java:162)
+        at org.netbeans.modules.cnd.makeproject.api.ProjectActionSupport$HandleEvents.go(ProjectActionSupport.java:563)
+        at org.netbeans.modules.cnd.makeproject.api.ProjectActionSupport$HandleEvents.access$000(ProjectActionSupport.java:236)
+        at org.netbeans.modules.cnd.makeproject.api.ProjectActionSupport.fireActionPerformed(ProjectActionSupport.java:222)
+        at org.netbeans.modules.cnd.makeproject.MakeActionProvider$1$1.runImpl(MakeActionProvider.java:339)
+        at org.netbeans.modules.cnd.utils.NamedRunnable.run(NamedRunnable.java:62)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1452)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:2032)

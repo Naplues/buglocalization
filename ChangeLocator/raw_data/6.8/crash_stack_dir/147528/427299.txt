@@ -1,0 +1,4 @@
+java.lang.NullPointerException
+        at org.netbeans.modules.maven.navigator.POMModelPanel.run(POMModelPanel.java:321)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:602)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1084)

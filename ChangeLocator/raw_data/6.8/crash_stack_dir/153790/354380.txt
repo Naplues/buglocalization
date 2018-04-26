@@ -1,0 +1,9 @@
+java.lang.NumberFormatException: For input string: "1,177.831"
+        at sun.misc.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:1224)
+        at java.lang.Float.parseFloat(Float.java:422)
+        at org.netbeans.modules.maven.junit.JUnitOutputListenerProvider.generateTest(JUnitOutputListenerProvider.java:258)
+        at org.netbeans.modules.maven.junit.JUnitOutputListenerProvider.sequenceEnd(JUnitOutputListenerProvider.java:167)
+        at org.netbeans.modules.maven.execute.AbstractOutputHandler.processEnd(AbstractOutputHandler.java:200)
+        at org.netbeans.modules.maven.execute.CommandLineOutputHandler$Output.run(CommandLineOutputHandler.java:194)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:602)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1084)

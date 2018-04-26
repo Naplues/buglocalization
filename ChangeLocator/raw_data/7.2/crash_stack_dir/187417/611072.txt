@@ -1,0 +1,27 @@
+java.lang.IllegalStateException: Property 'src.dir' was not found in 'nbproject/project.properties' (NB metadata corrupted?)
+diagnostics:
+project.properties exists: false
+project directory: C:\Users\Micha\Music\Documents\NetBeansProjects\kohana@3212326d:4be7a3[invalid]
+project directory children: []
+nbproject exists: false
+source roots: []
+source roots - fired changes: 0
+properties (helper): {}
+properties (evaluator): {copy.src.target=C:\xampp\htdocs\kohana, java.vm.version=20.10-b01, ant.core.lib=C:\Program Files\NetBeans 7.2\java\ant\lib\ant.jar, libs.ejb3-persistence.maven-pom=, libs.jpa20-persistence.src=, nbplatform.default.harness.dir=C:\Program Files\NetBeans 7.2/harness, libs.junit_4.javadoc=C:\Users\Micha\AppData\Roaming\NetBeans\7.2\docs\junit-4.10-javadoc.jar, libs.jakarta_slide_ant_webdav.javadoc=, libs.junit.classpath=C:\Users\Micha\AppData\Roaming\NetBeans\7.2\modules\ext\junit-3.8.2.jar, sun.java2d.noddraw=true, org.openide.version=deprecated, libs.primefaces.javadoc=, libs.struts.classpath=C:\
+        at org.netbeans.modules.php.project.PhpProject.resolveSourcesDirectory(PhpProject.java:376)
+        at org.netbeans.modules.php.project.PhpProject.getSourcesDirectory(PhpProject.java:300)
+        at org.netbeans.modules.php.project.PhpProject.resolveWebRootDirectory(PhpProject.java:487)
+        at org.netbeans.modules.php.project.PhpProject.getWebRootDirectory(PhpProject.java:478)
+        at org.netbeans.modules.php.project.PhpProject$ProjectPropertiesListener.propertyChange(PhpProject.java:982)
+        at org.openide.util.WeakListenerImpl$PropertyChange.propertyChange(WeakListenerImpl.java:196)
+        at java.beans.PropertyChangeSupport.firePropertyChange(PropertyChangeSupport.java:339)
+        at org.netbeans.spi.project.support.ant.SequentialPropertyEvaluator.stateChanged(SequentialPropertyEvaluator.java:208)
+        at org.openide.util.WeakListenerImpl$Change.stateChanged(WeakListenerImpl.java:329)
+        at org.openide.util.ChangeSupport.fireChange(ChangeSupport.java:133)
+        at org.openide.util.ChangeSupport.fireChange(ChangeSupport.java:119)
+        at org.netbeans.spi.project.support.ant.ProjectProperties$PP$2.run(ProjectProperties.java:348)
+        at org.netbeans.spi.project.support.ant.ProjectProperties$PP$2.run(ProjectProperties.java:346)
+        at org.openide.util.Mutex.readAccess(Mutex.java:290)
+        at org.netbeans.spi.project.support.ant.ProjectProperties$PP$3.run(ProjectProperties.java:362)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1452)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:2032)

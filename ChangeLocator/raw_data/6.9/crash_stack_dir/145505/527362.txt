@@ -1,0 +1,6 @@
+java.lang.IllegalArgumentException: MasterFileObject[C:\Documents and Settings\Beatriz\My Documents\NetBeansProjects\gestion_tienda\src\tienda\BaseClientes.java@ae2e31:ad95c4,valid=true] is not inside MasterFileObject[C:\Documents and Settings\Beatriz\My Documents\NetBeansProjects\gestion_tienda\src@e9a91a:4bc473,valid=false]
+        at org.netbeans.spi.project.support.ant.SourcesHelper$SourceRoot$Group.contains(SourcesHelper.java:201)
+        at org.netbeans.spi.java.project.support.ui.PackageViewChildren$NoFoldersDataFilter.acceptFileObject(PackageViewChildren.java:1224)
+        at org.openide.loaders.FolderChildren$1R.run(FolderChildren.java:163)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1418)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1957)

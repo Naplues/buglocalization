@@ -1,0 +1,23 @@
+java.lang.IllegalArgumentException: TreePathHandle [/home/aldo/develop/teko/omc-main/teko-alarmdb/src/com/imavis/omc/persistence/DevicePersistenceListener.java] was not created from /home/aldo/develop/teko/omc-main/teko-alarmdb/src/com/imavis/omc/persistence/DeviceDao.java
+mine: id=MasterFileObject[/home/aldo/develop/teko/omc-main/teko-alarmdb/src/com/imavis/omc/persistence/DevicePersistenceListener.java@ef3c63:fdaa2e,valid=true], url=file:/home/aldo/develop/teko/omc-main/teko-alarmdb/src/com/imavis/omc/persistence/DevicePersistenceListener.java
+remote: id=MasterFileObject[/home/aldo/develop/teko/omc-main/teko-alarmdb/src/com/imavis/omc/persistence/DeviceDao.java@da5b08:cfb451,valid=true], url=file:/home/aldo/develop/teko/omc-main/teko-alarmdb/src/com/imavis/omc/persistence/DeviceDao.java
+        at org.netbeans.api.java.source.TreePathHandle$TreeDelegate.resolve(TreePathHandle.java:424)
+        at org.netbeans.api.java.source.TreePathHandle.resolve(TreePathHandle.java:154)
+        at org.netbeans.modules.refactoring.java.ui.ChangeParametersPanel$1.run(ChangeParametersPanel.java:136)
+        at org.netbeans.modules.refactoring.java.ui.ChangeParametersPanel$1.run(ChangeParametersPanel.java:130)
+        at org.netbeans.api.java.source.JavaSource$MultiTask.run(JavaSource.java:478)
+        at org.netbeans.modules.parsing.api.ParserManager$UserTaskAction.run(ParserManager.java:154)
+        at org.netbeans.modules.parsing.api.ParserManager$UserTaskAction.run(ParserManager.java:138)
+        at org.netbeans.modules.parsing.impl.TaskProcessor$1.call(TaskProcessor.java:200)
+        at org.netbeans.modules.parsing.impl.TaskProcessor$1.call(TaskProcessor.java:197)
+        at org.netbeans.modules.masterfs.filebasedfs.utils.FileChangedManager.priorityIO(FileChangedManager.java:160)
+        at org.netbeans.modules.masterfs.providers.ProvidedExtensions.priorityIO(ProvidedExtensions.java:227)
+        at org.netbeans.modules.parsing.impl.Utilities.runPriorityIO(Utilities.java:66)
+        at org.netbeans.modules.parsing.impl.TaskProcessor.runUserTask(TaskProcessor.java:197)
+        at org.netbeans.modules.parsing.api.ParserManager.parse(ParserManager.java:106)
+        at org.netbeans.api.java.source.JavaSource.runUserActionTaskImpl(JavaSource.java:433)
+        at org.netbeans.api.java.source.JavaSource.runUserActionTask(JavaSource.java:404)
+        at org.netbeans.modules.refactoring.java.ui.ChangeParametersPanel.initialize(ChangeParametersPanel.java:130)
+        at org.netbeans.modules.refactoring.spi.impl.ParametersPanel$10.run(ParametersPanel.java:508)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1418)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1957)

@@ -1,0 +1,9 @@
+java.lang.IllegalArgumentException: Attempted to pass a non-directory to findProject: C:\Projects\Custom\adpmotm11\parent.xml
+        at org.netbeans.api.project.ProjectManager.findProject(ProjectManager.java:224)
+        at org.netbeans.modules.maven.hints.pom.ParentVersionError.getErrorsForDocument(ParentVersionError.java:119)
+        at org.netbeans.modules.maven.hints.pom.StatusProvider$StatusProviderImpl.findHints(StatusProvider.java:153)
+        at org.netbeans.modules.maven.hints.pom.StatusProvider$StatusProviderImpl.checkHints(StatusProvider.java:124)
+        at org.netbeans.modules.maven.hints.pom.StatusProvider$StatusProviderImpl.access$000(StatusProvider.java:96)
+        at org.netbeans.modules.maven.hints.pom.StatusProvider$StatusProviderImpl$1$1.run(StatusProvider.java:109)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:602)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1084)

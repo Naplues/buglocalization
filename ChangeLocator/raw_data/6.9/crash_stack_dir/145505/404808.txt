@@ -1,0 +1,6 @@
+java.lang.IllegalArgumentException: MasterFileObject[C:\Documents and Settings\I047997\My Documents\NetBeansProjects\bc\CustomericProject\CustomericBaseSalesModule\src\com\businesscompiler\modules\sales\CustomerService.java@128dd6:1c643d4,valid=true] is not inside MasterFileObject[C:\Documents and Settings\I047997\My Documents\NetBeansProjects\bc\CustomericProject\CustomericBaseSalesModule\src@140b47a:1d3f03b,valid=true]
+        at org.netbeans.spi.project.support.ant.SourcesHelper$SourceRoot$Group.contains(SourcesHelper.java:201)
+        at org.netbeans.spi.java.project.support.ui.PackageViewChildren$NoFoldersDataFilter.acceptFileObject(PackageViewChildren.java:1224)
+        at org.openide.loaders.FolderChildren$1R.run(FolderChildren.java:163)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1418)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1957)

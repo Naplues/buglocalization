@@ -1,0 +1,9 @@
+java.util.concurrent.CancellationException
+        at java.util.concurrent.FutureTask$Sync.innerGet(FutureTask.java:250)
+        at java.util.concurrent.FutureTask.get(FutureTask.java:111)
+        at org.netbeans.modules.php.api.phpmodule.PhpProgram.executeAndWait(PhpProgram.java:223)
+        at org.netbeans.modules.php.phpdoc.PhpDocScript.generateDocumentation(PhpDocScript.java:134)
+        at org.netbeans.modules.php.phpdoc.PhpDocumentorProvider.generateDocumentation(PhpDocumentorProvider.java:68)
+        at org.netbeans.modules.php.project.ui.logicalview.PhpLogicalViewProvider$PhpDocAction$1.run(PhpLogicalViewProvider.java:432)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1424)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1968)

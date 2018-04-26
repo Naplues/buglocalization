@@ -1,0 +1,49 @@
+java.lang.IllegalStateException: Property 'src.dir' was not found in 'nbproject/project.properties' (NB metadata corrupted?)
+diagnostics:
+project.properties exists: false
+project directory: /home/ghazali/version-control/git/dycode/projects/mizan-e-book-store/MizanBackend/ci-implementation-of-oauth-provider@8aa61e62:17e8794[invalid]
+project directory children: []
+nbproject exists: false
+source roots: []
+source roots - fired changes: 2
+properties (helper): {}
+properties (evaluator): {java.vm.version=23.1-b03, java.util.logging.config.class=org.netbeans.core.startup.TopLogging, apple.laf.useScreenMenuBar=true, sun.jnu.encoding=UTF-8, java.vendor.url=http://java.oracle.com/, ant.core.lib=/usr/local/netbeans-7.2/java/ant/lib/ant.jar, java.vm.info=mixed mode, user.dir=/home/ghazali, sun.cpu.isalist=, sun.awt.enableExtraMouseButtons=true, java.awt.graphicsenv=sun.awt.X11GraphicsEnvironment, sun.os.patch.level=unknown, sun.java2d.noddraw=true, org.openide.version=deprecated, netbeans.home=/usr/local/netbeans-7.2/plat
+        at org.netbeans.modules.php.project.PhpProject.resolveSourcesDirectory(PhpProject.java:382)
+        at org.netbeans.modules.php.project.PhpProject.getSourcesDirectory(PhpProject.java:302)
+        at org.netbeans.modules.php.project.ProjectPropertiesSupport.getSourcesDirectory(ProjectPropertiesSupport.java:120)
+        at org.netbeans.modules.php.project.PhpModuleImpl.getSourceDirectory(PhpModuleImpl.java:88)
+        at org.netbeans.modules.php.symfony2.commands.Symfony2Script.getPath(Symfony2Script.java:81)
+        at org.netbeans.modules.php.symfony2.commands.Symfony2Script.getPath(Symfony2Script.java:74)
+        at org.netbeans.modules.php.symfony2.Symfony2PhpFrameworkProvider.isInPhpModule(Symfony2PhpFrameworkProvider.java:110)
+        at org.netbeans.modules.php.project.PhpProject.getFrameworks(PhpProject.java:615)
+        at org.netbeans.modules.php.project.PhpProject.resetFrameworks(PhpProject.java:643)
+        at org.netbeans.modules.php.project.PhpProject$SourceDirectoryFileChangeListener.processFileChange(PhpProject.java:1035)
+        at org.netbeans.modules.php.project.PhpProject$SourceDirectoryFileChangeListener.fileDeleted(PhpProject.java:1020)
+        at sun.reflect.GeneratedMethodAccessor17.invoke(GeneratedMethodAccessor17.java:0)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:601)
+        at org.openide.util.WeakListenerImpl$ProxyListener.invoke(WeakListenerImpl.java:457)
+        at $Proxy1.fileDeleted(.java:0)
+        at org.openide.filesystems.FCLSupport$DispatchEventWrapper.dispatchEventImpl(FCLSupport.java:148)
+        at org.openide.filesystems.FCLSupport$DispatchEventWrapper.dispatchEvent(FCLSupport.java:128)
+        at org.openide.filesystems.FCLSupport.dispatchEvent(FCLSupport.java:105)
+        at org.openide.filesystems.FileObject$ED.dispatch(FileObject.java:1242)
+        at org.openide.filesystems.FileSystem$EventDispatcher.run(FileSystem.java:997)
+        at org.openide.filesystems.EventControl.dispatchEvent(EventControl.java:84)
+        at org.openide.filesystems.FileSystem.dispatchEvent(FileSystem.java:642)
+        at org.openide.filesystems.FileObject.dispatchEvent(FileObject.java:564)
+        at org.openide.filesystems.FileObject.fireFileDeletedEvent(FileObject.java:540)
+        at org.netbeans.modules.masterfs.filebasedfs.fileobjects.BaseFileObj.fireFileDeletedEvent(BaseFileObj.java:697)
+        at org.netbeans.modules.masterfs.filebasedfs.fileobjects.FolderObj.refreshImpl(FolderObj.java:542)
+        at org.netbeans.modules.masterfs.filebasedfs.fileobjects.FolderObj.refreshImpl(FolderObj.java:507)
+        at org.netbeans.modules.masterfs.filebasedfs.fileobjects.FolderObj.refreshImpl(FolderObj.java:507)
+        at org.netbeans.modules.masterfs.filebasedfs.fileobjects.BaseFileObj.refresh(BaseFileObj.java:818)
+        at org.netbeans.modules.masterfs.filebasedfs.fileobjects.FolderObj.refresh(FolderObj.java:554)
+        at org.netbeans.modules.masterfs.filebasedfs.fileobjects.BaseFileObj.handleMoveCopy(BaseFileObj.java:356)
+        at org.netbeans.modules.masterfs.filebasedfs.fileobjects.BaseFileObj.move(BaseFileObj.java:301)
+        at org.netbeans.modules.masterfs.filebasedfs.fileobjects.BaseFileObj.move(BaseFileObj.java:277)
+        at org.netbeans.modules.project.uiapi.DefaultProjectOperationsImplementation.doMoveProject(DefaultProjectOperationsImplementation.java:490)
+        at org.netbeans.modules.project.uiapi.DefaultProjectOperationsImplementation$4.execute(DefaultProjectOperationsImplementation.java:360)
+        at org.netbeans.modules.project.uiapi.DefaultProjectOperationsImplementation$6$1.run(DefaultProjectOperationsImplementation.java:649)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1452)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:2032)

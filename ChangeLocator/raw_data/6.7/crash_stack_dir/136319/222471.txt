@@ -1,0 +1,13 @@
+java.lang.ClassCastException: com.sun.tools.javac.tree.JCTree$JCPrimitiveTypeTree cannot be cast to com.sun.source.tree.IdentifierTree
+        at org.netbeans.modules.maven.hints.errors.SearchClassDependencyInRepo.run(SearchClassDependencyInRepo.java:238)
+        at org.netbeans.modules.java.hints.infrastructure.CreatorBasedLazyFixList.compute(CreatorBasedLazyFixList.java:144)
+        at org.netbeans.modules.java.hints.infrastructure.LazyHintComputation.run(LazyHintComputation.java:109)
+        at org.netbeans.modules.java.hints.infrastructure.LazyHintComputation.run(LazyHintComputation.java:55)
+        at org.netbeans.modules.java.source.JavaSourceAccessor$CancelableTaskWrapper.run(JavaSourceAccessor.java:288)
+        at org.netbeans.modules.parsing.impl.TaskProcessor$CompilationJob.run(TaskProcessor.java:668)
+        at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:441)
+        at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+        at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+        at java.lang.Thread.run(Thread.java:619)

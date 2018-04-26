@@ -1,0 +1,10 @@
+java.lang.NullPointerException
+        at java.io.Writer.<init>(Writer.java:0)
+        at java.io.OutputStreamWriter.<init>(OutputStreamWriter.java:0)
+        at org.netbeans.modules.cnd.makeproject.configurations.ConfigurationMakefileWriter.writeMakefileConf(ConfigurationMakefileWriter.java:311)
+        at org.netbeans.modules.cnd.makeproject.configurations.ConfigurationMakefileWriter.writeMissingMakefiles(ConfigurationMakefileWriter.java:120)
+        at org.netbeans.modules.cnd.makeproject.api.configurations.MakeConfigurationDescriptor.saveWorker(MakeConfigurationDescriptor.java:660)
+        at org.netbeans.modules.cnd.makeproject.api.configurations.MakeConfigurationDescriptor.access$000(MakeConfigurationDescriptor.java:99)
+        at org.netbeans.modules.cnd.makeproject.api.configurations.MakeConfigurationDescriptor$SaveRunnable.run(MakeConfigurationDescriptor.java:633)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:602)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1084)

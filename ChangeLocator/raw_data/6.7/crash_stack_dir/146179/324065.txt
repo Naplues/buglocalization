@@ -1,0 +1,12 @@
+java.lang.NullPointerException
+        at org.netbeans.modules.java.source.ant.ProjectRunnerImpl.computeProperties(ProjectRunnerImpl.java:153)
+        at org.netbeans.modules.java.source.ant.ProjectRunnerImpl.execute(ProjectRunnerImpl.java:115)
+        at org.netbeans.api.java.project.runner.JavaRunner.execute(JavaRunner.java:262)
+        at org.netbeans.modules.maven.cos.CosChecker.checkRunTest(CosChecker.java:521)
+        at org.netbeans.modules.maven.cos.CosChecker.checkRunConfig(CosChecker.java:123)
+        at org.netbeans.modules.maven.execute.PrereqCheckerMerger$Impl.checkRunConfig(PrereqCheckerMerger.java:84)
+        at org.netbeans.modules.maven.ActionProviderImpl.runGoal(ActionProviderImpl.java:231)
+        at org.netbeans.modules.maven.ActionProviderImpl.invokeAction(ActionProviderImpl.java:220)
+        at org.netbeans.modules.maven.ActionProviderImpl$1.run(ActionProviderImpl.java:177)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:577)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1030)

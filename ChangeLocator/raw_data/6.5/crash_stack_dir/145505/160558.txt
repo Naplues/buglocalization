@@ -1,0 +1,6 @@
+java.lang.IllegalArgumentException: D:\PROJECTS\JAVA\baseReplicator\src\basereplicator\BaseReplicatorView.java is not inside D:\PROJECTS\JAVA\baseReplicator\src
+        at org.netbeans.spi.project.support.ant.SourcesHelper$SourceRoot$Group.contains(SourcesHelper.java:180)
+        at org.netbeans.spi.java.project.support.ui.PackageViewChildren$NoFoldersDataFilter.acceptFileObject(PackageViewChildren.java:1160)
+        at org.openide.loaders.FolderChildren$1R.run(FolderChildren.java:157)
+        at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:572)
+        at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:997)
