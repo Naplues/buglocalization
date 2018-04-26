@@ -14,11 +14,6 @@ import java.util.Hashtable;
  *
  */
 public class BugSimilarity {
-	private static int wordCount = 1042;
-	private static int bugReportCount = 98;
-	private static String workDir = Utility.outputFileDir;
-
-
 	/**
 	 * 获取余弦值
 	 * @param firstVector
@@ -29,7 +24,7 @@ public class BugSimilarity {
 		float len1 = 0;
 		float len2 = 0;
 		float product = 0;
-		for (int i = 0; i < wordCount; i++) {
+		for (int i = 0; i < Utility.bugTermCount; i++) {
 			len1 += firstVector[i] * firstVector[i];
 			len2 += secondVector[i] * secondVector[i];
 			product += firstVector[i] * secondVector[i];
@@ -46,8 +41,7 @@ public class BugSimilarity {
 
 		Hashtable<Integer, float[]> vectors = new Hashtable<>();
 
-		BufferedReader reader = new BufferedReader(new FileReader(workDir
-				+ "BugVector.txt"));
+		BufferedReader reader = new BufferedReader(new FileReader(Utility.outputFileDir + "BugVector.txt"));
 		String line = null;
 		while ((line = reader.readLine()) != null) {
 			String idStr = line.substring(0, line.indexOf("."));
@@ -60,7 +54,7 @@ public class BugSimilarity {
 	}
 
 	private static float[] getVector(String vectorStr) {
-		float[] vector = new float[wordCount];
+		float[] vector = new float[Utility.bugTermCount];
 		String[] values = vectorStr.split(" ");
 		for (String value : values) {
 			String[] singleValues = value.split(":");
@@ -78,9 +72,9 @@ public class BugSimilarity {
 	 * @throws IOException
 	 */
 	public static void computeSimilarity() throws IOException {
-		BufferedReader reader = new BufferedReader(new FileReader(workDir + "SortedId.txt"));
-		String line = null;
-		int[] idArr = new int[bugReportCount];
+		BufferedReader reader = new BufferedReader(new FileReader(Utility.outputFileDir + "SortedId.txt"));
+		String line;
+		int[] idArr = new int[Utility.bugReportCount];
 		int index = 0;
 		while ((line = reader.readLine()) != null) {
 			String idStr = line.substring(0, line.indexOf("\t"));
@@ -89,9 +83,9 @@ public class BugSimilarity {
 
 		Hashtable<Integer, float[]> vectors = getVector();
 
-		FileWriter writer = new FileWriter(workDir + "BugSimilarity.txt");
+		FileWriter writer = new FileWriter(Utility.outputFileDir + "BugSimilarity.txt");
 
-		for (int i = 0; i < bugReportCount; i++) {
+		for (int i = 0; i < Utility.bugReportCount; i++) {
 			int firstId = idArr[i];
 			float[] firstVector = vectors.get(firstId);
 			String output = firstId + ";";
@@ -106,11 +100,5 @@ public class BugSimilarity {
 			writer.flush();
 		}
 		writer.close();
-	}
-	
-	public static void main(String[] args) throws IOException {
-		System.out.println("Computing bug similarity...");
-		BugSimilarity.computeSimilarity();
-		System.out.println("Finish");
 	}
 }

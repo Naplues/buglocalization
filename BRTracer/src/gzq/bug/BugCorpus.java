@@ -153,13 +153,4 @@ public class BugCorpus {
 		}
 		return res.toString();
 	}
-	
-	public static void main(String[] args) throws IOException {
-        System.out.println("Creating bug corpus...");
-        BugCorpus.create();
-		System.out.println("Finish");
-		System.out.println(Utility.bugTermCount);
-		System.out.println(Utility.bugReportCount);
-
-	}
 }

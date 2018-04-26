@@ -64,12 +64,4 @@ public class BugVector {
 		wvw.close();
 		outFile.close();
 	}
-	
-	public static void main(String[] args) throws WVToolException, IOException {
-		System.out.println("Creating bug vector...");
-		BugVector.create();
-		System.out.println("Finish");
-		System.out.println(Utility.bugTermCount);
-		System.out.println(Utility.bugReportCount);
-	}
 }
