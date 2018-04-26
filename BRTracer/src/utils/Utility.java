@@ -14,8 +14,8 @@ public class Utility {
     public static  String separator = System.getProperty("file.separator"); // 文件分隔符
     public static  String lineSeparator = System.getProperty("line.separator"); // 行分隔符
 
-    public static String project = "Swt";
-    public static String bugXMLFile = "SWTBugRepository.xml";
+    public static String project = "AspectJ";
+    private static String bugXMLFile = "AspectJBugRepository.xml";
     public static String workDir = "C:\\Users\\gzq\\Desktop\\BRTracer" + separator;
     public static String bugFilePath = workDir + project + separator + bugXMLFile;
     public static String sourceFileDir = workDir + project + "\\Source\\";
@@ -31,7 +31,7 @@ public class Utility {
 
     public static int originFileCount;
 
-    public static int aspectj_filename_offset = detectSourceFiles(sourceFileDir, srcFileType).length;
+    public static int aspectj_filename_offset = sourceFileDir.length();
 
     /**
      * 检测指定目录下指定类型的所有源码文件

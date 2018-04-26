@@ -382,7 +382,7 @@ public class Evaluation {
 
 			float[] finalscore = new float[Utility.originFileCount];
 			int[] usedcount = new int[Utility.originFileCount];
-			HashMap<Integer,ArrayList<Float>> scores = new HashMap<Integer,ArrayList<Float>>();
+			HashMap<Integer,ArrayList<Float>> scores = new HashMap<>();
 			for( int counter = 0; counter < finalR.length; counter++ ){
 				String name = methodnameTable.get(counter);
 				name = name.substring(0, name.indexOf('@'));
@@ -399,7 +399,7 @@ public class Evaluation {
 					t.add(finalR[counter]);
 				}
 				else{
-					ArrayList<Float> t = new ArrayList<Float>();
+					ArrayList<Float> t = new ArrayList<>();
 					t.add(finalR[counter]);
 					scores.put(id, t);
 				}

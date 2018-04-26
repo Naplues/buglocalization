@@ -42,7 +42,7 @@ public class BugSimilarity {
 		Hashtable<Integer, float[]> vectors = new Hashtable<>();
 
 		BufferedReader reader = new BufferedReader(new FileReader(Utility.outputFileDir + "BugVector.txt"));
-		String line = null;
+		String line;
 		while ((line = reader.readLine()) != null) {
 			String idStr = line.substring(0, line.indexOf("."));
 			String vectorStr = line.substring(line.indexOf(";") + 1).trim();

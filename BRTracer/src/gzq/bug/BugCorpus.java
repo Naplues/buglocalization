@@ -31,15 +31,13 @@ public class BugCorpus {
 		StringBuffer corpus = new StringBuffer();
 		for (String word : splitWords) {
 			word = Stem.stem(word.toLowerCase());
-			if (!Stopword.isEnglishStopword(word)) {
+			if (!Stopword.isEnglishStopword(word))
 				corpus.append(word + " ");
-			}
 		}
 		FileWriter writer = new FileWriter(storeDir + bug.getBugId() + ".txt");
 		writer.write(corpus.toString().trim());
 		writer.flush();
 		writer.close();
-
 	}
 
 	/**
@@ -104,21 +102,19 @@ public class BugCorpus {
 		}
 		return list;
 	}
-
 	
 	public static void create() throws IOException {
         //bug列表
 		ArrayList<Bug> list = BugCorpus.parseXML();
-
 		String bugCorpusDir = Utility.outputFileDir + "BugCorpus" + Utility.separator;
 		File file = new File(bugCorpusDir);
 		Utility.bugReportCount = list.size();
 		if (!file.exists())
 			file.mkdir();
 
-		for (Bug bug : list) {
+		for (Bug bug : list)
 			writeCorpus(bug, bugCorpusDir);
-		}
+
 		FileWriter writer = new FileWriter(Utility.outputFileDir  + "SortedId.txt");
 		FileWriter writerFix = new FileWriter(Utility.outputFileDir +  "FixLink.txt");
 		FileWriter writerClassName = new FileWriter(Utility.outputFileDir +  "DescriptionClassName.txt");
@@ -143,14 +139,12 @@ public class BugCorpus {
 	 * @return
 	 */
 	public static String extractClassName(String content) {
-
 		String pattern = "[a-zA-Z_][a-zA-Z0-9_\\-]*\\.java";
 		StringBuffer res = new StringBuffer();
 		Pattern r = Pattern.compile(pattern);
 		Matcher m = r.matcher(content);
-		while (m.find()) {
+		while (m.find())
 			res.append(m.group(0) + " ");
-		}
 		return res.toString();
 	}
 }

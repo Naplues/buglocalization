@@ -26,7 +26,6 @@ import java.io.IOException;
  */
 public class BugVector {
 
-	private static String HOME_FOLDER = Utility.outputFileDir;
 	private static String BUG_CORPUS_FOLDER = "BugCorpus" + Utility.separator;
 	
 	public static void create() throws WVToolException, IOException {
@@ -37,13 +36,13 @@ public class BugVector {
 		config.setConfigurationRule(WVTConfiguration.STEP_STEMMER, new WVTConfigurationRule() {
 			public Object getMatchingComponent(WVTDocumentInfo d) throws WVTConfigException {
 				return porterStemmer;
-			}
+        }
 		});
 		WVTStemmer stemmer = new LovinsStemmerWrapper();
 		config.setConfigurationRule(WVTConfiguration.STEP_STEMMER, new WVTConfigurationFact(stemmer));
 		WVTFileInputList list = new WVTFileInputList(1);
 
-		list.addEntry(new WVTDocumentInfo(HOME_FOLDER + BUG_CORPUS_FOLDER, "txt", "", "english", 0));
+		list.addEntry(new WVTDocumentInfo(Utility.outputFileDir + BUG_CORPUS_FOLDER, "txt", "", "english", 0));
 
 		WVTWordList wordList = wvt.createWordList(list, config);
 
@@ -51,9 +50,9 @@ public class BugVector {
 
 		int termCount = wordList.getNumWords();
 		Utility.bugTermCount = termCount;
-		wordList.storePlain(new FileWriter(HOME_FOLDER + "BugTermList.txt"));
+		wordList.storePlain(new FileWriter(Utility.outputFileDir + "BugTermList.txt"));
 
-		FileWriter outFile = new FileWriter(HOME_FOLDER + "BugVector.txt");
+		FileWriter outFile = new FileWriter(Utility.outputFileDir + "BugVector.txt");
 
 		WordVectorWriter wvw = new WordVectorWriter(outFile, true);
 

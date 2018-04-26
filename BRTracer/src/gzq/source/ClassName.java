@@ -12,10 +12,54 @@ import java.util.TreeSet;
 
 /**
  * 类名称
- * 提取源码文件的类和其中的方法
+ * 提取源码文件的类名和其中的方法名
  * @author gzq
  */
 public class ClassName {
+    /**
+     * 读取源文件创建对应的语料库
+     *
+     * @param file
+     * @return
+     */
+    public static Corpus createCorpus(File file) {
+        FileParser parser = new FileParser(file);
+        String fileName = parser.getPackageName();
+        // fileName = 包名+类名
+        if (fileName.trim().equals(""))
+            fileName = file.getName();
+        else
+            fileName += "." + file.getName();
+
+        //AspectJ项目处理
+        if (Utility.project.compareTo("AspectJ") == 0)
+            fileName = file.getPath().substring(Utility.aspectj_filename_offset);
+        fileName = fileName.substring(0, fileName.lastIndexOf(".")).replace("\\",".");
+
+        String[] content = parser.getContent();
+        StringBuffer contentBuf = new StringBuffer();
+        for (String word : content) {
+            String stemWord = Stem.stem(word.toLowerCase());
+            if (!(Stopword.isKeyword(word) || Stopword.isEnglishStopword(word))) {
+                contentBuf.append(stemWord);
+                contentBuf.append(" ");
+            }
+        }
+
+        String[] classNameAndMethodName = parser.getClassNameAndMethodName();
+        StringBuffer nameBuf = new StringBuffer();
+
+        for (String word : classNameAndMethodName) {
+            String stemWord = Stem.stem(word.toLowerCase());
+            nameBuf.append(stemWord + " ");
+        }
+        String names = nameBuf.toString();
+        Corpus corpus = new Corpus();
+        corpus.setJavaFilePath(file.getAbsolutePath());
+        corpus.setJavaFileFullClassName(fileName);
+        corpus.setContent(names);
+        return corpus;
+    }
 
     /**
      * 创建类名文件
@@ -55,64 +99,5 @@ public class ClassName {
         Utility.originFileCount = count;
         writer.close();
         NameWriter.close();
-    }
-
-    /**
-     * 读取源文件创建对应的语料库
-     *
-     * @param file
-     * @return
-     */
-    public static Corpus createCorpus(File file) {
-        FileParser parser = new FileParser(file);
-
-        String fileName = parser.getPackageName();
-        if (fileName.trim().equals("")) {
-            fileName = file.getName();
-        } else {
-            fileName += "." + file.getName();
-        }
-
-        /* modification for AspectJ */
-        if (Utility.project.compareTo("AspectJ") == 0) {
-            fileName = file.getPath();
-            fileName = fileName.substring(Utility.aspectj_filename_offset);
-        }
-        /* ************************** */
-
-        fileName = fileName.substring(0, fileName.lastIndexOf("."));
-
-        String[] content = parser.getContent();
-        StringBuffer contentBuf = new StringBuffer();
-        for (String word : content) {
-            String stemWord = Stem.stem(word.toLowerCase());
-            if (!(Stopword.isKeyword(word) || Stopword.isEnglishStopword(word))) {
-
-                contentBuf.append(stemWord);
-                contentBuf.append(" ");
-            }
-        }
-
-        String[] classNameAndMethodName = parser.getClassNameAndMethodName();
-        StringBuffer nameBuf = new StringBuffer();
-
-        for (String word : classNameAndMethodName) {
-            String stemWord = Stem.stem(word.toLowerCase());
-            nameBuf.append(stemWord);
-            nameBuf.append(" ");
-        }
-
-        String names = nameBuf.toString();
-        Corpus corpus = new Corpus();
-        corpus.setJavaFilePath(file.getAbsolutePath());
-        corpus.setJavaFileFullClassName(fileName);
-        corpus.setContent(names);
-        return corpus;
-    }
-
-    public static void main(String[] args) throws Exception {
-        System.out.println("Getting all class names...");
-        ClassName.create();
-        System.out.println("Finish");
     }
 }

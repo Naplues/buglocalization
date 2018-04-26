@@ -15,7 +15,7 @@ public class Main {
         System.out.println("2. Creating bug corpus...");
         BugCorpus.create();
         System.out.println("Finish");
-
+/*
         System.out.println("3. Creating bug vector...");
         BugVector.create();
         System.out.println("Finish");
@@ -67,6 +67,6 @@ public class Main {
         //MAP.statistics();
         System.out.println("Finish");
 
-
+*/
     }
 }
