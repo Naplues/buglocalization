@@ -32,41 +32,17 @@ public class Bug {
         return bugId;
     }
 
-    public void setBugId(String bugId) {
-        this.bugId = bugId;
-    }
-
-    public String getOpenDate() {
-        return openDate;
-    }
-
-    public void setOpenDate(String openDate) {
-        this.openDate = openDate;
-    }
-
-    public String getFixDate() {
-        return fixDate;
-    }
-
-    public void setFixDate(String fixDate) {
-        this.fixDate = fixDate;
-    }
-
     public String getBugSummary() {
         return bugSummary;
     }
 
-    public void setBugSummary(String bugSummary) {
-        this.bugSummary = bugSummary;
-    }
+    public void setBugSummary(String bugSummary) { this.bugSummary = bugSummary; }
 
     public String getBugDescription() {
         return bugDescription;
     }
 
-    public void setBugDescription(String bugDescription) {
-        this.bugDescription = bugDescription;
-    }
+    public void setBugDescription(String bugDescription) { this.bugDescription = bugDescription; }
 
     public TreeSet<String> getSet() {
         return set;

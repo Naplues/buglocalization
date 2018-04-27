@@ -19,11 +19,11 @@ public class Main {
         System.out.println("3. Creating bug vector...");
         BugVector.create();
         System.out.println("Finish");
-
-        System.out.println("4. Computing bug similarity...");
-        BugSimilarity.computeSimilarity();
-        System.out.println("Finish");
 /*
+        System.out.println("4. Computing bug similarity...");
+        BugSimilarity.computeBugSimilarity();
+        System.out.println("Finish");
+
         System.out.println("5. Creating code corpus...");
         CodeCorpus_SpiltCorpus.create();
         System.out.println("Finish");
@@ -64,9 +64,11 @@ public class Main {
         Evaluation.evaluate();
         System.out.println("Finish");
 
-        //MAP.statistics();
-        System.out.println("Finish");
+        Evaluation.getTopK(1);
+        Evaluation.getTopK(5);
+        Evaluation.getTopK(10);
 
-*/
+        Evaluation.getMRR();
+        Evaluation.getMAP();*/
     }
 }

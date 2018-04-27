@@ -14,60 +14,33 @@ import java.util.TreeSet;
  * 相似度分布
  */
 public class SimilarityDistribution {
+    //本过程读取的数据文件列表
+    public static String FixLinkFileName = "FixLink.txt";
+    public static String MethodNameFileName = "MethodName.txt";
+    public static String BugSimilarityFileName = "BugSimilarity.txt";
+
+    //本过程保存的数据文件列表
+    public static String SimiScoreFileName = "SimiScore.txt";
+
 
     /**
-     * 获取修复表
-     *
-     * @return
-     * @throws IOException
+     * 分布
+     * @throws Exception
      */
-    public static Hashtable<Integer, TreeSet<String>> getFixedTable() throws IOException {
-        Hashtable<Integer, TreeSet<String>> idTable = new Hashtable<>();
-        BufferedReader reader = new BufferedReader(new FileReader(Utility.outputFileDir + "FixLink.txt"));
-        String line;
-        while ((line = reader.readLine()) != null) {
-            String[] values = line.split("\t");
-            Integer id = Integer.parseInt(values[0]); //bug编号
-            // 修复表中没有改bugID编号新加入一个该编号的集合映射引用
-            if (!idTable.containsKey(id))
-                idTable.put(id, new TreeSet<>());
-            idTable.get(id).add(values[1].trim());  //加入该ID关联的文件名
-        }
-        return idTable;
-    }
-
-    /**
-     * 获取文件-ID 映射表
-     *
-     * @return
-     * @throws IOException
-     */
-    public static Hashtable<String, Integer> getFileIdTable() throws IOException {
-        Hashtable<String, Integer> idTable = new Hashtable<>();
-        BufferedReader reader = new BufferedReader(new FileReader(Utility.outputFileDir + "MethodName.txt"));
-        String line;
-        while ((line = reader.readLine()) != null) {
-            String[] values = line.split("\t");
-            idTable.put(values[1].trim(), Integer.parseInt(values[0]));
-        }
-        return idTable;
-    }
-
     public static void distribute() throws Exception {
         // 读取相似bug信息
-        BufferedReader reader = new BufferedReader(new FileReader(Utility.outputFileDir + "BugSimilarity.txt"));
+        BufferedReader reader = new BufferedReader(new FileReader(Utility.outputFileDir + BugSimilarityFileName));
         // 修复bug修复文件表 文件名-ID表
-        Hashtable<Integer, TreeSet<String>> fixedTable = getFixedTable();
-        Hashtable<String, Integer> idTable = getFileIdTable();
+        Hashtable<Integer, TreeSet<String>> fixedTable = Utility.getFixedTable();
+        Hashtable<String, Integer> idTable = Utility.getFileIdTable(MethodNameFileName);  //获取分段后文件名-ID 映射表
 
-        FileWriter writer = new FileWriter(Utility.outputFileDir + "SimiScore.txt");
+        FileWriter writer = new FileWriter(Utility.outputFileDir + SimiScoreFileName);
         String line;
         while ((line = reader.readLine()) != null) {
             float[] similarValues = new float[Utility.sourceFileCount];
             // 当前bug编号  该与bug相比的之前的bug的编号及相似度数组
             Integer id = Integer.parseInt(line.substring(0, line.indexOf(";")));
             String[] values = line.substring(line.indexOf(";") + 1).trim().split(" ");
-
             for (String value : values) {
                 String[] singleValues = value.split(":");
                 // 正常情况下 bug编号和相似度均存在
@@ -100,7 +73,6 @@ public class SimilarityDistribution {
             for (int i = 0; i < Utility.sourceFileCount; i++)
                 if (similarValues[i] != 0)
                     output += i + ":" + similarValues[i] + " ";
-
             writer.write(output.trim() + Utility.lineSeparator);
             writer.flush();
         }

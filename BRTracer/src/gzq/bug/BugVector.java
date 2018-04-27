@@ -25,9 +25,13 @@ import java.io.IOException;
  *
  */
 public class BugVector {
-	
-	public static void create() throws WVToolException, IOException {
+	//本过程读取的数据文件列表
+    public static String BugCorpusFolderName = "BugCorpus";
+	//本过程保存的数据文件列表
+    public static String BugTermListFileName = "BugTermList.txt";
+    public static String BugVectorFileName = "BugVector.txt";
 
+	public static void create() throws WVToolException, IOException {
 		WVTool wvt = new WVTool(false);
 		WVTConfiguration config = new WVTConfiguration();
 		final WVTStemmer porterStemmer = new PorterStemmerWrapper();
@@ -39,13 +43,13 @@ public class BugVector {
 		WVTStemmer stemmer = new LovinsStemmerWrapper();
 		config.setConfigurationRule(WVTConfiguration.STEP_STEMMER, new WVTConfigurationFact(stemmer));
 		WVTFileInputList list = new WVTFileInputList(1);
-		list.addEntry(new WVTDocumentInfo(Utility.outputFileDir + "BugCorpus" + Utility.separator, "txt", "", "english", 0));
+		list.addEntry(new WVTDocumentInfo(Utility.outputFileDir + BugCorpusFolderName + Utility.separator, "txt", "", "english", 0));
 		WVTWordList wordList = wvt.createWordList(list, config);
 		wordList.pruneByFrequency(1, Integer.MAX_VALUE);
 
 		int termCount = wordList.getNumWords();
-		wordList.storePlain(new FileWriter(Utility.outputFileDir + "BugTermList.txt"));
-		FileWriter outFile = new FileWriter(Utility.outputFileDir + "BugVector.txt");
+		wordList.storePlain(new FileWriter(Utility.outputFileDir + BugTermListFileName));
+		FileWriter outFile = new FileWriter(Utility.outputFileDir + BugVectorFileName);
 		WordVectorWriter wvw = new WordVectorWriter(outFile, true);
 		config.setConfigurationRule(WVTConfiguration.STEP_OUTPUT, new WVTConfigurationFact(wvw));
 		config.setConfigurationRule(WVTConfiguration.STEP_VECTOR_CREATION, new WVTConfigurationFact(new TFIDF()));
@@ -54,5 +58,6 @@ public class BugVector {
 		outFile.close();
 		Utility.bugTermCount = termCount;
 		Utility.writeConfig("bugTermCount",termCount + Utility.lineSeparator);
+		System.out.println("   Generating " + termCount + " Bug Terms");
 	}
 }

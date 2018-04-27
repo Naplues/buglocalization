@@ -16,7 +16,21 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Bug语料库
+ * 从XML文件中提取Bug信息制作语料库
+ * 输出文件：
+ * BugCorpus              Bug列表目录
+ * SortedId               排序后的Bug列表
+ * FixLink                Bug相关的文件
+ * DescriptionClassName   Bug中包含的类名
+ *
+ */
 public class BugCorpus {
+	//本过程保存的数据文件列表
+	public static String BugCorpusFolderName = "BugCorpus";
+	public static String FixLinkFileName = "FixLink.txt";
+	public static String DescriptionClassNameFileName = "DescriptionClassName.txt";
 
     /**
      * 提取bug中的单词 写入语料库
@@ -25,9 +39,8 @@ public class BugCorpus {
 	 * @throws IOException
      */
 	private static void writeCorpus(Bug bug, String storeDir) throws IOException {
-
 		String content = bug.getBugSummary() + " " + bug.getBugDescription(); //bug文本
-		String[] splitWords = Splitter.splitNatureLanguage(content);  //提取单词
+		String[] splitWords = Splitter.splitNatureLanguage(content);         //从文本中提取单词
 		StringBuffer corpus = new StringBuffer();
 		for (String word : splitWords) {
 			word = Stem.stem(word.toLowerCase());  //提取词干并小写
@@ -35,7 +48,7 @@ public class BugCorpus {
 				corpus.append(word + " ");
 		}
 		FileWriter writer = new FileWriter(storeDir + bug.getBugId() + ".txt");
-		writer.write(corpus.toString().trim());  //单词写入bug文件
+		writer.write(corpus.toString().trim());   //单词写入bug文件
 		writer.flush();
 		writer.close();
 	}
@@ -96,8 +109,16 @@ public class BugCorpus {
 		return list;
 	}
 
+    /**
+     * 获取按修复时间顺序排列的所有Bug信息
+     * @return
+     */
+	public static ArrayList<Bug> getBugs(){
+	    return parseXML();
+    }
+
 	/**
-	 * 提取类名
+	 * 提取bug中包含的类名
 	 * @param content
 	 * @return
 	 */
@@ -114,31 +135,25 @@ public class BugCorpus {
 	public static void create() throws IOException {
         //提取bug列表
 		ArrayList<Bug> list = BugCorpus.parseXML();
-		String bugCorpusDir = Utility.outputFileDir + "BugCorpus" + Utility.separator; //语料库文件夹
+		String bugCorpusDir = Utility.outputFileDir + BugCorpusFolderName + Utility.separator; //语料库文件夹
 		File file = new File(bugCorpusDir);
-		if (!file.exists())
-			file.mkdir();
-		//生成语料库
-		for (Bug bug : list)
-			writeCorpus(bug, bugCorpusDir);
-
-		FileWriter writer = new FileWriter(Utility.outputFileDir  + "SortedId.txt");  //按修复时间排序的bug列表
-		FileWriter writerFix = new FileWriter(Utility.outputFileDir +  "FixLink.txt");  //修复link
-		FileWriter writerClassName = new FileWriter(Utility.outputFileDir +  "DescriptionClassName.txt"); //bug中描述类名
+		if (!file.exists()) file.mkdir();
+		for (Bug bug : list) writeCorpus(bug, bugCorpusDir);  //生成语料库
+        //bug-fix文件 bug-附带的类名文件
+		FileWriter writerFix = new FileWriter(Utility.outputFileDir +  FixLinkFileName);  //修复link
+		FileWriter writerClassName = new FileWriter(Utility.outputFileDir +  DescriptionClassNameFileName); //bug中描述类名
 
 		for (Bug bug : list) {
-			writer.write(bug.getBugId() + "\t" + bug.getFixDate() + Utility.lineSeparator);
-			writer.flush();
 			for (String fixName : bug.set) {
-				writerFix.write(bug.getBugId() + "\t" + fixName + Utility.lineSeparator);
+				writerFix.write(bug.getBugId() + "\t" + fixName.replace("/",".") + Utility.lineSeparator);
 				writerFix.flush();
 			}
 			writerClassName.write(bug.getBugId() + "\t" + extractClassName(bug.getBugDescription()) + Utility.lineSeparator);
 		}
 		writerClassName.close();
-		writer.close();
 		writerFix.close();
 		Utility.bugReportCount = list.size();
 		Utility.writeConfig("bugReportCount", list.size() + Utility.lineSeparator);  //写入配置
+        System.out.println("   Generating " + list.size() + " Bug Reports");
 	}
 }
