@@ -10,12 +10,12 @@ import java.util.HashMap;
 import java.util.TreeSet;
 
 /**
- * 代码语料库
+ * 代码分段后的语料库
  *
  * 类名-方法名表
  *
  */
-public class CodeCorpus_SpiltCorpus {
+public class CodeCorpus_SpiltClass {
     //本过程读取的数据文件列表
     public static String ClassAndMethodCorpusFileName = "ClassAndMethodCorpus.txt";
     //本过程保存的数据文件列表
@@ -66,7 +66,7 @@ public class CodeCorpus_SpiltCorpus {
                 contentBuf.append(Stem.stem(word.toLowerCase()) + " ");
         for (String word :  parser.getClassNameAndMethodName())
             nameBuf.append(Stem.stem(word.toLowerCase() + " "));
-        return new Corpus(fileName, file.getAbsolutePath(), contentBuf.toString() + nameBuf.toString());
+        return new Corpus(fileName, file.getAbsolutePath(), contentBuf.toString() + nameBuf.toString(),"");
     }
 
     /**
@@ -99,10 +99,10 @@ public class CodeCorpus_SpiltCorpus {
                         content.append(src[i] + " ");
                         i++;
                     }
-                    content.append(names);
+                    content.append(names);  // 添加源码中的方法名
                     int tmp = count + methodCount;
                     writer.write(tmp + "\t" + tmpFileName + ".java" + "@" + methodCount + ".java" + Utility.lineSeparator);
-                    writeCorpus.write(tmpFileName + ".java" + "@" + methodCount + ".java" + "\t" + content.toString() + Utility.lineSeparator);
+                    writeCorpus.write(tmp+"\t"+ tmpFileName + ".java" + "@" + methodCount + ".java" + "\t" + content.toString() + Utility.lineSeparator);
                     methodCount++;
                 }
                 writeCorpus.flush();

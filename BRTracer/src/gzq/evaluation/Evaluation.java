@@ -1,10 +1,9 @@
 package gzq.evaluation;
 
-import gzq.source.ClassName;
-import org.omg.CORBA.INTERNAL;
+import gzq.bug.Bug;
+import gzq.bug.BugCorpus;
 import utils.Utility;
-import gzq.source.CodeCorpus_SpiltCorpus;
-import gzq.source.LenScore_OriginClass;
+import gzq.source.*;
 
 import java.io.*;
 import java.util.*;
@@ -19,8 +18,8 @@ public class Evaluation {
     public static String LOCFileName = "LOC.txt";
     public static String ImportFileName = "Import.txt";
 
-    public static Integer a = CodeCorpus_SpiltCorpus.spiltclass;
-    public static Integer b = LenScore_OriginClass.B;
+    public static Integer a = CodeCorpus_SpiltClass.spiltclass;
+    public static Integer b = CodeCorpus_OriginClass.B;
     public static float alpha = 0.3f;
 
     public static Hashtable<String, Integer> idTable = null;
@@ -38,7 +37,7 @@ public class Evaluation {
     public static LinkedList<HashMap<String, Integer>> groups = null;
     public static Iterator<HashMap<String, Integer>> itr = null;
     public static HashMap<String, Integer> tmp_group = null;
-    public static Integer TotalLOC;
+    public static Integer TotalLOC = new Integer(0);
 
     public static void init() throws IOException {
         idTable = Utility.getFileIdTable(ClassNameFileName);
@@ -50,59 +49,12 @@ public class Evaluation {
         fixTable = Utility.getFixedTable();
         lenTable = Utility.getLenScore(LengthScoreFileName);
 
-        LOCTable = getLOC(LOCFileName);
+        LOCTable = Utility.getLOC(LOCFileName, TotalLOC);
         shortNameSet = getShortNameSet();
         bugNameTable = getBugNameSet();
         groups = new LinkedList<>();
     }
 
-    public static Hashtable<String, Integer> getLOC(String fileName) throws IOException {
-        TotalLOC = new Integer(0);
-        Hashtable<String, Integer> table = new Hashtable<>();
-        BufferedReader reader = new BufferedReader(new FileReader(Utility.outputFileDir + fileName));
-        String line;
-        while ((line = reader.readLine()) != null) {
-            String[] values = line.split("\t");
-            Integer loc = Integer.parseInt(values[1]);
-            TotalLOC += loc;
-            String nameString = values[0].trim();
-            table.put(nameString, loc);
-        }
-        System.out.println("Total LOC: " + TotalLOC);
-        return table;
-    }
-
-    private static Rank[] sort(float[] finalR) {
-        Rank[] R = new Rank[finalR.length];
-        for (int i = 0; i < R.length; i++) {
-            Rank rank = new Rank();
-            rank.rank = finalR[i];
-            rank.id = i;
-            R[i] = rank;
-        }
-        R = insertionSort(R);
-        return R;
-    }
-
-    private static Rank[] insertionSort(Rank[] R) {
-        for (int i = 0; i < R.length; i++) {
-            int maxIndex = i;
-            for (int j = i; j < R.length; j++)
-                if (R[j].rank > R[maxIndex].rank)
-                    maxIndex = j;
-            Rank tmpRank = R[i];
-            R[i] = R[maxIndex];
-            R[maxIndex] = tmpRank;
-        }
-        return R;
-    }
-
-    public static float[] combine(float[] vsmVector, float[] graphVector, float f) {
-        float[] results = new float[Utility.sourceFileCount];
-        for (int i = 0; i < Utility.sourceFileCount; i++)
-            results[i] = vsmVector[i] * (1 - f) + graphVector[i] * f;
-        return results;
-    }
 
     /**
      * 获取短文件名xxx.java
@@ -230,9 +182,10 @@ public class Evaluation {
         BufferedReader VSMReader = new BufferedReader(new FileReader(Utility.outputFileDir + VSMScoreFileName));
         BufferedReader GraphReader = new BufferedReader(new FileReader(Utility.outputFileDir + SimiScoreFileName));
 
+        //float[][] allBugSimValues = Similarity.computeSimilarity();
+
         int count = 0;
         FileWriter writer = new FileWriter(Utility.outputFilePath);  //输出结果文件
-
         while (count++ < Utility.bugReportCount) {
             String vsmLine = VSMReader.readLine();
             Integer vsmId = Integer.parseInt(vsmLine.substring(0, vsmLine.indexOf(";")));       //bug ID
@@ -254,16 +207,13 @@ public class Evaluation {
             }
             vsmVector = Utility.normalize(vsmVector);  //归一化
 
-
             String simiLine = GraphReader.readLine();  //相似bug信息
             Integer graphId = Integer.parseInt(simiLine.substring(0, simiLine.indexOf(";")));  //相似bug ID
             float[] simiVector = Utility.getVector(simiLine.substring(simiLine.indexOf(";") + 1)); //相似bug 相似度
             simiVector = Utility.normalize(simiVector);  //对相似向量进行归一化
 
-            float[] finalR = combine(vsmVector, simiVector, alpha);  //最终的向量
+            float[] finalR = Utility.combine(vsmVector, simiVector, alpha);  //最终的向量
             float[] finalScore = new float[Utility.originFileCount];  //最终分数向量
-
-            int[] usedcount = new int[Utility.originFileCount];
 
             HashMap<Integer, ArrayList<Float>> scores = new HashMap<>();
             for (int counter = 0; counter < finalR.length; counter++) {
@@ -272,8 +222,6 @@ public class Evaluation {
                 Integer id = idTable.get(name);
                 if (id == null) {
                     System.err.println(name);
-                    Console console = System.console();
-                    String delay_input = console.readLine();
                     continue;
                 }
                 /* automatically determine num of file to represent the origin file */
@@ -314,26 +262,58 @@ public class Evaluation {
                 }
                 fileIdTable.put(fileId, fileName);
             }
-            //
-            Integer tmploc = 0;
+
             for (int i = 0; i < sort.length; i++) {
                 Rank rank = sort[i];
                 if ((!fileIdTable.isEmpty()) && fileIdTable.containsKey(rank.id)) {
-                    String filename = nameTable.get(rank.id);
-                    tmploc += LOCTable.get(filename);
-                    Float percent = (float) tmploc / (float) TotalLOC;
                     writer.write(vsmId + "\t" + fileIdTable.get(rank.id) + "\t" + i + "\t" + rank.rank + " " + Utility.lineSeparator);
                     writer.flush();
                     break;
-                } else {
-                    String filename = nameTable.get(rank.id);
-                    tmploc += LOCTable.get(filename);
                 }
             }
         }
         writer.close();
     }
 
+
+    private static Rank[] sort(float[] finalR) {
+        Rank[] R = new Rank[finalR.length];
+        for (int i = 0; i < R.length; i++) {
+            R[i] = new Rank();
+            R[i].rank = finalR[i];
+            R[i].id = i;
+        }
+        R = insertionSort(R);
+        return R;
+    }
+
+    private static Rank[] insertionSort(Rank[] R) {
+        for (int i = 0; i < R.length; i++) {
+            int maxIndex = i;
+            for (int j = i; j < R.length; j++)
+                if (R[j].rank > R[maxIndex].rank)
+                    maxIndex = j;
+            Rank tmpRank = R[i];
+            R[i] = R[maxIndex];
+            R[maxIndex] = tmpRank;
+        }
+        return R;
+    }
+
+
+    /**
+     * VSM方法进行排序
+     */
+    public static void rankByVSM() throws IOException{
+        float[][] allBugSimValues = Similarity.computeSimilarity();
+        List<Bug> bugs = BugCorpus.getBugs();
+        for(int i=0;i<allBugSimValues.length;i++){  //对每个相似度进行排序
+            Rank[] rank = sort(allBugSimValues[i]);
+            System.out.println( bugs.get(i).getBugId() + ":" + rank[0].id);
+
+            System.out.println();
+        }
+    }
 
     /**
      * 获取Top k 准确率

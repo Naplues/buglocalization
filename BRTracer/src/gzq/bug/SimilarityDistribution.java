@@ -15,7 +15,6 @@ import java.util.TreeSet;
  */
 public class SimilarityDistribution {
     //本过程读取的数据文件列表
-    public static String FixLinkFileName = "FixLink.txt";
     public static String MethodNameFileName = "MethodName.txt";
     public static String BugSimilarityFileName = "BugSimilarity.txt";
 

@@ -18,7 +18,7 @@ public class Utility {
 
     public static String project = "Swt";
     private static String bugXMLFile = "SWTBugRepository.xml";
-    public static String workDir = "C:\\Users\\gzq\\Desktop\\BRTracer" + separator;
+    public static String workDir = "C:\\Users\\naplues\\Desktop\\BRTracer" + separator;
     public static String bugFilePath = workDir + project + separator + bugXMLFile;
     public static String sourceFileDir = workDir + project + "\\Source\\";
     public static String outputFileDir = workDir + project + separator + "Output" + separator;
@@ -34,6 +34,7 @@ public class Utility {
     public static int originFileCount;
 
     public static int aspectj_filename_offset = sourceFileDir.length();
+
 
     /**
      * 检测指定目录下指定类型的所有源码文件
@@ -92,7 +93,7 @@ public class Utility {
      * @return
      */
     public static float getIdfValue(double docCount, double totalCount) {
-        return (float) Math.log(totalCount / docCount);
+        return  (float)Math.log(totalCount / docCount);
     }
 
     /**
@@ -195,16 +196,18 @@ public class Utility {
     }
 
     /**
-     * 获源码取向量
+     * 获取源码向量
      * @param vectorStr
      * @return
      */
     public static float[] getVector(String vectorStr) {
-        float[] vector = new float[Utility.sourceFileCount];
+        float[] vector = new float[Utility.sourceWordCount];
+        if(vectorStr == null) return vector;
         String[] values = vectorStr.split(" ");
+
         for (String value : values) {
             String[] singleValues = value.split(":");
-            if (singleValues.length == 2) {
+            if(singleValues.length != 1){
                 int index = Integer.parseInt(singleValues[0]);
                 float sim = Float.parseFloat(singleValues[1]);
                 vector[index] = sim;
@@ -251,6 +254,34 @@ public class Utility {
         return array;
     }
 
+    /**
+     * 将VSM和sim结合得到 带BRS的VSM
+     * @param vsmVector
+     * @param simVector
+     * @param f
+     * @return
+     */
+    public static float[] combine(float[] vsmVector, float[] simVector, float f) {
+        float[] results = new float[Utility.sourceFileCount];
+        for (int i = 0; i < Utility.sourceFileCount; i++)
+            results[i] = vsmVector[i] * (1 - f) + simVector[i] * f;
+        return results;
+    }
+
+    public static Hashtable<String, Integer> getLOC(String fileName, Integer TotalLOC) throws IOException {
+        Hashtable<String, Integer> table = new Hashtable<>();
+        BufferedReader reader = new BufferedReader(new FileReader(Utility.outputFileDir + fileName));
+        String line;
+        while ((line = reader.readLine()) != null) {
+            String[] values = line.split("\t");
+            Integer loc = Integer.parseInt(values[1]);
+            TotalLOC += loc;
+            String nameString = values[0].trim();
+            table.put(nameString, loc);
+        }
+        System.out.println("Total LOC: " + TotalLOC);
+        return table;
+    }
 
     /**
      * 写入配置

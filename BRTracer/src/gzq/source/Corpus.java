@@ -15,11 +15,22 @@ public class Corpus {
 	private String javaFileFullClassName;
 	private String javaFilePath;
 	private String content;
+	private String identifers;
+	private Integer loc;
 
-	public Corpus(String javaFileFullClassName, String javaFilePath, String content) {
+	public Corpus(String javaFileFullClassName, String javaFilePath, String content, String identifers) {
 		this.javaFileFullClassName = javaFileFullClassName;
 		this.javaFilePath = javaFilePath;
 		this.content = content;
+		this.identifers = identifers;
+	}
+
+	public Corpus(String javaFileFullClassName, String javaFilePath, String content, String identifers, Integer loc) {
+		this.javaFileFullClassName = javaFileFullClassName;
+		this.javaFilePath = javaFilePath;
+		this.content = content;
+		this.identifers = identifers;
+		this.loc = loc;
 	}
 
 	public String getJavaFileFullClassName() {
@@ -44,5 +55,17 @@ public class Corpus {
 
 	public void setContent(String content) {
 		this.content = content;
+	}
+
+	public String getIdentifers() {
+		return identifers;
+	}
+
+	public Integer getLoc() {
+		return loc;
+	}
+
+	public void setLoc(Integer loc) {
+		this.loc = loc;
 	}
 }

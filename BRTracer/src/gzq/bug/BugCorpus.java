@@ -1,5 +1,19 @@
 package gzq.bug;
 
+import edu.udo.cs.wvtool.config.WVTConfigException;
+import edu.udo.cs.wvtool.config.WVTConfiguration;
+import edu.udo.cs.wvtool.config.WVTConfigurationFact;
+import edu.udo.cs.wvtool.config.WVTConfigurationRule;
+import edu.udo.cs.wvtool.generic.output.WordVectorWriter;
+import edu.udo.cs.wvtool.generic.stemmer.LovinsStemmerWrapper;
+import edu.udo.cs.wvtool.generic.stemmer.PorterStemmerWrapper;
+import edu.udo.cs.wvtool.generic.stemmer.WVTStemmer;
+import edu.udo.cs.wvtool.generic.vectorcreation.TFIDF;
+import edu.udo.cs.wvtool.main.WVTDocumentInfo;
+import edu.udo.cs.wvtool.main.WVTFileInputList;
+import edu.udo.cs.wvtool.main.WVTool;
+import edu.udo.cs.wvtool.util.WVToolException;
+import edu.udo.cs.wvtool.wordlist.WVTWordList;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -13,6 +27,8 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Hashtable;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -31,7 +47,9 @@ public class BugCorpus {
 	public static String BugCorpusFolderName = "BugCorpus";
 	public static String FixLinkFileName = "FixLink.txt";
 	public static String DescriptionClassNameFileName = "DescriptionClassName.txt";
-
+	public static String BugTermListFileName = "BugTermList.txt";
+	public static String BugVectorFileName = "BugVector.txt";
+	public static String BugSimilarityFileName = "BugSimilarity.txt";
     /**
      * 提取bug中的单词 写入语料库
      * @param bug 对象
@@ -132,7 +150,7 @@ public class BugCorpus {
 		return res.toString();
 	}
 
-	public static void create() throws IOException {
+	public static void makeBugCorpus() throws IOException {
         //提取bug列表
 		ArrayList<Bug> list = BugCorpus.parseXML();
 		String bugCorpusDir = Utility.outputFileDir + BugCorpusFolderName + Utility.separator; //语料库文件夹
@@ -156,4 +174,124 @@ public class BugCorpus {
 		Utility.writeConfig("bugReportCount", list.size() + Utility.lineSeparator);  //写入配置
         System.out.println("   Generating " + list.size() + " Bug Reports");
 	}
+
+	/**
+	 * 制作bug向量
+	 * @throws WVToolException
+	 * @throws IOException
+	 */
+	public static void makeBugVector() throws WVToolException, IOException {
+		WVTool wvt = new WVTool(false);
+		WVTConfiguration config = new WVTConfiguration();
+		final WVTStemmer wvtStemmer = new PorterStemmerWrapper();
+		config.setConfigurationRule(WVTConfiguration.STEP_STEMMER, new WVTConfigurationRule() {
+			public Object getMatchingComponent(WVTDocumentInfo d) throws WVTConfigException {
+				return wvtStemmer;
+			}
+		});
+		WVTStemmer stemmer = new LovinsStemmerWrapper();
+		config.setConfigurationRule(WVTConfiguration.STEP_STEMMER, new WVTConfigurationFact(stemmer));
+		WVTFileInputList list = new WVTFileInputList(1);
+		list.addEntry(new WVTDocumentInfo(Utility.outputFileDir + BugCorpusFolderName + Utility.separator, "txt", "", "english", 0));
+		WVTWordList wordList = wvt.createWordList(list, config);
+		wordList.pruneByFrequency(1, Integer.MAX_VALUE);
+
+		int termCount = wordList.getNumWords();
+		wordList.storePlain(new FileWriter(Utility.outputFileDir + BugTermListFileName));
+		FileWriter outFile = new FileWriter(Utility.outputFileDir + BugVectorFileName);
+		WordVectorWriter wvw = new WordVectorWriter(outFile, true);
+		config.setConfigurationRule(WVTConfiguration.STEP_OUTPUT, new WVTConfigurationFact(wvw));
+		config.setConfigurationRule(WVTConfiguration.STEP_VECTOR_CREATION, new WVTConfigurationFact(new TFIDF()));
+		wvt.createVectors(list, config, wordList);
+		wvw.close();
+		outFile.close();
+		Utility.bugTermCount = termCount;
+		Utility.writeConfig("bugTermCount",termCount + Utility.lineSeparator);
+		System.out.println("   Generating " + termCount + " Bug Terms");
+	}
+
+
+	/**
+	 * 获取余弦值
+	 *
+	 * @param firstVector
+	 * @param secondVector
+	 * @return
+	 */
+	private static float getCosineValue(float[] firstVector, float[] secondVector) {
+		float len1 = 0, len2 = 0, product = 0;
+		for (int i = 0; i < Utility.bugTermCount; i++) {
+			product += firstVector[i] * secondVector[i];
+			len1 += firstVector[i] * firstVector[i];
+			len2 += secondVector[i] * secondVector[i];
+		}
+		return (float) (product / (Math.sqrt(len1) * Math.sqrt(len2)));
+	}
+
+	/**
+	 * 构建长度为bugTerm的bug向量
+	 * map: bugID-vector
+	 * @return
+	 * @throws IOException
+	 */
+	public static Hashtable<Integer, float[]> getBugVector() throws IOException {
+		Hashtable<Integer, float[]> vectors = new Hashtable<>();
+		BufferedReader reader = new BufferedReader(new FileReader(Utility.outputFileDir + BugVectorFileName));
+		String line;
+		while ((line = reader.readLine()) != null) {
+			Integer id = Integer.parseInt(line.substring(0, line.indexOf(".")));  //Bug ID
+			float[] vector = new float[Utility.bugTermCount];
+			String[] values = line.substring(line.indexOf(";") + 1).trim().split(" "); //索引-值 数组
+			for (String value : values) {
+				String[] singleValues = value.split(":");  //索引-值
+				if (singleValues.length == 2)                    //正常值, 在相应索引位置上写入值
+					vector[Integer.parseInt(singleValues[0])] = Float.parseFloat(singleValues[1]);
+			}
+			vectors.put(id, vector);
+		}
+		return vectors;
+	}
+	/**
+	 * 计算相似度
+	 *
+	 * @throws IOException
+	 */
+	public static void computeBugSimilarity() throws IOException {
+		// 按照修复时间排序的bugID列表
+		List<Bug> bugs = BugCorpus.getBugs();
+		//bug报告数量大小的数组, 地址-bugID映射
+		int[] idArr = new int[Utility.bugReportCount];
+		String line;
+		for (int index = 0; index < bugs.size(); index++ )
+			idArr[index] = Integer.parseInt(bugs.get(index).getBugId());
+		//获取bug向量数组
+		Hashtable<Integer, float[]> vectors = getBugVector();
+
+		// 从最早的bug开始计算相似度
+		FileWriter writer = new FileWriter(Utility.outputFileDir + BugSimilarityFileName);
+		for (int i = 0; i < idArr.length; i++) {
+			int firstId = idArr[i];                             //目标bugID
+			float[] firstVector = vectors.get(firstId);         //目标bug的向量
+			String output = firstId + ";";
+			for (int j = 0; j < i; j++) {
+				int secondId = idArr[j];                        //备选bugID
+				float[] secondVector = vectors.get(secondId);   //备选bug向量
+				output += secondId + ":" + getCosineValue(firstVector, secondVector) + " ";
+			}
+			writer.write(output.trim() + Utility.lineSeparator);
+			writer.flush();
+		}
+		writer.close();
+	}
+
+
+	/**
+	 * 运行bug处理方法
+	 */
+	public static void run() throws Exception{
+		makeBugCorpus();           //制作bug语料库
+		makeBugVector();           //生成bug向量
+		computeBugSimilarity();    //计算bug相似度
+	}
+
 }
