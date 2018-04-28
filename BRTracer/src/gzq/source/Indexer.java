@@ -104,10 +104,10 @@ public class Indexer {
     public static void indexOriginCode() throws IOException {
         Hashtable<String, Integer> DFTable = Indexer.countDF(CodeCorpus_OriginClassFileName);
         Hashtable<String, Integer> indexSet = new Hashtable<>();
-        int id = 0;
+        int index = 0;
         for (String key : DFTable.keySet()) {
-            indexSet.put(key, id);
-            id++;
+            indexSet.put(key, index);
+            index++;
         }
         index(indexSet, DFTable, CodeCorpus_OriginClassFileName, TermInfo_OriginClassFileName);
     }

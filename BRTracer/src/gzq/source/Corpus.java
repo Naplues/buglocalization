@@ -17,6 +17,7 @@ public class Corpus {
 	private String content;
 	private String identifers;
 	private Integer loc;
+	private double lengthScore;  //长度分数
 
 	public Corpus(String javaFileFullClassName, String javaFilePath, String content, String identifers) {
 		this.javaFileFullClassName = javaFileFullClassName;
@@ -67,5 +68,13 @@ public class Corpus {
 
 	public void setLoc(Integer loc) {
 		this.loc = loc;
+	}
+
+	public double getLengthScore() {
+		return lengthScore;
+	}
+
+	public void setLengthScore(double lengthScore) {
+		this.lengthScore = lengthScore;
 	}
 }

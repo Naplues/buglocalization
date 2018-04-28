@@ -105,7 +105,7 @@ public class Evaluation {
      * @return
      * @throws IOException
      */
-    public static float[] getRelativeScore(Integer bugid) throws IOException {
+    public static float[] getRelativeScore(Integer bugid) throws Exception {
         float[] relativeScore = new float[Utility.originFileCount];  //原始文件相关数组
         for (int i = 0; i < relativeScore.length; i++)
             relativeScore[i] = 0;
@@ -177,18 +177,16 @@ public class Evaluation {
     }
 
 
-    public static void evaluate() throws IOException {
+    public static void evaluate() throws Exception {
         init(); //初始化
         BufferedReader VSMReader = new BufferedReader(new FileReader(Utility.outputFileDir + VSMScoreFileName));
-        BufferedReader GraphReader = new BufferedReader(new FileReader(Utility.outputFileDir + SimiScoreFileName));
-
-        //float[][] allBugSimValues = Similarity.computeSimilarity();
-
+        BufferedReader SimReader = new BufferedReader(new FileReader(Utility.outputFileDir + SimiScoreFileName));
+        List<Bug> bugs = BugCorpus.getBugs();
         int count = 0;
         FileWriter writer = new FileWriter(Utility.outputFilePath);  //输出结果文件
-        while (count++ < Utility.bugReportCount) {
+        while (count < bugs.size()) {
             String vsmLine = VSMReader.readLine();
-            Integer vsmId = Integer.parseInt(vsmLine.substring(0, vsmLine.indexOf(";")));       //bug ID
+            Integer vsmId = Integer.parseInt(bugs.get(count++).getBugId());       //bug ID
             float[] vsmVector = Utility.getVector(vsmLine.substring(vsmLine.indexOf(";") + 1)); //bug VSM向量
 
             tmp_group = null; //Map<String, Integer>
@@ -207,12 +205,13 @@ public class Evaluation {
             }
             vsmVector = Utility.normalize(vsmVector);  //归一化
 
-            String simiLine = GraphReader.readLine();  //相似bug信息
+            String simiLine = SimReader.readLine();  //相似bug信息
             Integer graphId = Integer.parseInt(simiLine.substring(0, simiLine.indexOf(";")));  //相似bug ID
-            float[] simiVector = Utility.getVector(simiLine.substring(simiLine.indexOf(";") + 1)); //相似bug 相似度
+            float[] simiVector = Utility.getVector(simiLine.substring(simiLine.indexOf(";") + 1)); //相似bug 相似度,长度为单词数目
             simiVector = Utility.normalize(simiVector);  //对相似向量进行归一化
 
             float[] finalR = Utility.combine(vsmVector, simiVector, alpha);  //最终的向量
+
             float[] finalScore = new float[Utility.originFileCount];  //最终分数向量
 
             HashMap<Integer, ArrayList<Float>> scores = new HashMap<>();
@@ -304,7 +303,7 @@ public class Evaluation {
     /**
      * VSM方法进行排序
      */
-    public static void rankByVSM() throws IOException{
+    public static void rankByVSM() throws Exception{
         float[][] allBugSimValues = Similarity.computeSimilarity();
         List<Bug> bugs = BugCorpus.getBugs();
         for(int i=0;i<allBugSimValues.length;i++){  //对每个相似度进行排序

@@ -25,13 +25,14 @@ public class Utility {
     public static String srcFileType = "java";
     public static String outputFilePath = outputFileDir + "Result.txt";
     public static String metricDir = outputFileDir + "MAP" + separator;
+    public static int originFileCount;
     public static int sourceFileCount;
     public static int sourceWordCount;
     public static int bugReportCount;
     public static int bugTermCount;
     public static float alpha = 0.3f;
 
-    public static int originFileCount;
+
 
     public static int aspectj_filename_offset = sourceFileDir.length();
 

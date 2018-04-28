@@ -73,7 +73,7 @@ public class CodeCorpus_OriginClass {
 	}
 
 	/**
-	 * 计算长度分数
+	 * 计算长度分数：根据文件包含的单词数来计算
 	 * @throws IOException
 	 */
 	public static void computeLengthScore() throws IOException {
@@ -91,14 +91,14 @@ public class CodeCorpus_OriginClass {
 			Integer len = Integer.parseInt(values[0].substring(values[0].indexOf("\t") + 1)); //单词个数
 			lensTable.put(name, len);
 			lens[i++] = len;
-			if (len != 0) count++;     //更新非空文件
+			if (len != 0) count++;     //更新非空文件数目
 			if (len > max) max = len;  //更新最大单词数
 			if (len < min) min = len;  //更新最小单词数
 		}
 		double low = min;
 		double high = max;
-		Collections.sort(Arrays.asList(lens));  // 对长度数组进行排序，找中位值
-		double median;
+		Collections.sort(Arrays.asList(lens));  // 对长度数组进行排序
+		double median;   //计算中位值
 		if( lens.length%2==0 ) median = (lens[lens.length/2]+lens[lens.length/2+1])/2;
 		else median = lens[lens.length/2+1];
 
@@ -107,16 +107,14 @@ public class CodeCorpus_OriginClass {
 		for (String key : lensTable.keySet()) {
 			double len = (double)lensTable.get(key);
 			double score = 0.0;
-			double nor = getNormValue(len, max, min, median);
+			double nor = getNormValue(len, max, min, median); //归一化的值
 			if (len != 0) {
-				if (len >= low && len <= high) {
+				if (len >= low && len <= high) {  //范围内的值，取逻辑回归值
 					score = getLenScore(nor);
 					n++;
-				} else if (len < low) score = 0.5;
-				else score = 1.0;
-			} else {
-				score = 0.0;
-			}
+				} else if (len < low) score = 0.5;  //小值
+				else score = 1.0;  //大值
+			} else score = 0.0;  //长度为0的值
 			writer.write(key + "\t" + score + "\r\n");
 			writer.flush();
 		}
@@ -172,18 +170,16 @@ public class CodeCorpus_OriginClass {
 
         for (File file : files) {
 	        Corpus corpus = makeSingleCorpus(file, writeImport); //根据源文件创建语料库
-			sourceCorpus.add(corpus);
+			sourceCorpus.add(corpus);  //源码语料库
 	        if (!nameSet.contains(corpus.getJavaFileFullClassName())) {
                 writer.write(index + "\t" + corpus.getJavaFileFullClassName() + ".java" + "\t" + corpus.getLoc() + Utility.lineSeparator);
 	            writeCorpus.write(index + "\t" + corpus.getJavaFileFullClassName() + ".java" + "\t" + corpus.getContent() + Utility.lineSeparator);
                 NameWriter.write(corpus.getJavaFileFullClassName() + ".java" + "\t" + corpus.getIdentifers() + Utility.lineSeparator);
 				writerLOC.write( corpus.getJavaFileFullClassName() + ".java" + "\t" + corpus.getLoc() + Utility.lineSeparator);
-
                 writer.flush();
                 writeCorpus.flush();
                 NameWriter.flush();
 				writerLOC.flush();
-
 		        nameSet.add(corpus.getJavaFileFullClassName());
 		        index++;
 	        }

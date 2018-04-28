@@ -1,5 +1,6 @@
 package gzq.bug;
 
+import java.util.HashMap;
 import java.util.TreeSet;
 
 /**
@@ -12,15 +13,19 @@ import java.util.TreeSet;
  *         综述
  *         描述
  *         修复集
+ *         bug向量
  */
 public class Bug {
 
-    String bugId;
-    String openDate;
-    String fixDate;
-    String bugSummary;
-    String bugDescription;
-    TreeSet<String> set = new TreeSet<>();
+    private String bugId;
+    private String openDate;
+    private String fixDate;
+    private String bugSummary;
+    private String bugDescription;
+    private TreeSet<String> set = new TreeSet<>();
+    private HashMap<Integer, Float> preSimValues = new HashMap<>();      //该bug之前的相似的bug
+    private float[] similarValues;
+    private float[] vector;
 
     public Bug(String bugId, String openDate, String fixDate) {
         this.bugId = bugId;
@@ -52,4 +57,19 @@ public class Bug {
         this.set.add(fileName);
     }
 
+    public HashMap<Integer, Float> getPreSimValues() {
+        return preSimValues;
+    }
+
+    public void setPreSimValues(HashMap<Integer, Float> preSimValues) {
+        this.preSimValues = preSimValues;
+    }
+
+    public float[] getSimilarValues() {
+        return similarValues;
+    }
+
+    public void setSimilarValues(float[] similarValues) {
+        this.similarValues = similarValues;
+    }
 }

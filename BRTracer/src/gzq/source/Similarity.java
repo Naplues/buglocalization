@@ -96,7 +96,7 @@ public class Similarity {
 	 * 计算相似度,返回相似度值
 	 * @throws IOException
 	 */
-	public static float[][] computeSimilarity() throws IOException {
+	public static float[][] computeSimilarity() throws Exception {
 		Hashtable<String, Integer> fileIndexTable = getSourceFileIndex(); //源码文件索引
 		Hashtable<String, Integer> wordIndexTable = getWordIndex();       //源码单词索引
 		Hashtable<String, Integer> DFTable = getIDCTable();               //源码单词DF表
