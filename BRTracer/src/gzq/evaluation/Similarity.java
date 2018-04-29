@@ -1,6 +1,7 @@
-package gzq.source;
+package gzq.evaluation;
 
 import gzq.bug.*;
+import gzq.source.Code;
 import utils.Utility;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -15,24 +16,6 @@ public class Similarity {
 	public static String MethodNameFileName = "MethodName.txt";
 	//保存
 	public static String VSMScoreFileName = "VSMScore.txt";
-
-
-	/**
-	 * 获取DF 文档频率表word-DF
-	 * @return
-	 * @throws IOException
-	 */
-	private static Hashtable<String, Integer> getIDCTable() throws IOException {
-		BufferedReader reader = new BufferedReader(new FileReader(Utility.outputFileDir + "IDC.txt"));
-		String line;
-		Hashtable<String, Integer> idcTable = new Hashtable<>();
-		while ((line = reader.readLine()) != null) {
-			String[] values = line.split("\t");
-			idcTable.put(values[0], Integer.parseInt(values[1]));
-		}
-		reader.close();
-		return idcTable;
-	}
 
 	/**
 	 * 获取单词索引
@@ -68,7 +51,7 @@ public class Similarity {
 	}
 
 	/**
-	 * 计算相似度
+	 * 计算某一bug的相似度
 	 * @param bugVector
 	 * @return 源码文件与指定bug相似的数组
 	 * @throws IOException
@@ -99,7 +82,7 @@ public class Similarity {
 	public static float[][] computeSimilarity() throws Exception {
 		Hashtable<String, Integer> fileIndexTable = getSourceFileIndex(); //源码文件索引
 		Hashtable<String, Integer> wordIndexTable = getWordIndex();       //源码单词索引
-		Hashtable<String, Integer> DFTable = getIDCTable();               //源码单词DF表
+		Hashtable<String, Integer> DFTable = Code.DFTable;                //源码单词DF表
 
 		FileWriter writer = new FileWriter(Utility.outputFileDir + VSMScoreFileName);
 		List<Bug> bugs = BugCorpus.getBugs();  //所有bug信息

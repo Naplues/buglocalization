@@ -1,36 +1,44 @@
 package gzq.source;
 
+import java.util.Hashtable;
+
 /**
- * 语料库实体
- *
- * java文件全称限定类名
- * 文件路径
+ * 语料库
+ * 全称限定类名
+ * 路径
  * 内容
+ * 标识符
+ * 代码行
+ * 长度分数
+ * 单词-文档 频度表, 所有文件的语料库共享一份
+ * 分段后每个段的索引表
  *
  * @author gzq
  *
  */
-public class Corpus {
+public class Code {
 
 	private String javaFileFullClassName;
 	private String javaFilePath;
 	private String content;
-	private String identifers;
+	private String identifiers;
 	private Integer loc;
-	private double lengthScore;  //长度分数
+	private double lengthScore;
+	public static Hashtable<String, Integer> DFTable;
+	public static Hashtable<String, Integer> methodIndexTable = new Hashtable<>();
 
-	public Corpus(String javaFileFullClassName, String javaFilePath, String content, String identifers) {
+	public Code(String javaFileFullClassName, String javaFilePath, String content, String identifers) {
 		this.javaFileFullClassName = javaFileFullClassName;
 		this.javaFilePath = javaFilePath;
 		this.content = content;
-		this.identifers = identifers;
+		this.identifiers = identifers;
 	}
 
-	public Corpus(String javaFileFullClassName, String javaFilePath, String content, String identifers, Integer loc) {
+	public Code(String javaFileFullClassName, String javaFilePath, String content, String identifers, Integer loc) {
 		this.javaFileFullClassName = javaFileFullClassName;
 		this.javaFilePath = javaFilePath;
 		this.content = content;
-		this.identifers = identifers;
+		this.identifiers = identifers;
 		this.loc = loc;
 	}
 
@@ -58,8 +66,8 @@ public class Corpus {
 		this.content = content;
 	}
 
-	public String getIdentifers() {
-		return identifers;
+	public String getIdentifiers() {
+		return identifiers;
 	}
 
 	public Integer getLoc() {
@@ -76,5 +84,10 @@ public class Corpus {
 
 	public void setLengthScore(double lengthScore) {
 		this.lengthScore = lengthScore;
+	}
+
+
+	public void setIdentifiers(String identifiers) {
+		this.identifiers = identifiers;
 	}
 }

@@ -14,6 +14,7 @@ import edu.udo.cs.wvtool.main.WVTFileInputList;
 import edu.udo.cs.wvtool.main.WVTool;
 import edu.udo.cs.wvtool.util.WVToolException;
 import edu.udo.cs.wvtool.wordlist.WVTWordList;
+import gzq.source.Code;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -299,7 +300,7 @@ public class BugCorpus {
     public static List<Bug> distribute() throws Exception {
         // 修复bug修复文件表 文件名-ID表
         Hashtable<Integer, TreeSet<String>> fixedTable = Utility.getFixedTable();
-        Hashtable<String, Integer> idTable = Utility.getFileIdTable(MethodNameFileName);  //获取分段后文件名-ID 映射表
+        Hashtable<String, Integer> idTable = Code.methodIndexTable;     //获取分段后文件名-ID 映射表
         FileWriter writer = new FileWriter(Utility.outputFileDir + SimiScoreFileName);
 
         List<Bug> bugs = BugCorpus.computeBugSimilarity();

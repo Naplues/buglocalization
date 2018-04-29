@@ -15,12 +15,10 @@ public class Evaluation {
     public static String VSMScoreFileName = "VSMScore.txt";
     public static String SimiScoreFileName = "SimiScore.txt";
     public static String LengthScoreFileName = "LengthScore.txt";
-    public static String LOCFileName = "LOC.txt";
     public static String ImportFileName = "Import.txt";
 
-    public static Integer a = CodeCorpus_SpiltClass.spiltclass;
-    public static Integer b = CodeCorpus_OriginClass.B;
-    public static float alpha = 0.3f;
+    public static Integer a = CodeCorpus.spiltclass;
+    public static Integer b = Utility.B;
 
     public static Hashtable<String, Integer> idTable = null;
     public static Hashtable<Integer, String> nameTable = null;
@@ -35,67 +33,23 @@ public class Evaluation {
     public static HashMap<Integer, String> bugNameTable = null;
     public static HashMap<String, HashSet<String>> shortNameSet = null;
     public static LinkedList<HashMap<String, Integer>> groups = null;
-    public static Iterator<HashMap<String, Integer>> itr = null;
     public static HashMap<String, Integer> tmp_group = null;
     public static Integer TotalLOC = new Integer(0);
 
     public static void init() throws IOException {
-        idTable = Utility.getFileIdTable(ClassNameFileName);
+        idTable = Utility.getFileIdTable("ClassName.txt");
         nameTable = Utility.getFileNameTable(ClassNameFileName);
 
-        methodIdTable = Utility.getFileIdTable(MethodNameFileName);
+        methodIdTable = Utility.getFileIdTable("MethodName.txt");
         methodNameTable = Utility.getFileNameTable(MethodNameFileName);
 
         fixTable = Utility.getFixedTable();
         lenTable = Utility.getLenScore(LengthScoreFileName);
 
-        LOCTable = Utility.getLOC(LOCFileName, TotalLOC);
-        shortNameSet = getShortNameSet();
-        bugNameTable = getBugNameSet();
+        LOCTable = Utility.getLOC(TotalLOC);
+        shortNameSet = Utility.getShortNameSet();
+        bugNameTable = Utility.getBugNameSet();
         groups = new LinkedList<>();
-    }
-
-
-    /**
-     * 获取短文件名xxx.java
-     *
-     * @return
-     * @throws IOException
-     */
-    public static HashMap<String, HashSet<String>> getShortNameSet() throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(Utility.outputFileDir + "ClassName.txt"));
-        HashMap<String, HashSet<String>> nameSet = new HashMap<>();
-        String line;
-        while ((line = reader.readLine()) != null) {
-            String[] fields = line.split("\t");
-            String tmp = fields[1].substring(0, fields[1].lastIndexOf("."));
-            String name = tmp.substring(tmp.lastIndexOf(".") + 1) + ".java";
-
-            if (!nameSet.containsKey(name)) {
-                HashSet<String> t = new HashSet<>();
-                t.add(fields[1]);
-                nameSet.put(name, t);
-            }
-        }
-        return nameSet;
-    }
-
-    /**
-     * 获取bug 包含的描述类名称集合
-     *
-     * @return
-     * @throws IOException
-     */
-    public static HashMap<Integer, String> getBugNameSet() throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(Utility.outputFileDir + "DescriptionClassName.txt"));
-        HashMap<Integer, String> bugNameSet = new HashMap<>();
-        String line;
-        while ((line = reader.readLine()) != null) {
-            String[] fields = line.split("\t");
-            if (fields.length < 2) continue;
-            else bugNameSet.put(Integer.parseInt(fields[0]), fields[1]);
-        }
-        return bugNameSet;
     }
 
     /**
@@ -106,13 +60,12 @@ public class Evaluation {
      * @throws IOException
      */
     public static float[] getRelativeScore(Integer bugid) throws Exception {
-        float[] relativeScore = new float[Utility.originFileCount];  //原始文件相关数组
+        float[] relativeScore = new float[Utility.originFileCount];  //原始文件相关数组260
         for (int i = 0; i < relativeScore.length; i++)
             relativeScore[i] = 0;
 
         String s = bugNameTable.get(bugid);  //该bug中包含的描述性类名
-        if (s == null) //没有相关类名，返回0
-            return relativeScore;
+        if (s == null) return relativeScore;  //没有相关类名，返回0
 
         String[] f = s.split(" ");  //获取类名数组
         Set<String> nameSet = new HashSet<>();
@@ -210,7 +163,7 @@ public class Evaluation {
             float[] simiVector = Utility.getVector(simiLine.substring(simiLine.indexOf(";") + 1)); //相似bug 相似度,长度为单词数目
             simiVector = Utility.normalize(simiVector);  //对相似向量进行归一化
 
-            float[] finalR = Utility.combine(vsmVector, simiVector, alpha);  //最终的向量
+            float[] finalR = Utility.combine(vsmVector, simiVector, Utility.alpha);  //最终的向量
 
             float[] finalScore = new float[Utility.originFileCount];  //最终分数向量
 
@@ -223,7 +176,7 @@ public class Evaluation {
                     System.err.println(name);
                     continue;
                 }
-                /* automatically determine num of file to represent the origin file */
+                /* 自动确定代表源文件的文件数 */
                 if (scores.containsKey(id)) {
                     ArrayList<Float> t = scores.get(id);
                     t.add(finalR[counter]);
