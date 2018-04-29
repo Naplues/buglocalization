@@ -1,0 +1,1 @@
+link displai enabl settext call seten ve 1 1 run xp manifest 1 creat visual bean swt 2 drop link composit 3 set enabl properti link disabl 4 note link disabl preview 5 close editor 6 open editor 7 observ link show enabl run applic link show enabl disabl order initi enabl statu set text set displai correctli swt bug

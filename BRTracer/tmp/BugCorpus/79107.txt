@@ -1,0 +1,1 @@
+consist setitem string null element check platform stop null null element

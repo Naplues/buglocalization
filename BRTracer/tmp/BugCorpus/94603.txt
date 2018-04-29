@@ -1,0 +1,1 @@
+spinner window standard swt spinner put button text box inset border standard window updown control button insid inset border

@@ -16,8 +16,8 @@ public class Utility {
     public static String separator = System.getProperty("file.separator"); // 文件分隔符
     public static String lineSeparator = System.getProperty("line.separator"); // 行分隔符
 
-    public static String project = "Swt";
-    private static String bugXMLFile = "SWTBugRepository.xml";
+    public static String project = "AspectJ";
+    private static String bugXMLFile = "AspectJBugRepository.xml";
     public static String workDir = "C:\\Users\\gzq\\Desktop\\BRTracer" + separator;
     public static String bugFilePath = workDir + project + separator + bugXMLFile;
     public static String sourceFileDir = workDir + project + "\\Source\\";
@@ -384,25 +384,5 @@ public class Utility {
             else bugNameSet.put(Integer.parseInt(fields[0]), fields[1]);
         }
         return bugNameSet;
-    }
-
-    /**
-     * 写入配置
-     *
-     * @param name
-     * @param value
-     */
-    public static void writeConfig(String name, String value) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(Utility.outputFileDir + "Config.txt"));
-        List lines = new ArrayList();
-        String line;
-        while ((line = reader.readLine()) != null)
-            lines.add(line.toString());
-
-        FileWriter configWriter = new FileWriter(Utility.outputFileDir + "Config.txt");
-        for (int i = 0; i < lines.size(); i++)
-            configWriter.write(lines.get(i).toString() + lineSeparator);
-        configWriter.write(name + ":" + value + lineSeparator);
-        configWriter.close();
     }
 }

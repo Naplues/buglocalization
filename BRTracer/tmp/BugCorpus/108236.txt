@@ -1,0 +1,1 @@
+spinner min max r3 1 build id i20050627 1435 setmaximum effect spinner spinner spinner parent swt spinner setminimum 1 spinner setmaximum 1 maximum default 100 setmaximum code lt min 0 return likewis setminimum gt max 0 return restrict rang singl scenario work app choos number peopl bui activ part adventur packag max head count packag default 1

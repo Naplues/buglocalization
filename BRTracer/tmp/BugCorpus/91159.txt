@@ -1,0 +1,1 @@
+consist droptarget event datatyp field alwi set dragent window dragent event datatyp field set event datatyp arrai carbon gtk motif event datatyp field null

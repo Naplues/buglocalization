@@ -1,0 +1,98 @@
+75739	
+77948	CLabel.java CLabel.java CLabel.java TypedListener.java EventTable.java Widget.java Widget.java Widget.java Control.java Control.java Composite.java Composite.java Composite.java Composite.java Composite.java Composite.java Composite.java Control.java Control.java Composite.java Tree.java Widget.java Display.java Control.java Widget.java Display.java Display.java Display.java Window.java Window.java NewWizardAction.java Action.java ActionHandler.java Command.java WorkbenchKeyboard.java WorkbenchKeyboard.java WorkbenchKeyboard.java WorkbenchKeyboard.java WorkbenchKeyboard.java WorkbenchKeyboard.java EventTable.java Display.java Widget.java Widget.java Widget.java Widget.java Widget.java Control.java Composite.java Tree.java Widget.java Display.java Display.java Display.java Workbench.java Workbench.java Workbench.java PlatformUI.java IDEApplication.java PlatformActivator.java EclipseStarter.java EclipseStarter.java NativeMethodAccessorImpl.java NativeMethodAccessorImpl.java DelegatingMethodAccessorImpl.java Method.java Main.java Main.java Main.java 
+78548	
+78559	
+79107	
+79481	
+80120	
+80276	
+78854	
+81265	
+80506	
+58185	
+83251	
+82346	
+83699	
+79419	
+83262	
+80830	
+82905	
+84557	
+86000	
+84012	
+87363	
+87676	
+86294	
+87855	Table.java Table.java Table.java Control.java Display.java OS.java Display.java Workbench.java Workbench.java Workbench.java PlatformUI.java IDEApplication.java PlatformActivator.java EclipseStarter.java EclipseStarter.java NativeMethodAccessorImpl.java DelegatingMethodAccessorImpl.java Method.java Main.java Main.java Main.java Main.java 
+89533	
+90018	
+87997	
+88829	
+86631	
+81242	OS.java ClipboardProxy.java ClipboardProxy.java Clipboard.java Clipboard.java Test_org_eclipse_swt_custom_StyledText.java Test_org_eclipse_swt_custom_StyledText.java TestCase.java TestResult.java TestResult.java TestResult.java TestCase.java TestSuite.java TestSuite.java TestSuite.java TestSuite.java RemoteTestRunner.java RemoteTestRunner.java RemoteTestRunner.java 
+92017	
+88717	Snippet91.java Snippet91.java 
+92612	
+92181	
+91159	
+79268	
+94467	
+94598	
+93724	DragSource.java OS.java 
+97651	
+97678	
+97745	
+97177	
+99376	
+100040	
+78634	
+94603	
+96916	
+102794	
+100387	
+104966	
+90258	
+107145	Widget.java Widget.java Widget.java 
+92013	
+96053	
+105772	
+84609	
+99266	
+113971	Tree.java TreeItem.java TreeItem.java TreeViewer.java AbstractTreeViewer.java AbstractTreeViewer.java AbstractTreeViewer.java AbstractTreeViewer.java StructuredViewer.java StructuredViewer.java StructuredViewer.java TestModelContentProvider.java TestModelContentProvider.java TestModel.java TestElement.java TestElement.java AbstractTreeViewerTest.java EclipseTestRunner.java EclipseTestRunner.java CoreTestApplication.java CoreTestApplication.java PlatformActivator.java EclipseStarter.java EclipseStarter.java Main.java Main.java Main.java Main.java 
+112358	
+82277	
+92341	
+117574	
+93380	
+103976	
+106289	
+104150	
+81264	
+99145	
+101354	
+108769	
+85072	www.java www.java 
+102756	
+81834	
+106372	
+115947	
+84911	
+84906	
+14654	
+82500	
+92241	
+108591	
+108813	
+78856	
+100095	
+111259	
+91317	
+87460	
+92757	
+83408	
+108236	
+104545	Widget.java 
+95410	
+103863	
+119192	
+108792	

@@ -1,0 +1,1 @@
+spinner support neg version 3 1 0 build id i20050413 0910 spinner negavt

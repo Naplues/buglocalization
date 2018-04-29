@@ -172,7 +172,6 @@ public class BugCorpus {
         writerFix.close();
 		writerClassName.close();
 		Utility.bugReportCount = bugs.size();
-		Utility.writeConfig("bugReportCount", bugs.size() + Utility.lineSeparator);  //写入配置
         System.out.println("   Generating " + bugs.size() + " Bug Reports");
 	}
 
@@ -208,7 +207,6 @@ public class BugCorpus {
 		wvw.close();
 		outFile.close();
 		Utility.bugTermCount = termCount;
-		Utility.writeConfig("bugTermCount",termCount + Utility.lineSeparator);
 		System.out.println("   Generating " + termCount + " Bug Terms");
 	}
 

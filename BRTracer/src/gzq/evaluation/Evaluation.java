@@ -199,31 +199,30 @@ public class Evaluation {
 
             float[] groupScore = getRelativeScore(vsmId);  //获取相对分数
             for (int i = 0; i < Utility.originFileCount; i++) finalScore[i] = finalScore[i] + groupScore[i];
-            Rank[] sort = sort(finalScore);  //排序后的分数
+            Rank[] sort = sort(finalScore);  //排序后的分数数组
 
-            Iterator<String> fileIt = fixTable.get(vsmId).iterator();    //该bug的修复文件
-            Hashtable<Integer, String> fileIdTable = new Hashtable<>();  //
+            Iterator<String> fileIt = fixTable.get(vsmId).iterator();    //修复该bug的文件迭代器
+            Hashtable<Integer, String> fileIdTable = new Hashtable<>();  //文件-索引表
             while (fileIt.hasNext()) {
                 String fileName = fileIt.next();         //某个修复文件
                 Integer fileId = idTable.get(fileName);  //该修复文件的索引
-                //未找到该文件索引或者没有改文件名
+                //未在语料库中找到该文件索引或者没有该文件名
                 if (fileId == null || fileName == null) {
-                    System.out.println("null pointer");
-                    System.out.println(fileName);
+                    //System.out.println("null pointer" + fileName);
                     continue;
                 }
                 fileIdTable.put(fileId, fileName);
             }
 
             for (int i = 0; i < sort.length; i++) {
-                Rank rank = sort[i];
+                Rank rank = sort[i];  //260个源文件
                 if ((!fileIdTable.isEmpty()) && fileIdTable.containsKey(rank.id)) {
                     writer.write(vsmId + "\t" + fileIdTable.get(rank.id) + "\t" + i + "\t" + rank.rank + " " + Utility.lineSeparator);
                     writer.flush();
-                    break;
+                    //break;
                 }
             }
-        }
+        }//while end
         writer.close();
     }
 
@@ -262,7 +261,6 @@ public class Evaluation {
         for(int i=0;i<allBugSimValues.length;i++){  //对每个相似度进行排序
             Rank[] rank = sort(allBugSimValues[i]);
             System.out.println( bugs.get(i).getBugId() + ":" + rank[0].id);
-
             System.out.println();
         }
     }
@@ -285,6 +283,7 @@ public class Evaluation {
             if (Integer.parseInt(value[2]) < k)
                 sum++;
         }
+
         System.out.println("Top" + k + ": " + (float)sum / hasCountBugs.size());
     }
 

@@ -1,0 +1,1 @@
+implement gc drawfocu i20041208 gtk gc drawfocu simpli draw solid line correctli javadoc happend draw focu support limit implement custom widget chanc implement gtk dup point 2 span class bz close href show bug cgi id 62424 titl resolv wontfix gc drawfocu linux xor draw bug 62424 span mention thing file separ

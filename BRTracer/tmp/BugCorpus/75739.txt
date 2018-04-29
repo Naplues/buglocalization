@@ -1,0 +1,1 @@
+variant tostr variant class tostr call getstr case throw type vt empti suggest return string 64 param variant 64 return string public static string tostr gettyp vt empti return return getstr version 3 1 m2

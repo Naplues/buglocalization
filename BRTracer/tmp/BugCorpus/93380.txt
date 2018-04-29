@@ -1,0 +1,1 @@
+dnd 100 cpu usag drag file navig packag explor version 3 1 0 build id i20050419 1200 drag drop file insid packag explor navig view cpu 100 50 hyperthread enabl cpu usag 50 guess process time spent event thread window virtual cpu event thread 50 number massiv cpu drag extern file navig drag file navig drag view editor thread dump tonight tomorrow

@@ -314,7 +314,6 @@ public class CodeCorpus {
 	    writeImport.close();
         NameWriter.close();
         Utility.originFileCount = index; //原始文件数
-        Utility.writeConfig("originFileCount", Utility.originFileCount + Utility.lineSeparator);  //写入配置
         System.out.println("   Generated " + index + " Origin Class Corpus");
     }
 

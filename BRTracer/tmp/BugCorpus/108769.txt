@@ -1,0 +1,1 @@
+swt filedialog addit clarif javadoc conveni method recent work issu code swt filedialog class attach patch add addit inform javadoc explain detail glean read sourc clear exist javadoc patch add method set filter extens conveni creat patch gtk version swt adapt version note adapt line number adjust code platform specif

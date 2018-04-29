@@ -12,11 +12,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Utility.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Utility.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/utils/Utility.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="535">
-              <caret line="386" column="5" selection-start-line="386" selection-start-column="5" selection-end-line="386" selection-end-column="5" />
+            <state relative-caret-position="247">
+              <caret line="23" column="94" lean-forward="true" selection-start-line="23" selection-start-column="94" selection-end-line="23" selection-end-column="94" />
             </state>
           </provider>
         </entry>
@@ -24,8 +24,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gzq/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
+            <state relative-caret-position="228">
+              <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -33,28 +33,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CodeCorpus.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gzq/source/CodeCorpus.java">
+      <file leaf-file-name="BugCorpus.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gzq/bug/BugCorpus.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3002">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="532">
+              <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
               <folding>
-                <element signature="method#countDF#0;class#CodeCorpus_OriginClass#0" />
-                <element signature="e#1695#1696#0" expanded="true" />
-                <element signature="e#1746#1747#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Code.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/gzq/source/Code.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-              <folding>
-                <element signature="e#1924#1925#0" expanded="true" />
-                <element signature="e#1961#1962#0" expanded="true" />
+                <element signature="method#writeCorpus#0;class#BugCorpus#0" />
+                <element signature="method#parseXML#0;class#BugCorpus#0" />
+                <element signature="docComment;method#getCosineValue#0;class#BugCorpus#0" />
+                <element signature="method#getCosineValue#0;class#BugCorpus#0" />
               </folding>
             </state>
           </provider>
@@ -63,27 +51,11 @@
       <file leaf-file-name="Evaluation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gzq/evaluation/Evaluation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="284" column="47" lean-forward="true" selection-start-line="284" selection-start-column="47" selection-end-line="284" selection-end-column="47" />
+            <state relative-caret-position="516">
+              <caret line="291" column="3" lean-forward="true" selection-start-line="291" selection-start-column="3" selection-end-line="291" selection-end-column="3" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;method#getTopK#0;class#Evaluation#0" />
-                <element signature="method#getMRR#0;class#Evaluation#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Similarity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gzq/evaluation/Similarity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-685">
-              <caret line="72" column="39" lean-forward="true" selection-start-line="72" selection-start-column="39" selection-end-line="72" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="docComment;method#getSourceFileIndex#0;class#Similarity#0" />
-                <element signature="method#getSourceFileIndex#0;class#Similarity#0" />
-                <element signature="docComment;method#computeOneSimilarity#0;class#Similarity#0" />
               </folding>
             </state>
           </provider>
@@ -121,6 +93,8 @@
       <find>LOCFileName</find>
       <find>getL</find>
       <find>System</find>
+      <find>bugFilePath</find>
+      <find>datasetPath</find>
       <find>countL</find>
     </findStrings>
   </component>
@@ -150,19 +124,20 @@
         <option value="$PROJECT_DIR$/src/gzq/source/Corpus.java" />
         <option value="$PROJECT_DIR$/src/gzq/source/CodeCorpus_SpiltClass.java" />
         <option value="$PROJECT_DIR$/src/gzq/source/CodeCorpus_OriginClass.java" />
-        <option value="$PROJECT_DIR$/src/gzq/source/CodeCorpus.java" />
-        <option value="$PROJECT_DIR$/src/gzq/bug/BugCorpus.java" />
         <option value="$PROJECT_DIR$/src/gzq/evaluation/Similarity.java" />
-        <option value="$PROJECT_DIR$/src/utils/Utility.java" />
+        <option value="$PROJECT_DIR$/src/gzq/source/Code.java" />
+        <option value="$PROJECT_DIR$/src/evaluation/Evaluation.java" />
         <option value="$PROJECT_DIR$/src/gzq/Main.java" />
         <option value="$PROJECT_DIR$/src/gzq/evaluation/Evaluation.java" />
-        <option value="$PROJECT_DIR$/src/gzq/source/Code.java" />
+        <option value="$PROJECT_DIR$/src/gzq/bug/BugCorpus.java" />
+        <option value="$PROJECT_DIR$/src/gzq/source/CodeCorpus.java" />
+        <option value="$PROJECT_DIR$/src/utils/Utility.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="48" />
-    <option name="y" value="-9" />
+    <option name="x" value="208" />
+    <option name="y" value="-8" />
     <option name="width" value="1696" />
     <option name="height" value="1036" />
   </component>
@@ -189,12 +164,6 @@
               <item name="BRTracer" type="b2602c69:ProjectViewProjectNode" />
               <item name="BRTracer" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="evaluation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BRTracer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BRTracer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="gzq" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -203,20 +172,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="gzq" type="462c0819:PsiDirectoryNode" />
               <item name="bug" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BRTracer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BRTracer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="gzq" type="462c0819:PsiDirectoryNode" />
-              <item name="evaluation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BRTracer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BRTracer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="gzq" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -302,7 +257,7 @@
     <configuration name="Main1" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="BRTracer" />
-      <option name="PROGRAM_PARAMETERS" value="-d C:\Users\gzq\Desktop\BRTracer\Swt -p swt -o C:\Users\gzq\Desktop\BRTracer\Swt\output.txt" />
+      <option name="PROGRAM_PARAMETERS" value="-d C:\Users\gzq\Desktop\BRTracer\Swt\ -p swt -o C:\Users\gzq\Desktop\BRTracer\Swt\output.txt" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -519,7 +474,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32931727" />
@@ -686,27 +640,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/bug/BugCorpusCreator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="104" selection-start-line="104" selection-end-line="104" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/property/Property.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1026">
-          <caret line="68" column="34" selection-start-line="68" selection-start-column="28" selection-end-line="68" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="99" column="88" selection-start-line="99" selection-start-column="75" selection-end-line="99" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/wvtool.jar!/edu/udo/cs/wvtool/config/WVTConfigurationRule.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
@@ -779,13 +712,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/evaluation/Evaluation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="233" column="9" lean-forward="true" selection-start-line="233" selection-start-column="9" selection-end-line="233" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gzq/source/Indexer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-88">
@@ -807,19 +733,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gzq/bug/BugCorpus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="method#writeCorpus#0;class#BugCorpus#0" />
-            <element signature="method#parseXML#0;class#BugCorpus#0" />
-            <element signature="docComment;method#getCosineValue#0;class#BugCorpus#0" />
-            <element signature="method#getCosineValue#0;class#BugCorpus#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gzq/bug/Bug.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
@@ -838,10 +751,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/evaluation/Evaluation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="395" column="4" selection-start-line="395" selection-start-column="4" selection-end-line="395" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="43" column="31" lean-forward="true" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gzq/source/Code.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="9" lean-forward="true" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+          <folding>
+            <element signature="e#1924#1925#0" expanded="true" />
+            <element signature="e#1961#1962#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bug/BugCorpusCreator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="47" column="52" selection-start-line="47" selection-start-column="52" selection-end-line="47" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/property/Property.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gzq/source/CodeCorpus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1007">
+          <caret line="315" column="48" selection-start-line="315" selection-start-column="48" selection-end-line="315" selection-end-column="48" />
+          <folding>
+            <element signature="method#countDF#0;class#CodeCorpus_OriginClass#0" />
+            <element signature="e#1695#1696#0" expanded="true" />
+            <element signature="e#1746#1747#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gzq/bug/BugCorpus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
+          <folding>
+            <element signature="method#writeCorpus#0;class#BugCorpus#0" />
+            <element signature="method#parseXML#0;class#BugCorpus#0" />
+            <element signature="docComment;method#getCosineValue#0;class#BugCorpus#0" />
+            <element signature="method#getCosineValue#0;class#BugCorpus#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/gzq/evaluation/Similarity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-685">
-          <caret line="72" column="39" lean-forward="true" selection-start-line="72" selection-start-column="39" selection-end-line="72" selection-end-column="39" />
+        <state relative-caret-position="963">
+          <caret line="131" column="5" lean-forward="true" selection-start-line="131" selection-start-column="5" selection-end-line="131" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;method#getSourceFileIndex#0;class#Similarity#0" />
@@ -851,55 +828,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/Utility.java">
+    <entry file="file://$PROJECT_DIR$/src/gzq/evaluation/Evaluation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="386" column="5" selection-start-line="386" selection-start-column="5" selection-end-line="386" selection-end-column="5" />
+        <state relative-caret-position="516">
+          <caret line="291" column="3" lean-forward="true" selection-start-line="291" selection-start-column="3" selection-end-line="291" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#getTopK#0;class#Evaluation#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gzq/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
+        <state relative-caret-position="228">
+          <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gzq/evaluation/Evaluation.java">
+    <entry file="file://$PROJECT_DIR$/src/utils/Utility.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="284" column="47" lean-forward="true" selection-start-line="284" selection-start-column="47" selection-end-line="284" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;method#getTopK#0;class#Evaluation#0" />
-            <element signature="method#getMRR#0;class#Evaluation#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gzq/source/CodeCorpus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3002">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="method#countDF#0;class#CodeCorpus_OriginClass#0" />
-            <element signature="e#1695#1696#0" expanded="true" />
-            <element signature="e#1746#1747#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gzq/source/Code.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="e#1924#1925#0" expanded="true" />
-            <element signature="e#1961#1962#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="247">
+          <caret line="23" column="94" lean-forward="true" selection-start-line="23" selection-start-column="94" selection-end-line="23" selection-end-column="94" />
         </state>
       </provider>
     </entry>

@@ -1,0 +1,1 @@
+styledtext add caret listen null

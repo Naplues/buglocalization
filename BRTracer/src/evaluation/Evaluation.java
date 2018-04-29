@@ -394,7 +394,6 @@ public class Evaluation {
 		return lenTable;
 	}
 
-
 	public HashMap<String,HashSet<String>> getShortNameSet() throws IOException {
 		BufferedReader namereader = new BufferedReader(new FileReader(workDir+"ClassName.txt"));
 		HashMap<String, HashSet<String>> nameset = new HashMap<String, HashSet<String>>();

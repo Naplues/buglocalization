@@ -1,0 +1,1 @@
+dcr swt vertic style coolbar coolbar orient vertic drag handl render vertic line vertic dot coolbar coolitem intro launch bar os specif handl render posit coolbar vertic left window trim area orient coolitem handl render horizont horizont line dot
