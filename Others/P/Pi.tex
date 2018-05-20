@@ -4,6 +4,7 @@
 \usepackage{cite}
 \usepackage{url}
 \usepackage[pdftex, final]{graphics}
+\usepackage{amsmath}
 \title{Pi: A simple unsupervised approach to locating crash-inducing changes}
 \author{}
 \date{}
@@ -70,8 +71,32 @@ The research results of Wu et al's empirical study also suggest that one can nar
 
 \section{Pi approach}
 \paragraph{}
-As mentioned before, we build our two heuristic metrics in Pi.
+As mentioned before, we select two heuristic metrics IADCP and CC in ChangeLocator and compose them to \emph{Pi}, a new metric to measure the possibility of one change is a crash-inducing one. Then, We get the ranked list by ordering corrsponding Pi score.
+
 \vspace{-1em}
+
+\paragraph{Inverse Average Distance to Crashing Point(IADCP)}
+Wu et al.'s empirical study indicate that, if a revision appears in a crash frame which is closer to the crash point, it is more likely to be the crash-inducing change. Therefore, the feature \emph{Inverse Average Distance to Crash Point(IADCP)} that measures how close a revision \emph{r} is to the crash point of crash reports in a crash bucket \emph{B}. The fromal definition is as follows.
+$$ IADCP(r,B)=\frac{1}{1+\sum_{j=1}^{n}{DCP_{j}(r)/n}} \eqno
+(1)$$
+where \emph{n} is the total number of crash reports within the bucket \emph{B} which contains revision \emph{r}, and $DCP_j(r)$ represents the minimum distance between the revision \emph{r} and the crash point in the $j^{th}$ crash report of the bucket \emph{B}.
+\vspace{-1em}
+
+
+\paragraph{Crash Component(CC)}
+As mentioned in Section 2.2, if source files of one component that the crash bucket belongs to was affected by a revision, it is more likely to be the crash-inducing changes. Therefore, \textbf{CC} metric was designed to revise the IADCP measure when the score of IADCP of an unrelated revision.
+$$CC(r,B)=\left\{
+\begin{aligned}
+1 & \text{ if \emph{r} affects source files in the component that \emph{B} belongs to} \\
+0 & \text{ otherwise}
+\end{aligned}
+\right.
+\eqno(2)$$
+
+\paragraph{Pi(Pos revised by isComponent)}
+It is intuitively plausible that if a revision does not affect the component that the crash bucket belongs to, the revision is more unlikely to the crash inducing one. \emph{Pi} is suitable for removing the revision discussed above.
+$$Pi(r,B)=IADCP*CC \eqno(3)$$
+ For example, given two revision $r_a=0.9$, $r_b=0.8$ and one bucket \emph{B}, $r_a$ would rank in front of $r_b$ if we only use \emph{IADCP} measure. The result may be correct in the case that the relativity is identical. Whereas, the result is unreliable if $r_b$ has affected portion that containing crash components while $r_a$ over the left. By using \emph{Pi}, the value of $r_a$ turns into 0 so that $r_b$ becomes the most suspicious revision.
 
 
 \section{Experimental design}
@@ -82,6 +107,7 @@ This section describes our experimental design for evaluating Pi. We first intro
 \subsection{Experimental Setup}
 \paragraph{}
 We choose the large-scale projects, namely NetBeans\footnote{https://netbeans.org/}​, as our evaluation subjects. The details of the dataset are listed in Table \ref{NetBeansProject}.
+To compare the performance of \emph{Pi} and existing approaches, we choose two mentioned above state-of-art approaches, \emph{Locus} and \emph{ChangeLocator} as our cross reference.
 \vspace{-1em}
 
 \begin{table}[!htbp]
@@ -105,16 +131,21 @@ Netbeans 7.2 & 39,674 & 8,666 & 235,526 & 39 \\
 
 \subsection{Evaluation Metrics}
 \paragraph{}
-Just like ChangeLocator, Pi will produce a ranked list of all changes according to their suspicious score. Developers can check the changes from the top of list and find out the location where crash occured. In order to evaluate the effectiveness of Pi, we adopt the following three metrics, which are widely used to evaluate the performance of ranking relevant tecchniques.\\
+Just like ChangeLocator, Pi will produce a ranked list of all candidate changes according to their suspicious score. Developers can check the changes from the top of list and find out the location where crash occured. In order to evaluate the effectiveness of Pi, we adopt the following three metrics, which are widely used to evaluate the performance of ranking relevant tecchniques.\\
 \vspace{-1em}
 
 \begin{itemize}
 \item \textbf{Recall@K}
-This metric reports the percentage of bugs.
+This metric measures the percentage of crash-inducing changes for which we make at least one correct recommendation in the top k ranked results. Since we are only considering the top few ranks, and only requires finding one of the bug-inducing for per bug, the \textbf{K} usually is assigned as 1, 5 and 10. The higher thees three metric values, the better the crash localization performance. This metric emphasizes early precision over total recall.
+
 \item \textbf{MRR}
-This metric is used to evaluate the ability to locate the first relevant code element for a bug.
+(Mean Reciprocal Rank) This metric is used to evaluate the ability to locate the first relevant bug-inducing change for a bug. The reciprocal rank for a crash is the inverse rank of the first relevant bug-inducing change found. MRR is the reciprocal rank averaged over all inducing changes.
+$$MRR= \frac{1}{|Q|}\sum_{i=1}^{|Q|}{\frac{1}{rank_i}} \eqno(1)$$
+
 \item \textbf{MAP}
 The metric provides a single-figure measure of quality across recall levels. This metric is used to evaluate the ability of approaches to locate all the buggy entities of a bug.
+$$MAP=\sum_{q=1}^{|Q|}{\frac{AvgP(q)}{|Q|}}, AvgP=\sum_{k\in K}{\frac{Prec@k}{|K|}} \eqno(2)$$
+$$Prec@k=\frac{\# \ of\ relevant\ docs\ in\ top\ k}{k} \eqno(3)$$
 \end{itemize}
 
 
