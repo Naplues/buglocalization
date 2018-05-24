@@ -20,9 +20,24 @@ public class Main {
         data.setClassIndex(data.numAttributes() - 1); //设置最后一个属性为类别属性
         String[] options = Utils.splitOptions("-R 1");
         Remove remove = new Remove();
-        remove.setOptions(options);
+        //remove.setOptions(options);
         remove.setInputFormat(data);
         return Filter.useFilter(data, remove);
+    }
+
+    public static void runMethod(String file) throws Exception {
+        Instances data = ConverterUtils.DataSource.read("data/" + file);
+        data = filter(data);
+        Evaluation evaluation = new Evaluation(data);
+        J48 j48 = new J48();
+        j48.buildClassifier(data);
+        System.out.println(j48);
+
+        evaluation.crossValidateModel(j48, data, 10, new Random(1));
+
+        System.out.println(evaluation.toSummaryString(false));
+        System.out.println(evaluation.toClassDetailsString());
+        System.out.println(evaluation.toMatrixString());
     }
 
     public static void main(String[] args) throws Exception{
@@ -30,15 +45,8 @@ public class Main {
                 "hepatitis.arff", "mozilla4.arff", "pc1.arff", "pc5.arff", "waveform-5000.arff"};
 
         for(String file : files) {
-            Instances data = ConverterUtils.DataSource.read("data/" + file);
-            data = filter(data);
-            Evaluation evaluation = new Evaluation(data);
-            J48 j48 = new J48();
-            evaluation.crossValidateModel(j48, data, 10, new Random(1));
-            System.out.println(evaluation.toSummaryString(false));
-            System.out.println(evaluation.toClassDetailsString());
-            System.out.println(evaluation.toMatrixString());
-
+            runMethod(file);
         }
+
     }
 }
